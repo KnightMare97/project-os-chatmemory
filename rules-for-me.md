@@ -1,0 +1,106 @@
+1. one topic at a time
+2. create snapshot after:
+   - important decision
+   - important finding
+   - domain comletion
+   - 20 messages
+3. each time the topic changes, write:
+   - current phase
+   - current topic
+4. phases and their topics:
+   - Phase 0 — Vision & Principles => vision.md
+     - Vision
+     - Mission
+     - Non-goals
+     - Core Principles
+     - AI Philosophy
+     - Human-in-the-loop Philosophy
+     - Extensibility Philosophy
+   - Phase 1 — Domain Discovery => domains.md
+     - CRM
+       - Entities
+       - Aggregates
+       - Bounded Contexts
+     - Service Delivery
+       - Entities
+       - Aggregates
+       - Bounded Contexts
+     - Finance
+       - Entities
+       - Aggregates
+       - Bounded Contexts
+     - Workforce
+       - Entities
+       - Aggregates
+       - Bounded Contexts
+     - Knowledge
+       - Entities
+       - Aggregates
+       - Bounded Contexts
+     - Intelligence
+       - Entities
+       - Aggregates
+       - Bounded Contexts
+     - Client Success
+       - Entities
+       - Aggregates
+       - Bounded Contexts
+    - Phase 2 — Extensibility Model => extensibility.md
+       - Plugin Model
+       - Provider Model
+       - Channel Model
+       - AI Model Routing
+       - External Integrations
+       - Feature Modules
+       - Future Domains
+    - Phase 3 — Knowledge & Memory Architecture => memory.md
+      - Client Brain
+      - Agency Brain
+      - Knowledge Base
+      - Decision Logs
+      - Learnings
+      - Context Retrieval
+    - Phase 4 — Capability Map => capabilities.md
+       - Research
+       - Strategy
+       - Content Creation
+       - Video Creation
+       - Publishing
+       - Analytics
+       - Reporting
+       - Lead Scoring
+    - Phase 5 — Workflow Design => workflows.md
+       - Lead → Client
+       - Client → Strategy
+       - Strategy → Production
+       - Production → Approval
+       - Approval → Publishing
+       - Publishing → Reporting
+    - Phase 6 — Puzzle Board Architecture => architecture.md
+       - Core Layer
+       - Domains Layer
+       - Capabilities Layer
+       - Plugins Layer
+       - Infrastructure Layer
+    - Phase 7 — Infrastructure Design => infrastructure.md
+       - Postgres
+       - Storage
+       - Queues
+       - Events
+       - Workers
+       - Authentication
+       - Secrets
+       - Deployment
+    - Phase 8 — Build Roadmap => roadmap.md
+       - MVP
+       - V1
+       - V2
+       - Future
+    - Phase 9 — Claude Code Operating System => claude-operating-system.md
+       - CLAUDE.md
+       - Development Rules
+       - Coding Standards
+       - Architect Agent
+       - Builder Agent
+       - QA Agent
+       - Review Agent
