@@ -6,6 +6,7 @@
      - AI Philosophy
      - Human-in-the-loop Philosophy
      - Extensibility Philosophy
+
 - Phase 1: Domain Discovery => domains.md
      - CRM
        - Entities
@@ -35,6 +36,7 @@
        - Entities
        - Aggregates
        - Bounded Contexts
+
 - Phase 2: Extensibility Model => extensibility.md
        - Plugin Model
        - Provider Model
@@ -43,6 +45,7 @@
        - External Integrations
        - Feature Modules
        - Future Domains
+
 - Phase 3: Knowledge & Memory Architecture => memory.md
       - Client Brain
       - Agency Brain
@@ -50,6 +53,7 @@
       - Decision Logs
       - Learnings
       - Context Retrieval
+
 - Phase 4: Capability Map => capabilities.md
        - Research
        - Strategy
@@ -59,6 +63,7 @@
        - Analytics
        - Reporting
        - Lead Scoring
+
 - Phase 5: Workflow Design => workflows.md
        - Lead → Client
        - Client → Strategy
@@ -66,12 +71,14 @@
        - Production → Approval
        - Approval → Publishing
        - Publishing → Reporting
+
 - Phase 6: Puzzle Board Architecture => architecture.md
        - Core Layer
        - Domains Layer
        - Capabilities Layer
        - Plugins Layer
        - Infrastructure Layer
+
 - Phase 7: Infrastructure Design => infrastructure.md
        - Postgres
        - Storage
@@ -81,11 +88,13 @@
        - Authentication
        - Secrets
        - Deployment
+
 - Phase 8: Build Roadmap => roadmap.md
        - MVP
        - V1
        - V2
        - Future
+
 - Phase 9: Claude Code Operating System => claude-operating-system.md
        - CLAUDE.md
        - Development Rules
