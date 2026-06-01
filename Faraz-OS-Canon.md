@@ -1,4 +1,4 @@
-Phase 0: Vision & Principles => vision.md
+- Phase 0: Vision & Principles => vision.md
      - Vision
      - Mission
      - Non-goals
@@ -6,7 +6,7 @@ Phase 0: Vision & Principles => vision.md
      - AI Philosophy
      - Human-in-the-loop Philosophy
      - Extensibility Philosophy
-Phase 1: Domain Discovery => domains.md
+- Phase 1: Domain Discovery => domains.md
      - CRM
        - Entities
        - Aggregates
