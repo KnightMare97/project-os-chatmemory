@@ -35,7 +35,7 @@
        - Entities
        - Aggregates
        - Bounded Contexts
-Phase 2: Extensibility Model => extensibility.md
+- Phase 2: Extensibility Model => extensibility.md
        - Plugin Model
        - Provider Model
        - Channel Model
@@ -43,14 +43,14 @@ Phase 2: Extensibility Model => extensibility.md
        - External Integrations
        - Feature Modules
        - Future Domains
-Phase 3: Knowledge & Memory Architecture => memory.md
+- Phase 3: Knowledge & Memory Architecture => memory.md
       - Client Brain
       - Agency Brain
       - Knowledge Base
       - Decision Logs
       - Learnings
       - Context Retrieval
-Phase 4: Capability Map => capabilities.md
+- Phase 4: Capability Map => capabilities.md
        - Research
        - Strategy
        - Content Creation
@@ -59,20 +59,20 @@ Phase 4: Capability Map => capabilities.md
        - Analytics
        - Reporting
        - Lead Scoring
-Phase 5: Workflow Design => workflows.md
+- Phase 5: Workflow Design => workflows.md
        - Lead → Client
        - Client → Strategy
        - Strategy → Production
        - Production → Approval
        - Approval → Publishing
        - Publishing → Reporting
-Phase 6: Puzzle Board Architecture => architecture.md
+- Phase 6: Puzzle Board Architecture => architecture.md
        - Core Layer
        - Domains Layer
        - Capabilities Layer
        - Plugins Layer
        - Infrastructure Layer
-Phase 7: Infrastructure Design => infrastructure.md
+- Phase 7: Infrastructure Design => infrastructure.md
        - Postgres
        - Storage
        - Queues
@@ -81,12 +81,12 @@ Phase 7: Infrastructure Design => infrastructure.md
        - Authentication
        - Secrets
        - Deployment
-Phase 8: Build Roadmap => roadmap.md
+- Phase 8: Build Roadmap => roadmap.md
        - MVP
        - V1
        - V2
        - Future
-Phase 9: Claude Code Operating System => claude-operating-system.md
+- Phase 9: Claude Code Operating System => claude-operating-system.md
        - CLAUDE.md
        - Development Rules
        - Coding Standards
