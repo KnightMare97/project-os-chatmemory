@@ -40,6 +40,29 @@ Human responsibility is elevated from:
 to:
 - strategist / reviewer / quality controller
 
+### DEC-004
+Default execution pattern of Faraz OS is:
+
+System suggests
+→ Human approves
+→ System executes
+
+This is the standard pattern for client-facing and quality-sensitive workflows.
+
+### DEC-005
+Mission is locked.
+
+### DEC-006
+Human checkpoints are risk-based, not universally mandatory.
+
+Some checkpoints require explicit human approval.
+Others may escalate to a human only when:
+- risk is high
+- confidence is low
+- ambiguity is high
+- policy violation is suspected
+- execution is irreversible or externally visible
+
 ---
 
 ## Findings
@@ -169,6 +192,20 @@ The first implementation target is:
 standardizing digital marketing service delivery
 into reusable Domain and Capability layers
 that can later be adapted to other service businesses.
+
+### FIND-014
+Faraz OS is not designed for full autonomous execution by default.
+
+It is designed for checkpointed automation:
+AI progresses the work as far as safely possible,
+then pauses at defined approval gates
+for human validation or correction.
+
+### FIND-015
+Faraz OS uses checkpointed automation with risk-tiered oversight.
+
+Human review is not a default requirement for every step.
+It is a control mechanism applied where risk, ambiguity, or low confidence justifies intervention.
 
 ---
 
