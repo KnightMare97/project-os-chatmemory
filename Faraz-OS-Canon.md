@@ -8,40 +8,78 @@
      - Extensibility Philosophy
 
 - Phase 1: Domain Discovery => domains.md
+  - Ubiquitous Language
+  - Core Concepts
+  - Scope Object / Client Brain
+  - Context Map Draft
   - CRM
      - Entities
      - Aggregates
      - Bounded Contexts
+     - Responsibilities
+     - What it owns
+     - Inbound events
+     - Outbound events
   - Service Delivery
      - Entities
      - Aggregates
      - Bounded Contexts
+     - Responsibilities
+     - What it owns
+     - Inbound events
+     - Outbound events
   - Finance
      - Entities
      - Aggregates
      - Bounded Contexts
+     - Responsibilities
+     - What it owns
+     - Inbound events
+     - Outbound events
   - Workforce
      - Entities
      - Aggregates
      - Bounded Contexts
+     - Responsibilities
+     - What it owns
+     - Inbound events
+     - Outbound events
   - Knowledge
      - Entities
      - Aggregates
      - Bounded Contexts
+     - Responsibilities
+     - What it owns
+     - Inbound events
+     - Outbound events
   - Intelligence
      - Entities
      - Aggregates
      - Bounded Contexts
+     - Responsibilities
+     - What it owns
+     - Inbound events
+     - Outbound events
   - Client Success
      - Entities
      - Aggregates
      - Bounded Contexts
+     - Responsibilities
+     - What it owns
+     - Inbound events
+     - Outbound events
+  - Governance
 
 - Phase 2: Extensibility Model => extensibility.md
+  - Permission
+  - Extension Contracts
   - Plugin Model
   - Provider Model
   - Channel Model
+  - Model
   - AI Model Routing
+  - Runtime vs Config-Time Extensions
+  - Versioning & Compatibility
   - External Integrations
   - Feature Modules
   - Future Domains
@@ -71,6 +109,10 @@
   - Production → Approval
   - Approval → Publishing
   - Publishing → Reporting
+  - Escalation Loop
+  - Revision Loop
+  - Failure/Exception Path
+  - Learn → Memory Update
 
 - Phase 6: Puzzle Board Architecture => architecture.md
   - Core Layer
@@ -103,3 +145,8 @@
   - Builder Agent
   - QA Agent
   - Review Agent
+  - Snapshot
+  - Session Protocol
+  - Plan Mode vs Build Mode vs Review Mode
+  - Prompt Handoff Format
+  - Rules
