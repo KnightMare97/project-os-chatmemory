@@ -1,0 +1,48 @@
+## Client Brain / Engagement Scope — Domain Relationships (Draft v1)
+
+### CRM Relationship
+CRM is the likely source of truth for Client identity,
+account state, and core client relationship records.
+
+Client Brain is not the Client entity itself.
+It is a persistent memory artifact about the client.
+
+### Brand Relationship
+Brand may need to be modeled as its own Entity
+or a scoped child entity,
+rather than only as a field inside Client Brain.
+
+Open Question:
+Should Client Brain exist per Client,
+per Brand,
+or support both levels?
+
+### Service Agreement Relationship
+Service Agreement is the likely business artifact
+that defines what service has been agreed,
+what is in scope,
+and what is out of scope.
+
+Engagement Scope should likely be derived from
+or constrained by a Service Agreement,
+not created independently from it.
+
+### Workforce Relationship
+Workforce remains the source of truth for:
+- operator identity
+- role
+- availability
+- capacity
+- skill profile
+- employment or contractor records
+
+Engagement Scope may store only references
+to assigned human operators.
+
+### Proposed Model
+- Client -> CRM
+- Brand -> CRM or adjacent client context
+- Service Agreement -> CRM / Client Success
+- Client Brain -> Client Success + Knowledge
+- Engagement Scope -> Service Delivery
+- Human Operator -> Workforce
