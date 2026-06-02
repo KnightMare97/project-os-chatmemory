@@ -1,0 +1,232 @@
+# Snapshot-001
+
+## Current Phase
+Phase 0 — Vision & Principles
+
+## Current Topic
+Mission
+
+## Status
+In Progress
+
+---
+
+## Decisions
+
+### DEC-001
+Faraz OS is not an Agency Management System.
+
+Faraz OS is an AI-Native Operating System for Service Businesses.
+
+Faraz Agency is the primary operational environment for validating and evolving Faraz OS.
+
+The long-term objective is to use Faraz OS as a foundational asset for creating and operating multiple AI-native businesses.
+
+### DEC-002
+Default operational pattern of the system is:
+
+System suggests
+→ Human approves
+→ System executes
+
+This is the default design logic for high-value and quality-sensitive workflows.
+
+### DEC-003
+Human role in Faraz OS is not removed.
+
+Human responsibility is elevated from:
+- producer / operator
+
+to:
+- strategist / reviewer / quality controller
+
+---
+
+## Findings
+
+### FIND-001
+Instagram is not a Domain.
+
+Instagram is most likely a Channel Plugin.
+
+The same principle probably applies to:
+- LinkedIn
+- Twitter/X
+- TikTok
+- YouTube
+
+### FIND-002
+Many existing workflow definitions in the original blueprint are workflows, not domains.
+
+Examples:
+- Publishing
+- Reporting
+- Content Production
+
+must not automatically be treated as Domains.
+
+### FIND-003
+The original blueprint was influenced by workflow-first thinking.
+
+The architecture is now moving toward:
+
+Domain
+→ Capability
+→ Workflow
+
+instead of:
+
+Workflow
+→ Domain
+
+### FIND-004
+Scope Object appears to be much more important than originally assumed.
+
+There is a strong possibility that Scope Object will evolve into:
+
+Client Brain
+
+which may become one of the central memory structures of Faraz OS.
+
+This remains an open architectural question.
+
+### FIND-005
+Faraz OS is not an Agency Management Tool.
+
+Faraz OS is an AI-Native Service Business Operating System.
+
+### FIND-006
+The ultimate goal is not to build an agency.
+
+The agency is the first operational environment and validation layer for the system.
+
+### FIND-007
+Faraz OS is Product-Oriented from day one.
+
+However, Faraz Agency is not merely a test environment.
+
+Faraz Agency is:
+- Primary Use Case
+- Primary Validation Environment
+- Primary Revenue Engine
+- Primary Learning Source
+
+for the foreseeable future.
+
+### FIND-008
+The primary problem Faraz OS aims to solve is:
+
+Human Dependency.
+
+Including:
+- Limited scalability
+- Repetitive operational work
+- Human error
+- Rising labor costs
+- Knowledge fragmentation
+
+### FIND-009
+The core value proposition of Faraz OS is:
+
+Operational Scalability.
+
+The system should enable:
+
+Increase output
+without
+linear increase in headcount.
+
+### FIND-010
+The long-term vision is larger than Faraz Agency and larger than Faraz OS itself.
+
+Faraz OS is the first foundational asset in a future ecosystem dedicated to building and operating AI-native businesses.
+
+### FIND-011
+Faraz OS is not about removing humans.
+
+It is about redistributing responsibility:
+
+AI owns execution.
+Human owns judgment.
+
+This distinction is foundational to:
+- Human-in-the-loop design
+- Approval gates
+- Governance boundaries
+- Automation boundaries
+
+### FIND-012
+Mission is becoming clearer:
+
+Faraz OS exists to transfer repetitive and heavy operational load from humans to AI,
+while preserving human authority for judgment, quality control, and strategic direction.
+
+### FIND-013
+The first implementation target is not generic business automation.
+
+The first implementation target is:
+
+standardizing digital marketing service delivery
+into reusable Domain and Capability layers
+that can later be adapted to other service businesses.
+
+---
+
+## Open Questions
+
+### Q-001
+What exactly defines an AI-Native Business?
+
+### Q-002
+What is the final definition of Client Brain?
+
+### Q-003
+What are the final bounded contexts?
+
+### Q-004
+What belongs to a Domain vs Capability vs Plugin?
+
+### Q-005
+How should extensibility be implemented?
+
+### Q-006
+What responsibilities belong to AI vs Human in each Domain?
+
+### Q-007
+Where should human checkpoints exist:
+every step, only high-risk steps, or confidence-based escalation points?
+
+---
+
+## Current Risks
+
+### R-001
+Scope Object may require complete redesign into Client Brain.
+
+### R-002
+Final domain boundaries are not validated.
+
+### R-003
+Extensibility model has not been designed yet.
+
+### R-004
+Memory architecture is undefined.
+
+### R-005
+Human-AI responsibility boundaries are not finalized per domain.
+
+### R-006
+Multi-tenant strategy is undefined.
+
+---
+
+## Updated Direction
+
+Faraz OS should be designed as an AI-native operating system where:
+
+- domains define responsibility boundaries
+- capabilities provide reusable business functions
+- workflows orchestrate execution
+- plugins add channels, providers, and integrations
+- memory preserves organizational knowledge
+- humans intervene at strategic checkpoints
