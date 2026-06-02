@@ -659,3 +659,263 @@ Candidate outbound events from CRM:
   or move into its own bounded context later?
 - Which CRM fields are operationally visible to Service Delivery,
   and which remain purely commercial/relationship-facing?
+
+  ---
+
+  ## Service Delivery (Draft v1)
+
+### Responsibilities
+Service Delivery is responsible for planning, coordinating, executing,
+tracking, and governing the delivery of agreed client services.
+
+It is responsible for:
+- engagement execution
+- service scope operationalization
+- deliverable planning and tracking
+- production coordination
+- approval coordination
+- publishing handoff readiness
+- execution status visibility
+- revision handling
+- delivery completion state
+- engagement-level workflow governance
+
+Service Delivery is not responsible for:
+- client identity ownership
+- commercial relationship ownership
+- financial ledger ownership
+- workforce identity ownership
+- persistent client memory ownership
+- raw analytics warehouse ownership
+
+---
+
+### What it owns
+Service Delivery owns the source of truth for:
+- Engagement Scope
+- delivery status
+- deliverable records
+- production queue state
+- revision state
+- approval queue state
+- execution checkpoints
+- publishing readiness state
+- engagement execution history
+- operational handoff records
+
+Service Delivery may reference but should not own:
+- CRM Client
+- Service Agreement commercial baseline
+- Client Brain
+- Workforce operator profiles
+- channel credentials
+- financial records
+- raw reporting datasets
+
+---
+
+### Candidate Entities
+- Engagement
+- Engagement Scope
+- Deliverable
+- Deliverable Batch
+- Brief
+- Production Task
+- Revision Request
+- Approval Request
+- Publishing Handoff
+- Delivery Milestone
+- Execution Checkpoint
+
+---
+
+### Candidate Aggregates
+These are candidate aggregates only
+and remain subject to refinement.
+
+#### Engagement Aggregate
+Possible contents:
+- Engagement
+- Engagement Scope
+- delivery status
+- milestones
+- active execution policies
+- linked deliverables
+
+#### Deliverable Aggregate
+Possible contents:
+- Deliverable
+- Brief
+- production status
+- revision state
+- approval state
+- publish readiness
+
+#### Approval Aggregate
+Possible contents:
+- Approval Request
+- approver references
+- decision state
+- feedback
+- approval history
+
+#### Revision Aggregate
+Possible contents:
+- Revision Request
+- revision reason
+- revision cycle state
+- linked deliverable
+- resolution state
+
+---
+
+### Bounded Contexts
+These are candidate bounded contexts for Service Delivery.
+
+#### Engagement Management
+Focus:
+- engagement lifecycle
+- scope activation
+- status tracking
+- operational ownership
+
+#### Production Coordination
+Focus:
+- briefs
+- deliverables
+- task orchestration
+- execution state
+- production readiness
+
+#### Review & Approval Coordination
+Focus:
+- approvals
+- revisions
+- feedback loops
+- human checkpoints
+
+#### Delivery Handoff
+Focus:
+- publishing handoff
+- completion state
+- downstream readiness
+- execution closure
+
+---
+
+### Notes on Key Terms
+
+#### Engagement
+Engagement is the operational unit of delivery
+for a package, campaign, project, or recurring service cycle.
+
+It is likely one of the most important Service Delivery entities.
+
+#### Engagement Scope
+Engagement Scope is not a CRM artifact.
+It is a Service Delivery artifact
+that operationalizes the agreed service into executable context.
+
+It should be constrained by a Service Agreement,
+but not replaced by it.
+
+#### Deliverable
+Deliverable should be treated as a delivery artifact,
+not as a generic content object across all contexts.
+
+A deliverable may later connect to capabilities like:
+- Strategy
+- Content Creation
+- Video Creation
+- Publishing
+
+#### Approval
+Approval is not merely a UI action.
+It is a governed checkpoint artifact
+that may require:
+- human review
+- correction
+- rejection
+- escalation
+- override
+
+This aligns with the Human-in-the-loop Philosophy.
+
+#### Publishing Handoff
+Publishing readiness and publishing handoff may belong here,
+while final channel execution may later sit
+closer to Publishing capability or plugin-layer execution.
+
+This boundary is still draft.
+
+---
+
+### Inbound events
+Candidate inbound events to Service Delivery:
+- service agreement activated
+- engagement created
+- engagement scope approved
+- brief created
+- brief updated
+- production task created
+- production started
+- production completed
+- revision requested
+- revision completed
+- approval requested
+- approval granted
+- approval rejected
+- approval overridden
+- publishing requested
+- publishing completed
+- publishing failed
+- deliverable archived
+- engagement paused
+- engagement resumed
+- engagement closed
+
+---
+
+### Outbound events
+Candidate outbound events from Service Delivery:
+- engagement started
+- engagement scope changed
+- deliverable created
+- deliverable ready for review
+- revision cycle started
+- revision cycle completed
+- approval requested
+- approval completed
+- approval rejected
+- publishing handoff ready
+- delivery completed
+- delivery blocked
+- engagement paused
+- engagement closed
+- execution learning generated
+
+---
+
+### Risks
+- Engagement vs Engagement Scope boundary is not yet fully finalized.
+- Deliverable vs Brief vs Production Task boundaries may still overlap.
+- Approval and Publishing boundaries may later need redistribution
+  between Service Delivery, Capabilities, and Plugins.
+- Service Delivery must not absorb Client Brain, CRM, or Workforce ownership.
+
+---
+
+### Open Questions
+- Is Engagement the Aggregate Root,
+  with Engagement Scope as a child artifact,
+  or should Engagement Scope itself be aggregate-like?
+- Should Brief belong inside the Deliverable Aggregate
+  or exist as a separate artifact with its own lifecycle?
+- Where is the final boundary between:
+  - Service Delivery
+  - Publishing capability
+  - channel/plugin execution
+- Should Delivery Handoff remain inside Service Delivery
+  or evolve into a more explicit cross-domain coordination context?
+
+  ---
