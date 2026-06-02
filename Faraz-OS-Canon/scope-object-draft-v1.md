@@ -1,4 +1,4 @@
-## Scope Object / Client Brain (Draft)
+## Scope Object / Client Brain (Draft v1)
 
 ### Current Assessment
 Scope Object is not currently treated as a Domain.
