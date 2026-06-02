@@ -63,6 +63,20 @@ Others may escalate to a human only when:
 - policy violation is suspected
 - execution is irreversible or externally visible
 
+### DEC-007
+Vision is locked.
+
+### VISION-LOCKED
+Faraz OS exists to become a foundational operating system
+for building and running AI-native service businesses.
+
+Faraz Agency is the primary operational environment
+for validating and evolving this system.
+
+The long-term goal extends beyond a single agency
+toward a broader ecosystem for creating and operating
+multiple AI-native businesses.
+
 ---
 
 ## Findings
@@ -206,6 +220,13 @@ Faraz OS uses checkpointed automation with risk-tiered oversight.
 
 Human review is not a default requirement for every step.
 It is a control mechanism applied where risk, ambiguity, or low confidence justifies intervention.
+
+### FIND-016
+The long-term vision of Faraz OS is ecosystem-level, not agency-level.
+
+Faraz Agency is the first and primary operating environment,
+but Faraz OS is intended to become a foundational asset
+for a broader portfolio of AI-native businesses.
 
 ---
 
