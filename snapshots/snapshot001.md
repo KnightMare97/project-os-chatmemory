@@ -67,6 +67,9 @@ Principles are locked.
 ### DEC-008
 Non-goals are locked.
 
+### DEC-009
+AI Philosophy is locked.
+
 ---
 
 ## Locked Canon
@@ -320,6 +323,17 @@ Faraz OS is workflow-centered, domain-bounded, memory-centric, and human-governe
 
 ### FIND-018
 Human oversight in Faraz OS is risk-tiered, not uniformly approval-heavy.
+
+### FIND-019
+Faraz OS must be multi-model, provider-agnostic, and routing-capable.
+
+### FIND-020
+AI in Faraz OS may replace entire human roles or large portions of human operational work,
+but only within bounded, governed, and workflow-controlled contexts.
+
+### FIND-021
+Agent orchestration is a core architectural direction of Faraz OS,
+including support for agents, subagents, and specialized execution paths.
 
 ---
 
