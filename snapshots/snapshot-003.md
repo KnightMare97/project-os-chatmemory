@@ -123,6 +123,16 @@ for:
 - Client Brain
 - Engagement Scope
 
+### Q-012
+- Is Client Brain only a Memory Object,
+  or will it also need aggregate-like ownership rules?
+- What is the exact relationship between Client Brain and:
+  - CRM Client
+  - Brand
+  - Service Agreement
+- Should assigned_human_operator_refs remain a simple reference list,
+  or evolve into a more formal assignment artifact through Workforce?
+
 ---
 
 ## Next Focus
