@@ -1,3 +1,8 @@
+# Bootstrap Context v2
+
+Project Name:
+Faraz OS
+
 Current Risks
  - R-001
    - Scope Object may require complete redesign into Client Brain.
