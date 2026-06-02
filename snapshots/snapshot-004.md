@@ -108,18 +108,18 @@ and the following domain concepts remains architecturally critical:
 
 ## Open Questions
 
-### Q-012
+### Q-013
 What are the candidate Entities, Aggregates, and Bounded Contexts
 for each Phase 1 Domain?
 
-### Q-013
+### Q-014
 Should Brand be modeled as:
 - its own Entity
 - a child entity
 - a client-scoped concept inside CRM
 - a memory-scoped concept inside Client Brain
 
-### Q-014
+### Q-015
 Is Service Agreement best owned by:
 - CRM
 - Client Success
@@ -127,7 +127,7 @@ Is Service Agreement best owned by:
 
 and how exactly does it constrain Engagement Scope?
 
-### Q-015
+### Q-016
 Should assigned_human_operator_refs remain a simple reference field
 inside Engagement Scope,
 or evolve later into a more formal assignment artifact
