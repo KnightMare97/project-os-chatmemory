@@ -77,6 +77,9 @@ The long-term goal extends beyond a single agency
 toward a broader ecosystem for creating and operating
 multiple AI-native businesses.
 
+### DEC-008
+Principles are locked.
+
 ---
 
 ## Findings
@@ -227,6 +230,12 @@ The long-term vision of Faraz OS is ecosystem-level, not agency-level.
 Faraz Agency is the first and primary operating environment,
 but Faraz OS is intended to become a foundational asset
 for a broader portfolio of AI-native businesses.
+
+### FIND-017
+Faraz OS is workflow-centered, domain-bounded, memory-centric, and human-governed.
+
+### FIND-018
+Human oversight in Faraz OS is risk-tiered, not uniformly approval-heavy.
 
 ---
 
