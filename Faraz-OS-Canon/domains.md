@@ -1145,3 +1145,259 @@ Candidate outbound events from Workforce:
   or just a coordination view over operators?
 
 ---
+
+## Knowledge (Draft v1)
+
+### Responsibilities
+Knowledge is responsible for capturing, structuring, storing,
+retrieving, and evolving reusable organizational knowledge
+for both humans and AI.
+
+It is responsible for:
+- durable knowledge storage
+- client-relevant memory structures
+- agency-level reusable knowledge
+- decision logging
+- learnings capture
+- policy-adjacent knowledge references
+- retrieval-ready context structuring
+- knowledge version visibility
+- cross-workflow memory reuse
+
+Knowledge is not responsible for:
+- CRM identity ownership
+- live service execution ownership
+- workforce identity ownership
+- financial ledger ownership
+- raw analytics interpretation ownership
+- channel/plugin execution ownership
+
+---
+
+### What it owns
+Knowledge owns the source of truth for:
+- Agency Brain
+- Knowledge Base
+- Decision Logs
+- durable learnings
+- reusable playbooks or knowledge artifacts
+- retrieval-oriented knowledge structures
+- memory references and knowledge indexing
+- approved organizational memory artifacts
+
+Knowledge may reference but should not own:
+- CRM Client identity
+- Service Agreement
+- Engagement Scope
+- raw deliverables
+- operator identity records
+- financial records
+- raw analytics source systems
+
+Client Brain remains closely related to Knowledge,
+but its final ownership boundary with Client Success
+is still draft.
+
+---
+
+### Candidate Entities
+- Knowledge Artifact
+- Knowledge Entry
+- Decision Log
+- Learning Record
+- Playbook
+- Retrieval Context
+- Memory Reference
+- Agency Brain Entry
+- Client Brain
+- Knowledge Version
+
+---
+
+### Candidate Aggregates
+These are candidate aggregates only
+and remain subject to refinement.
+
+#### Knowledge Artifact Aggregate
+Possible contents:
+- Knowledge Artifact
+- content body or structured payload
+- tags
+- version state
+- retrieval metadata
+- approval state
+
+#### Decision Log Aggregate
+Possible contents:
+- Decision Log
+- decision summary
+- rationale
+- decision maker refs
+- effective date
+- linked domain refs
+
+#### Learning Aggregate
+Possible contents:
+- Learning Record
+- source context
+- confidence or validation state
+- reusable recommendation
+- linked workflow/domain refs
+
+#### Client Brain Aggregate or Memory Aggregate
+Possible contents:
+- Client Brain
+- strategic context
+- relationship memory
+- reusable client learnings
+- approved memory updates
+- linked engagement refs
+
+This remains draft
+because Client Brain may stay a Memory Object
+rather than becoming a full aggregate.
+
+---
+
+### Bounded Contexts
+These are candidate bounded contexts for Knowledge.
+
+#### Organizational Knowledge
+Focus:
+- agency-wide reusable knowledge
+- methods
+- templates
+- standards
+- reusable guidance
+
+#### Decision Memory
+Focus:
+- decision logs
+- rationale capture
+- audit-friendly knowledge trails
+- decision visibility over time
+
+#### Learning Memory
+Focus:
+- post-execution learnings
+- recurring patterns
+- validated improvements
+- reusable lessons
+
+#### Client Memory
+Focus:
+- Client Brain
+- client-specific reusable context
+- durable client learnings
+- client execution memory
+
+#### Retrieval Context Management
+Focus:
+- indexing
+- memory references
+- retrieval slices
+- context packaging for workflows and AI execution
+
+---
+
+### Notes on Key Terms
+
+#### Knowledge Artifact
+Knowledge Artifact should be treated as a reusable,
+structured memory object,
+not merely a document file.
+
+It may later back:
+- prompts
+- workflows
+- policy guidance
+- strategic recommendations
+- reusable agency methods
+
+#### Decision Log
+Decision Log is important because Faraz OS is human-governed
+and must preserve why a decision was made,
+not just the final state.
+
+This supports auditability, learning, and future retrieval.
+
+#### Learning Record
+Learning Record should capture reusable insight
+produced by execution, review, correction, and outcome analysis.
+
+This aligns with the principle of continuous learning loops.
+
+#### Client Brain
+Client Brain is closely related to Knowledge
+because it behaves like durable structured memory.
+
+However, its ownership may still be shared
+with Client Success,
+so this boundary is not yet locked.
+
+#### Agency Brain
+Agency Brain is likely the reusable memory layer
+for organization-wide knowledge,
+distinct from client-specific memory.
+
+---
+
+### Inbound events
+Candidate inbound events to Knowledge:
+- decision made
+- decision revised
+- learning generated
+- learning approved
+- client memory updated
+- engagement completed
+- revision cycle completed
+- approval completed
+- strategy updated
+- policy changed
+- workflow feedback recorded
+- knowledge artifact created
+- knowledge artifact updated
+- retrieval context requested
+
+---
+
+### Outbound events
+Candidate outbound events from Knowledge:
+- knowledge artifact created
+- knowledge artifact approved
+- knowledge artifact superseded
+- decision logged
+- learning published
+- client brain updated
+- agency brain updated
+- retrieval context prepared
+- reusable pattern detected
+- memory recommendation generated
+
+---
+
+### Risks
+- Knowledge may become an unbounded dumping ground
+  if artifact types are not kept explicit.
+- Knowledge may overlap with Client Success
+  around Client Brain ownership.
+- Knowledge may overlap with Intelligence
+  if interpretive analytics and reusable knowledge are mixed.
+- Retrieval structures may be overdesigned too early
+  before core artifact types stabilize.
+
+---
+
+### Open Questions
+- Is Client Brain primarily owned by Knowledge,
+  Client Success,
+  or jointly across both?
+- Which artifact types require explicit approval
+  before becoming durable reusable knowledge?
+- Should Decision Log and Learning Record
+  be separate aggregates,
+  or just specialized Knowledge Artifact types?
+- How much retrieval structure should be modeled now
+  versus deferred to Phase 3 memory architecture?
+
+---
