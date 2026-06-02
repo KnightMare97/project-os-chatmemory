@@ -335,6 +335,20 @@ but only within bounded, governed, and workflow-controlled contexts.
 Agent orchestration is a core architectural direction of Faraz OS,
 including support for agents, subagents, and specialized execution paths.
 
+### FIND-022
+Human involvement in Faraz OS is not limited to approval.
+Some capabilities may require human-first or hybrid production paths.
+
+### FIND-023
+Faraz OS must support multiple oversight modes:
+- human-in-the-loop
+- human-on-the-loop
+- hybrid execution
+
+### FIND-024
+Client-facing publishing has a human checkpoint by default,
+but this checkpoint must be configurable by policy.
+
 ---
 
 ## Open Questions
