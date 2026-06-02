@@ -70,6 +70,12 @@ Non-goals are locked.
 ### DEC-009
 AI Philosophy is locked.
 
+### DEC-010
+Human-in-the-loop Philosophy is locked.
+
+### DEC-011
+Extensibility Philosophy is locked.
+
 ---
 
 ## Locked Canon
@@ -348,6 +354,25 @@ Faraz OS must support multiple oversight modes:
 ### FIND-024
 Client-facing publishing has a human checkpoint by default,
 but this checkpoint must be configurable by policy.
+
+### FIND-025
+Faraz OS must be extensible by design,
+with explicit separation between domains, capabilities, and plugins.
+
+### FIND-026
+Faraz OS must support provider-agnostic model routing and orchestrated execution paths
+across multiple models, agents, and providers.
+
+### FIND-027
+Extensions in Faraz OS must communicate with the core only through governed contracts,
+not through direct access to internal database structures or private runtime state.
+
+### FIND-028
+Faraz OS should be architected as third-party-ready but implemented internal-first in early phases.
+
+### FIND-029
+Some parts of Faraz OS extensibility should be runtime-swappable,
+while others may remain configuration-time or deployment-time.
 
 ---
 
