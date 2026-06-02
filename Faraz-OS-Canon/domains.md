@@ -919,3 +919,229 @@ Candidate outbound events from Service Delivery:
   or evolve into a more explicit cross-domain coordination context?
 
   ---
+
+## Workforce (Draft v1)
+
+### Responsibilities
+Workforce is responsible for representing, organizing, and governing
+the human contributors who participate in Faraz OS operations.
+
+It is responsible for:
+- human operator identity
+- role definitions
+- skill visibility
+- capacity visibility
+- availability visibility
+- assignment eligibility
+- contributor status
+- human participation modes
+- operator-level accountability references
+- execution resource visibility
+
+Workforce is not responsible for:
+- client identity ownership
+- service delivery execution ownership
+- persistent client memory ownership
+- commercial agreement ownership
+- approval artifact ownership
+- financial ledger ownership
+
+---
+
+### What it owns
+Workforce owns the source of truth for:
+- human operator records
+- contributor profiles
+- role assignments
+- skill profiles
+- availability state
+- capacity state
+- employment or contractor status
+- operator eligibility for certain workflows or tasks
+- execution participation metadata
+
+Workforce may reference but should not own:
+- Engagement Scope
+- Client Brain
+- CRM Client
+- Service Agreement
+- deliverables
+- approval requests
+- financial payouts or ledger records
+- secrets and credentials unrelated to workforce identity/access policy
+
+---
+
+### Candidate Entities
+- Human Operator
+- Contributor
+- Role
+- Skill Profile
+- Availability Record
+- Capacity Record
+- Assignment
+- Team
+- Contractor Profile
+- Operator Status
+- Participation Policy
+
+---
+
+### Candidate Aggregates
+These are candidate aggregates only
+and remain subject to refinement.
+
+#### Human Operator Aggregate
+Possible contents:
+- Human Operator
+- role refs
+- skill profile
+- availability state
+- capacity state
+- status
+- participation eligibility
+
+#### Assignment Aggregate
+Possible contents:
+- Assignment
+- operator ref
+- engagement ref
+- role-in-engagement
+- assignment status
+- time window
+
+#### Team Aggregate
+Possible contents:
+- Team
+- member refs
+- team role structure
+- active participation scope
+
+---
+
+### Bounded Contexts
+These are candidate bounded contexts for Workforce.
+
+#### Operator Registry
+Focus:
+- human operator identity
+- contributor records
+- role membership
+- status tracking
+
+#### Skills & Capacity Management
+Focus:
+- skills
+- availability
+- capacity
+- assignment readiness
+
+#### Assignment Coordination
+Focus:
+- operator-to-engagement assignment references
+- assignment lifecycle
+- role in execution
+
+#### Participation Governance
+Focus:
+- who may act in which workflows
+- who may review, approve, override, or escalate
+- human participation mode constraints
+
+---
+
+### Notes on Key Terms
+
+#### Human Operator
+Human Operator is likely the core Workforce entity.
+
+This represents a real human contributor
+who may act in execution, review, approval, escalation,
+or hybrid production paths.
+
+#### Assignment
+Assignment should not be confused with full Service Delivery ownership.
+
+Service Delivery may reference who is working on an engagement,
+but Workforce should remain the source of truth
+for the identity and eligibility of the assigned humans.
+
+#### Role
+Role should not be treated only as a UI permission label.
+
+A role may influence:
+- what type of work a human can perform
+- what approvals they can give
+- what workflows they can enter
+- whether they can override or escalate
+
+#### Participation Policy
+Given the Human-in-the-loop philosophy,
+it may be useful to model human participation rules
+as explicit workforce-aware policy artifacts,
+especially for high-risk or hybrid execution paths.
+
+---
+
+### Inbound events
+Candidate inbound events to Workforce:
+- operator created
+- operator updated
+- operator activated
+- operator deactivated
+- contractor onboarded
+- role assigned
+- role removed
+- skill profile updated
+- capacity updated
+- availability updated
+- assignment requested
+- assignment created
+- assignment changed
+- assignment removed
+- participation policy changed
+- operator access changed
+
+---
+
+### Outbound events
+Candidate outbound events from Workforce:
+- operator available
+- operator unavailable
+- operator capacity changed
+- operator eligible for assignment
+- operator ineligible for assignment
+- assignment confirmed
+- assignment removed
+- reviewer assigned
+- approver assigned
+- escalation target assigned
+- workforce status changed
+
+---
+
+### Risks
+- Workforce may overlap with Service Delivery
+  if assignment ownership is not kept clear.
+- Workforce may overlap with Governance
+  if access control and role modeling are mixed incorrectly.
+- Human role, reviewer role, approver role,
+  and operator role may blur if not separated clearly.
+- Capacity and assignment modeling may become too operationally heavy
+  if overdesigned too early.
+
+---
+
+### Open Questions
+- Is Assignment owned primarily by Workforce,
+  or should Service Delivery own a lighter operational assignment artifact?
+- How far should Workforce go into capacity planning
+  versus staying a lean contributor registry?
+- Should reviewer, approver, and escalation authority
+  be modeled inside Workforce,
+  Governance,
+  or jointly across both?
+- Is Team a true aggregate,
+  or just a coordination view over operators?
+
+---
