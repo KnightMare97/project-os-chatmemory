@@ -1,38 +1,74 @@
-## Scope Object / Client Brain (Draft v1)
+## Scope Object / Client Brain / Engagement Scope — Draft v1
 
-### Current Assessment
-Scope Object is not currently treated as a Domain.
-It is best understood as a structured, living, executable customer-context artifact.
+### Current Position
+The original Scope Object concept should be treated as a transitional concept,
+not as a standalone Domain.
 
-### Preliminary Classification
-- Memory Object
-- Shared Service Artifact
-- Early Client Brain abstraction
-
-### Proposed Evolution
-The current Scope Object concept should likely be split into:
+### Proposed Split
+The Scope Object concept should likely evolve into two distinct artifacts:
 1. Client Brain
 2. Engagement Scope
 
 ### Client Brain
-Persistent, cross-workflow, cross-service memory of the client/brand.
+[Memory Object]
+[Shared Service Artifact]
+
+Persistent client-level memory used across services, workflows, and time.
+
+Owns:
+- durable brand context
+- audience
+- positioning
+- voice
+- restrictions
+- long-lived preferences
+- strategic learnings
+- decision summaries
+
+Primary Owner:
+- Client Success
+- Knowledge
 
 ### Engagement Scope
-Service-level or project-level executable scope used by workflows for a specific package, campaign, or deliverable set.
+[Memory Object]
+[Domain Artifact]
 
-### Risk
-If Scope Object remains a single undifferentiated object,
-it may cause:
+Service-level or project-level executable scope
+for a specific package, campaign, or deliverable set.
+
+Owns:
+- active service scope
+- deliverables
+- execution constraints
+- workflow policies
+- current priorities
+- engagement-specific goals
+- approval mode
+- references to Client Brain context
+
+Primary Owner:
+- Service Delivery
+
+### Relationship
+One Client may have one Client Brain
+and multiple Engagement Scopes.
+
+### Architectural Benefit
+This separation reduces:
 - memory fragmentation
-- domain boundary confusion
+- domain confusion
 - workflow coupling
-- poor extensibility
+
+and improves:
+- reusability
+- versioning
+- auditability
+- extensibility
 
 
 ### DEC-PROPOSED
-The current Scope Object concept should not be modeled as a standalone Domain.
+The original Scope Object should be reinterpreted as a transitional concept.
 
-It should be treated as an early Client Brain abstraction,
-with likely future separation between:
-- Client Brain
-- Engagement Scope
+Faraz OS should likely distinguish between:
+- Client Brain as persistent client memory
+- Engagement Scope as service-level executable context
