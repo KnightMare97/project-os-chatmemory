@@ -431,3 +431,231 @@ to assigned human operators.
 - Client Brain -> Client Success + Knowledge
 - Engagement Scope -> Service Delivery
 - Human Operator -> Workforce
+
+---
+
+## CRM (Draft v1)
+
+### Responsibilities
+CRM is responsible for managing the business relationship layer
+between Faraz and prospects, leads, clients, and client accounts.
+
+It is responsible for:
+- lead capture and qualification state
+- client identity and account records
+- contact and stakeholder records
+- account lifecycle state
+- commercial relationship visibility
+- service agreement references
+- relationship timeline visibility
+- client onboarding triggers
+
+CRM is not responsible for:
+- service delivery execution
+- persistent strategic memory
+- content production
+- workflow execution state
+- workforce ownership
+- financial ledger ownership
+
+---
+
+### What it owns
+CRM owns the source of truth for:
+- lead records
+- client records
+- contact records
+- account status
+- relationship stage
+- client-facing stakeholder map
+- service agreement references or service agreement ownership boundary (still open)
+- onboarding status
+- account-level metadata
+
+CRM may reference but should not own:
+- Client Brain
+- Engagement Scope
+- invoices and payments
+- operator assignments
+- raw performance analytics
+- secrets and credentials
+
+---
+
+### Candidate Entities
+- Lead
+- Client
+- Contact
+- Stakeholder
+- Brand
+- Service Agreement
+- Onboarding Record
+- Opportunity
+- Account Note
+
+---
+
+### Candidate Aggregates
+These are candidate aggregates only
+and remain subject to refinement.
+
+#### Client Aggregate
+Possible contents:
+- Client
+- Contacts
+- Stakeholders
+- Brand refs or Brand child entities
+- account metadata
+- onboarding status
+
+#### Lead Aggregate
+Possible contents:
+- Lead
+- qualification state
+- source
+- contact info
+- opportunity linkage
+
+#### Service Agreement Aggregate
+Possible contents:
+- Service Agreement
+- agreed service scope summary
+- package/tier
+- start/end boundaries
+- status
+- linked client
+
+#### Opportunity Aggregate
+Possible contents:
+- Opportunity
+- proposed services
+- commercial status
+- decision stage
+- linked lead or client
+
+---
+
+### Bounded Contexts
+These are candidate bounded contexts for CRM.
+
+#### Lead Management
+Focus:
+- lead capture
+- lead qualification
+- conversion readiness
+
+#### Client Account Management
+Focus:
+- client identity
+- contacts
+- stakeholders
+- account lifecycle
+- brand/account structure
+
+#### Commercial Agreement Management
+Focus:
+- service agreements
+- package/tier records
+- commercial scope baseline
+- start/end status
+
+#### Onboarding Coordination
+Focus:
+- handoff from signed client to operational setup
+- onboarding readiness signals
+- references to downstream domains
+
+---
+
+### Notes on Key Terms
+
+#### Client
+Client is likely a core CRM Entity
+and may become an Aggregate Root.
+
+#### Brand
+Brand remains an open modeling question.
+
+It may be:
+- a child entity under Client
+- its own entity within CRM
+- or a concept partially shared with Client Brain
+
+For now, Brand should not be assumed to be owned by Client Brain.
+
+#### Service Agreement
+Service Agreement is likely one of the most important CRM-side artifacts,
+because it may define the business baseline
+that later constrains Engagement Scope.
+
+This relationship is still draft
+and should be validated before lock.
+
+#### Client Brain
+Client Brain is not the CRM Client record.
+It is a separate memory-centric artifact
+that may reference CRM entities
+but should not replace CRM ownership.
+
+#### Engagement Scope
+Engagement Scope is not owned by CRM.
+CRM may reference it for relationship visibility,
+but Service Delivery should remain its primary owner.
+
+---
+
+### Inbound events
+Candidate inbound events to CRM:
+- lead captured
+- lead qualified
+- lead disqualified
+- proposal requested
+- proposal accepted
+- client signed
+- onboarding started
+- onboarding completed
+- service agreement created
+- service agreement updated
+- service agreement renewed
+- service agreement paused
+- service agreement ended
+- client account updated
+- stakeholder updated
+- brand information updated
+
+---
+
+### Outbound events
+Candidate outbound events from CRM:
+- lead qualified
+- client created
+- client converted from lead
+- service agreement activated
+- service agreement changed
+- onboarding initiated
+- onboarding completed
+- client status changed
+- stakeholder map changed
+- brand context changed
+- account paused
+- account reactivated
+- account closed
+
+---
+
+### Risks
+- Brand boundary is not yet finalized.
+- Service Agreement ownership boundary is not yet finalized.
+- CRM vs Client Success ownership may still overlap in some relationship-management areas.
+- CRM must not absorb Client Brain or Engagement Scope responsibilities.
+
+---
+
+### Open Questions
+- Is Brand a child entity of Client or its own CRM entity?
+- Is Service Agreement fully owned by CRM,
+  or jointly constrained with Client Success?
+- Should onboarding live partly in CRM
+  or move into its own bounded context later?
+- Which CRM fields are operationally visible to Service Delivery,
+  and which remain purely commercial/relationship-facing?
