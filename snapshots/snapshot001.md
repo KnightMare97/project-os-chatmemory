@@ -4,7 +4,7 @@
 Phase 0 — Vision & Principles
 
 ## Current Topic
-Mission
+Phase 0 Wrap-up
 
 ## Status
 In Progress
@@ -29,30 +29,24 @@ System suggests
 → Human approves
 → System executes
 
-This is the default design logic for high-value and quality-sensitive workflows.
+This is the standard design logic for client-facing, high-value, and quality-sensitive workflows.
 
 ### DEC-003
 Human role in Faraz OS is not removed.
 
 Human responsibility is elevated from:
-- producer / operator
+- producer
+- operator
 
 to:
-- strategist / reviewer / quality controller
+- strategist
+- reviewer
+- quality controller
 
 ### DEC-004
-Default execution pattern of Faraz OS is:
-
-System suggests
-→ Human approves
-→ System executes
-
-This is the standard pattern for client-facing and quality-sensitive workflows.
-
-### DEC-005
 Mission is locked.
 
-### DEC-006
+### DEC-005
 Human checkpoints are risk-based, not universally mandatory.
 
 Some checkpoints require explicit human approval.
@@ -61,24 +55,116 @@ Others may escalate to a human only when:
 - confidence is low
 - ambiguity is high
 - policy violation is suspected
-- execution is irreversible or externally visible
+- execution is irreversible
+- execution is externally visible
 
-### DEC-007
+### DEC-006
 Vision is locked.
 
-### VISION-LOCKED
+### DEC-007
+Principles are locked.
+
+### DEC-008
+Non-goals are locked.
+
+---
+
+## Locked Canon
+
+### Vision
+
 Faraz OS exists to become a foundational operating system
 for building and running AI-native service businesses.
 
+Its long-term vision is to enable a future
+where service businesses can scale output, quality, and operational complexity
+without proportional growth in headcount,
+by embedding AI into the core of execution, coordination, and organizational memory.
+
 Faraz Agency is the primary operational environment
-for validating and evolving this system.
+for validating, evolving, and hardening this system,
+but the vision extends beyond a single agency.
 
-The long-term goal extends beyond a single agency
-toward a broader ecosystem for creating and operating
-multiple AI-native businesses.
+Faraz OS is intended to become
+the first foundational asset
+in a broader ecosystem for creating, operating,
+and eventually multiplying AI-native businesses.
 
-### DEC-008
-Principles are locked.
+### Mission
+
+Faraz OS exists to transfer repetitive, heavy, and human-dependent operational work
+from service teams to AI-driven workflows,
+so that a business can scale delivery capacity
+without linear growth in headcount.
+
+Its mission is to elevate human roles
+from production and execution
+to strategy, supervision, and quality control,
+thereby reducing human error,
+limiting knowledge fragmentation,
+and increasing consistency of service delivery.
+
+Faraz OS is designed to push operational and generative work
+as far as safely possible through automation,
+then pause at defined human checkpoints
+for approval, correction, or escalation
+before execution continues.
+
+In its first implementation,
+Faraz OS standardizes digital marketing service delivery
+into reusable Domain and Capability layers,
+so the same architectural pattern
+can later be adapted to other service businesses.
+
+### Principles
+
+1. AI-first, but not AI-only.  
+AI is the default execution layer, while humans retain judgment and accountability.
+
+2. Human-governed automation.  
+Automation must pause at defined checkpoints where approval, correction, or escalation is required.
+
+3. Workflow-centered design.  
+The system is designed around executable business workflows, not isolated screens or disconnected modules.
+
+4. Domain-defined boundaries.  
+Each major business responsibility must live within a clear bounded context.
+
+5. Capability-based reuse.  
+Reusable capabilities must serve multiple workflows, channels, and providers without duplicating business logic.
+
+6. Event-driven coordination.  
+Domains should coordinate through events and explicit contracts, not direct coupling or shared internal models.
+
+7. Memory-centric architecture.  
+Operational knowledge, client context, rules, and learnings must be structured as reusable memory for both humans and AI.
+
+8. Risk-tiered oversight.  
+Human review should increase with risk, ambiguity, low confidence, or irreversible impact.
+
+9. Continuous learning loops.  
+Every execution path should generate feedback that improves prompts, policies, workflows, and memory.
+
+10. Modular, plugin-ready evolution.  
+New channels, tools, providers, and services must be addable without major architectural redesign.
+
+### Non-goals
+
+1. Faraz OS is not being designed as a generic all-in-one software suite for every business type from day one.
+
+2. Faraz OS is not trying to fully eliminate humans from service delivery.
+
+3. Faraz OS is not aiming for fully autonomous publishing or execution by default.
+
+4. Faraz OS is not being designed around channels such as Instagram, Twitter/X, LinkedIn, or YouTube as primary Domains.
+
+5. Faraz OS is not intended to hardcode current AI tools, media tools, or third-party platforms into the core architecture.
+
+6. Faraz OS is not trying to solve every operational problem in the first version.
+
+7. Faraz OS is not a custom one-off internal tool built only for Faraz Agency’s current workflow.
+
+8. Faraz OS is not intended to depend on tribal knowledge, undocumented operator behavior, or prompt-by-prompt improvisation as its long-term operating model.
 
 ---
 
@@ -103,7 +189,7 @@ Examples:
 - Reporting
 - Content Production
 
-must not automatically be treated as Domains.
+These must not automatically be treated as Domains.
 
 ### FIND-003
 The original blueprint was influenced by workflow-first thinking.
@@ -159,11 +245,11 @@ The primary problem Faraz OS aims to solve is:
 Human Dependency.
 
 Including:
-- Limited scalability
-- Repetitive operational work
-- Human error
-- Rising labor costs
-- Knowledge fragmentation
+- limited scalability
+- repetitive operational work
+- human error
+- rising labor costs
+- knowledge fragmentation
 
 ### FIND-009
 The core value proposition of Faraz OS is:
@@ -190,14 +276,12 @@ AI owns execution.
 Human owns judgment.
 
 This distinction is foundational to:
-- Human-in-the-loop design
-- Approval gates
-- Governance boundaries
-- Automation boundaries
+- human-in-the-loop design
+- approval gates
+- governance boundaries
+- automation boundaries
 
 ### FIND-012
-Mission is becoming clearer:
-
 Faraz OS exists to transfer repetitive and heavy operational load from humans to AI,
 while preserving human authority for judgment, quality control, and strategic direction.
 
@@ -261,7 +345,9 @@ What responsibilities belong to AI vs Human in each Domain?
 
 ### Q-007
 Where should human checkpoints exist:
-every step, only high-risk steps, or confidence-based escalation points?
+every step,
+only high-risk steps,
+or confidence-based escalation points?
 
 ---
 
@@ -290,7 +376,6 @@ Multi-tenant strategy is undefined.
 ## Updated Direction
 
 Faraz OS should be designed as an AI-native operating system where:
-
 - domains define responsibility boundaries
 - capabilities provide reusable business functions
 - workflows orchestrate execution
