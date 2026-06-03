@@ -184,19 +184,30 @@ and any newly surfaced Open Questions or Risks.
 Whether the review summary should also be persisted
 as a standalone file after acceptance remains open.
 
+Further partial direction established:
+The review summary requirements section of the Execution Checklist v1
+now specifies the required format and content of the review summary,
+including Changes Made, Items Left Unchanged,
+Duplicate Definitions Consolidated,
+Draft Boundaries Confirmed Preserved,
+Follow-up Discovery Items,
+and Residual Ambiguity.
+Whether the review summary should persist as a standalone file
+after acceptance remains open.
+Full resolution of Q-009 is deferred until after
+the first normalization pass is complete.
+
 ---
 
 ### Q-010
-Should a dedicated normalization checklist
-be created before Claude Code begins the normalization pass?
+RESOLVED — see Execution Checklist v1 appended to
+`Faraz-OS-Canon/Normalization Pass v1 Plan for domains.md`.
 
-Current direction:
-- This remains open,
-  but current direction suggests it would likely improve control.
-
-Why it matters:
-- This affects execution safety
-  and consistency of AI-assisted structural editing.
+A dedicated normalization checklist has been produced
+and appended to the Normalization Pass v1 Plan.
+Claude Code must read and follow it in full
+before beginning the normalization pass.
+This question is closed.
 
 Priority raised following DEC-011:
 Claude Code must operate under explicit constraints
