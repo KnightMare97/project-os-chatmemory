@@ -155,19 +155,12 @@ Why it matters:
 ---
 
 ### Q-008
-Should normalization of `domains.md`
-update the file directly,
-or produce a proposed normalized draft plus review summary first?
+RESOLVED — see DEC-011.
 
-Current direction:
-- This remains open.
-- Claude Code is expected to perform the normalization later
-  under explicit constraints and human review.
-
-Why it matters:
-- This affects safety,
-  review flow,
-  and how broad structural cleanup is governed.
+Normalization of `domains.md` produces a proposed normalized draft
+plus a review summary before any canonical file replacement.
+Direct update to the canonical file is not the accepted operating model.
+This question is closed.
 
 ---
 
@@ -184,6 +177,13 @@ Why it matters:
   review quality,
   and future maintenance.
 
+Partial direction established:
+The review summary component of DEC-011 should serve the change log purpose.
+It should cover what was consolidated, what was left unchanged,
+and any newly surfaced Open Questions or Risks.
+Whether the review summary should also be persisted
+as a standalone file after acceptance remains open.
+
 ---
 
 ### Q-010
@@ -197,6 +197,12 @@ Current direction:
 Why it matters:
 - This affects execution safety
   and consistency of AI-assisted structural editing.
+
+Priority raised following DEC-011:
+Claude Code must operate under explicit constraints
+even when producing only a proposed draft.
+A normalization checklist reduces the risk of constraint drift
+during the pass and should be prepared before Claude Code begins.
 
 ---
 
