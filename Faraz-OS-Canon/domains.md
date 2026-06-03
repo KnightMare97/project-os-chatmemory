@@ -1746,3 +1746,246 @@ Candidate outbound events from Intelligence:
   or may some become auto-applied under policy?
 
 ---
+
+## Finance (Draft v1)
+
+### Responsibilities
+Finance is responsible for managing the monetary layer
+of commercial and operational activity in Faraz OS.
+
+It is responsible for:
+- financial obligation tracking
+- invoice management
+- payment tracking
+- receivable visibility
+- payable visibility
+- settlement state visibility
+- financial status reporting
+- due date tracking
+- collection coordination state
+- refund or adjustment tracking
+- finance-facing transaction records
+- account balance visibility where applicable
+
+Finance is not responsible for:
+- lead acquisition ownership
+- client relationship ownership
+- service execution ownership
+- Engagement Scope ownership
+- workforce identity ownership
+- approval workflow ownership
+- policy rule ownership
+- durable knowledge ownership
+
+---
+
+### What it owns
+Finance owns the source of truth for:
+- invoices
+- payment records
+- receivables
+- payables
+- settlement records
+- refund records
+- adjustment records
+- financial due dates
+- payment status
+- collection status
+- finance ledger-facing summaries
+
+Finance may reference but should not own:
+- CRM client account records
+- Service Agreement commercial context
+- Service Delivery execution state
+- Workforce contributor records
+- Client Brain
+- Knowledge artifacts
+- raw bank/provider infrastructure details outside domain contracts
+
+---
+
+### Candidate Entities
+- Invoice
+- Payment
+- Receivable
+- Payable
+- Settlement
+- Refund
+- Adjustment
+- Billing Account
+- Financial Obligation
+- Collection Case
+
+---
+
+### Candidate Aggregates
+These are candidate aggregates only
+and remain subject to refinement.
+
+#### Invoice Aggregate
+Possible contents:
+- Invoice
+- billed party ref
+- amount
+- due date
+- line items or charge summary
+- payment status
+- linked payment refs
+
+#### Payment Aggregate
+Possible contents:
+- Payment
+- payment source
+- amount
+- received date
+- allocation state
+- settlement status
+
+#### Collection Aggregate
+Possible contents:
+- Collection Case
+- outstanding obligation refs
+- collection state
+- reminder history
+- escalation state
+
+#### Billing Account Aggregate
+Possible contents:
+- Billing Account
+- client or counterparty ref
+- open balances
+- invoice refs
+- payment refs
+- adjustment refs
+
+---
+
+### Bounded Contexts
+These are candidate bounded contexts for Finance.
+
+#### Billing
+Focus:
+- invoice creation
+- charge visibility
+- due dates
+- billing state
+
+#### Receivables Management
+Focus:
+- incoming payments
+- unpaid invoices
+- collection tracking
+- settlement visibility
+
+#### Payables Management
+Focus:
+- outgoing obligations
+- supplier or contractor payments
+- payment due tracking
+
+#### Financial Adjustments
+Focus:
+- refunds
+- corrections
+- adjustments
+- exceptional financial changes
+
+---
+
+### Notes on Key Terms
+
+#### Domain
+Finance is a Domain.
+
+It should own the monetary truth of the system,
+not just a reporting view.
+
+#### Entity
+Invoice is likely one of the central Finance entities,
+because many downstream payment and collection states
+depend on it.
+
+#### Aggregate
+Invoice Aggregate and Payment Aggregate
+are likely stronger candidates
+than modeling each status change independently.
+
+#### Bounded Context
+Receivables Management is especially important
+because payment visibility,
+follow-up,
+and settlement state
+are operationally significant.
+
+#### Shared Service
+External payment gateways,
+banks,
+and accounting tools
+should be treated as providers or integrations,
+not as the Finance domain itself.
+
+---
+
+### Inbound events
+Candidate inbound events to Finance:
+- client converted
+- service agreement activated
+- invoice requested
+- invoice revised
+- payment received
+- payment failed
+- payment confirmed
+- refund requested
+- refund approved
+- payable created
+- contractor payout requested
+- adjustment requested
+- billing cycle started
+
+---
+
+### Outbound events
+Candidate outbound events from Finance:
+- invoice created
+- invoice issued
+- invoice overdue
+- payment recorded
+- payment allocated
+- payment failed
+- receivable settled
+- payable due
+- payable settled
+- refund issued
+- adjustment applied
+- collection case opened
+- financial status changed
+
+---
+
+### Risks
+- Finance may overlap with CRM
+  if commercial relationship data
+  and financial obligation data are not separated clearly.
+- Finance may overlap with Governance
+  if approval policy and financial record ownership are mixed.
+- Finance may overlap with Workforce
+  if contractor payout logic and contributor identity logic are not separated.
+- Billing may be modeled too early
+  without a finalized Service Agreement boundary.
+
+---
+
+### Open Questions
+- Is Service Agreement owned outside Finance,
+  with Finance only referencing it,
+  or does Finance own some financial sub-artifacts of it?
+- Should contractor payouts live fully inside Finance,
+  or partly in Workforce with Finance as settlement owner?
+- What is the final boundary between:
+  - invoice
+  - commercial proposal
+  - service agreement
+- How much accounting detail belongs inside Finance
+  versus external accounting providers or tools?
+
+---
