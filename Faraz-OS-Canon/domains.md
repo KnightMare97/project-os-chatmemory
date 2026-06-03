@@ -2378,3 +2378,346 @@ Candidate outbound events from Governance:
 - Risk: If this boundary is not kept explicit, Governance may become either too weak to enforce control or too broad to remain bounded.
 
 ---
+
+## Boundary Decisions Draft v1
+
+### Purpose
+This section clarifies the current boundary decisions between:
+- CRM Client Account
+- Client Success Relationship
+- Client Brain
+- Engagement Scope
+- Service Agreement
+- Human Operator
+
+These decisions remain draft,
+but they should reduce overlap
+between CRM,
+Client Success,
+Knowledge,
+Service Delivery,
+Workforce,
+and Governance.
+
+---
+
+### Boundary Overview
+
+#### Client
+Client is best treated as an Entity owned by CRM.
+
+CRM should remain the source of truth for:
+- client identity
+- account baseline
+- account lifecycle state
+- core client record continuity
+
+Client is not the same thing as Client Brain,
+Client Relationship,
+or Engagement Scope.
+
+---
+
+#### CRM Client Account
+CRM Client Account is an Entity or Aggregate candidate inside the CRM Domain.
+
+It should represent:
+- the commercial and account-facing baseline for a current client
+- account identity
+- primary contact and stakeholder visibility
+- account status
+- high-level service relationship visibility
+- commercial continuity visibility
+
+CRM Client Account should not own:
+- durable strategic memory
+- active relationship handling logic
+- client approval response history as a relationship concern
+- service execution context
+- workflow execution state
+
+---
+
+#### Client Success Relationship
+Client Success Relationship is best treated as an Entity
+or Aggregate candidate inside the Client Success Domain.
+
+It should represent:
+- the ongoing active relationship with the client after conversion
+- communication continuity
+- expectation management
+- client coordination
+- approval and revision communication
+- relationship health and satisfaction signals
+- escalation intake at the client-facing layer
+
+Client Success Relationship is not the same as CRM Client Account.
+
+A useful working distinction is:
+- CRM Client Account = who the client is in the commercial/account sense
+- Client Success Relationship = how the active relationship is being handled over time
+
+---
+
+#### Client Brain
+Client Brain is currently best treated as a Memory Object
+and a Shared Service Artifact direction,
+not as a CRM Entity,
+not as a Client Success Entity,
+and not yet as a finalized Aggregate.
+
+Client Brain should represent:
+- persistent client-specific memory
+- strategic context
+- relationship memory relevant to future work
+- durable learnings
+- approved long-lived client context
+- reusable client-specific knowledge for humans and AI
+
+Client Brain should not represent:
+- the legal or commercial client account
+- operational delivery state
+- approval queue state
+- workforce identity
+- secret values
+
+Working ownership direction:
+- CRM references Client Brain but does not own it
+- Client Success contributes heavily to its relationship-relevant content
+- Knowledge remains the strongest long-term ownership direction for durable reusable memory
+- final ownership is still draft
+
+---
+
+#### Engagement Scope
+Engagement Scope is currently best treated as a Memory Object
+and a Domain Artifact aligned most strongly with Service Delivery.
+
+It should represent:
+- the active execution context for a specific engagement
+- what is in scope
+- what is out of scope
+- current priorities
+- deliverable context
+- workflow rules
+- execution constraints
+- assigned human operator references
+- approval mode
+- escalation rules
+- timing and operational references
+
+Engagement Scope should not represent:
+- the client account itself
+- the durable client memory layer
+- workforce identity records
+- governance policy ownership
+- secret values
+
+Working ownership direction:
+- Service Delivery is the strongest current domain direction
+- Client Success may reference it for client coordination
+- CRM may reference it for account visibility only
+- Workforce may be referenced from it,
+  but Workforce remains the source of truth for Human Operator records
+
+---
+
+#### Service Agreement
+Service Agreement is best treated as a business artifact
+that defines what has been agreed,
+what is in scope,
+and what is out of scope.
+
+Current best direction:
+- Engagement Scope should be derived from,
+  constrained by,
+  or validated against Service Agreement
+- Engagement Scope should not be created as if it were independent from agreement reality
+
+Service Agreement is not the same as:
+- CRM Client Account
+- Client Brain
+- Engagement Scope
+
+Open Question:
+- Is Service Agreement owned by CRM,
+  by Client Success,
+  or by a separate future Bounded Context or Domain?
+
+For now,
+it is safest to treat Service Agreement as a distinct business artifact
+whose final ownership remains draft.
+
+---
+
+#### Human Operator
+Human Operator is best treated as an Entity inside Workforce.
+
+Workforce should remain the source of truth for:
+- operator identity
+- role
+- availability
+- capacity
+- skill profile
+- employment or contractor status
+- eligibility metadata
+
+Engagement Scope may store only references to assigned Human Operators.
+It should not own their identity or workforce truth.
+
+Governance may define:
+- who is allowed to approve
+- who may override
+- who may escalate
+
+But Governance should not own Human Operator identity itself.
+
+---
+
+### Cross-Boundary Rules
+
+#### CRM and Client Success
+CRM should own account baseline and commercial continuity.
+Client Success should own active relationship handling and client-facing coordination after conversion.
+
+This means:
+- CRM may know the client exists and what account state they are in
+- Client Success manages how the relationship is progressing in practice
+
+---
+
+#### Client Brain and CRM
+CRM may reference Client Brain,
+but Client Brain must not replace CRM ownership of Client identity or account state.
+
+A client can exist in CRM
+without requiring CRM to own the durable strategic memory layer.
+
+---
+
+#### Client Brain and Client Success
+Client Success likely contributes significant relationship memory
+and client-facing learnings into Client Brain.
+
+However,
+Client Success Relationship is not the same as Client Brain:
+- Client Success Relationship is operational and ongoing
+- Client Brain is durable and reusable memory
+
+---
+
+#### Engagement Scope and Service Delivery
+Engagement Scope should be treated as the active execution-context artifact for a specific service engagement.
+
+This makes Service Delivery the strongest current ownership direction,
+even if other domains reference the artifact.
+
+---
+
+#### Engagement Scope and Client Success
+Client Success may use Engagement Scope for:
+- client coordination
+- scheduling confirmation
+- approval communication
+- expectation alignment
+
+But Client Success should not absorb Engagement Scope ownership,
+because client-facing coordination is not the same as execution-context ownership.
+
+---
+
+#### Engagement Scope and Workforce
+Engagement Scope may contain assignedhumanoperatorrefs
+or equivalent assignment references.
+
+These are references only.
+Workforce remains the source of truth for:
+- who the operator is
+- whether they are available
+- whether they are eligible
+- what role or skill profile they have
+
+---
+
+#### Workforce and Governance
+Workforce should answer:
+- who the human is
+- what role they have
+- whether they are available or eligible
+
+Governance should answer:
+- whether that role may approve
+- whether that role may override
+- whether that role may escalate
+- what checkpoint is required
+
+So:
+- Workforce = human identity and participation baseline
+- Governance = control rules over permitted actions
+
+---
+
+### Classification Summary
+
+#### Domain
+- CRM
+- Client Success
+- Service Delivery
+- Workforce
+- Knowledge
+- Governance
+
+#### Entity
+- Client
+- CRM Client Account
+- Client Success Relationship
+- Human Operator
+
+#### Memory Object
+- Client Brain
+- Engagement Scope
+
+#### Aggregate Candidate
+- CRM Client Account Aggregate
+- Client Relationship Aggregate
+
+#### Domain Artifact
+- Engagement Scope
+
+#### Shared Service Artifact
+- Client Brain
+
+#### Business Artifact
+- Service Agreement
+
+---
+
+### Assumptions
+- Assumption: CRM owns Client identity and account baseline.
+- Assumption: Client Success owns active relationship handling after conversion.
+- Assumption: Client Brain remains memory-centric rather than becoming a CRM-owned account object.
+- Assumption: Engagement Scope is aligned primarily with Service Delivery.
+- Assumption: Workforce owns Human Operator truth.
+- Assumption: Governance owns approval and control rules, not human identity.
+
+---
+
+### Open Questions
+- Open Question: Is Client Brain ultimately owned by Knowledge, Client Success, or a joint pattern with clearer update authority?
+- Open Question: Should Client Brain exist per Client, per Brand, or support both levels?
+- Open Question: Is Service Agreement owned by CRM, Client Success, or a separate future Bounded Context?
+- Open Question: Is CRM Client Account a true Aggregate, or a lighter account record with projections around it?
+- Open Question: Should Client Success Relationship be its own Aggregate, or remain a lighter relationship-layer construct?
+- Open Question: Should assignedhumanoperatorrefs remain a simple reference list inside Engagement Scope, or evolve into a stronger assignment artifact?
+- Open Question: What is the exact lifecycle connection between Service Agreement and Engagement Scope creation, revision, and closure?
+
+---
+
+### Risks
+- Risk: If CRM Client Account and Client Success Relationship are not separated clearly, current-client handling may become duplicated across Domains.
+- Risk: If Client Brain is treated as a substitute for CRM records, memory and operational identity will collapse into one unstable artifact.
+- Risk: If Engagement Scope is not clearly constrained by Service Agreement, execution context may drift away from agreed scope.
+- Risk: If Human Operator identity and Governance authority are mixed, Workforce and Governance boundaries will blur.
+- Risk: If these boundaries stay implicit, aggregate modeling in later phases may become unstable.
+
+---
