@@ -434,489 +434,335 @@ to assigned human operators.
 
 ---
 
-## CRM (Draft v1)
+## CRM (Draft v2)
+
+### Domain Position
+CRM is a Domain responsible for managing relationship-facing
+commercial records and pipeline visibility across the client lifecycle.
+
+At this stage, CRM should be modeled as having two major parts:
+- Lead Acquisition & Conversion
+- Current Client Management
+
+The current implementation strongly supports
+Lead Acquisition & Conversion.
+
+Current Client Management is valid as part of the CRM Domain,
+but remains less mature and more draft in the current system.
+
+---
 
 ### Responsibilities
-CRM is responsible for managing the business relationship layer
-between Faraz and prospects, leads, clients, and client accounts.
+CRM is responsible for managing the relationship and commercial-facing layer
+between Faraz and prospects, leads, current clients, and client accounts.
 
 It is responsible for:
-- lead capture and qualification state
-- client identity and account records
-- contact and stakeholder records
-- account lifecycle state
+- lead intake
+- lead qualification flow
+- sales pipeline stage tracking
+- follow-up scheduling
+- manager assignment for lead handling
+- interaction and call summary tracking
+- dead lead archiving and recheck flow
 - commercial relationship visibility
-- service agreement references
-- relationship timeline visibility
-- client onboarding triggers
+- current client account visibility
+- client status visibility
+- service history visibility at CRM level
+- client-facing stakeholder/contact visibility
+- sales and CRM dashboard reporting
 
 CRM is not responsible for:
 - service delivery execution
-- persistent strategic memory
-- content production
-- workflow execution state
-- workforce ownership
+- persistent strategic memory ownership
+- Engagement Scope ownership
+- workforce identity ownership
 - financial ledger ownership
+- channel credential ownership
+- raw analytics warehouse ownership
 
 ---
 
 ### What it owns
 CRM owns the source of truth for:
 - lead records
-- client records
-- contact records
-- account status
-- relationship stage
-- client-facing stakeholder map
-- service agreement references or service agreement ownership boundary (still open)
-- onboarding status
-- account-level metadata
+- lead pipeline state
+- lead follow-up state
+- lead interaction history
+- dead lead archive entries
+- manager-to-lead handling visibility
+- current client account records
+- client contact records
+- account lifecycle status
+- high-level service relationship visibility
+- CRM dashboard and reporting views
 
 CRM may reference but should not own:
 - Client Brain
 - Engagement Scope
-- invoices and payments
-- operator assignments
-- raw performance analytics
+- workforce operator profiles
+- financial contracts or ledger records
+- publishing state
+- knowledge artifacts
 - secrets and credentials
 
 ---
 
+### Bounded Contexts
+
+#### Lead Acquisition & Conversion
+This Bounded Context is responsible for:
+- lead capture
+- channel/source tracking
+- qualification flow
+- sales stage progression
+- follow-up management
+- signal-based prioritization
+- manager work queue visibility
+- conversion to signed client or dead lead
+
+This is the strongest and most grounded part
+of the current CRM implementation.
+
+#### Current Client Management
+This Bounded Context is responsible for:
+- active client account visibility
+- current client contact and stakeholder visibility
+- client status tracking
+- client service relationship visibility
+- relationship notes at CRM level
+- commercial continuity and retention visibility
+
+This part is valid as a CRM concern,
+but is still more draft and less explicit
+in the current implementation.
+
+#### Dead Lead Recovery
+This Bounded Context is responsible for:
+- dead lead archive management
+- dead reason tracking
+- recheck scheduling
+- lead reactivation back into pipeline
+
+#### CRM Reporting & Dashboarding
+This Bounded Context is responsible for:
+- sales summary visibility
+- manager performance visibility
+- service demand visibility
+- active pipeline reporting
+- conversion-facing dashboard views
+
+---
+
 ### Candidate Entities
+
+#### Lead Acquisition & Conversion
 - Lead
-- Client
-- Contact
+- Lead Source
+- Lead Stage
+- Follow-up Schedule
+- Signal
+- Interaction Note
+- Manager Assignment
+- Dead Lead Archive Entry
+
+#### Current Client Management
+- Client Account
+- Client Contact
 - Stakeholder
-- Brand
-- Service Agreement
-- Onboarding Record
-- Opportunity
+- Client Status
+- Service Relationship Record
 - Account Note
+
+#### Shared or Cross-Context Candidates
+- Manager
+- Service Selection
+- Relationship Timeline Entry
 
 ---
 
 ### Candidate Aggregates
-These are candidate aggregates only
-and remain subject to refinement.
-
-#### Client Aggregate
-Possible contents:
-- Client
-- Contacts
-- Stakeholders
-- Brand refs or Brand child entities
-- account metadata
-- onboarding status
 
 #### Lead Aggregate
 Possible contents:
 - Lead
-- qualification state
 - source
-- contact info
-- opportunity linkage
+- stage
+- follow-up state
+- signal
+- interaction summary
+- assigned manager
+- requested services
+- notes
 
-#### Service Agreement Aggregate
+#### Dead Lead Aggregate
 Possible contents:
-- Service Agreement
-- agreed service scope summary
-- package/tier
-- start/end boundaries
-- status
-- linked client
+- Dead Lead Archive Entry
+- dead reason
+- dead date
+- recheck date
+- previous manager ref
+- reactivation state
 
-#### Opportunity Aggregate
+#### Client Account Aggregate
 Possible contents:
-- Opportunity
-- proposed services
-- commercial status
-- decision stage
-- linked lead or client
+- Client Account
+- contact refs
+- stakeholder refs
+- client status
+- service relationship summary
+- account notes
 
----
+#### Manager Queue Projection
+This is likely not an Aggregate.
 
-### Bounded Contexts
-These are candidate bounded contexts for CRM.
+It is better treated as a read model or operational projection
+generated from pipeline data.
 
-#### Lead Management
-Focus:
-- lead capture
-- lead qualification
-- conversion readiness
+#### CRM Dashboard Projection
+This is likely not an Aggregate.
 
-#### Client Account Management
-Focus:
-- client identity
-- contacts
-- stakeholders
-- account lifecycle
-- brand/account structure
-
-#### Commercial Agreement Management
-Focus:
-- service agreements
-- package/tier records
-- commercial scope baseline
-- start/end status
-
-#### Onboarding Coordination
-Focus:
-- handoff from signed client to operational setup
-- onboarding readiness signals
-- references to downstream domains
+It is better treated as a reporting projection
+generated from CRM records.
 
 ---
 
 ### Notes on Key Terms
 
-#### Client
-Client is likely a core CRM Entity
-and may become an Aggregate Root.
+#### Domain
+CRM is a Domain.
 
-#### Brand
-Brand remains an open modeling question.
+It should not be reduced to only a spreadsheet implementation,
+even if the current operational system is built on Google Sheets
+and Apps Script.
 
-It may be:
-- a child entity under Client
-- its own entity within CRM
-- or a concept partially shared with Client Brain
+#### Bounded Context
+Lead Acquisition & Conversion
+and Current Client Management
+should be treated as separate Bounded Contexts
+inside the CRM Domain.
 
-For now, Brand should not be assumed to be owned by Client Brain.
+#### Entity
+Lead is a strong candidate Entity
+in the current implementation.
 
-#### Service Agreement
-Service Agreement is likely one of the most important CRM-side artifacts,
-because it may define the business baseline
-that later constrains Engagement Scope.
+Client Account is also a valid candidate Entity,
+but currently less evidenced in the implementation.
 
-This relationship is still draft
-and should be validated before lock.
+#### Aggregate
+Lead Aggregate is the strongest candidate Aggregate
+in the current CRM system.
 
-#### Client Brain
-Client Brain is not the CRM Client record.
-It is a separate memory-centric artifact
-that may reference CRM entities
+Client Account Aggregate is a valid candidate,
+but remains more draft.
+
+#### Memory Object
+Client Brain is not a CRM Entity or CRM Aggregate.
+
+It is a separate Memory Object
+that may reference CRM records
 but should not replace CRM ownership.
 
-#### Engagement Scope
-Engagement Scope is not owned by CRM.
-CRM may reference it for relationship visibility,
-but Service Delivery should remain its primary owner.
+#### Shared Service
+CRM Dashboarding behaves more like a reporting view
+or projection than a Shared Service.
+
+It should not be mistaken for the CRM Domain itself.
 
 ---
 
 ### Inbound events
 Candidate inbound events to CRM:
 - lead captured
-- lead qualified
-- lead disqualified
-- proposal requested
-- proposal accepted
-- client signed
-- onboarding started
-- onboarding completed
-- service agreement created
-- service agreement updated
-- service agreement renewed
-- service agreement paused
-- service agreement ended
-- client account updated
+- lead manually created
+- lead updated
+- source recorded
+- signal updated
+- follow-up scheduled
+- follow-up completed
+- stage advanced
+- stage reverted
+- lead marked dead
+- dead lead recheck triggered
+- dead lead reactivated
+- manager assigned
+- manager changed
+- client converted from lead
+- current client updated
+- client contact updated
 - stakeholder updated
-- brand information updated
+- service relationship updated
 
 ---
 
 ### Outbound events
 Candidate outbound events from CRM:
+- lead created
 - lead qualified
-- client created
-- client converted from lead
-- service agreement activated
-- service agreement changed
-- onboarding initiated
-- onboarding completed
+- lead became overdue
+- lead requires follow-up today
+- lead converted to client
+- lead moved to dead archive
+- dead lead scheduled for recheck
+- dead lead reactivated
+- manager queue changed
+- client account created
 - client status changed
-- stakeholder map changed
-- brand context changed
-- account paused
-- account reactivated
-- account closed
+- client relationship updated
+- CRM dashboard updated
 
 ---
 
 ### Risks
-- Brand boundary is not yet finalized.
-- Service Agreement ownership boundary is not yet finalized.
-- CRM vs Client Success ownership may still overlap in some relationship-management areas.
-- CRM must not absorb Client Brain or Engagement Scope responsibilities.
+- If CRM is modeled only around the current implementation,
+  Current Client Management may be underrepresented.
+- If CRM is modeled too broadly,
+  it may incorrectly absorb Client Brain responsibilities.
+- Lead pipeline logic is strongly evidenced,
+  but client account modeling is still structurally lighter.
+- Manager queue views and dashboard views
+  may be mistaken for source-of-truth aggregates
+  when they are better treated as projections.
 
 ---
 
 ### Open Questions
-- Is Brand a child entity of Client or its own CRM entity?
-- Is Service Agreement fully owned by CRM,
-  or jointly constrained with Client Success?
-- Should onboarding live partly in CRM
-  or move into its own bounded context later?
-- Which CRM fields are operationally visible to Service Delivery,
-  and which remain purely commercial/relationship-facing?
-
-  ---
-
-  ## Service Delivery (Draft v1)
-
-### Responsibilities
-Service Delivery is responsible for planning, coordinating, executing,
-tracking, and governing the delivery of agreed client services.
-
-It is responsible for:
-- engagement execution
-- service scope operationalization
-- deliverable planning and tracking
-- production coordination
-- approval coordination
-- publishing handoff readiness
-- execution status visibility
-- revision handling
-- delivery completion state
-- engagement-level workflow governance
-
-Service Delivery is not responsible for:
-- client identity ownership
-- commercial relationship ownership
-- financial ledger ownership
-- workforce identity ownership
-- persistent client memory ownership
-- raw analytics warehouse ownership
+- When a lead becomes a signed client,
+  does Lead evolve into Client Account,
+  or does a new Client Account Entity get created?
+- How much of current client management
+  should remain inside CRM
+  versus move into Client Success?
+- Should Service Relationship Record stay inside CRM
+  as a commercial/account view,
+  while Engagement Scope remains in Service Delivery?
+- What is the exact boundary between:
+  - CRM Client Account
+  - Client Success account handling
+  - Client Brain memory ownership
 
 ---
 
-### What it owns
-Service Delivery owns the source of truth for:
-- Engagement Scope
-- delivery status
-- deliverable records
-- production queue state
-- revision state
-- approval queue state
-- execution checkpoints
-- publishing readiness state
-- engagement execution history
-- operational handoff records
+### Implementation Grounding Notes
+The current operational backend strongly supports:
+- pipeline stages
+- follow-up dates
+- manager assignment
+- signal scoring
+- dead lead archive
+- recheck cycle
+- manager tabs
+- CRM dashboard reporting
 
-Service Delivery may reference but should not own:
-- CRM Client
-- Service Agreement commercial baseline
-- Client Brain
-- Workforce operator profiles
-- channel credentials
-- financial records
-- raw reporting datasets
+The current operational backend provides weaker evidence for:
+- rich client account structure
+- standalone brand modeling
+- explicit service agreement artifacts
+- mature current-client account management structures
 
----
-
-### Candidate Entities
-- Engagement
-- Engagement Scope
-- Deliverable
-- Deliverable Batch
-- Brief
-- Production Task
-- Revision Request
-- Approval Request
-- Publishing Handoff
-- Delivery Milestone
-- Execution Checkpoint
-
----
-
-### Candidate Aggregates
-These are candidate aggregates only
-and remain subject to refinement.
-
-#### Engagement Aggregate
-Possible contents:
-- Engagement
-- Engagement Scope
-- delivery status
-- milestones
-- active execution policies
-- linked deliverables
-
-#### Deliverable Aggregate
-Possible contents:
-- Deliverable
-- Brief
-- production status
-- revision state
-- approval state
-- publish readiness
-
-#### Approval Aggregate
-Possible contents:
-- Approval Request
-- approver references
-- decision state
-- feedback
-- approval history
-
-#### Revision Aggregate
-Possible contents:
-- Revision Request
-- revision reason
-- revision cycle state
-- linked deliverable
-- resolution state
-
----
-
-### Bounded Contexts
-These are candidate bounded contexts for Service Delivery.
-
-#### Engagement Management
-Focus:
-- engagement lifecycle
-- scope activation
-- status tracking
-- operational ownership
-
-#### Production Coordination
-Focus:
-- briefs
-- deliverables
-- task orchestration
-- execution state
-- production readiness
-
-#### Review & Approval Coordination
-Focus:
-- approvals
-- revisions
-- feedback loops
-- human checkpoints
-
-#### Delivery Handoff
-Focus:
-- publishing handoff
-- completion state
-- downstream readiness
-- execution closure
-
----
-
-### Notes on Key Terms
-
-#### Engagement
-Engagement is the operational unit of delivery
-for a package, campaign, project, or recurring service cycle.
-
-It is likely one of the most important Service Delivery entities.
-
-#### Engagement Scope
-Engagement Scope is not a CRM artifact.
-It is a Service Delivery artifact
-that operationalizes the agreed service into executable context.
-
-It should be constrained by a Service Agreement,
-but not replaced by it.
-
-#### Deliverable
-Deliverable should be treated as a delivery artifact,
-not as a generic content object across all contexts.
-
-A deliverable may later connect to capabilities like:
-- Strategy
-- Content Creation
-- Video Creation
-- Publishing
-
-#### Approval
-Approval is not merely a UI action.
-It is a governed checkpoint artifact
-that may require:
-- human review
-- correction
-- rejection
-- escalation
-- override
-
-This aligns with the Human-in-the-loop Philosophy.
-
-#### Publishing Handoff
-Publishing readiness and publishing handoff may belong here,
-while final channel execution may later sit
-closer to Publishing capability or plugin-layer execution.
-
-This boundary is still draft.
-
----
-
-### Inbound events
-Candidate inbound events to Service Delivery:
-- service agreement activated
-- engagement created
-- engagement scope approved
-- brief created
-- brief updated
-- production task created
-- production started
-- production completed
-- revision requested
-- revision completed
-- approval requested
-- approval granted
-- approval rejected
-- approval overridden
-- publishing requested
-- publishing completed
-- publishing failed
-- deliverable archived
-- engagement paused
-- engagement resumed
-- engagement closed
-
----
-
-### Outbound events
-Candidate outbound events from Service Delivery:
-- engagement started
-- engagement scope changed
-- deliverable created
-- deliverable ready for review
-- revision cycle started
-- revision cycle completed
-- approval requested
-- approval completed
-- approval rejected
-- publishing handoff ready
-- delivery completed
-- delivery blocked
-- engagement paused
-- engagement closed
-- execution learning generated
-
----
-
-### Risks
-- Engagement vs Engagement Scope boundary is not yet fully finalized.
-- Deliverable vs Brief vs Production Task boundaries may still overlap.
-- Approval and Publishing boundaries may later need redistribution
-  between Service Delivery, Capabilities, and Plugins.
-- Service Delivery must not absorb Client Brain, CRM, or Workforce ownership.
-
----
-
-### Open Questions
-- Is Engagement the Aggregate Root,
-  with Engagement Scope as a child artifact,
-  or should Engagement Scope itself be aggregate-like?
-- Should Brief belong inside the Deliverable Aggregate
-  or exist as a separate artifact with its own lifecycle?
-- Where is the final boundary between:
-  - Service Delivery
-  - Publishing capability
-  - channel/plugin execution
-- Should Delivery Handoff remain inside Service Delivery
-  or evolve into a more explicit cross-domain coordination context?
+Therefore:
+- Lead Acquisition & Conversion is implementation-grounded
+- Current Client Management is architecturally valid,
+  but still draft and extensible
 
   ---
 
