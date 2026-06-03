@@ -1,0 +1,138 @@
+# Snapshot-008 - Normalization Operating Model Decision
+
+## Current Phase
+Phase 1 Domain Discovery
+Phase 9 Claude Code Operating System
+
+## Current Topic
+Normalization operating model for `domains.md`
+
+## Status
+Decision reached
+
+---
+
+## Summary
+This session resolved open question Q-008.
+
+The accepted operating model for normalization of `domains.md` is:
+- produce a proposed normalized draft as a separate artifact
+- produce a review summary alongside it
+- require human review and explicit approval
+- only then replace the canonical file
+
+Direct update to `domains.md` during normalization is not accepted.
+
+---
+
+## Decisions
+
+### DEC-011
+Normalization of `domains.md` must produce a proposed normalized draft
+plus a review summary
+before any canonical file replacement occurs.
+
+Meaning:
+- Claude Code should not update `domains.md` directly during normalization.
+- The proposed normalized version should exist as a separate artifact
+  pending human review.
+- The review summary should cover:
+  - what was consolidated and why
+  - what was left unchanged and why
+  - any cases where normalization revealed a possible missing boundary
+    or inconsistency, flagged as Open Question or Risk
+- Human review and explicit approval are required
+  before the proposed draft replaces the canonical file.
+
+Basis:
+- Resolves Q-008.
+- Consistent with `CLAUDE.md` broad-task pattern:
+  plan → constrained implementation → review summary.
+- Consistent with Snapshot-006 DEC-023 direction.
+- Consistent with the `Normalization Pass v1 Plan` constraint rules.
+
+Status:
+- Active
+
+---
+
+## Findings
+
+### FIND-013
+The risk asymmetry between direct canonical file update
+and proposed draft plus review summary
+strongly favors the proposed draft operating model
+for broad normalization of `domains.md`.
+
+Meaning:
+- In a direct update model, a bad normalization edit corrupts
+  the canonical file before human review can catch it.
+- In a proposed draft model, a bad edit is visible and rejectable
+  before the canonical file is touched.
+- This asymmetry is especially significant for `domains.md`
+  because it is the active Phase 1 source of truth.
+
+Impact:
+- Broad AI-assisted normalization of `domains.md`
+  should follow the proposed draft plus review summary pattern,
+  not direct mutation.
+- This may also be a strong default pattern
+  for future broad structural editing of canonical files,
+  but that has not yet been separately decided.
+
+---
+
+## Open Questions Updated
+
+### Q-008
+Resolved. See DEC-011.
+Normalization produces a proposed draft plus review summary
+before canonical file replacement.
+This question is closed.
+
+### Q-009
+Partially addressed.
+The review summary component of DEC-011 serves the change log purpose.
+Whether the review summary should also persist as a standalone file
+after acceptance remains open.
+
+### Q-010
+Priority raised.
+A normalization checklist should be prepared before Claude Code begins,
+even for a proposed draft pass.
+This remains the next unresolved normalization preparation question.
+
+---
+
+## Risks
+
+### R-019
+If the proposed draft artifact format is not specified
+before Claude Code begins normalization,
+the review step may become unclear or inconsistently applied.
+
+### R-020
+If Q-010 is not resolved before normalization begins,
+Claude Code may operate without sufficient constraint definition,
+increasing the risk of concept drift in the proposed draft.
+
+---
+
+## Assumptions
+
+- Assumption: the proposed draft should be a clearly named separate file
+  until explicitly accepted and merged.
+- Assumption: the review summary is a required artifact,
+  not optional documentation.
+- Assumption: the DEC-011 operating pattern may be reusable
+  for future broad structural editing of canonical files,
+  but this has not yet been separately decided.
+
+---
+
+## Next Focus
+- Resolve Q-010: prepare a normalization checklist
+  before Claude Code begins the normalization pass.
+- Decide the exact file naming and format
+  for the proposed normalized draft artifact.
+- When both are ready, prepare the Claude Code normalization handoff.
