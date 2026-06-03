@@ -2995,3 +2995,223 @@ So:
 - Risk: If these boundaries stay implicit, aggregate modeling in later phases may become unstable.
 
 ---
+
+## Service Agreement Decision Draft v1
+
+### Purpose
+This section clarifies the current working role
+of Service Agreement inside Phase 1 Domain Discovery.
+
+It does not finalize all ownership questions,
+but it should reduce ambiguity between:
+- CRM
+- Client Success
+- Service Delivery
+- Finance
+- Engagement Scope
+
+---
+
+### Current Classification
+Service Agreement is currently best treated as a Business Artifact.
+
+It is important enough to shape scope,
+coordination,
+delivery,
+and financial interpretation,
+but its final ownership and final Aggregate placement
+should remain draft for now.
+
+Service Agreement is not currently treated as:
+- a Domain
+- a Memory Object
+- a Shared Service
+- a finalized Aggregate
+
+---
+
+### Core Role
+Service Agreement should represent the business artifact
+that defines what has been agreed between Faraz and the client
+at the service level.
+
+It should define or constrain:
+- agreed service type
+- package or engagement basis
+- in-scope work
+- out-of-scope work
+- commercial expectations relevant to service interpretation
+- approval-sensitive constraints where relevant
+- high-level delivery expectations
+- important timing or cadence commitments where relevant
+
+Service Agreement should not be treated as:
+- the CRM Client entity itself
+- the Client Brain
+- the Engagement Scope
+- the detailed operational task plan
+- the finance ledger
+- the workforce assignment record
+
+---
+
+### Cross-Boundary Position
+
+#### Service Agreement and CRM
+CRM may own the commercial account-facing visibility
+that a Service Agreement exists
+and what high-level service relationship has been agreed.
+
+CRM should not automatically absorb
+the full operational meaning of Service Agreement.
+
+#### Service Agreement and Client Success
+Client Success may reference Service Agreement
+for expectation management,
+client communication continuity,
+approval handling context,
+and client-facing coordination.
+
+Client Success should not automatically become
+the sole owner of Service Agreement
+unless later modeling confirms that direction.
+
+#### Service Agreement and Service Delivery
+Service Delivery should treat Service Agreement
+as a constraining business artifact.
+
+Engagement Scope should be derived from,
+constrained by,
+or validated against Service Agreement.
+
+Service Delivery should own execution context,
+not the agreement artifact by default.
+
+#### Service Agreement and Finance
+Finance may reference Service Agreement
+for billing interpretation,
+financial obligation context,
+or package-linked invoice logic.
+
+Finance should not own Service Agreement itself,
+except possibly finance-specific sub-artifacts later
+if that becomes necessary.
+
+---
+
+### Service Agreement and Engagement Scope
+Service Agreement and Engagement Scope are not the same thing.
+
+A useful working distinction is:
+- Service Agreement = what was agreed
+- Engagement Scope = how that agreed service is currently being executed in a bounded engagement context
+
+This means:
+- Service Agreement should constrain Engagement Scope
+- Engagement Scope may become more operational and time-sensitive
+- Engagement Scope should not drift away from the agreement baseline without explicit revision logic
+
+---
+
+### Candidate Contents
+Service Agreement may eventually include:
+- client reference
+- service type
+- package or offering reference
+- in-scope summary
+- out-of-scope summary
+- service cadence or cycle type where relevant
+- approval expectations where relevant
+- major delivery constraints
+- start condition or activation condition
+- revision or exception notes where relevant
+- commercial interpretation notes relevant to execution boundaries
+
+These are candidate contents only
+and remain subject to refinement.
+
+---
+
+### Candidate Lifecycle Direction
+A possible working lifecycle for Service Agreement is:
+- draft
+- proposed
+- agreed
+- active
+- revised
+- closed
+- superseded
+
+This lifecycle remains draft
+and should not yet be treated as final.
+
+---
+
+### Ownership Direction
+The safest current direction is:
+
+- Final ownership remains unresolved.
+- Service Agreement should currently be treated as a distinct Business Artifact.
+- CRM, Client Success, Service Delivery, and Finance may all reference it.
+- No Domain should yet absorb it casually without an explicit later decision.
+
+This avoids premature locking
+while still giving the artifact a clear role in the model.
+
+---
+
+### Domain Implications
+
+#### Domain
+Service Agreement is not currently modeled as a Domain.
+
+#### Entity
+Service Agreement may later become an Entity
+if identity continuity and revision history become central.
+
+#### Aggregate
+Service Agreement may later become a Candidate Aggregate
+if scope commitments,
+revision rules,
+and consistency boundaries need stronger control.
+
+#### Memory Object
+Service Agreement is not a Memory Object.
+It is an agreement artifact,
+not primarily a reusable memory structure.
+
+#### Business Artifact
+Business Artifact is currently the best classification
+because the concept is clearly important
+but not yet finally placed.
+
+---
+
+### Assumptions
+- Assumption: Service Agreement is distinct from CRM Client Account.
+- Assumption: Service Agreement is distinct from Client Brain.
+- Assumption: Service Agreement is distinct from Engagement Scope.
+- Assumption: Engagement Scope should be derived from or constrained by Service Agreement.
+- Assumption: Service Agreement should remain cross-domain referenceable until final ownership is clarified.
+
+---
+
+### Open Questions
+- Open Question: Is Service Agreement best owned by CRM?
+- Open Question: Is Service Agreement best owned by Client Success?
+- Open Question: Does Service Agreement require its own future Bounded Context?
+- Open Question: Should Service Agreement become an Entity only, or a Candidate Aggregate?
+- Open Question: What exact revision logic connects Service Agreement changes to Engagement Scope changes?
+- Open Question: Which parts of Service Agreement are commercial only, and which parts are operationally binding?
+- Open Question: Should Finance reference Service Agreement directly, or only through narrower finance-facing artifacts?
+
+---
+
+### Risks
+- Risk: If Service Agreement is treated as identical to Engagement Scope, agreement and execution will collapse into one unstable concept.
+- Risk: If Service Agreement is absorbed too early into CRM, operational meaning may be under-modeled.
+- Risk: If Service Agreement is absorbed too early into Client Success, commercial and contractual baseline may become overly communication-shaped.
+- Risk: If Service Agreement remains too vague, scope control and aggregate boundaries will drift later.
+- Risk: If revisions to Service Agreement do not propagate clearly, execution may diverge from agreed service reality.
+
+---
