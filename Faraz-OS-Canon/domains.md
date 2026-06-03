@@ -1247,3 +1247,283 @@ Candidate outbound events from Knowledge:
   versus deferred to Phase 3 memory architecture?
 
 ---
+
+## Client Success (Draft v1)
+
+### Responsibilities
+Client Success is responsible for managing the active client relationship
+after commercial conversion,
+with emphasis on communication,
+coordination,
+approval handling,
+expectation management,
+and continuity of service experience.
+
+It is responsible for:
+- active client relationship coordination
+- client-facing communication
+- expectation management
+- approval request communication
+- revision communication
+- issue escalation intake
+- service continuity visibility
+- client-side coordination for operational decisions
+- meeting and coordination confirmation flow
+- client response tracking
+- client satisfaction-related signals
+- relationship-level account handling
+
+Client Success is not responsible for:
+- lead acquisition ownership
+- raw sales pipeline ownership
+- service execution ownership
+- Engagement Scope ownership
+- workforce availability ownership
+- financial ledger ownership
+- durable memory ownership
+- policy rule ownership
+
+---
+
+### What it owns
+Client Success owns the source of truth for:
+- active client communication records
+- client coordination records
+- approval response records
+- revision communication records
+- escalation intake records
+- relationship status visibility
+- client-facing scheduling confirmation state
+- client-side issue and concern tracking
+- account handling notes at the relationship layer
+
+Client Success may reference but should not own:
+- CRM lead pipeline
+- CRM client account baseline
+- Client Brain
+- Engagement Scope
+- workforce assignments
+- financial invoices or payment records
+- publishing execution state
+- internal delivery task state
+
+---
+
+### Candidate Entities
+- Client Relationship
+- Client Contact
+- Stakeholder
+- Approval Response
+- Revision Communication
+- Escalation Case
+- Coordination Request
+- Scheduling Confirmation
+- Relationship Note
+- Satisfaction Signal
+
+---
+
+### Candidate Aggregates
+These are candidate aggregates only
+and remain subject to refinement.
+
+#### Client Relationship Aggregate
+Possible contents:
+- Client Relationship
+- primary contact refs
+- stakeholder refs
+- relationship status
+- relationship notes
+- active coordination state
+
+#### Escalation Aggregate
+Possible contents:
+- Escalation Case
+- escalation source
+- severity
+- current status
+- resolution summary
+- linked engagement refs
+
+#### Coordination Aggregate
+Possible contents:
+- Coordination Request
+- request type
+- client response state
+- confirmation state
+- linked service context
+- linked scheduling context
+
+#### Approval Response Aggregate
+Possible contents:
+- Approval Response
+- client decision
+- response timestamp
+- revision or feedback notes
+- linked deliverable or request ref
+
+---
+
+### Bounded Contexts
+These are candidate bounded contexts for Client Success.
+
+#### Relationship Management
+Focus:
+- active client relationship handling
+- client communication continuity
+- stakeholder visibility
+- relationship health signals
+
+#### Approval & Revision Coordination
+Focus:
+- client approvals
+- rejections
+- revision communication
+- expectation clarification
+- feedback capture
+
+#### Client Coordination
+Focus:
+- meetings
+- scheduling confirmations
+- operational communication to clients
+- response collection
+- exception follow-up
+
+#### Escalation Handling
+Focus:
+- complaints
+- blockers
+- dissatisfaction signals
+- issue intake
+- client-facing escalation routing
+
+---
+
+### Notes on Key Terms
+
+#### Domain
+Client Success is a Domain.
+
+It should represent the relationship-management layer
+for active clients,
+not just a communication inbox.
+
+#### Bounded Context
+Client Coordination is especially important
+because many operational workflows
+still need client confirmation,
+even if planning itself becomes increasingly automated.
+
+#### Entity
+Client Relationship is likely a central Entity
+because the key concern here is not just a client record,
+but the state of the ongoing relationship.
+
+#### Aggregate
+Client Relationship Aggregate is likely stronger
+than treating every message or note
+as an isolated object.
+
+#### Memory Object
+Client Brain is not owned by Client Success.
+
+Client Success may contribute signals or updates to it,
+but durable structured memory should remain separate.
+
+#### Scheduling Confirmation
+Scheduling Confirmation is not the same as scheduling ownership.
+
+Client Success should own the client-facing confirmation state,
+while actual operational scheduling logic
+likely belongs elsewhere.
+
+---
+
+### Inbound events
+Candidate inbound events to Client Success:
+- client converted from lead
+- client contact added
+- stakeholder updated
+- approval requested
+- revision requested
+- schedule proposal prepared
+- coordination request created
+- engagement delayed
+- issue reported
+- escalation triggered
+- deliverable ready for client review
+- service status changed
+
+---
+
+### Outbound events
+Candidate outbound events from Client Success:
+- client notified
+- approval requested from client
+- approval response received
+- revision feedback captured
+- schedule confirmed by client
+- schedule rejected by client
+- coordination pending
+- escalation opened
+- escalation resolved
+- relationship status changed
+- client success signal updated
+
+---
+
+### Risks
+- Client Success may overlap with CRM
+  if current-client account visibility is not separated
+  from relationship handling.
+- Client Success may overlap with Service Delivery
+  if operational execution coordination is pulled too far inward.
+- Client Success may overlap with Knowledge
+  if communication notes and durable client memory are mixed.
+- Scheduling-related coordination may become ambiguous
+  unless planning,
+  confirmation,
+  and workforce assignment are explicitly separated.
+
+---
+
+### Open Questions
+- What is the final boundary between:
+  - CRM Current Client Management
+  - Client Success Relationship Management
+- Should client-facing approval handling live fully in Client Success,
+  or partly in Service Delivery for certain workflows?
+- Which client-facing scheduling artifacts belong here
+  versus in Service Delivery?
+- When a client repeatedly rejects proposed timing or deliverables,
+  does that remain normal coordination,
+  or become an Escalation Case?
+
+---
+
+### Scheduling Automation Note
+A historically human planner role existed
+for coordinating shoot times across many clients.
+
+Faraz OS should aim to reduce or remove this dedicated planner role
+through automation-first workflow design.
+
+In the likely target model:
+- Service Delivery prepares or requests scheduling options
+- Workforce provides human availability constraints
+- Client Success communicates proposed timing to the client
+- the client confirms,
+  rejects,
+  or requests change
+- the final confirmed plan is distributed downstream
+
+This workflow should be designed
+to run with minimal human intervention,
+while still supporting escalation
+when ambiguity,
+conflict,
+or high-risk coordination appears.
+
+---
+
