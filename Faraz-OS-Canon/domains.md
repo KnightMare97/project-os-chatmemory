@@ -3536,3 +3536,192 @@ not governance policy.
 - Risk: If revision handling is not modeled explicitly, execution state and approval state may become mixed.
 
 ---
+
+## Brand Decision Draft v1
+
+### Purpose
+This section clarifies the current working role
+of Brand inside Phase 1 Domain Discovery.
+
+It does not fully finalize Brand modeling,
+but it should reduce ambiguity between:
+- Client
+- CRM
+- Client Brain
+- Engagement Scope
+- Service Delivery
+- Client Success
+
+---
+
+### Current Position
+Brand is an important business concept
+that should not currently be treated
+as only a loose text field inside other artifacts.
+
+The safest current direction is:
+- Brand may become its own Entity
+- or a client-scoped child Entity
+- but should remain explicitly modeled as a concept
+  rather than hidden inside unstructured memory
+
+This remains draft.
+
+---
+
+### Brand and Client
+Brand is not automatically the same thing as Client.
+
+A useful working distinction is:
+- Client = the commercial or account-bearing party
+- Brand = the specific market-facing identity,
+  offering line,
+  or operating identity that may sit under that client
+
+This means:
+- one Client may have one Brand
+- one Client may have multiple Brands
+- Brand should therefore remain distinguishable from Client
+
+The exact multiplicity remains draft.
+
+---
+
+### Brand and CRM
+CRM should remain the likely source of truth
+for Client identity and account baseline.
+
+CRM may also become the place
+where Brand is referenced
+or partially represented
+when Brand matters for current-client account visibility
+or commercial service relationships.
+
+However,
+Brand should not be reduced prematurely
+to only a CRM display field
+if it later requires stronger identity continuity.
+
+---
+
+### Brand and Client Brain
+Client Brain should not be treated
+as the owner of Brand identity itself.
+
+Client Brain may store durable Brand-related memory such as:
+- brand voice
+- tone guidance
+- style preferences
+- strategic positioning notes
+- reusable brand constraints
+
+But Brand identity
+and Brand memory
+should not be collapsed into the same concept.
+
+A useful working distinction is:
+- Brand = identity-bearing business concept
+- Client Brain = memory artifact containing durable context about that Brand or Client
+
+---
+
+### Brand and Engagement Scope
+Engagement Scope may reference Brand
+when a specific engagement is brand-specific.
+
+This is especially important when:
+- one Client has multiple Brands
+- one Brand has different campaigns or service packages
+- execution constraints differ by Brand
+
+Engagement Scope should therefore be allowed
+to reference a Brand context,
+but should not become the owner of Brand identity.
+
+---
+
+### Brand and Service Delivery
+Service Delivery may require Brand references
+for execution quality,
+deliverable consistency,
+channel appropriateness,
+and creative alignment.
+
+Service Delivery should not own Brand identity,
+but it may depend on Brand-specific context
+to execute correctly.
+
+---
+
+### Brand and Client Success
+Client Success may reference Brand
+for communication continuity,
+stakeholder alignment,
+approval language,
+and expectation management.
+
+Client Success should not automatically own Brand identity,
+even if many brand-related conversations happen there.
+
+---
+
+### Candidate Direction
+The safest current modeling direction is:
+
+- Client = Entity in CRM
+- Brand = Entity candidate or client-scoped child Entity candidate
+- Client Brain = Memory Object that may contain durable Brand-related memory
+- Engagement Scope = Domain Artifact / Memory Object that may reference Brand for active execution context
+
+This direction keeps identity,
+memory,
+and execution context separate.
+
+---
+
+### Candidate Contents
+If Brand later becomes a stronger explicit Entity,
+it may include:
+- brand name
+- client reference
+- market-facing identity type
+- brand status
+- positioning summary reference
+- voice or style reference
+- offering focus reference
+- stakeholder relevance
+- active or inactive state
+
+These are candidate contents only
+and remain draft.
+
+---
+
+### Assumptions
+- Assumption: Brand is not automatically identical to Client.
+- Assumption: Brand should not be modeled only as a loose field inside Client Brain.
+- Assumption: Client Brain may contain durable Brand-related memory without owning Brand identity.
+- Assumption: Engagement Scope may reference Brand when execution is brand-specific.
+- Assumption: Final Brand placement remains unresolved.
+
+---
+
+### Open Questions
+- Open Question: Is Brand its own Entity, or a child Entity under Client?
+- Open Question: Should Brand be owned primarily in CRM, or in an adjacent future Bounded Context?
+- Open Question: Should Client Brain exist per Client, per Brand, or support both levels?
+- Open Question: Can one Engagement Scope reference more than one Brand, or should it stay brand-specific?
+- Open Question: Which Brand attributes are identity-level, and which belong only in memory artifacts?
+- Open Question: Does Brand eventually require its own Aggregate boundary?
+
+---
+
+### Risks
+- Risk: If Brand is treated as identical to Client, multi-brand clients may be modeled poorly.
+- Risk: If Brand is stored only as memory text, identity continuity may become unstable.
+- Risk: If Brand identity and Client Brain memory are collapsed together, memory and ownership boundaries will blur.
+- Risk: If Engagement Scope does not reference Brand where needed, execution quality and context accuracy may degrade.
+- Risk: If Brand is over-modeled too early, the file may lock into a structure before enough evidence exists.
+
+---
+
