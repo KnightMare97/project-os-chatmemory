@@ -1,145 +1,216 @@
 # Findings
 
-## FIND-001
+## Purpose
+This file tracks the current important findings
+that shape interpretation of Faraz OS.
 
-Instagram is not a Domain.
+It is not a complete historical log.
 
-Instagram is most likely a Channel Plugin.
+It should contain active,
+still-relevant findings
+that influence current architecture work,
+current repository understanding,
+or current execution planning.
 
-The same principle probably applies to:
-
-- LinkedIn
-- Twitter/X
-- TikTok
-- YouTube
-
----
-
-## FIND-002
-
-Many existing workflow definitions in the original blueprint are workflows, not domains.
-
-Examples:
-
-- Publishing
-- Reporting
-- Content Production
-
-must not automatically be treated as Domains.
+Historical detail may remain in snapshots.
 
 ---
 
-## FIND-003
-
-The original blueprint was influenced by n8n workflow thinking.
-
-The architecture is now moving toward:
-
-Domain
-→ Capability
-→ Workflow
-
-instead of:
-
-Workflow
-→ Domain
+## Usage Rules
+- Keep findings current.
+- Prefer one canonical entry per important finding.
+- If a finding becomes outdated, remove it or move it to snapshots.
+- If a finding turns into an explicit decision, capture the decision in `decisions.md`.
+- Do not duplicate full snapshot history here.
 
 ---
 
-## FIND-004
+## Current Active Findings
 
-Scope Object appears to be much more important than originally assumed.
+### FIND-001
+The repository is phase-structured,
+not topic-chaotic.
 
-There is a strong possibility that Scope Object will evolve into:
+Meaning:
+- Faraz OS is organized through explicit phases.
+- `Faraz-OS-Canon.md` is the canonical phase map.
+- Phase interpretation should remain aligned to the canon.
 
-Client Brain
-
-which may become one of the central memory structures of Faraz OS.
-
-This remains an open architectural question.
-
----
-
-## FIND-005
-
-Faraz OS is not an Agency Management Tool.
-
-Faraz OS is an:
-
-AI-Native Service Business Operating System.
+Impact:
+- Work should be placed into the correct phase context
+  instead of being handled as unstructured notes.
 
 ---
 
-## FIND-006
+### FIND-002
+Repository truth is hierarchical,
+not flat.
 
-The ultimate goal is not to build an agency.
+Meaning:
+- Newer snapshots and canon material carry more weight
+  than stale root notes or old bootstrap files.
+- Not every markdown file should be treated as equally current.
 
-The agency is the first operational environment and validation layer for the system.
-
----
-
-## FIND-007
-
-Faraz OS is Product-Oriented from day one.
-
-However:
-
-Faraz Agency is not merely a test environment.
-
-Faraz Agency is:
-
-- Primary Use Case
-- Primary Validation Environment
-- Primary Revenue Engine
-- Primary Learning Source
-
-for the foreseeable future.
+Impact:
+- Claude collaboration must respect source-of-truth priority.
 
 ---
 
-## FIND-008
+### FIND-003
+Phase 1 Domain Discovery now has enough structure
+to shift primary effort toward normalization.
 
-The primary problem Faraz OS aims to solve is:
+Meaning:
+- The main missing work is increasingly document stabilization work
+  rather than broad new domain discovery.
 
-Human Dependency.
-
-Including:
-
-- Limited scalability
-- Repetitive operational work
-- Human error
-- Rising labor costs
-- Knowledge fragmentation
+Impact:
+- The next valuable step is controlled normalization,
+  not broad expansion.
 
 ---
 
-## FIND-009
+### FIND-004
+Phase 1 already has a stronger readiness basis
+than earlier drafts.
 
-The core value proposition of Faraz OS is:
+Meaning:
+- There is now a canonical classification layer.
+- Core domains are explicitly treated.
+- Sensitive cross-domain concepts have explicit draft handling.
+- Assumption, Open Question, and Risk are actively used.
 
-Operational Scalability.
-
-The system should enable:
-
-Increase output
-without
-linear increase in headcount.
-
----
-
-## FIND-010
-
-The long-term vision is larger than Faraz Agency and larger than Faraz OS itself.
-
-Faraz OS is the first foundational asset in a future ecosystem dedicated to building and operating AI-native businesses.
-
-## FIND-011
-
-True operational scalability requires moving the foundational operational layer (e.g., initial content planning, structural brief creation) away from human dependency to multiply project capacity without linear headcount growth.
+Impact:
+- The project is more stable for interpretation
+  and safer for controlled cleanup.
 
 ---
 
-## FIND-012
-Because Faraz Agency is the first operational environment and validation layer , the initial configuration must perfectly model digital marketing services while keeping the structural abstractions completely domain-agnostic. 
+### FIND-005
+Normalization is a structurally sensitive task,
+not simple document cleanup.
+
+Meaning:
+- It affects terminology,
+  repeated definitions,
+  section consistency,
+  and cross-domain interpretation.
+- Poor cleanup could create concept drift.
+
+Impact:
+- Normalization needs explicit constraints
+  and careful review.
 
 ---
+
+### FIND-006
+AI-assisted normalization is safer than broad manual editing
+for the current repository state.
+
+Meaning:
+- The work is cross-cutting,
+  repetitive,
+  and easy to damage through inconsistent manual edits.
+- Claude Code is the preferred later execution path
+  if guided by clear rules and human review.
+
+Impact:
+- Normalization should be prepared as a controlled handoff,
+  not casual cleanup.
+
+---
+
+### FIND-007
+The repository currently contains mixed freshness levels
+in root summary files.
+
+Meaning:
+- Some root files are current enough to keep.
+- Some are stale or incomplete.
+- Root summaries should not automatically override canon or snapshots.
+
+Impact:
+- Root files need selective refresh
+  before full trust inside Claude Project.
+
+---
+
+### FIND-008
+Snapshot discipline is essential
+for preserving continuity across sessions.
+
+Meaning:
+- Important decisions,
+  findings,
+  and shifts in interpretation
+  should not remain only in chat.
+- Snapshots provide the chronology layer for repository memory.
+
+Impact:
+- Chat-only reasoning must be promoted into repository files
+  when it materially changes project understanding.
+
+---
+
+### FIND-009
+Phase ownership and operating ownership are distinct concerns.
+
+Meaning:
+- Architecture content belongs to its corresponding phase.
+- Claude collaboration method belongs to Phase 9
+  and repository-level operating rules.
+
+Impact:
+- This reduces confusion between
+  architecture truth
+  and AI operating procedure.
+
+---
+
+### FIND-010
+Current unresolved boundaries are visible enough
+to continue productively without pretending they are solved.
+
+Meaning:
+- Some important areas remain draft,
+  such as Client Brain ownership,
+  Brand placement,
+  Service Agreement ownership,
+  and some aggregate boundaries.
+- Visible ambiguity is currently healthier than false certainty.
+
+Impact:
+- Progress can continue
+  without forced premature finalization.
+
+---
+
+### FIND-011
+Canonical consolidation is now more valuable
+than adding more parallel notes.
+
+Meaning:
+- The repository benefits more from aligning,
+  cleaning,
+  and stabilizing current material
+  than from creating new overlapping summaries.
+
+Impact:
+- Prefer updating existing canonical files
+  over adding new parallel documents.
+
+---
+
+### FIND-012
+Claude Project migration should be curated,
+not raw.
+
+Meaning:
+- Uploading stale root files too early
+  can distort Claude’s understanding of current truth.
+- Canon files and snapshots are safer first imports.
+
+Impact:
+- Migration should happen in stages,
+  beginning with canonical and snapshot material,
+  then refreshed root memory files.
