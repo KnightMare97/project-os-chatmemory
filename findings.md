@@ -214,3 +214,27 @@ Impact:
 - Migration should happen in stages,
   beginning with canonical and snapshot material,
   then refreshed root memory files.
+
+---
+
+### FIND-013
+The risk asymmetry between direct canonical file update
+and proposed draft plus review summary
+strongly favors the proposed draft operating model
+for broad normalization of `domains.md`.
+
+Meaning:
+- In a direct update model, a bad normalization edit corrupts
+  the canonical file before human review can catch it.
+- In a proposed draft model, a bad edit is visible and rejectable
+  before the canonical file is touched.
+- This asymmetry is especially significant for `domains.md`
+  because it is the active Phase 1 source of truth.
+
+Impact:
+- Broad AI-assisted normalization of `domains.md`
+  should follow the proposed draft plus review summary pattern,
+  not direct mutation.
+- This may also be a strong default pattern
+  for future broad structural editing of canonical files,
+  but that has not yet been separately decided.
