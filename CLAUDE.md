@@ -221,6 +221,60 @@ prefer:
 
 ---
 
+## Phase Boundary Rule
+
+Faraz OS currently has two active concerns
+that must remain distinct:
+
+- Phase 1 Domain Discovery owns architecture content,
+  domain interpretation,
+  boundary reasoning,
+  and the canonical meaning of concepts inside `domains.md`.
+
+- Phase 9 Claude Code Operating System owns operating method,
+  session discipline,
+  handoff format,
+  review discipline,
+  and the controlled execution pattern
+  for Claude Project and Claude Code work.
+
+Working rule:
+- Phase 9 may define how architecture work is planned,
+  reviewed,
+  constrained,
+  and handed off.
+- Phase 9 must not introduce new architecture
+  beyond repository evidence.
+- Phase 9 must not silently reinterpret
+  Phase 1 domain truth.
+- Any change to domain meaning,
+  ownership,
+  classification,
+  or architectural boundaries
+  belongs to Phase 1.
+
+Decision test:
+- If the question is about what something is,
+  who owns it,
+  where it belongs,
+  or how domain boundaries should be interpreted,
+  treat it as Phase 1.
+- If the question is about how Claude should analyze,
+  propose,
+  review,
+  constrain,
+  or hand off work,
+  treat it as Phase 9 serving Phase 1.
+
+Escalation rule:
+- If a task appears to mix Phase 1 content decisions
+  with Phase 9 operating-method design,
+  separate the content question
+  from the execution-method question
+  before proceeding.
+
+---
+
 ## Response Behavior
 When assisting on this repository:
 
