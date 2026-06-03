@@ -3215,3 +3215,324 @@ but not yet finally placed.
 - Risk: If revisions to Service Agreement do not propagate clearly, execution may diverge from agreed service reality.
 
 ---
+
+## Service Delivery Draft v1
+
+### Domain Position
+Service Delivery is a Domain responsible for owning and coordinating
+the execution layer of agreed client work inside Faraz OS.
+
+It should represent the Domain that turns agreed service intent
+into active engagement execution,
+delivery coordination,
+progress visibility,
+and completion flow.
+
+Service Delivery is not:
+- CRM
+- Client Success
+- Workforce
+- Finance
+- Knowledge
+- Governance
+
+Service Delivery may reference those Domains,
+but should not absorb their source-of-truth responsibilities.
+
+---
+
+### Responsibilities
+Service Delivery is responsible for:
+- engagement execution coordination
+- active delivery context ownership
+- deliverable planning visibility
+- execution progress tracking
+- task and work state visibility
+- revision loop handling at execution level
+- production readiness tracking
+- handoff coordination across execution steps
+- operational timing visibility
+- delivery exception visibility
+- execution completion state
+- downstream handoff readiness for approval, publishing, or reporting
+
+Service Delivery is not responsible for:
+- lead acquisition ownership
+- CRM client identity ownership
+- active client relationship ownership
+- durable client memory ownership
+- workforce identity ownership
+- financial ledger ownership
+- governance policy ownership
+- provider implementation ownership
+
+---
+
+### What it owns
+Service Delivery owns the source of truth for:
+- engagement execution state
+- engagement progress state
+- execution task state
+- deliverable execution visibility
+- revision-cycle execution state
+- production readiness state
+- delivery exception state
+- execution completion state
+- execution handoff state
+- active Engagement Scope ownership direction
+
+Service Delivery may reference but should not own:
+- CRM Client Account
+- Client Success Relationship
+- Client Brain
+- Human Operator identity records
+- Service Agreement final ownership
+- Finance invoices and payments
+- Governance policy definitions
+- Plugin internals
+- Provider internals
+- secrets and credentials
+
+---
+
+### Candidate Entities
+- Engagement
+- Deliverable
+- Delivery Task
+- Revision Cycle
+- Delivery Milestone
+- Production Run
+- Delivery Exception
+- Handoff Record
+- Execution Status
+- Delivery Schedule Reference
+
+---
+
+### Candidate Aggregates
+These are candidate aggregates only
+and remain subject to refinement.
+
+#### Engagement Aggregate
+Possible contents:
+- Engagement
+- Engagement Scope reference
+- Service Agreement reference
+- execution status
+- delivery milestones
+- active deliverable refs
+- revision state
+- handoff state
+
+#### Deliverable Aggregate
+Possible contents:
+- Deliverable
+- deliverable type
+- current status
+- revision count
+- approval readiness
+- publish readiness
+- linked task refs
+
+#### Revision Aggregate
+Possible contents:
+- Revision Cycle
+- revision trigger
+- change notes
+- current state
+- linked deliverable refs
+- client-facing response refs where relevant
+
+#### Delivery Exception Aggregate
+Possible contents:
+- Delivery Exception
+- exception type
+- severity
+- current state
+- escalation refs
+- blocked work refs
+- resolution summary
+
+---
+
+### Bounded Contexts
+These are candidate Bounded Contexts for Service Delivery.
+
+#### Engagement Management
+Focus:
+- active engagement state
+- execution coordination
+- milestone visibility
+- scope-constrained delivery flow
+
+#### Deliverable Execution
+Focus:
+- deliverable lifecycle
+- production progress
+- completion readiness
+- execution state changes
+
+#### Revision Handling
+Focus:
+- revision loops
+- change execution
+- deliverable rework
+- return-to-ready flow
+
+#### Delivery Coordination
+Focus:
+- internal handoffs
+- timing coordination
+- dependency visibility
+- execution follow-through
+
+#### Delivery Exception Handling
+Focus:
+- blocked work
+- execution issues
+- operational exceptions
+- escalation into governance or client-facing flows where needed
+
+---
+
+### Notes on Key Terms
+
+#### Domain
+Service Delivery is a Domain because it owns a major business responsibility:
+the execution of agreed work.
+
+#### Bounded Context
+Service Delivery likely needs multiple Bounded Contexts
+because engagement management,
+deliverable execution,
+revision handling,
+and delivery exceptions do not all share the exact same language or emphasis.
+
+#### Entity
+Engagement and Deliverable are strong Entity candidates
+because identity continuity matters across state changes,
+revisions,
+handoffs,
+and completion.
+
+#### Aggregate
+Engagement Aggregate is a strong candidate
+if execution consistency must be kept around scope,
+progress,
+deliverables,
+and revision state together.
+
+#### Domain Artifact
+Engagement Scope should currently be treated as a Domain Artifact
+aligned strongly to Service Delivery.
+
+Service Delivery is the strongest current ownership direction
+for Engagement Scope,
+even though other Domains may reference it.
+
+---
+
+### Cross-Boundary Notes
+
+#### Service Delivery and Engagement Scope
+Engagement Scope is not the same thing as the Engagement itself.
+
+A useful working distinction is:
+- Engagement Scope = the active execution-context artifact
+- Engagement = the execution-bearing Entity or Aggregate candidate
+
+#### Service Delivery and Service Agreement
+Service Agreement should constrain Service Delivery,
+but Service Delivery should not automatically own Service Agreement.
+
+A useful working distinction is:
+- Service Agreement = what was agreed
+- Service Delivery = how agreed work is actively executed
+
+#### Service Delivery and Client Success
+Client Success may communicate,
+coordinate,
+and manage client-facing approval or scheduling interactions.
+
+Service Delivery should remain the owner
+of execution context and internal delivery state.
+
+#### Service Delivery and Workforce
+Workforce owns Human Operator identity,
+availability,
+capacity,
+and eligibility.
+
+Service Delivery may reference assigned humans for execution,
+but should not own workforce truth.
+
+#### Service Delivery and Governance
+Governance may define approval checkpoints,
+risk-tiered controls,
+or override rules.
+
+Service Delivery should own execution state,
+not governance policy.
+
+---
+
+### Candidate Inbound Events
+- service agreement activated
+- engagement created
+- engagement scope created
+- engagement scope revised
+- deliverable requested
+- deliverable ready for execution
+- assignment confirmed
+- revision requested
+- approval rejected back to delivery
+- dependency completed
+- workflow exception opened
+- schedule changed
+- client constraint updated
+
+---
+
+### Candidate Outbound Events
+- engagement started
+- engagement delayed
+- deliverable in progress
+- deliverable ready for review
+- revision cycle started
+- revision cycle completed
+- delivery blocked
+- delivery resumed
+- execution handoff prepared
+- engagement completed
+- delivery exception opened
+- delivery exception resolved
+
+---
+
+### Assumptions
+- Assumption: Service Delivery is the strongest current ownership direction for Engagement Scope.
+- Assumption: Service Delivery owns execution context, not CRM identity truth.
+- Assumption: Service Delivery owns execution state, not client relationship truth.
+- Assumption: Workforce remains the source of truth for Human Operator identity and eligibility.
+- Assumption: Service Agreement constrains Service Delivery without yet requiring final ownership here.
+
+---
+
+### Open Questions
+- Open Question: Is Engagement a stronger Aggregate root than Deliverable?
+- Open Question: Should Deliverable and Revision Cycle live under one Aggregate, or remain separate Aggregate candidates?
+- Open Question: How much scheduling logic belongs in Service Delivery versus Workforce versus Client Success?
+- Open Question: Which delivery exceptions remain local to Service Delivery, and which become Governance or Client Success concerns?
+- Open Question: Should execution handoff to approval or publishing be modeled as a dedicated Entity or just event flow?
+- Open Question: Does Engagement Scope remain only a Domain Artifact, or later require stronger aggregate-like rules?
+
+---
+
+### Risks
+- Risk: If Service Delivery absorbs client relationship handling, it will overlap with Client Success.
+- Risk: If Service Delivery absorbs Human Operator truth, it will overlap with Workforce.
+- Risk: If Engagement Scope and Engagement are treated as the same concept, execution modeling may become unstable.
+- Risk: If Service Agreement does not constrain Service Delivery clearly, execution may drift from agreed scope.
+- Risk: If revision handling is not modeled explicitly, execution state and approval state may become mixed.
+
+---
