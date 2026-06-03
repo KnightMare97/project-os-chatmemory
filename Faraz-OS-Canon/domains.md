@@ -2,6 +2,280 @@
 
 ## Core Structural Terms
 
+## Canonical Classification Rules Draft v1
+
+### Purpose
+This section defines the working classification rules
+for Phase 1 Domain Discovery.
+
+Its purpose is to reduce:
+- duplicated definitions
+- inconsistent wording
+- unstable concept classification
+- cross-domain boundary drift
+
+These rules are working rules for `domains.md`
+and may be refined later,
+but they should be treated as the default interpretation
+unless a section explicitly says otherwise.
+
+---
+
+### Domain
+A Domain is a major business responsibility area
+with clear ownership boundaries.
+
+A Domain may contain:
+- Entities
+- Aggregate candidates
+- Bounded Contexts
+- domain events
+- domain-specific responsibilities
+
+Examples in the current draft include:
+- CRM
+- Service Delivery
+- Finance
+- Workforce
+- Knowledge
+- Intelligence
+- Client Success
+- Governance
+
+A Domain is not:
+- a UI area
+- a report
+- a plugin
+- a provider
+- a workflow step
+- a memory object
+
+---
+
+### Bounded Context
+A Bounded Context is a distinct semantic boundary
+inside a Domain.
+
+It exists when one Domain contains multiple internally coherent parts
+with different language,
+rules,
+or model emphasis.
+
+A Bounded Context is not automatically a separate Domain.
+
+Examples:
+- Lead Acquisition Conversion inside CRM
+- Current Client Management inside CRM
+- Relationship Management inside Client Success
+
+---
+
+### Entity
+An Entity is a concept with identity continuity over time.
+
+An Entity should be modeled as an Entity
+when the identity matters more than a single snapshot of attributes.
+
+Examples of likely Entities in the current draft include:
+- Client
+- Lead
+- Client Account
+- Client Relationship
+- Human Operator
+- Invoice
+- Insight
+- Policy
+
+---
+
+### Aggregate
+An Aggregate is a consistency boundary
+around one or more closely related Entities or value-like parts.
+
+During Phase 1,
+most Aggregates should be treated as:
+- candidate aggregates
+- draft consistency boundaries
+
+Unless clearly stabilized,
+the file should prefer the wording:
+- Candidate Aggregate
+- Aggregate candidate
+rather than presenting all Aggregates as final.
+
+---
+
+### Memory Object
+A Memory Object is a reusable context artifact
+that primarily exists to preserve and supply structured memory
+for humans,
+AI,
+or workflows.
+
+A Memory Object is not automatically a Domain Entity
+and is not automatically an Aggregate.
+
+Current working examples:
+- Client Brain
+- Engagement Scope
+
+Current working direction:
+- Client Brain = Memory Object, Shared Service Artifact direction
+- Engagement Scope = Memory Object, Domain Artifact direction
+
+---
+
+### Shared Service
+A Shared Service is a reusable cross-domain service or artifact
+that supports multiple Domains
+without becoming the owner of their business responsibilities.
+
+A Shared Service is not a Domain.
+
+A concept should be called a Shared Service
+only when it clearly serves multiple Domains
+through a stable cross-domain role.
+
+Current working example:
+- Client Brain may be treated as a Shared Service Artifact direction,
+  but this remains draft
+
+---
+
+### Business Artifact
+A Business Artifact is a meaningful business object
+that influences behavior,
+constraints,
+or agreements,
+but whose final ownership or aggregate status
+may still be unresolved.
+
+Current working example:
+- Service Agreement
+
+A Business Artifact is useful when the concept is important,
+but its final Domain or Aggregate placement
+should remain open.
+
+---
+
+### Domain Artifact
+A Domain Artifact is a structured artifact
+strongly aligned to one Domain’s operational meaning
+without yet requiring final Entity or Aggregate commitment.
+
+Current working example:
+- Engagement Scope as a Service Delivery-aligned Domain Artifact
+
+---
+
+### Capability
+A Capability is a reusable business function
+that may serve multiple workflows,
+domains,
+or channels.
+
+A Capability is not a Domain.
+
+Examples from Canon include:
+- Research
+- Strategy
+- Content Creation
+- Publishing
+- Analytics
+- Reporting
+- Lead Scoring
+
+---
+
+### Workflow
+A Workflow is an executable path of work
+across one or more Domains and Capabilities.
+
+A Workflow is not a Domain
+and should not be used as the owner of core business truth.
+
+Examples from Canon include:
+- Lead Client
+- Client Strategy
+- Strategy Production
+- Production Approval
+- Approval Publishing
+- Publishing Reporting
+
+---
+
+### Plugin
+A Plugin is an extension mechanism
+for channels,
+providers,
+or specialized integrations.
+
+A Plugin is not a Domain,
+not a Capability,
+and not a source of business ownership.
+
+---
+
+### Provider
+A Provider is a swappable execution option
+such as an AI model provider,
+media tool,
+external integration,
+or payment platform.
+
+A Provider is not a Domain.
+
+Governance may constrain Provider usage,
+but Provider concepts should remain distinct
+from Domain ownership.
+
+---
+
+### Classification Rules
+Use these default rules unless explicitly overridden:
+
+- If the concept owns a major business responsibility, classify it as a Domain.
+- If the concept is a semantic sub-area inside one Domain, classify it as a Bounded Context.
+- If the concept has identity continuity, classify it as an Entity.
+- If the concept defines a consistency boundary, classify it as a Candidate Aggregate unless clearly finalized.
+- If the concept is reusable structured memory, classify it as a Memory Object.
+- If the concept serves multiple Domains without owning their business truth, classify it as a Shared Service or Shared Service Artifact.
+- If the concept is operationally important but not yet stably placed, classify it as a Business Artifact or Domain Artifact.
+- If the concept is a reusable function across Domains, classify it as a Capability.
+- If the concept is an execution path, classify it as a Workflow.
+- If the concept is an extension mechanism, classify it as a Plugin.
+- If the concept is a swappable external or internal execution option, classify it as a Provider.
+
+---
+
+### Writing Rules
+To keep `domains.md` stable,
+use these writing rules:
+
+- Prefer one canonical definition per important concept.
+- Prefer "Candidate Aggregate" over "Aggregate" when still draft.
+- Prefer "Open Question", "Assumption", and "Risk" labels explicitly.
+- Do not redefine Client Brain, Engagement Scope, or Service Agreement in conflicting ways across multiple sections.
+- If a concept is classified centrally here, later sections should align with that classification or explicitly explain why they differ.
+
+---
+
+### Current Canonical Directions
+The current working directions are:
+
+- Client = Entity in CRM
+- Client Account = Entity or Candidate Aggregate in CRM
+- Client Relationship = Entity or Candidate Aggregate in Client Success
+- Client Brain = Memory Object, Shared Service Artifact direction
+- Engagement Scope = Memory Object, Domain Artifact direction aligned to Service Delivery
+- Human Operator = Entity in Workforce
+- Service Agreement = Business Artifact with unresolved final ownership
+
+These directions remain draft,
+but should be treated as the current baseline
+for interpreting the rest of the file.
+
 ### Domain
 A major business responsibility area of Faraz OS.
 Examples:
