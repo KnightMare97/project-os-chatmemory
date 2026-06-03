@@ -1527,3 +1527,222 @@ or high-risk coordination appears.
 
 ---
 
+## Intelligence (Draft v1)
+
+### Responsibilities
+Intelligence is responsible for interpreting data,
+detecting patterns,
+generating insights,
+producing recommendations,
+and supporting optimization decisions
+for humans and AI workflows.
+
+It is responsible for:
+- performance interpretation
+- pattern detection
+- recommendation generation
+- optimization suggestions
+- anomaly detection
+- trend analysis
+- comparative analysis
+- scoring and prioritization logic
+- decision-support outputs
+- insight generation for workflows and operators
+
+Intelligence is not responsible for:
+- raw source-of-truth ownership for CRM records
+- service execution ownership
+- durable memory ownership
+- client relationship ownership
+- financial ledger ownership
+- workforce identity ownership
+- channel/plugin execution ownership
+
+---
+
+### What it owns
+Intelligence owns the source of truth for:
+- analytical interpretations
+- derived insights
+- recommendations
+- scores
+- prioritization outputs
+- optimization suggestions
+- analytical summaries
+- anomaly and trend findings
+
+Intelligence may reference but should not own:
+- CRM pipeline records
+- Service Delivery execution records
+- Knowledge artifacts
+- Client Brain
+- raw analytics source systems
+- workforce records
+- financial records
+
+---
+
+### Candidate Entities
+- Insight
+- Recommendation
+- Score
+- Analytical Finding
+- Trend Signal
+- Anomaly Signal
+- Optimization Suggestion
+- Priority Model Output
+- Comparative Analysis Result
+
+---
+
+### Candidate Aggregates
+These are candidate aggregates only
+and remain subject to refinement.
+
+#### Insight Aggregate
+Possible contents:
+- Insight
+- source refs
+- interpretation summary
+- confidence
+- time window
+- linked recommendations
+
+#### Recommendation Aggregate
+Possible contents:
+- Recommendation
+- target domain or workflow
+- rationale
+- priority
+- expected impact
+- acceptance state
+
+#### Scoring Aggregate
+Possible contents:
+- Score
+- scoring type
+- input refs
+- score value
+- confidence
+- effective date
+
+---
+
+### Bounded Contexts
+These are candidate bounded contexts for Intelligence.
+
+#### Performance Intelligence
+Focus:
+- performance interpretation
+- KPI analysis
+- outcome analysis
+- trend summaries
+
+#### Recommendation Engine
+Focus:
+- next-best-action suggestions
+- optimization proposals
+- prioritization outputs
+- intervention recommendations
+
+#### Scoring & Prioritization
+Focus:
+- lead scoring
+- task prioritization
+- opportunity ranking
+- risk or urgency scoring
+
+#### Anomaly & Pattern Detection
+Focus:
+- unusual behavior detection
+- recurring pattern detection
+- variance identification
+- emerging signal interpretation
+
+---
+
+### Notes on Key Terms
+
+#### Domain
+Intelligence is a Domain.
+
+It should represent interpretive and analytical logic,
+not just a chart or dashboard.
+
+#### Entity
+Insight is a strong candidate Entity
+because Intelligence should produce meaningful interpreted outputs,
+not just raw numbers.
+
+#### Aggregate
+Recommendation Aggregate may become important
+if recommendation lifecycle,
+acceptance,
+and learning feedback
+need explicit modeling.
+
+#### Bounded Context
+Scoring & Prioritization is especially important
+because Faraz OS already assumes decision support
+and next-step guidance in multiple workflows.
+
+#### Memory Object
+Knowledge stores durable reusable memory.
+
+Intelligence produces new interpretation from data.
+These must remain separate,
+even though Intelligence outputs may later be stored in Knowledge.
+
+---
+
+### Inbound events
+Candidate inbound events to Intelligence:
+- CRM data updated
+- delivery outcome recorded
+- engagement completed
+- lead status changed
+- campaign performance updated
+- reporting data refreshed
+- client response captured
+- human correction recorded
+- workflow exception logged
+- learning request triggered
+
+---
+
+### Outbound events
+Candidate outbound events from Intelligence:
+- insight generated
+- recommendation generated
+- score updated
+- priority changed
+- anomaly detected
+- trend identified
+- optimization opportunity detected
+- decision support prepared
+- intelligence summary published
+
+---
+
+### Risks
+- Intelligence may overlap with Knowledge
+  if derived insight and durable memory are not separated clearly.
+- Intelligence may overlap with Reporting capability
+  if dashboards and interpretation are treated as the same thing.
+- Intelligence may become too broad
+  if every type of automation logic is pushed into it.
+- Confidence and recommendation governance
+  may be weak unless downstream acceptance rules are defined.
+
+---
+
+### Open Questions
+- What belongs in Intelligence
+  versus Analytics / Reporting capability?
+- When does an insight become durable knowledge?
+- Should lead scoring live fully inside Intelligence,
+  or partly inside CRM as domain-local logic?
+- Should optimization suggestions remain advisory only,
+  or may some become auto-applied under policy?
+
+---
