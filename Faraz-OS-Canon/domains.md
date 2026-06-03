@@ -1989,3 +1989,392 @@ Candidate outbound events from Finance:
   versus external accounting providers or tools?
 
 ---
+
+## Governance Draft v1
+
+### Domain Position
+Governance is a Domain responsible for defining, evaluating, enforcing, and auditing the control layer of Faraz OS across workflows, domains, capabilities, plugins, providers, models, agents, and externally visible actions.
+
+Governance exists because Faraz OS is explicitly:
+- AI-first, but not AI-only
+- human-governed
+- risk-tiered
+- event-driven
+- provider-agnostic
+- plugin-ready
+- policy-governed for AI autonomy and external execution
+
+Governance should therefore be modeled as a real Domain,
+not as a thin middleware concern,
+not as a UI permission table,
+and not as an infrastructure-only subsystem.
+
+---
+
+### Responsibilities
+Governance is responsible for:
+- policy definition
+- policy evaluation
+- policy enforcement
+- permission and authorization rules
+- risk-tiered control rules
+- human checkpoint rules
+- approval requirement rules
+- escalation rules
+- override rules
+- safety constraints
+- externally visible action control
+- irreversible action control
+- provider and model usage constraints
+- routing guardrails at policy level
+- extension and plugin compliance control
+- auditability requirements
+- traceability requirements
+- exception handling at governance level
+
+Governance is not responsible for:
+- CRM relationship ownership
+- Service Delivery execution ownership
+- Finance record ownership
+- Workforce identity ownership
+- Knowledge ownership
+- Intelligence ownership
+- Client Success ownership
+- plugin implementation ownership
+- provider implementation ownership
+- secrets storage implementation ownership
+- general workflow business data ownership
+
+---
+
+### What it owns
+Governance owns the source of truth for:
+- governance policies
+- permission rules
+- authorization rules
+- action eligibility rules
+- risk classification rules
+- checkpoint definitions
+- approval requirement definitions
+- escalation definitions
+- override definitions
+- exception definitions
+- safety rules
+- audit requirements
+- traceability requirements
+- policy-level routing constraints
+- extension compliance rules
+- execution control decisions at governance level
+
+Governance may reference but should not own:
+- CRM Client records
+- lead records
+- Service Delivery execution records
+- Engagement Scope
+- Workforce Human Operator records
+- Finance invoices and payments
+- Knowledge artifacts
+- Client Brain
+- provider internals
+- plugin internals
+- raw execution telemetry unless needed for governance decisions
+- secret values
+
+---
+
+### Candidate Entities
+- Policy
+- Permission Rule
+- Authorization Rule
+- Authorization Decision
+- Action Eligibility Rule
+- Risk Rule
+- Checkpoint Definition
+- Approval Requirement
+- Escalation Rule
+- Override Rule
+- Override Record
+- Exception Case
+- Safety Constraint
+- Audit Rule
+- Audit Record
+- Routing Constraint
+- Extension Compliance Record
+
+---
+
+### Candidate Aggregates
+These are candidate aggregates only and remain subject to refinement.
+
+#### Policy Aggregate
+Possible contents:
+- Policy
+- policy type
+- scope
+- conditions
+- enforcement mode
+- status
+- version
+- linked rules
+- exception references
+
+#### Authorization Aggregate
+Possible contents:
+- Authorization Rule
+- subject type
+- action type
+- resource scope
+- conditions
+- allowed or denied outcome
+- validity window
+- linked policy refs
+
+#### Checkpoint Aggregate
+Possible contents:
+- Checkpoint Definition
+- trigger conditions
+- risk basis
+- required human action
+- required actor type
+- escalation path
+- evidence requirements
+
+#### Exception Aggregate
+Possible contents:
+- Exception Case
+- triggering rule refs
+- requested action
+- current state
+- escalation state
+- override state
+- resolution summary
+
+#### Audit Aggregate
+Possible contents:
+- Audit Record
+- actor ref
+- action ref
+- proposed action summary
+- approved action summary
+- executed action summary
+- timestamps
+- trace refs
+- changed by human evidence
+
+#### Routing Governance Aggregate
+Possible contents:
+- Routing Constraint
+- task type
+- allowed models or providers
+- blocked models or providers
+- risk tier
+- cost or quality constraints
+- fallback policy refs
+
+---
+
+### Bounded Contexts
+These are candidate bounded contexts for Governance.
+
+#### Policy Management
+This Bounded Context is responsible for:
+- policy authoring
+- policy lifecycle
+- policy versioning
+- policy status management
+- policy scope definition
+- applicability conditions
+- enforcement mode definition
+
+#### Access and Authorization Control
+This Bounded Context is responsible for:
+- who may do what
+- human permissions
+- agent permissions
+- workflow action permissions
+- plugin action permissions
+- provider usage permissions
+- authorization decisions
+- action eligibility control
+
+#### Risk and Checkpoint Orchestration
+This Bounded Context is responsible for:
+- risk-tiered oversight rules
+- checkpoint triggers
+- human-in-the-loop rules
+- human-on-the-loop rules
+- hybrid execution control rules
+- escalation thresholds
+- irreversible action gating
+- external publication gating
+
+#### Audit and Trace Governance
+This Bounded Context is responsible for:
+- auditability requirements
+- trace completeness rules
+- visible accountability
+- evidence expectations
+- review trace rules
+- approved versus executed trace visibility
+- human modification visibility
+
+#### Extension and Execution Governance
+This Bounded Context is responsible for:
+- plugin governance
+- provider governance
+- model governance
+- extension contract compliance
+- routing constraints at governance level
+- approved execution path constraints
+- runtime versus config-time control boundaries
+
+#### Exception and Override Handling
+This Bounded Context is responsible for:
+- policy exception handling
+- override requests
+- override approvals or rejections
+- emergency bypass control
+- exception resolution tracking
+- governance-level exception auditability
+
+---
+
+### Notes on Key Terms
+
+#### Domain
+Governance is a Domain.
+It owns business responsibility for control,
+not just a technical mechanism.
+
+#### Bounded Context
+A Bounded Context inside Governance should isolate one control concern.
+Policy definition,
+authorization,
+checkpointing,
+audit,
+and exception handling should not all collapse into one vague block.
+
+#### Entity
+Policy is a strong candidate Entity because Faraz OS depends on explicit policy-governed AI execution, extension behavior, and human review control.
+
+#### Aggregate
+Checkpoint Aggregate is important because review is not globally constant in Faraz OS.
+It is triggered by policy,
+risk,
+confidence,
+ambiguity,
+external visibility,
+and irreversibility.
+
+#### Workflow
+Governance is not itself a Workflow.
+It governs whether workflows may proceed,
+pause,
+escalate,
+require review,
+or execute externally.
+
+#### Capability
+Governance is not merely a Capability.
+Capabilities provide reusable business functions,
+while Governance holds business responsibility for the control layer.
+
+#### Plugin
+A Plugin is not Governance.
+A Plugin attaches a channel,
+provider,
+or specialized integration.
+Governance defines the rules under which that Plugin may operate.
+
+#### Provider
+A Provider is not Governance.
+A Provider offers an execution option.
+Governance constrains whether and how that option may be used.
+
+#### Memory Object
+Client Brain is a Memory Object or memory-centric artifact direction,
+not a Governance artifact.
+Governance may constrain access or update rules around it,
+but should not absorb its ownership.
+
+#### Shared Service
+Auth infrastructure,
+audit infrastructure,
+or policy evaluation engines may later be implemented as Shared Services.
+That does not change Governance as the Domain owner of business control rules.
+
+---
+
+### Inbound events
+Candidate inbound events to Governance:
+- workflow execution requested
+- external action requested
+- publish action requested
+- irreversible action requested
+- approval required
+- escalation triggered
+- override requested
+- policy updated
+- permission rule changed
+- routing decision requested
+- low confidence detected
+- ambiguity detected
+- policy-sensitive action detected
+- extension registered
+- provider enabled
+- provider disabled
+- model enabled
+- model disabled
+- suspected policy violation detected
+- audit evidence submitted
+
+---
+
+### Outbound events
+Candidate outbound events from Governance:
+- execution approved
+- execution blocked
+- human checkpoint required
+- approval required
+- escalation required
+- override granted
+- override rejected
+- permission denied
+- authorization granted
+- authorization denied
+- policy violation detected
+- safety constraint triggered
+- routing path restricted
+- extension accepted
+- extension rejected
+- audit trail updated
+- exception case opened
+- exception case resolved
+
+---
+
+### Risks
+- Governance may become a catch-all Domain if policy, auth, audit, routing guardrails, and exception handling are not separated clearly by Bounded Context.
+- Governance may overlap with Workforce if role identity and access control are modeled as the same thing.
+- Governance may overlap with Service Delivery if operational approval artifacts and governance checkpoint policy are mixed.
+- Governance may overlap with Knowledge if policy documents, learnings, and decision memory are treated as the same thing as live governance control.
+- Governance may become too infrastructure-shaped if business control rules are reduced to implementation details only.
+- Provider-agnostic routing may become unsafe if governance-level model and provider constraints are not explicit.
+- Override flows may quietly destroy control integrity if they are not narrow, auditable, and policy-bound.
+- Overdesign risk exists if every future governance nuance is encoded before domain flows stabilize.
+
+---
+
+### Open Questions
+- What is the final boundary between Governance checkpoint policy and domain-local approval artifacts?
+- Should approval requirement definitions live in Governance while approval records live in local Domains or Workflows?
+- How should reviewer, approver, and override authority be split between Workforce and Governance?
+- Is there one unified Policy Entity, or several policy families such as permission policy, checkpoint policy, routing policy, and safety policy?
+- Which actions are always human-gated, and which are conditionally gated by policy and risk tier?
+- How should policy-level routing constraints interact with runtime orchestration and extensibility concerns?
+- Where should audit records live at implementation level while Governance remains the business owner of audit requirements?
+- How much policy should be runtime-configurable versus config-time or deployment-time?
+- Assumption: Governance owns control rules, while execution-owning Domains keep their own operational artifacts.
+- Risk: If this boundary is not kept explicit, Governance may become either too weak to enforce control or too broad to remain bounded.
+
+---
