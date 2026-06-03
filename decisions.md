@@ -195,6 +195,35 @@ Status:
 
 ---
 
+### DEC-011
+Normalization of `domains.md` must produce a proposed normalized draft
+plus a review summary
+before any canonical file replacement occurs.
+
+Meaning:
+- Claude Code should not update `domains.md` directly during normalization.
+- The proposed normalized version should exist as a separate artifact
+  pending human review.
+- The review summary should cover:
+  - what was consolidated and why
+  - what was left unchanged and why
+  - any cases where normalization revealed a possible missing boundary
+    or inconsistency, flagged as Open Question or Risk
+- Human review and explicit approval are required
+  before the proposed draft replaces the canonical file.
+
+Basis:
+- Resolves Q-008.
+- Consistent with `CLAUDE.md` broad-task pattern:
+  plan → constrained implementation → review summary.
+- Consistent with Snapshot-006 DEC-023 direction.
+- Consistent with the `Normalization Pass v1 Plan` constraint rules.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
