@@ -78,7 +78,7 @@ The most important current files include:
 
 - `Faraz-OS-Canon.md`
 - `CLAUDE.md`
-- `Current State.md`
+- `Current-State.md`
 - `open-questions.md`
 - `decisions.md`
 - `findings.md`
@@ -146,9 +146,15 @@ through repository-level operating rules.
 This includes:
 - `CLAUDE.md`
 - session discipline
+- session close-out and sync discipline
 - source-of-truth discipline
 - plan/build/review mode discipline
 - handoff-oriented repository behavior
+
+Execution tracking is mirrored in Linear.
+GitHub remains the source of truth;
+Linear is execution tracking only,
+reconciled against the latest snapshot at session close.
 
 This separates architecture content ownership
 from Claude operating behavior.
