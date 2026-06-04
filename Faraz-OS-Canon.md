@@ -70,7 +70,7 @@
      - Outbound events
   - Governance
 
-Phase 2: Experience Architecture          [ADDED]
+Phase 2: Experience Architecture => experience-architecture.md          [ADDED]
   - Personas
   - Operating Surfaces
   - Portals
@@ -128,7 +128,7 @@ Phase 2: Experience Architecture          [ADDED]
   - Workflow Runtime                 [ADDED]
 
 
-Phase 7: System Architecture Blueprint    [ADDED]
+Phase 7: System Architecture Blueprint  => system-architecture-blueprint.md     [ADDED]
   - Logical Architecture
   - Application Architecture
   - Data Architecture
