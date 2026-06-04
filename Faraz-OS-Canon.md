@@ -70,7 +70,26 @@
      - Outbound events
   - Governance
 
-- Phase 2: Extensibility Model => extensibility.md
+Phase 2: Experience Architecture          [ADDED]
+  - Personas
+  - Operating Surfaces
+  - Portals
+  - Navigation Model
+  - Permission Matrix
+  - Cross-Domain Views
+  - Channel Behaviors
+
+- Phase 3: Capability Map => capabilities.md
+  - Research
+  - Strategy
+  - Content Creation
+  - Video Creation
+  - Publishing
+  - Analytics
+  - Reporting
+  - Lead Scoring
+
+- Phase 4: Extensibility Model => extensibility.md
   - Permission
   - Extension Contracts
   - Plugin Model
@@ -84,25 +103,16 @@
   - Feature Modules
   - Future Domains
 
-- Phase 3: Knowledge & Memory Architecture => memory.md
+- Phase 5: Knowledge & Memory Architecture => memory.md
   - Client Brain
   - Agency Brain
   - Knowledge Base
   - Decision Logs
   - Learnings
   - Context Retrieval
+  - Asset Intelligence               [ADDED]
 
-- Phase 4: Capability Map => capabilities.md
-  - Research
-  - Strategy
-  - Content Creation
-  - Video Creation
-  - Publishing
-  - Analytics
-  - Reporting
-  - Lead Scoring
-
-- Phase 5: Workflow Design => workflows.md
+- Phase 6: Workflow Design => workflows.md
   - Lead → Client
   - Client → Strategy
   - Strategy → Production
@@ -113,15 +123,30 @@
   - Revision Loop
   - Failure/Exception Path
   - Learn → Memory Update
+  - Agent Chains                     [ADDED]
+  - Human Approval Gates             [ADDED]
+  - Workflow Runtime                 [ADDED]
 
-- Phase 6: Puzzle Board Architecture => architecture.md
+
+Phase 7: System Architecture Blueprint    [ADDED]
+  - Logical Architecture
+  - Application Architecture
+  - Data Architecture
+  - AI Architecture
+  - Integration Architecture
+  - Security Architecture
+  - Runtime Architecture
+
+- Phase 8: Puzzle Board Architecture => architecture.md
   - Core Layer
   - Domains Layer
   - Capabilities Layer
   - Plugins Layer
   - Infrastructure Layer
+  - Experience Layer                 [ADDED]
+  - AI Layer                         [ADDED]
 
-- Phase 7: Infrastructure Design => infrastructure.md
+- Phase 9: Infrastructure Design => infrastructure.md
   - Postgres
   - Storage
   - Queues
@@ -130,14 +155,16 @@
   - Authentication
   - Secrets
   - Deployment
+  - Monitoring                       [ADDED]
+  - Observability                    [ADDED]
 
-- Phase 8: Build Roadmap => roadmap.md
+- Phase 10: Build Roadmap => roadmap.md
   - MVP
   - V1
   - V2
   - Future
 
-- Phase 9: Claude Code Operating System => claude-operating-system.md
+- Phase 11: Claude Code Operating System => claude-operating-system.md
   - CLAUDE.md
   - Development Rules
   - Coding Standards
