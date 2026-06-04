@@ -153,6 +153,53 @@ in the appropriate repository file or snapshot.
 
 ---
 
+## Session Close-Out and Sync Discipline
+Faraz OS uses two synchronized tracking layers:
+
+- GitHub repository is the source of truth.
+- Linear is execution tracking only.
+
+GitHub wins on any conflict.
+Linear must never silently diverge from repository truth.
+
+When closing out a session that produced
+any decision, finding, structural change,
+or meaningful progress, do the following
+before the session is considered closed:
+
+1. Create a new snapshot file at:
+   `snapshots/Snapshot-{NNN} - {title}.md`
+   - Use the next sequential zero-padded number
+     after the latest existing snapshot.
+   - Use the established snapshot format:
+     Current Phase, Current Topic, Status,
+     Document Updates, Decisions, Findings,
+     Open Questions, Assumptions, Risks, Next Focus.
+
+2. Update `Current-State.md` to match
+   the new snapshot's reality.
+
+3. Reconcile Linear against the new snapshot:
+   - update issue status, priority, labels,
+     milestones, and relations to reflect
+     the repository's current truth.
+   - flag any deliberate divergence explicitly
+     rather than leaving it silent.
+
+Discipline:
+- Propose the snapshot content and the
+  `Current-State.md` diff for human review
+  before committing, consistent with the
+  draft-plus-review model (DEC-011).
+- Do not push or commit without explicit approval.
+- Do not invent architecture in a snapshot.
+  A snapshot records what happened;
+  it does not finalize unresolved boundaries.
+- Preserve Assumption, Open Question, and Risk
+  markers exactly as they stand.
+
+---
+
 ## Mode Discipline
 Use this default collaboration pattern:
 
