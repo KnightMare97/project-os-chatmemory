@@ -40,15 +40,18 @@ It supports:
 ## Current Architecture Position
 The project is organized by explicit phases.
 
-The canonical phase map is defined in `Faraz-OS-Canon.md`.
+The canonical phase map is defined in `Faraz-OS-Canon.md`
+and currently spans Phase 0 through Phase 11.
 
-The current most active work is centered on:
-- Phase 1 Domain Discovery
-- Phase 9 Claude Code Operating System
+Phase 1 Domain Discovery is complete.
+Its normalized model in `domains.md`
+is the accepted Phase 1 reference.
 
-Phase 1 currently owns the active domain-modeling work.
+The current most active work is:
+- Phase 2 Experience Architecture
 
-Phase 9 currently owns the operating method
+Phase 11 Claude Code Operating System
+currently owns the operating method
 for how Claude collaboration and later Claude Code execution
 should be governed.
 
@@ -93,27 +96,26 @@ special importance should be given to:
 ---
 
 ## Current Phase 1 Position
-Phase 1 Domain Discovery has matured enough
-that the next major expected step
-is a dedicated normalization pass for `domains.md`,
-not broad new domain expansion.
+Phase 1 Domain Discovery is complete.
+Normalization pass v1 on `domains.md`
+has been applied and accepted (see Snapshot-010).
 
-This does not mean all architecture is finalized.
+This does not mean every boundary is finalized.
+Unresolved draft boundaries remain draft
+until separately resolved.
 
-It means the current model is stable enough
-that cleanup,
-deduplication,
-canonicalization,
-and wording alignment
-should now be the primary focus.
-
-`domains.md` remains the active source of truth
-for the Phase 1 domain model.
+`domains.md` is the accepted source of truth
+for the Phase 1 domain model
+and must not be re-normalized or re-discovered
+without a new explicit decision.
 
 ---
 
-## Current Normalization Direction
-Normalization should be treated
+## Normalization Status and Rules
+Normalization pass v1 on `domains.md` is complete
+and accepted (see Snapshot-010).
+
+Any future normalization must continue to be treated
 as a controlled architecture-editing task.
 
 It should:
@@ -137,7 +139,7 @@ with human review.
 
 ---
 
-## Current Phase 9 Position
+## Current Phase 11 Position
 Claude collaboration is now being made more explicit
 through repository-level operating rules.
 
@@ -203,8 +205,14 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-1. finish refreshing the repository root memory files
-2. keep Claude Project input limited to high-signal current files
-3. prepare a clean handoff structure for Claude Project
+1. run a Phase 2 Experience Architecture
+   question-gate and scoping session
+   before producing any content
+   for `experience-architecture.md`
+2. keep Phase 2 scope distinct from
+   Phase 3 Capability Map and Phase 6 Workflow Design
+3. keep Claude Project input limited to high-signal current files
 4. prepare later controlled handoff to Claude Code
-5. continue toward normalization-readiness and operating-system clarity
+5. resolve open question Q-011
+   (Phase 2 ↔ Phase 3 boundary),
+   which blocks Phase 2 scope completion

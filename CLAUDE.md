@@ -93,17 +93,25 @@ Avoid:
 ## Current Project Direction
 The current architecture work remains phase-based.
 
-The most active current work is Phase 1 Domain Discovery.
+The canonical phase map is defined in `Faraz-OS-Canon.md`
+and currently spans Phase 0 through Phase 11.
 
-`domains.md` remains the active source of truth
-for the Phase 1 domain model.
+Phase 1 Domain Discovery is complete.
+Normalization pass v1 on `domains.md` has been
+applied and accepted (see Snapshot-010).
+`domains.md` is the accepted source of truth
+for the Phase 1 domain model and must not be
+re-normalized or re-discovered
+without a new explicit decision.
 
-Phase 1 has progressed to the point
-where normalization is the next major expected step,
-not broad new discovery.
+The most active current work is
+Phase 2 Experience Architecture.
+Phase 2 should begin with a question-gate
+and scoping session before any content is produced
+for `experience-architecture.md`.
 
-Normalization must improve clarity and consistency
-without inventing new architecture.
+Unresolved Phase 1 draft boundaries remain draft
+until separately resolved.
 
 ---
 
@@ -270,15 +278,19 @@ prefer:
 
 ## Phase Boundary Rule
 
-Faraz OS currently has two active concerns
+Faraz OS separates two kinds of concern
 that must remain distinct:
 
-- Phase 1 Domain Discovery owns architecture content,
+- Architecture content phases (Phase 0 through Phase 10)
+  own architecture content,
   domain interpretation,
   boundary reasoning,
-  and the canonical meaning of concepts inside `domains.md`.
+  and the canonical meaning of concepts
+  inside their phase files.
+  Domain truth specifically lives in
+  Phase 1 Domain Discovery and `domains.md`.
 
-- Phase 9 Claude Code Operating System owns operating method,
+- Phase 11 Claude Code Operating System owns operating method,
   session discipline,
   handoff format,
   review discipline,
@@ -286,36 +298,37 @@ that must remain distinct:
   for Claude Project and Claude Code work.
 
 Working rule:
-- Phase 9 may define how architecture work is planned,
+- Phase 11 may define how architecture work is planned,
   reviewed,
   constrained,
   and handed off.
-- Phase 9 must not introduce new architecture
+- Phase 11 must not introduce new architecture
   beyond repository evidence.
-- Phase 9 must not silently reinterpret
-  Phase 1 domain truth.
+- Phase 11 must not silently reinterpret
+  architecture content or domain truth.
 - Any change to domain meaning,
   ownership,
   classification,
   or architectural boundaries
-  belongs to Phase 1.
+  belongs to the owning content phase
+  (domain truth belongs to Phase 1).
 
 Decision test:
 - If the question is about what something is,
   who owns it,
   where it belongs,
   or how domain boundaries should be interpreted,
-  treat it as Phase 1.
+  treat it as an architecture content phase question.
 - If the question is about how Claude should analyze,
   propose,
   review,
   constrain,
   or hand off work,
-  treat it as Phase 9 serving Phase 1.
+  treat it as Phase 11 serving the content phases.
 
 Escalation rule:
-- If a task appears to mix Phase 1 content decisions
-  with Phase 9 operating-method design,
+- If a task appears to mix architecture content decisions
+  with Phase 11 operating-method design,
   separate the content question
   from the execution-method question
   before proceeding.
