@@ -50,6 +50,11 @@ is the accepted Phase 1 reference.
 The current most active work is:
 - Phase 2 Experience Architecture
 
+Phase 2 scope is now defined and human-confirmed
+(see Snapshot-013), and Open Question Q-011 is resolved.
+No Phase 2 content has been written yet;
+`experience-architecture.md` is the next deliverable.
+
 Phase 11 Claude Code Operating System
 currently owns the operating method
 for how Claude collaboration and later Claude Code execution
@@ -215,14 +220,17 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-1. run a Phase 2 Experience Architecture
-   question-gate and scoping session
-   before producing any content
-   for `experience-architecture.md`
+1. write `Faraz-OS-Canon/experience-architecture.md`
+   from the approved Phase 2 scope (Snapshot-013),
+   under plan -> build -> review,
+   in a separate session
 2. keep Phase 2 scope distinct from
-   Phase 3 Capability Map and Phase 6 Workflow Design
-3. keep Claude Project input limited to high-signal current files
-4. prepare later controlled handoff to Claude Code
-5. resolve open question Q-011
-   (Phase 2 ↔ Phase 3 boundary),
-   which blocks Phase 2 scope completion
+   Phase 3 Capability Map and Phase 6 Workflow Design,
+   per the governing boundary test in Snapshot-013
+3. carry the Future Personas placeholder and the deferred
+   navigation sub-detail forward as marked future items
+4. keep Claude Project input limited to high-signal current files
+5. prepare later controlled handoff to Claude Code
+
+Open question Q-011 (Phase 2 ↔ Phase 3 boundary)
+is now resolved (see Snapshot-013).
