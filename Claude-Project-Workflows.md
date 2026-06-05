@@ -17,6 +17,9 @@ It should be used together with:
 - `Faraz-OS-Canon.md`
 - current canon files
 - latest relevant snapshots
+- `workflows/sync-protocol.md`
+  (the canonical executable runbook for
+  Linear ↔ GitHub session close-out and sync)
 
 ---
 

@@ -156,6 +156,10 @@ GitHub remains the source of truth;
 Linear is execution tracking only,
 reconciled against the latest snapshot at session close.
 
+The executable runbook for this reconciliation
+is `workflows/sync-protocol.md`
+(the single canonical Linear ↔ GitHub sync procedure).
+
 This separates architecture content ownership
 from Claude operating behavior.
 
