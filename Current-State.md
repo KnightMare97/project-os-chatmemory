@@ -50,10 +50,17 @@ is the accepted Phase 1 reference.
 The current most active work is:
 - Phase 2 Experience Architecture
 
-Phase 2 scope is now defined and human-confirmed
-(see Snapshot-013), and Open Question Q-011 is resolved.
-No Phase 2 content has been written yet;
-`experience-architecture.md` is the next deliverable.
+Phase 2 scope is defined and human-confirmed
+(see Snapshot-013, DEC-019), and Open Question Q-011 is resolved.
+The first Phase 2 canon write is complete
+(see Snapshot-014):
+`Faraz-OS-Canon/experience-architecture.md` defines
+the Phase 2 framework — purpose, scope, governing boundary
+test, all seven sub-items, non-goals, deferred items, and
+cross-phase references.
+It does not enumerate concrete surfaces, populate the
+permission matrix, or define portal contents.
+Those are later Phase 2 refinements.
 
 Phase 11 Claude Code Operating System
 currently owns the operating method
@@ -88,6 +95,8 @@ The most important current files include:
 - `decisions.md`
 - `findings.md`
 - `snapshots.md`
+- `Faraz-OS-Canon/domains.md`
+- `Faraz-OS-Canon/experience-architecture.md`
 - current relevant files in `Faraz-OS-Canon/`
 - latest relevant files in `snapshots/`
 
@@ -220,17 +229,29 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-1. write `Faraz-OS-Canon/experience-architecture.md`
-   from the approved Phase 2 scope (Snapshot-013),
-   under plan -> build -> review,
-   in a separate session
-2. keep Phase 2 scope distinct from
+1. refine `Faraz-OS-Canon/experience-architecture.md`
+   from framework to populated detail
+   (concrete Operating Surfaces by name,
+   portal contents per persona,
+   populated permission matrix rows and columns,
+   concrete Cross-Domain Views)
+   under plan -> build -> review, in a separate session
+2. reconcile remaining tracker drift surfaced in
+   Snapshot-014 / FIND-023:
+   backfill Q-012 into `open-questions.md`;
+   backfill DEC-012 through DEC-018 into `decisions.md`;
+   backfill FIND-014 through FIND-021 into `findings.md`
+   from their originating snapshots
+3. keep Phase 2 scope distinct from
    Phase 3 Capability Map and Phase 6 Workflow Design,
-   per the governing boundary test in Snapshot-013
-3. carry the Future Personas placeholder and the deferred
-   navigation sub-detail forward as marked future items
-4. keep Claude Project input limited to high-signal current files
-5. prepare later controlled handoff to Claude Code
+   per the governing boundary test in
+   `Faraz-OS-Canon/experience-architecture.md`
+4. carry the Future Personas placeholder and the deferred
+   navigation sub-detail (notification routing, deep-linking)
+   forward as marked future items
+5. keep Claude Project input limited to high-signal current files
+6. prepare later controlled handoff to Claude Code
 
-Open question Q-011 (Phase 2 ↔ Phase 3 boundary)
-is now resolved (see Snapshot-013).
+Open question Q-011 is resolved (see DEC-019 / Snapshot-013).
+Open question Q-013 (AI / agent-surface home) is deferred
+and not blocking Phase 2.

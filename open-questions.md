@@ -217,6 +217,49 @@ during the pass and should be prepared before Claude Code begins.
 
 ---
 
+### Q-011
+RESOLVED — see DEC-019 in
+`snapshots/Snapshot-013 - Phase 2 Experience Architecture Scope Defined.md`.
+
+The Phase 2 ↔ Phase 3 boundary
+and the Permission Matrix question
+are resolved.
+
+Direction:
+- Operator-facing surfaces are in Phase 2 scope.
+- Phase 2 owns where / to whom / how humans interact.
+- Phase 2 does not own human identity (Workforce / Phase 1),
+  capabilities (Phase 3),
+  or authorization rules (Governance / Phase 1).
+- The Phase 2 Permission Matrix is a read-only projection
+  of Governance rules onto the experience layer
+  (rows = personas; columns = surfaces / portals / views;
+  not capabilities).
+- Phase 2 authors no rules.
+
+This question is closed.
+
+---
+
+### Q-013
+What is the exact home of AI / agent-facing surfaces?
+
+Current direction:
+- Likely Phase 7 System Architecture Blueprint (AI Architecture).
+- Possibly relates to Phase 8 AI Layer.
+- Deferred to a later Phase 7 / 8 scoping pass.
+- Not blocking Phase 2.
+- Repo-only; not tracked as an active Linear issue
+  (see Snapshot-013).
+
+Why it matters:
+- This affects where agent-driven and AI-driven surfaces
+  belong in canon.
+- It prevents Phase 2 from silently absorbing
+  AI / agent-facing surfaces.
+
+---
+
 ## Question Review Rule
 Review this file regularly.
 

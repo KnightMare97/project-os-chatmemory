@@ -238,3 +238,26 @@ Impact:
 - This may also be a strong default pattern
   for future broad structural editing of canonical files,
   but that has not yet been separately decided.
+
+---
+
+### FIND-022
+Governance (Phase 1, `domains.md`) owns permission,
+authorization, and policy rules as the source of truth
+and is explicitly modeled as not a UI permission table
+(`domains.md` lines ~2170-2173).
+
+Meaning:
+- The three-altitude permission separation
+  (Phase 1 Governance rules,
+  Phase 4 extension grants,
+  Phase 2 experience projection)
+  has a Phase 1 evidentiary basis.
+- The apparent Phase 2 / Phase 4 permission overlap
+  raised in Q-011 is removed by this finding.
+
+Impact:
+- The Phase 2 Permission Matrix is a read-only projection
+  of Governance rules.
+- Phase 2 authors no permission or authorization rules.
+- Supports DEC-019.

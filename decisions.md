@@ -224,6 +224,84 @@ Status:
 
 ---
 
+### DEC-019
+The Phase 2 Experience Architecture scope
+is defined and human-confirmed,
+and Open Question Q-011 is resolved.
+
+Meaning:
+- Phase 2 designs the human experience layer only,
+  for all human personas.
+  AI / agent-facing surfaces are out of scope
+  (they belong to AI Architecture,
+  Phase 7 likely; see Q-013).
+- Governing boundary test:
+  presentation / surface / navigation → Phase 2;
+  reusable functional ability → Phase 3 Capability Map;
+  ordered cross-step flow and approval gates → Phase 6 Workflow Design.
+- Operator-facing surfaces are in Phase 2 scope.
+  Phase 2 owns where / to whom / how humans interact.
+  Phase 2 does not own human identity (Workforce / Phase 1),
+  capabilities (Phase 3),
+  or authorization rules (Governance / Phase 1).
+- Permission concerns sit at three altitudes:
+  Phase 1 Governance owns authoritative permission and
+  authorization rules;
+  Phase 4 Extensibility owns extension, plugin, and provider
+  capability grants;
+  the Phase 2 Permission Matrix is a read-only projection
+  of Governance rules onto the experience layer
+  (rows = personas;
+  columns = surfaces / portals / views;
+  not capabilities).
+  Phase 2 authors no rules.
+- Locked persona set:
+  Client (external),
+  Contractor (external),
+  Workforce / Operator (internal),
+  Manager (internal),
+  System Administrator (internal),
+  plus a Future Personas placeholder.
+  Contractor and Workforce / Operator are distinct personas.
+- Portal = visual panel per persona group.
+  A Portal contains Operating Surfaces.
+  There is one portal definition per persona group.
+  Multi-role humans receive one composed portal
+  via role-based composition.
+- Operating Surface = functional workspace,
+  reusable across portals.
+- Navigation Model = movement between surfaces inside a persona's
+  composed portal.
+  Notification routing and deep-linking are deferred future sub-detail.
+- Cross-Domain Views = persona-facing presentation and composition
+  of multi-domain information.
+  They consume; they do not own or compute.
+  KPI computation = Phase 3;
+  the dashboard surface that displays it = Phase 2.
+- Channel Behaviors in Phase 2 are narrowly scoped to
+  rendering, preview, and notification UX.
+  Channel integration belongs to Phase 4.
+  Workflow belongs to Phase 6.
+- Phase 2 ↔ Phase 8:
+  Phase 2 is the design source;
+  Phase 8 Puzzle Board "Experience Layer" positions it.
+
+This decision records scope only.
+It does not finalize any Phase 1 domain boundary
+and it does not write Phase 2 canon content by itself.
+
+Basis:
+- Resolves Q-011 (both parts A and B).
+- Recorded in
+  `snapshots/Snapshot-013 - Phase 2 Experience Architecture Scope Defined.md`.
+- Reflected in `Faraz-OS-Canon/experience-architecture.md`
+  at framework level (per Snapshot-014).
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
