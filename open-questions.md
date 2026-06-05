@@ -241,6 +241,33 @@ This question is closed.
 
 ---
 
+### Q-012
+What is the intended boundary between
+Phase 7 System Architecture Blueprint
+and Phase 8 Puzzle Board Architecture?
+
+Current direction:
+- Both appear to cover system-level concerns
+  and need an explicit scope distinction
+  before working content is produced for either.
+- Deferred until Phase 6 is complete.
+- Not tracked as active work.
+- Lives in this file as the system of record;
+  tracked in Linear as `KNI-11`, Canceled with a
+  re-open-after-Phase-6 note (deferral pattern,
+  not a separate status).
+
+Why it matters:
+- This affects how Phase 7
+  (System Architecture Blueprint)
+  and Phase 8 (Puzzle Board Architecture,
+  including the Experience Layer and AI Layer)
+  are scoped and what each owns.
+- It prevents premature finalization of either phase's
+  responsibility before Phase 6 reveals concrete needs.
+
+---
+
 ### Q-013
 What is the exact home of AI / agent-facing surfaces?
 

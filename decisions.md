@@ -224,6 +224,153 @@ Status:
 
 ---
 
+### DEC-012
+The normalization execution checklist
+is appended to the existing
+`Faraz-OS-Canon/Normalization Pass v1 Plan for domains.md`
+rather than created as a parallel file.
+
+Meaning:
+- The checklist lives in one canonical location
+  with the rest of the normalization plan.
+- A parallel "normalization checklist" file is rejected
+  in favor of a minimal-diff append.
+
+Basis:
+- Preferred minimal diff over parallel file creation.
+- Keeps normalization planning and execution constraints
+  in one canonical location.
+- Recorded in Snapshot-009.
+
+Status:
+- Active
+
+---
+
+### DEC-013
+Normalization of `domains.md` is complete.
+
+Meaning:
+- The normalized draft was accepted and applied.
+- `domains.md` reflects the normalized result.
+- Normalization must not be rerun.
+
+Basis:
+- Recorded in Snapshot-010.
+
+Status:
+- Active
+
+---
+
+### DEC-014
+`domains.md` is the current active source of truth
+for Phase 1 Domain Discovery.
+
+Meaning:
+- `domains.md` is canonical for Phase 1.
+- `domains-before-normalize.md` is the archived
+  pre-normalization version and must not be treated
+  as current.
+
+Basis:
+- Recorded in Snapshot-010 (DOC-008, DOC-009).
+
+Status:
+- Active
+
+---
+
+### DEC-015
+`Faraz-OS-Canon.md` is updated to the Phase 0–11 structure.
+
+Meaning:
+- The authoritative phase map spans Phase 0 through Phase 11.
+- All future work must use the updated phase numbering.
+- Prior phase numbering from earlier snapshots is superseded.
+
+Basis:
+- Recorded in Snapshot-010 (DOC-010).
+
+Status:
+- Active
+
+---
+
+### DEC-016
+Session close-out is a standing rule.
+
+Meaning:
+- At the close of any session that produced a decision,
+  finding, structural change, or meaningful progress,
+  a snapshot must be created,
+  `Current-State.md` must be updated,
+  and Linear must be reconciled against the snapshot.
+- GitHub is the source of truth.
+- Linear is execution tracking only.
+- GitHub wins on any conflict.
+
+Basis:
+- Codified in `CLAUDE.md`
+  (Session Close-Out and Sync Discipline section).
+- Recorded in Snapshot-011 (DOC-011).
+- Implemented procedurally in
+  `workflows/sync-protocol.md` (see DEC-018).
+
+Status:
+- Active
+
+---
+
+### DEC-017
+The Claude Code Operating System is canonically Phase 11.
+
+Meaning:
+- Earlier "Phase 9" references in `CLAUDE.md`
+  and `Current-State.md` are superseded.
+- The Phase Boundary Rule distinguishes
+  architecture content phases (Phase 0 through Phase 10)
+  from the Phase 11 operating-method layer.
+- Domain truth still belongs specifically to Phase 1.
+
+Basis:
+- Recorded in Snapshot-011 (DOC-012).
+- Reflected in current `CLAUDE.md` Phase Boundary Rule.
+
+Status:
+- Active
+
+---
+
+### DEC-018
+`workflows/sync-protocol.md` is the single canonical
+procedure for Linear ↔ GitHub reconciliation.
+
+Meaning:
+- Repository writes precede Linear writes.
+- The human review gate sits between the repo draft
+  and any commit.
+- Linear is reconciled only after repo changes are approved.
+- Decisions (`DEC-0NN`) and Findings (`FIND-0NN`)
+  stay repo-only.
+- Only Open Questions, actionable Risks, and work tasks
+  become Linear issues.
+- Deferral is expressed as a `Canceled` Linear issue
+  with a re-open-trigger note, not a separate status.
+- The Linear label taxonomy is locked to the two parent
+  groups `Type` and `Phase`;
+  new labels require an explicit decision.
+
+Basis:
+- Implements DEC-016 (Session Close-Out and Sync Discipline)
+  and DEC-011 (draft-plus-review).
+- Recorded in Snapshot-012 (DOC-015).
+
+Status:
+- Active
+
+---
+
 ### DEC-019
 The Phase 2 Experience Architecture scope
 is defined and human-confirmed,

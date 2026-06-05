@@ -236,22 +236,30 @@ The current recommended next focus is:
    populated permission matrix rows and columns,
    concrete Cross-Domain Views)
    under plan -> build -> review, in a separate session
-2. reconcile remaining tracker drift surfaced in
-   Snapshot-014 / FIND-023:
-   backfill Q-012 into `open-questions.md`;
-   backfill DEC-012 through DEC-018 into `decisions.md`;
-   backfill FIND-014 through FIND-021 into `findings.md`
-   from their originating snapshots
-3. keep Phase 2 scope distinct from
+2. keep Phase 2 scope distinct from
    Phase 3 Capability Map and Phase 6 Workflow Design,
    per the governing boundary test in
    `Faraz-OS-Canon/experience-architecture.md`
-4. carry the Future Personas placeholder and the deferred
+3. carry the Future Personas placeholder and the deferred
    navigation sub-detail (notification routing, deep-linking)
    forward as marked future items
+4. (optional) consider extending
+   `workflows/sync-protocol.md` to formalize
+   tracker-backfill as a standing close-out step
+   (per R-025 / FIND-023 mitigation); would be its own decision
 5. keep Claude Project input limited to high-signal current files
 6. prepare later controlled handoff to Claude Code
 
+Tracker drift surfaced in Snapshot-014 / FIND-023
+is reconciled (see Snapshot-015):
+Q-012, DEC-012 through DEC-018, and FIND-014 through FIND-018
+are now present in the tracker files.
+FIND-019, FIND-020, FIND-021 were deliberately not promoted
+per the trackers' "active, still-relevant" rule;
+they remain in their originating snapshots as historical record.
+
 Open question Q-011 is resolved (see DEC-019 / Snapshot-013).
+Open question Q-012 (Phase 7 ↔ Phase 8) is deferred
+until Phase 6 is complete.
 Open question Q-013 (AI / agent-surface home) is deferred
 and not blocking Phase 2.

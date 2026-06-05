@@ -241,6 +241,93 @@ Impact:
 
 ---
 
+### FIND-014
+Follow-up Discovery Items found during normalization
+should be recorded in the review summary by default.
+
+Meaning:
+- If preserving architectural meaning in the proposed draft
+  requires an explicit marker,
+  the item may also appear in the proposed draft
+  using Draft, Open Question, Risk,
+  or Follow-up Discovery labeling.
+- Silent redesign is not permitted in either case.
+
+Impact:
+- Normalization passes must surface follow-up items
+  rather than absorb them silently
+  into the canonical file.
+
+---
+
+### FIND-015
+Phase 1 Domain Discovery is complete through normalization.
+
+Meaning:
+- `domains.md` contains:
+  - canonical classification rules
+  - all eight core domain sections
+  - boundary decisions
+  - service agreement and brand decision sections
+  - explicit draft markers on all unresolved boundaries
+
+Impact:
+- Phase 1 is the stable reference layer
+  for downstream phase work.
+
+---
+
+### FIND-016
+`Faraz-OS-Canon.md` is aligned with the intended
+Phase 0–11 structure.
+
+Meaning:
+- Two new phases are present:
+  - Phase 2 Experience Architecture
+    → `experience-architecture.md`
+  - Phase 7 System Architecture Blueprint
+    → `system-architecture-blueprint.md`
+- Canon alignment is confirmed complete.
+
+Impact:
+- The canon map is the authoritative phase scaffold
+  for all subsequent work.
+
+---
+
+### FIND-017
+The normalization operating model established through
+DEC-011 and Execution Checklist v1 proved effective.
+
+Meaning:
+- The proposed draft plus review summary pattern
+  kept the canonical file safe throughout the pass.
+
+Impact:
+- This pattern is a strong default for future broad
+  structural editing of canonical files.
+
+---
+
+### FIND-018
+Phase 2 Experience Architecture is the first phase
+after the completed Phase 1.
+
+Meaning:
+- Phase 2 has a canon entry, a filename,
+  and defined sub-items in `Faraz-OS-Canon.md`:
+  Personas, Operating Surfaces, Portals,
+  Navigation Model, Permission Matrix,
+  Cross-Domain Views, Channel Behaviors.
+
+Impact:
+- Phase 2 is the natural next focus after Phase 1.
+- The framework canon write now lives in
+  `Faraz-OS-Canon/experience-architecture.md`
+  (see DEC-019 and Snapshot-014).
+
+---
+
 ### FIND-022
 Governance (Phase 1, `domains.md`) owns permission,
 authorization, and policy rules as the source of truth
