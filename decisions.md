@@ -449,6 +449,79 @@ Status:
 
 ---
 
+### DEC-020
+The Operating Surfaces inventory for Phase 2
+is defined and human-confirmed.
+
+Meaning:
+- **Discovery method.** Persona-driven, starting with
+  Workforce/Operator. Reuse across other personas is then
+  mapped; persona-distinct emerging surfaces become separate
+  inventory entries, not specializations of a parent.
+- **Granularity rule (canon-worthy).** Operating Surfaces
+  are sized at one surface per coherent work-mode,
+  not one per task type.
+- **Naming convention (canon-worthy).** Persona-facing
+  surfaces are persona-prefixed; subject-facing surfaces
+  use distinct subject words rather than persona names.
+- **Persona reuse vocabulary (canon-worthy).** Four modes —
+  **Full** (same surface, same content),
+  **Scoped** (same surface, restricted content),
+  **Distinct surface** (a different surface serves the same
+  intent for that persona and is added to the inventory),
+  **—** (no access).
+- **Scoped marker placement.** Phase 2 records "Scoped" as
+  a marker on the surface↔persona relationship. The rules
+  that define what is scoped come from Phase 1 Governance
+  and are projected via the Permission Matrix.
+  Matrix population remains deferred until Governance rules
+  are concrete.
+- **Renames.**
+  *Client Context Surface* → *Client Brain Surface*
+  (anchors on the Phase 5 Knowledge & Memory concept;
+  eliminates the "Client" subject-vs-persona ambiguity;
+  scope deliberately narrowed to current-client strategic
+  memory).
+  *Workflow Control Panel* → *Agent & Workflow Monitor*
+  (sharper separation from Phase 6 Workflow Design).
+- **Firm inventory (16 surfaces).**
+  Operator-anchored (8): Operator Inbox, Production Workspace,
+  Review Queue, Client Brain Surface, Knowledge Workspace,
+  Agent & Workflow Monitor, Reports & Analytics Surface
+  (classification flag: possibly Cross-Domain View),
+  Lead Workspace.
+  Client persona (4): Client Notifications,
+  Client Approval Queue, Client Deliverable Library,
+  Client Billing / Invoices Surface.
+  Contractor persona (1): Contractor Assignments.
+  System Administrator (3): Admin Knowledge,
+  Workflow & Agent Configuration, Credentials & Integrations.
+- **Flagged (5, deferred).**
+  *Client Profile* (tentative);
+  *Team Performance / Oversight Surface* (possibly
+  Cross-Domain View);
+  *System Configuration / Settings*
+  (depends on Phase 4 / Phase 9 maturity);
+  *Operator-finance gap*;
+  *Onboarding / first-time-use surfaces*.
+
+This decision records scope only.
+It does not modify `Faraz-OS-Canon/experience-architecture.md`,
+does not finalize any Phase 1 domain boundary,
+does not populate the Permission Matrix,
+and does not enumerate Portals or Cross-Domain Views.
+
+Basis:
+- Captured in `brainstorms/2026-06-06-phase-2-operating-surfaces.md`.
+- Recorded in Snapshot-016.
+- Builds on DEC-019 / Snapshot-013 (Phase 2 scope) and
+  Snapshot-014 (framework canon write).
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

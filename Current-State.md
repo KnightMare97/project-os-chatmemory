@@ -60,7 +60,18 @@ test, all seven sub-items, non-goals, deferred items, and
 cross-phase references.
 It does not enumerate concrete surfaces, populate the
 permission matrix, or define portal contents.
-Those are later Phase 2 refinements.
+
+The Operating Surfaces sub-item is now scoped
+(see Snapshot-016 / DEC-020):
+the inventory is 16 firm + 5 flagged surfaces;
+the granularity rule, the persona reuse vocabulary
+(Full / Scoped / Distinct surface / —),
+and the naming convention are canon-worthy.
+Two renames decided:
+*Client Context Surface* → *Client Brain Surface*;
+*Workflow Control Panel* → *Agent & Workflow Monitor*.
+The canon write for the Operating Surfaces section
+is the next deliverable.
 
 Phase 11 Claude Code Operating System
 currently owns the operating method
@@ -229,13 +240,15 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-1. refine `Faraz-OS-Canon/experience-architecture.md`
-   from framework to populated detail
-   (concrete Operating Surfaces by name,
+1. write the Operating Surfaces section of
+   `Faraz-OS-Canon/experience-architecture.md`
+   from the approved scope (Snapshot-016 / DEC-020),
+   under plan -> build -> review, in a separate session.
+   After that, sequence the remaining KNI-14 sub-items:
    portal contents per persona,
-   populated permission matrix rows and columns,
-   concrete Cross-Domain Views)
-   under plan -> build -> review, in a separate session
+   then concrete Cross-Domain Views.
+   Permission Matrix population remains deferred until
+   Phase 1 Governance rules are concrete.
 2. keep Phase 2 scope distinct from
    Phase 3 Capability Map and Phase 6 Workflow Design,
    per the governing boundary test in

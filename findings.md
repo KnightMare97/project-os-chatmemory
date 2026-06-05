@@ -348,3 +348,27 @@ Impact:
   of Governance rules.
 - Phase 2 authors no permission or authorization rules.
 - Supports DEC-019.
+
+---
+
+### FIND-024
+System Administrator surface count is growing relative
+to other personas in the Phase 2 Operating Surfaces
+inventory (DEC-020): 3 firm surfaces plus 1 flagged,
+on top of full reuse of *Agent & Workflow Monitor*.
+
+Meaning:
+- Admin work is genuinely multi-headed (knowledge,
+  workflow authoring, integration management,
+  system configuration).
+- The current shape is defensible, but the surface count
+  is disproportionate to other personas.
+
+Impact:
+- Flagged as a potential later refactor candidate
+  (for example, merging some admin surfaces, or splitting
+  System Administrator into sub-personas if the count
+  keeps growing).
+- Informational only; no action this session.
+- Supports the deferred *System Configuration / Settings*
+  flag in DEC-020.
