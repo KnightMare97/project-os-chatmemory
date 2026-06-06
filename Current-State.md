@@ -120,6 +120,25 @@ item. Three Operating-Surface flags remain (Client Profile,
 System Configuration / Settings, Onboarding). KNI-14 is unchanged
 — only the deferred Permission Matrix population remains.
 
+Phase 2 sub-item status (7 canon sub-items):
+- Populated (4): Personas (with the Future Personas placeholder
+  carried), Operating Surfaces, Portals, Cross-Domain Views.
+- Framework only, unblocked-but-unstarted: Navigation Model
+  (core surface-movement model; depends only on the now-populated
+  surfaces and portals; its notification-routing and deep-linking
+  sub-detail stays separately deferred).
+- Framework only, soft-blocked for per-channel population:
+  Channel Behaviors (channel-agnostic patterns may be writable
+  now, but naming behaviors per channel depends on the Phase 4
+  Extensibility Channel Model becoming concrete).
+- Structure-defined, blocked: Permission Matrix (population
+  requires concrete Phase 1 Governance rules; the cross-phase
+  dependency is tracked as Q-014).
+- Parked flags (Operating Surfaces): Client Profile, System
+  Configuration / Settings, Onboarding.
+
+Phase 2 is therefore 4-of-7 populated, not near-complete.
+
 Phase 11 Claude Code Operating System
 currently owns the operating method
 for how Claude collaboration and later Claude Code execution
@@ -287,12 +306,19 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-1. KNI-14's content sub-items are complete (Operating Surfaces,
-   Portal contents, Cross-Domain Views all written to canon —
-   Snapshot-017, Snapshot-018, Snapshot-020). The only remaining
-   KNI-14 item is the Permission Matrix population, which stays
-   deferred until Phase 1 Governance rules in `domains.md` are
-   concrete.
+1. Phase 2 remaining work, now made visible (KNI-14's content
+   sub-items — Operating Surfaces, Portal contents, Cross-Domain
+   Views — are written: Snapshot-017 / 018 / 020):
+   - Navigation Model is the actionable next content (unblocked;
+     core surface-movement model, excluding the deferred
+     notification-routing / deep-linking sub-detail).
+   - Channel Behaviors is soft-blocked for per-channel population
+     on the Phase 4 Extensibility Channel Model.
+   - Permission Matrix population is blocked on concrete Phase 1
+     Governance rules (cross-phase dependency Q-014); it remains
+     KNI-14's open item, which keeps KNI-14 In Progress.
+   - The three Operating-Surface flags (Client Profile, System
+     Configuration / Settings, Onboarding) stay parked.
 2. keep Phase 2 scope distinct from
    Phase 3 Capability Map and Phase 6 Workflow Design,
    per the governing boundary test in

@@ -372,3 +372,28 @@ Impact:
 - Informational only; no action this session.
 - Supports the deferred *System Configuration / Settings*
   flag in DEC-020.
+
+---
+
+### FIND-025
+Phase 2 Experience Architecture is 4-of-7 canon sub-items
+populated, not near-complete. Prior trackers had read
+"KNI-14 content sub-items complete" as near-complete Phase 2.
+
+Meaning:
+- Populated (4): Personas, Operating Surfaces, Portals,
+  Cross-Domain Views.
+- Framework only: Navigation Model (unblocked-but-unstarted)
+  and Channel Behaviors (soft-blocked for per-channel
+  population on the Phase 4 Channel Model; channel-agnostic
+  patterns may be writable before then).
+- Structure-defined but blocked: Permission Matrix
+  (blocked on concrete Phase 1 Governance rules; Q-014).
+
+Impact:
+- The remaining Phase 2 work is now visible:
+  Navigation Model is actionable; Channel Behaviors waits on
+  Phase 4; Permission Matrix waits on Phase 1 Governance.
+- Recording / hygiene correction only; no canon content was
+  written and no flag was resolved (Client Profile, System
+  Configuration / Settings, Onboarding stay flagged).

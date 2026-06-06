@@ -287,6 +287,41 @@ Why it matters:
 
 ---
 
+### Q-014
+What concrete Phase 1 Governance rules are required
+to populate the Phase 2 Permission Matrix,
+and when do they become available?
+
+Current direction:
+- The Phase 2 Permission Matrix is structurally defined
+  (rows = personas; columns = surfaces / portals / views;
+  a read-only projection of Governance rules),
+  but it cannot be populated until Phase 1 Governance
+  authorization and permission rules in `domains.md`
+  are concrete.
+- This is a cross-phase dependency:
+  Permission Matrix population is blocked on Phase 1 Governance.
+- Trigger: reopening Phase 1 Governance
+  (making its permission / authorization rules concrete)
+  is what unblocks Permission Matrix population.
+- Deferred; not active work.
+- The Permission Matrix population work itself remains
+  in `KNI-14` (In Progress, blocked).
+- This dependency lives in this file as the system of record;
+  tracked in Linear as a separate issue,
+  Canceled with a reopen-when-Phase-1-Governance-rules-concrete
+  note (deferral pattern, not a separate status).
+
+Why it matters:
+- It prevents Phase 2 from authoring permission rules
+  (which belong to Phase 1 Governance)
+  merely to populate the matrix.
+- It makes the Phase 2 -> Phase 1 dependency explicit,
+  so the Permission Matrix is populated
+  only when Governance truth exists.
+
+---
+
 ## Question Review Rule
 Review this file regularly.
 
