@@ -14,10 +14,10 @@ and how their experience differs per channel.
 This file is canon for Phase 2.
 It records the framework,
 enumerates the firm inventory of concrete Operating Surfaces,
-and enumerates portal contents per persona.
-It does not populate the permission matrix
-or enumerate concrete cross-domain views.
-Those refinements are deferred to later Phase 2 work.
+enumerates portal contents per persona,
+and enumerates the concrete Cross-Domain Views.
+It does not populate the permission matrix.
+Permission matrix population is deferred to later Phase 2 work.
 
 ---
 
@@ -31,12 +31,14 @@ The Operating Surfaces section is populated
 with the firm sixteen-surface inventory
 and its canon-worthy rules
 (see DEC-020 / Snapshot-016).
-The Portals section now enumerates
+The Portals section enumerates
 portal contents per persona,
 as a membership and reuse-mode projection
 of that inventory.
-The Permission Matrix and concrete Cross-Domain Views
-remain unpopulated.
+The Cross-Domain Views section now enumerates
+the seven firm views and their canon-worthy rules
+(see DEC-022 / Snapshot-019).
+The Permission Matrix remains unpopulated.
 
 No Phase 1 domain truth,
 ownership,
@@ -231,7 +233,7 @@ they are carried in Open and Deferred Items, not here.
 | 4 | Client Brain Surface | Operator | Manager Full; Contractor Scoped (assigned client) |
 | 5 | Knowledge Workspace | Operator | Manager Full; Contractor Scoped (engagement-relevant); System Administrator → Distinct (*Admin Knowledge*) |
 | 6 | Agent & Workflow Monitor | Operator | Manager Full or Scoped; System Administrator Full |
-| 7 | Reports & Analytics Surface | Operator | Manager Full; Contractor Scoped; Client Scoped — *flag: possibly a Cross-Domain View* |
+| 7 | Reports & Analytics Surface | Operator | Manager Full; Contractor Scoped; Client Scoped — hosts the Performance & Analytics View and Team Oversight View (see Cross-Domain Views) |
 | 8 | Lead Workspace | Operator | Manager Full; Contractor — |
 | 9 | Client Notifications | Client | — |
 | 10 | Client Approval Queue | Client | — |
@@ -262,10 +264,10 @@ the granularity rule, the naming convention,
 the persona reuse vocabulary,
 and the firm inventory of sixteen surfaces above.
 
-It does not populate the Permission Matrix,
-name portal contents per persona,
-or enumerate concrete Cross-Domain Views.
-The five flagged surfaces remain flagged
+It does not populate the Permission Matrix.
+Portal contents per persona and Cross-Domain Views
+are defined in their own sections, not here.
+The remaining flagged surfaces stay flagged
 in Open and Deferred Items
 and must not be silently resolved.
 
@@ -318,7 +320,7 @@ defined in the Operating Surfaces section
 | Client Brain Surface | Full | primary persona |
 | Knowledge Workspace | Full | primary persona |
 | Agent & Workflow Monitor | Full | primary persona |
-| Reports & Analytics Surface | Full | carries the possibly-Cross-Domain-View flag |
+| Reports & Analytics Surface | Full | hosts the Performance & Analytics View and Team Oversight View (see Cross-Domain Views) |
 | Lead Workspace | Full | primary persona |
 
 #### Manager portal
@@ -336,7 +338,9 @@ defined in the Operating Surfaces section
 Projection note: the Manager portal does not include Production Workspace.
 The inventory assigns that surface to Operator (Full) and Contractor (Scoped) only.
 This is a faithful projection of the inventory, not a new exclusion decision.
-Pending / flagged: *Team Performance / Oversight Surface* — not added.
+The former *Team Performance / Oversight Surface* flag is resolved
+(DEC-022) to the Team Oversight View, a Cross-Domain View hosted on
+the Manager's Reports & Analytics Surface — not a standalone surface.
 
 #### Contractor portal
 
@@ -491,11 +495,6 @@ A Cross-Domain View is a persona-facing presentation
 that composes information from multiple domains
 onto a single surface for a human.
 
-Example of the intent (not an enumeration of concrete views):
-- a manager view that composes information from CRM,
-  Service Delivery,
-  and Finance
-
 ### What Cross-Domain Views are
 Cross-Domain Views are presentation and composition.
 They consume multi-domain information for the human.
@@ -514,6 +513,111 @@ For metrics and KPIs that appear on dashboards:
 
 The altitude rule is presents / computes / owns,
 held in that order across Phase 2, Phase 3, and Phase 1.
+
+### Granularity Rule
+Cross-Domain Views are sized at
+one view per coherent persona decision-context,
+composed from a stable domain-set.
+
+A view corresponds to a decision or oversight question
+a persona is trying to answer
+(for example, "understand this client",
+"oversee the team", "read performance"),
+not to each individual metric or domain slice.
+This keeps views at presentation altitude
+and prevents the inventory from fragmenting
+per domain-combination or per KPI cluster.
+
+### Naming Convention
+Cross-Domain Views are named by their decision-context or subject,
+with a "View" suffix (for example, Client Brain View,
+Team Oversight View, Engagement Health View).
+A persona word is used only when the composition
+is persona-specific (for example, Client Engagement Summary View).
+
+### Surface and View relationship
+A Cross-Domain View is a named multi-domain composition
+rendered on an Operating Surface.
+A single Operating Surface may host more than one view.
+A view is not itself a portal entry;
+the host surface is the portal entry,
+and the view is the composition it presents.
+
+### View Inventory
+The following seven Cross-Domain Views are the firm inventory
+for Phase 2, defined and human-confirmed
+(see DEC-022 / Snapshot-019).
+Each row names the view, the persona decision-context it serves,
+the domains it composes, its host Operating Surface,
+and its primary persona.
+
+| # | View | Decision-context | Domains composed | Host surface | Primary persona |
+|---|------|------------------|------------------|--------------|-----------------|
+| 1 | Client Brain View | understand this client | Client Brain (Phase 5) + CRM + Service Delivery + Client Success + Finance + Brand | Client Brain Surface | Operator (Manager full; Contractor scoped) |
+| 2 | Lead Context View | understand this lead | CRM + Intelligence (lead scoring) + Client Success | Lead Workspace | Operator (Manager full) |
+| 3 | Performance & Analytics View | read performance | Intelligence + Finance + Service Delivery + CRM | Reports & Analytics Surface | Operator / Manager (Contractor / Client scoped) |
+| 4 | Team Oversight View | oversee the team | Workforce + Service Delivery + Client Success + Intelligence | Reports & Analytics Surface (manager scope) | Manager |
+| 5 | Engagement Health View | is this engagement healthy / profitable? | Service Delivery + Finance + Client Success + Workforce | deferred (DEC-020 follow-up) | Operator / Manager |
+| 6 | Client Engagement Summary View | how is my engagement going? | Service Delivery + Finance + Client Success | deferred (DEC-020 follow-up) | Client |
+| 7 | Contractor Assignment-in-Context View | my assigned work in context | Workforce + Service Delivery + Client Brain (scoped) + Knowledge | Contractor Assignments | Contractor |
+
+The **Reports & Analytics Surface hosts two distinct views**
+— the Performance & Analytics View and the Team Oversight View —
+kept separately named so the two compositions do not collapse
+into one.
+
+System Administrator has no Cross-Domain View.
+The System Administrator surfaces are configuration and management
+at single-domain Governance / Extensibility altitude,
+not multi-domain human compositions.
+
+The inventory references other phases at reference altitude only,
+without reinterpreting their ownership.
+Views consume multi-domain information;
+they do not own it (Phase 1) or compute it (Phase 3).
+The altitude rule is presents / computes / owns.
+The Intelligence domain (Phase 1) owns derived insights and scores
+as source of truth, while Phase 3 owns computation;
+a Cross-Domain View consumes those outputs
+and does not resolve that Phase 1 / Phase 3 boundary,
+which is upstream of Phase 2.
+Which personas are exposed to which view
+is not decided here; entitlement is deferred
+to the Permission Matrix (see that section).
+
+### Flag resolutions
+Two previously flagged Operating Surfaces are resolved here:
+
+- **Reports & Analytics Surface → both.**
+  It remains the firm Operating Surface from DEC-020 (unchanged)
+  and hosts two Cross-Domain Views
+  (the Performance & Analytics View and the Team Oversight View).
+- **Team Performance / Oversight Surface → pure Cross-Domain View.**
+  It is the Team Oversight View,
+  hosted on the Manager's Reports & Analytics Surface.
+  It is not a standalone Operating Surface
+  and is removed from the flagged-surface list.
+
+### Deferred and flagged
+- The host surfaces for the Engagement Health View
+  and the Client Engagement Summary View are deferred
+  as a DEC-020 follow-up
+  (a possible new surface, or scoped reuse of an existing surface).
+- The operator-finance gap (DEC-020) remains flagged.
+  The Engagement Health View names the composition
+  that will address it,
+  but the view's host and the gap's resolution are deferred.
+
+### Scope of definition in this file
+This file defines the Cross-Domain View concept,
+the granularity rule, the naming convention,
+the surface-and-view relationship,
+and the firm inventory of seven views above.
+
+It does not populate the Permission Matrix,
+decide the deferred host surfaces,
+or assign which personas are entitled to which view.
+Entitlement remains deferred to the Permission Matrix.
 
 ---
 
@@ -583,9 +687,8 @@ They are not designed in this pass.
 The following enumerations are deferred to later Phase 2 refinement:
 
 - populated permission matrix rows and columns
-- concrete Cross-Domain Views by name
 
-These items require additional explicit decisions
+This item requires additional explicit decisions
 and must not be introduced silently.
 
 The firm Operating Surfaces inventory
@@ -593,28 +696,33 @@ is no longer deferred; it is enumerated
 in the Operating Surfaces section above.
 Portal contents per persona are likewise no longer deferred;
 they are enumerated in the Portals section above.
+The Cross-Domain Views are likewise no longer deferred;
+they are enumerated in the Cross-Domain Views section above.
 
 ### Flagged — Operating Surfaces carried forward
-Five Operating Surfaces are flagged, not firm,
+Four Operating Surfaces are flagged, not firm,
 and are deferred until a separate explicit decision.
 They must not be silently resolved into the firm inventory:
 
 - **Client Profile** (Client persona) — tentative;
   needs later confirmation that it is a real surface
   and not absorbed by other Client-persona surfaces.
-- **Team Performance / Oversight Surface** (Manager) —
-  possibly a Cross-Domain View;
-  resolution belongs to the Cross-Domain Views sub-session.
 - **System Configuration / Settings** (System Administrator) —
   depends on Phase 4 Extensibility / Phase 9 Infrastructure maturity
   before its real shape can be named.
 - **Operator-finance gap** — the operator's view of
-  engagement revenue, contractor payment status, and similar;
-  currently absorbed by Client Brain Surface
-  and Reports & Analytics Surface;
-  may need its own surface later.
+  engagement revenue, contractor payment status, and similar.
+  The Engagement Health View (see Cross-Domain Views)
+  names the composition that will address it,
+  but the view's host surface and the gap's resolution
+  are deferred (DEC-020 follow-up); the gap stays flagged.
 - **Onboarding / first-time-use surfaces** — none named
   for any persona; may be a Phase 2 oversight or out of scope; defer.
+
+The previously flagged *Team Performance / Oversight Surface*
+is resolved (DEC-022): it is the Team Oversight View,
+a Cross-Domain View hosted on the Manager's
+Reports & Analytics Surface — not a standalone surface.
 
 Informational (FIND-024):
 the System Administrator surface count is growing
@@ -686,6 +794,9 @@ Scope and definitions in this file derive from:
   and the persona-to-portal rule (DEC-019),
   produced under plan → build → review
   and recorded in DEC-021 / Snapshot-018
+- the Cross-Domain Views inventory and rules derive from DEC-022,
+  recorded in Snapshot-019 and captured in
+  `brainstorms/2026-06-06-phase-2-cross-domain-views.md`
 - the Phase 2 sub-item list in `Faraz-OS-Canon.md`
 - Phase 1 references in `Faraz-OS-Canon/domains.md`
 
