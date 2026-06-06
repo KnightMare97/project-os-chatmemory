@@ -522,6 +522,51 @@ Status:
 
 ---
 
+### DEC-021
+Portal contents per persona for Phase 2 are defined
+and human-confirmed.
+
+Meaning:
+- For each of the five locked personas (Client, Contractor,
+  Workforce / Operator, Manager, System Administrator), the
+  Portals section of `experience-architecture.md` enumerates
+  which Operating Surfaces the persona's portal contains
+  and the reuse mode for each
+  (Full / Scoped / Distinct surface / —).
+- This is a projection of the DEC-020 Operating Surfaces
+  inventory at membership + reuse-mode altitude.
+  Reuse modes are taken verbatim from the inventory,
+  including the disjunctive "Full or Scoped" for the Manager
+  view of Agent & Workflow Monitor.
+- Built from the 16 firm surfaces only. All 16 appear in at
+  least one portal. The 5 flagged surfaces remain flagged and
+  are noted as pending per portal where relevant; none added.
+- Faithful-projection rule: where the inventory assigns no mode
+  to a persona, the portal omits that surface (for example,
+  Manager has no Production Workspace; Contractor has no Lead
+  Workspace). These are projections, not new exclusion decisions.
+- The projection is not the Permission Matrix. Authoritative
+  per-surface entitlement, and the resolution of reuse mode when
+  a surface is reached via more than one role, come from Phase 1
+  Governance and are projected via the Permission Matrix
+  (population deferred until Governance rules are concrete).
+- Altitude bound: portal contents stop at membership + reuse
+  mode. Surface ordering, landing/primary surface, and grouping
+  are not introduced (they belong to the Navigation Model / UI).
+
+Basis:
+- Builds on DEC-019 (persona-to-portal rule) and DEC-020
+  (Operating Surfaces inventory).
+- Produced as plan-then-write (the approved plan was the scoping
+  artifact; no separate grill-me brainstorm).
+- Recorded in
+  `snapshots/Snapshot-018 - Phase 2 Portal Contents Written.md`.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

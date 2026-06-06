@@ -76,6 +76,16 @@ per persona and concrete Cross-Domain Views remain deferred.
 This was execution of DEC-020 (Snapshot-016); it produced no
 new decisions, findings, or open questions.
 
+Portal contents per persona are now written into canon as well
+(see Snapshot-018 / DEC-021): the Portals section enumerates, for
+each of the five locked personas, which Operating Surfaces its
+portal contains and in what reuse mode — a membership and
+reuse-mode projection of the DEC-020 inventory, built from the 16
+firm surfaces only. The 5 flagged surfaces remain flagged and are
+noted as pending per portal where relevant. The Permission Matrix
+and concrete Cross-Domain Views remain unpopulated; multi-role
+reuse-mode overlap is deferred to the Permission Matrix.
+
 Phase 11 Claude Code Operating System
 currently owns the operating method
 for how Claude collaboration and later Claude Code execution
@@ -243,14 +253,12 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-1. sequence the remaining KNI-14 sub-items, in order:
-   portal contents per persona,
-   then concrete Cross-Domain Views
-   (which will resolve the Reports & Analytics Surface
-   and Team Performance / Oversight Surface flags).
-   The Operating Surfaces section is now written
-   (Snapshot-017). Permission Matrix population remains
-   deferred until Phase 1 Governance rules are concrete.
+1. the sole remaining KNI-14 sub-item is concrete Cross-Domain
+   Views (which will resolve the Reports & Analytics Surface and
+   Team Performance / Oversight Surface flags). The Operating
+   Surfaces and Portal Contents sections are now written
+   (Snapshot-017, Snapshot-018). Permission Matrix population
+   remains deferred until Phase 1 Governance rules are concrete.
    Revisit the 5 flagged Operating Surfaces in their owning
    sessions; do not silently fold them into the firm inventory.
 2. keep Phase 2 scope distinct from

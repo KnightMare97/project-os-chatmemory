@@ -13,9 +13,9 @@ and how their experience differs per channel.
 
 This file is canon for Phase 2.
 It records the framework,
-and enumerates the firm inventory of concrete Operating Surfaces.
-It does not populate the permission matrix,
-name portal contents per persona,
+enumerates the firm inventory of concrete Operating Surfaces,
+and enumerates portal contents per persona.
+It does not populate the permission matrix
 or enumerate concrete cross-domain views.
 Those refinements are deferred to later Phase 2 work.
 
@@ -27,12 +27,16 @@ Phase 2 scope is defined and human-confirmed
 
 This file began as the framework canon of Phase 2 content
 (Snapshot-014).
-The Operating Surfaces section is now populated
+The Operating Surfaces section is populated
 with the firm sixteen-surface inventory
 and its canon-worthy rules
 (see DEC-020 / Snapshot-016).
-The Permission Matrix, portal contents per persona,
-and concrete Cross-Domain Views remain unpopulated.
+The Portals section now enumerates
+portal contents per persona,
+as a membership and reuse-mode projection
+of that inventory.
+The Permission Matrix and concrete Cross-Domain Views
+remain unpopulated.
 
 No Phase 1 domain truth,
 ownership,
@@ -290,10 +294,121 @@ Identity-to-portal is role-based composition.
 - A Portal is not an integration boundary.
   Channel integration belongs to Phase 4.
 
+### Portal Contents per Persona
+This section enumerates, for each locked persona,
+the Operating Surfaces its portal contains
+and the reuse mode for each.
+It is a projection of the firm Operating Surfaces inventory
+(see DEC-020 / Snapshot-016 and the Operating Surfaces section above).
+It is built from the sixteen firm surfaces only;
+the five flagged surfaces are noted as pending where relevant
+and are not added.
+
+The reuse mode column uses the persona reuse vocabulary
+defined in the Operating Surfaces section
+(Full / Scoped / Distinct surface / —).
+
+#### Operator portal
+
+| Surface | Reuse mode | Note |
+|---------|------------|------|
+| Operator Inbox | Full | primary persona |
+| Production Workspace | Full | primary persona |
+| Review Queue | Full | primary persona |
+| Client Brain Surface | Full | primary persona |
+| Knowledge Workspace | Full | primary persona |
+| Agent & Workflow Monitor | Full | primary persona |
+| Reports & Analytics Surface | Full | carries the possibly-Cross-Domain-View flag |
+| Lead Workspace | Full | primary persona |
+
+#### Manager portal
+
+| Surface | Reuse mode | Note |
+|---------|------------|------|
+| Operator Inbox | Full | |
+| Review Queue | Full | |
+| Client Brain Surface | Full | |
+| Knowledge Workspace | Full | |
+| Agent & Workflow Monitor | Full or Scoped | |
+| Reports & Analytics Surface | Full | |
+| Lead Workspace | Full | |
+
+Projection note: the Manager portal does not include Production Workspace.
+The inventory assigns that surface to Operator (Full) and Contractor (Scoped) only.
+This is a faithful projection of the inventory, not a new exclusion decision.
+Pending / flagged: *Team Performance / Oversight Surface* — not added.
+
+#### Contractor portal
+
+| Surface | Reuse mode | Note |
+|---------|------------|------|
+| Contractor Assignments | Full | primary persona |
+| Production Workspace | Scoped | own engagement |
+| Client Brain Surface | Scoped | assigned client |
+| Knowledge Workspace | Scoped | engagement-relevant |
+| Reports & Analytics Surface | Scoped | |
+
+Projection note: the Contractor portal does not include Lead Workspace
+(inventory: "Contractor —"), Operator Inbox, or Review Queue.
+
+#### Client portal
+
+| Surface | Reuse mode | Note |
+|---------|------------|------|
+| Client Notifications | Full | primary persona |
+| Client Approval Queue | Full | primary persona |
+| Client Deliverable Library | Full | primary persona |
+| Client Billing / Invoices Surface | Full | primary persona; Finance owns the data |
+| Reports & Analytics Surface | Scoped | |
+
+Pending / flagged: *Client Profile* — tentative; not added.
+
+#### System Administrator portal
+
+| Surface | Reuse mode | Note |
+|---------|------------|------|
+| Admin Knowledge | Full | primary persona |
+| Workflow & Agent Configuration | Full | primary persona |
+| Credentials & Integrations | Full | primary persona |
+| Agent & Workflow Monitor | Full | |
+
+Pending / flagged: *System Configuration / Settings* — not added.
+
+#### Future Personas
+Future Personas carry no portal contents in this pass.
+The placeholder is carried forward and not designed here.
+
+#### Multi-role composition
+A human who carries more than one role
+receives one composed portal,
+per the persona-to-portal rule above.
+The composed portal is the union of the per-persona memberships
+listed in this section.
+Resolving the effective reuse mode
+when the same surface is reached through more than one role
+is a Permission Matrix concern and remains deferred.
+
+#### Boundary note
+Portal membership here is derived from the inventory's reuse markers.
+It is not the populated Permission Matrix.
+The authoritative per-surface entitlement projection,
+and the resolution of reuse mode across multiple roles,
+come from Phase 1 Governance rules
+and are projected via the Permission Matrix,
+whose population is deferred until those rules are concrete.
+
 ### Scope of definition in this file
-This file defines the Portal concept and the persona-to-portal rule.
-It does not enumerate portal contents per persona.
-Per-persona portal composition is a later Phase 2 refinement.
+This file defines the Portal concept and the persona-to-portal rule,
+and enumerates portal contents per persona
+at membership and reuse-mode altitude.
+
+It does not order, group, or assign a landing surface
+within a portal,
+does not populate the Permission Matrix,
+and does not resolve multi-role reuse-mode overlap.
+The five flagged surfaces remain flagged
+in Open and Deferred Items
+and must not be silently resolved.
 
 ---
 
@@ -467,7 +582,6 @@ They are not designed in this pass.
 ### Deferred — Concrete enumeration
 The following enumerations are deferred to later Phase 2 refinement:
 
-- portal contents per persona
 - populated permission matrix rows and columns
 - concrete Cross-Domain Views by name
 
@@ -477,6 +591,8 @@ and must not be introduced silently.
 The firm Operating Surfaces inventory
 is no longer deferred; it is enumerated
 in the Operating Surfaces section above.
+Portal contents per persona are likewise no longer deferred;
+they are enumerated in the Portals section above.
 
 ### Flagged — Operating Surfaces carried forward
 Five Operating Surfaces are flagged, not firm,
@@ -566,6 +682,10 @@ Scope and definitions in this file derive from:
   (the Operating Surfaces inventory and canon-worthy rules)
 - the scoping capture in
   `brainstorms/2026-06-06-phase-2-operating-surfaces.md`
+- portal contents per persona derive from the DEC-020 inventory
+  and the persona-to-portal rule (DEC-019),
+  produced under plan → build → review
+  and recorded in DEC-021 / Snapshot-018
 - the Phase 2 sub-item list in `Faraz-OS-Canon.md`
 - Phase 1 references in `Faraz-OS-Canon/domains.md`
 
