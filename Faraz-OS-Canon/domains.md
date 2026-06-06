@@ -185,6 +185,7 @@ Examples from Canon include:
 - Research
 - Strategy
 - Content Creation
+- Video Creation
 - Publishing
 - Analytics
 - Reporting
