@@ -18,14 +18,11 @@ or integrate providers and channels (Phase 4).
 Phase 3 scope is defined and human-confirmed
 (see Snapshot-024 and DEC-024).
 
-This file is written in batches.
-Batch A is written: Publishing, Reporting, Content Creation,
-Research, Strategy.
-Batch B is pending: Video Creation, Analytics, Lead Scoring.
-
-(When Batch B lands, this Status line must be updated
-to record the full eight as written and to remove the
-"Batch B pending" note.)
+This file records all eight capabilities, written in two
+batches under plan → build → review: Batch A (Publishing,
+Reporting, Content Creation, Research, Strategy) and Batch B
+(Video Creation, Analytics, Lead Scoring). The full Phase 3
+write is recorded in Snapshot-025.
 
 No Phase 1 domain truth, ownership, or boundary is changed
 by this file. Phase 3 references Phase 1;

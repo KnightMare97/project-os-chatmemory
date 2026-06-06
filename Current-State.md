@@ -138,8 +138,8 @@ Phase 2 sub-item status (7 canon sub-items):
 
 Phase 2 is therefore 5-of-7 populated.
 
-Phase 3 Capability Map is now scoped (see Snapshot-024 / DEC-024), content not
-yet written. A grill-me scoping session human-confirmed: the Capability
+Phase 3 Capability Map is now scoped and written (Snapshot-024 / DEC-024 for
+scope; Snapshot-025 for the write). A grill-me scoping session human-confirmed: the Capability
 definition (a reusable, UI-independent functional ability; owns no domain
 truth; not a sequence, not a surface; execution mode AI/human/hybrid is a
 per-capability attribute, never narrowed to AI-only per Core Principle #1); a
@@ -149,11 +149,17 @@ operational rules (verb-test, sequence-test, workflow-agnostic,
 naming-altitude, granularity); the six-field per-capability skeleton; the
 non-goals; and the granularity rule (one capability per distinct reusable
 ability). All eight sub-items are firm; Video Creation is resolved as a
-genuine capability with its tooling deferred to Phase 4. `capabilities.md` is
-deferred to a separate plan -> build -> review session. New: Q-015 (Publishing
-scheduling/queueing P3 ↔ P6, deferred to the entry-writing pass), FIND-026
-(domains.md examples-list reconciliation), R-027 (entry-writing must not
-silently resolve an inherited Phase 1 question).
+genuine capability with its tooling deferred to Phase 4. `capabilities.md` now
+records all eight capabilities on the six-field skeleton (commits 9be5cbc,
+288969a); the header references the Governing Boundary Test and six-boundary
+set rather than restating them; the Serves field is a Phase-3 inference at
+naming altitude; Q-015 and the inherited Phase 1 questions (domains.md:1914-1915,
+:1916, :1917-1918) remain open — referenced, not resolved. The FIND-026
+examples-list touch-up (adding Video Creation to domains.md:184-191) is applied
+as a separate called-out commit. New this phase: Q-015 (Publishing
+scheduling/queueing P3 ↔ P6), FIND-026 (domains.md examples-list
+reconciliation), R-027 (entry-writing must not silently resolve an inherited
+Phase 1 question).
 
 Phase 11 Claude Code Operating System
 currently owns the operating method
@@ -322,14 +328,12 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-1. Write `Faraz-OS-Canon/capabilities.md` from the approved Phase 3 scope
-   (Snapshot-024 / DEC-024), under plan -> build -> review: eight entries on
-   the six-field skeleton, opening by referencing (not restating) the
-   Governing Boundary Test and the closed six-boundary checklist. Honor the
-   carried flags — Q-015 (Publishing scheduling/queueing), Reporting
-   sequence-risk, the hidden-sequence watch-list (Publishing, Content
-   Creation, Research, Strategy), the three inherited Phase 1 questions
-   (reference, never resolve), and the FIND-026 examples-list reconciliation.
+1. Phase 3 `Faraz-OS-Canon/capabilities.md` is written (all eight capabilities,
+   Snapshot-025). The remaining Phase 3 open item is Q-015 (Publishing
+   scheduling/queueing altitude, P3 ↔ P6) — a deliberate decision when it
+   surfaces (KNI-21). The inherited Phase 1 questions (domains.md:1914-1915,
+   :1916, :1917-1918) stay referenced, not resolved, pending their owning
+   Phase 1 work.
 2. Phase 2 is 5-of-7 populated; the Navigation Model is written
    (Snapshot-023, KNI-17). Remaining Phase 2 work:
    - Channel Behaviors is soft-blocked for per-channel population
