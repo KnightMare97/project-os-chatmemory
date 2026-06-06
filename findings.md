@@ -397,3 +397,16 @@ Impact:
 - Recording / hygiene correction only; no canon content was
   written and no flag was resolved (Client Profile, System
   Configuration / Settings, Onboarding stay flagged).
+
+---
+
+### FIND-026
+Video Creation appears in the Phase 3 map (`Faraz-OS-Canon.md:82-90`) but is
+absent from the `domains.md:184-191` Capability examples list. That examples
+list is illustrative, not exhaustive (the phase map is authoritative); the
+entry-writing pass should add Video Creation to it. Examples-touch-up altitude
+only — this is NOT a Phase 1 domain-truth change and must not reinterpret
+Phase 1.
+
+Source:
+- Backfilled from Snapshot-024; not created here.

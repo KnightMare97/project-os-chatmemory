@@ -676,6 +676,76 @@ Status:
 
 ---
 
+### DEC-024
+The Phase 3 Capability Map scope is defined and human-confirmed (scoping only):
+
+- **Capability definition:** a reusable, UI-independent functional ability —
+  a unit of "what the system can *do*" — invokable by multiple workflows,
+  serving multiple domains, runnable across channels; owns no domain truth,
+  prescribes no ordered sequence, tied to no surface. Faithful to
+  `domains.md:177-180`. Execution mode (AI / human / hybrid) is a
+  per-capability **attribute**, not part of the definition (Core Principle #1
+  "AI-first, but not AI-only", `principles.md:3`) — never narrowed to AI-only.
+- **Closed six-boundary set** (the entry-writing checklist):
+  1. Capability definition.
+  2. ↔ Phase 2 presentation: KPI computation = Phase 3, display = Phase 2;
+     `capabilities.md` references `experience-architecture.md:564-571`, does
+     not restate it.
+  3. ↔ Phase 6 sequence: order-free, gate-free, workflow-agnostic.
+  4. ↔ Phase 1 domain truth: serve, never own; inherits the unresolved
+     P1 ↔ P3 source-of-truth-vs-computation line, does not resolve it.
+  5. ↔ Phase 4 provider/plugin: per Extensibility Philosophy #5
+     (`extensibility-philosophy.md:17`) and `domains.md:212-235`.
+  6. ↔ Phase 5 memory/knowledge: names that an output *may become* durable
+     knowledge; never defines storage / retention / memory structure.
+- **Five reusable operational rules:** verb-test (if removing all UI leaves
+  the ability intact, it is Phase 3); sequence-test (if defining it needs a
+  predecessor/successor/gate, it is Phase 6); workflow-agnostic (a capability
+  does not know its predecessor/successor; `capabilities.md` does not record
+  ordering — a writing constraint, not a claim that no real-world sequence
+  exists); naming-altitude (per-capability fields name the owning domain /
+  store-of-record / durable-knowledge possibility only; never author the rule,
+  describe data-paths (Phase 7), or define memory structure (Phase 5));
+  granularity (one capability per distinct reusable ability).
+- **Granularity rule:** one capability per distinct reusable ability (verb),
+  not per output variant or per domain served (justifies Video Creation ≠
+  Content Creation and Analytics ≠ Reporting). **Naming convention (light):**
+  a capability is named for the ability, not the output, tool, or domain.
+- **Sub-item set:** all **eight** are firm (Research, Strategy, Content
+  Creation, Video Creation, Publishing, Analytics, Reporting, Lead Scoring);
+  the phase map is authoritative over the illustrative `domains.md:184-191`
+  examples list. **Video Creation** is resolved as a genuine capability
+  ("produce a video asset"); its tool integration is Phase 4. No MVP subset —
+  build-order is Phase 10 Build Roadmap.
+- **Per-capability skeleton (six fields):** Definition; Domains served (name
+  only); Execution mode (which mode it *can run in*, not the
+  human-intervention/checkpoint policy, which is Phase 1 Governance);
+  Produces; Provider dependency (deferred to Phase 4); Boundary notes /
+  inherited flags. **No "Consumed by workflows" field** (it would import
+  Phase 6 ordering — a capability that names its consuming workflows knows its
+  successors).
+- **Non-goals — `capabilities.md` will NOT contain:** UI / surfaces / views
+  (Phase 2); ordered sequences or approval gates (Phase 6); domain-entity
+  definitions, ownership, or authoritative meaning (Phase 1); provider/tool
+  implementations or channel integration (Phase 4); data-paths / read-write
+  mechanics / wiring (Phase 7); storage / retention / memory structure
+  (Phase 5); permission / authorization / human-intervention-checkpoint rules
+  (Phase 1 Governance); build order / MVP sequencing (Phase 10); and the
+  resolution of ANY inherited Phase 1 open question.
+
+This decision records scope only. It finalizes no Phase 1 boundary and writes
+no Phase 2 or Phase 3 canon content.
+
+Basis:
+- Scoping session (grill-me); capture in
+  `brainstorms/2026-06-07-phase-3-capability-map.md`.
+- Backfilled from Snapshot-024; not created here.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

@@ -322,6 +322,36 @@ Why it matters:
 
 ---
 
+### Q-015
+At what altitude does Publishing scheduling/queueing sit —
+within the Publishing capability (Phase 3),
+or orchestration (Phase 6)?
+
+Current direction:
+- Atomic "push approved content to a channel" is clearly the
+  Publishing capability (Phase 3).
+- A scheduled-publish *when-parameter* is probably still within
+  the capability.
+- Cross-item **queueing** may be orchestration (Phase 6),
+  not a capability, and needs a deliberate decision.
+- Deferred to the Publishing entry-writing pass; resolve
+  deliberately — flag, do not default. Not resolve-now.
+- This question lives in this file as the system of record;
+  tracked in Linear as a `boundary` + `Phase 3` issue (KNI-21),
+  related to the write-`capabilities.md` issue (KNI-20).
+- Resolution is a recorded `DEC-0NN` during the write of
+  `capabilities.md`.
+
+Why it matters:
+- It keeps the Phase 3 ↔ Phase 6 boundary clean: a capability
+  is a single, order-free, gate-free ability, while ordered
+  cross-item sequencing belongs to Phase 6 Workflow Design.
+- Defaulting Publishing toward "the queueing is part of the
+  ability" would silently import workflow orchestration into a
+  capability.
+
+---
+
 ## Question Review Rule
 Review this file regularly.
 
