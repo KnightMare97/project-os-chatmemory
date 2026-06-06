@@ -12,10 +12,11 @@ what cross-domain information they see,
 and how their experience differs per channel.
 
 This file is canon for Phase 2.
-It records the framework only.
-It does not enumerate concrete surfaces,
-populate the permission matrix,
-or design specific portal contents.
+It records the framework,
+and enumerates the firm inventory of concrete Operating Surfaces.
+It does not populate the permission matrix,
+name portal contents per persona,
+or enumerate concrete cross-domain views.
 Those refinements are deferred to later Phase 2 work.
 
 ---
@@ -24,7 +25,14 @@ Those refinements are deferred to later Phase 2 work.
 Phase 2 scope is defined and human-confirmed
 (see Snapshot-013 and DEC-019).
 
-This file is the first canon write of Phase 2 content.
+This file began as the framework canon of Phase 2 content
+(Snapshot-014).
+The Operating Surfaces section is now populated
+with the firm sixteen-surface inventory
+and its canon-worthy rules
+(see DEC-020 / Snapshot-016).
+The Permission Matrix, portal contents per persona,
+and concrete Cross-Domain Views remain unpopulated.
 
 No Phase 1 domain truth,
 ownership,
@@ -148,10 +156,114 @@ when more than one persona has legitimate access to it.
 - They are not UI components or visual designs.
   Visual design (colors, components, styling) is out of Phase 2.
 
+### Granularity Rule
+Operating Surfaces are sized at
+one surface per coherent work-mode,
+not one per task type.
+
+A surface corresponds to a mode of work
+a persona enters,
+not to each individual action taken inside it.
+This keeps surfaces at presentation altitude
+and prevents the inventory from fragmenting
+into per-task or per-domain explosion.
+
+### Naming Convention
+Persona-facing surfaces are persona-prefixed.
+The prefix names the persona who operates the surface
+(for example, Client Notifications,
+Client Approval Queue, Contractor Assignments).
+Wherever a persona word such as "Client" appears as a prefix,
+it carries the persona meaning,
+not the subject being viewed.
+
+Subject-facing surfaces use distinct subject words
+rather than persona names.
+For example, the operator's current-client memory workspace
+is the Client Brain Surface
+(anchored on the Phase 5 Knowledge & Memory concept of Client Brain),
+not "Client Context Surface,"
+so that "Client" is never overloaded between
+the persona doing the work
+and the subject the work is about.
+
+### Persona Reuse Vocabulary
+An Operating Surface can be exposed to more than one persona.
+Each surface↔persona relationship is described
+with one of four reuse modes:
+
+- **Full** — the same surface, with the same content.
+- **Scoped** — the same surface, with restricted content.
+- **Distinct surface** — a different surface serves the
+  same intent for that persona, and is added to the inventory
+  as its own entry (not a persona-specialized variant of a parent).
+- **—** — no access.
+
+#### Scoped marker placement
+Phase 2 records "Scoped" as a property
+of the surface↔persona relationship.
+Phase 2 does not author the rules
+that decide what content is restricted.
+Those rules come from Phase 1 Governance
+and are projected onto the experience layer
+through the Permission Matrix,
+whose population is deferred
+until the Governance rules are concrete.
+
+### Surface Inventory
+The following sixteen Operating Surfaces are the firm inventory
+for Phase 2, defined and human-confirmed
+(see DEC-020 / Snapshot-016).
+Each row names the surface, its primary persona,
+and the reuse pattern across other personas.
+Five additional surfaces remain flagged and deferred;
+they are carried in Open and Deferred Items, not here.
+
+| # | Surface | Primary persona | Reuse pattern |
+|---|---------|-----------------|---------------|
+| 1 | Operator Inbox | Operator | Manager Full; Client → Distinct (*Client Notifications*) |
+| 2 | Production Workspace | Operator | Contractor Scoped (own engagement) |
+| 3 | Review Queue | Operator | Manager Full; Client → Distinct (*Client Approval Queue*) |
+| 4 | Client Brain Surface | Operator | Manager Full; Contractor Scoped (assigned client) |
+| 5 | Knowledge Workspace | Operator | Manager Full; Contractor Scoped (engagement-relevant); System Administrator → Distinct (*Admin Knowledge*) |
+| 6 | Agent & Workflow Monitor | Operator | Manager Full or Scoped; System Administrator Full |
+| 7 | Reports & Analytics Surface | Operator | Manager Full; Contractor Scoped; Client Scoped — *flag: possibly a Cross-Domain View* |
+| 8 | Lead Workspace | Operator | Manager Full; Contractor — |
+| 9 | Client Notifications | Client | — |
+| 10 | Client Approval Queue | Client | — |
+| 11 | Client Deliverable Library | Client | — |
+| 12 | Client Billing / Invoices Surface | Client | — (Finance owns the data; this is presentation) |
+| 13 | Contractor Assignments | Contractor | — |
+| 14 | Admin Knowledge | System Administrator | — |
+| 15 | Workflow & Agent Configuration | System Administrator | — |
+| 16 | Credentials & Integrations | System Administrator | references Phase 4 (provider/channel/model) and Phase 1 Governance (policy touchpoints) |
+
+The reuse patterns above are a Phase 2 surface property.
+They are not the populated Permission Matrix.
+The authoritative persona-to-surface projection
+still awaits concrete Phase 1 Governance rules
+and is deferred (see the Permission Matrix section).
+
+The inventory references other phases at reference altitude only,
+without reinterpreting their ownership:
+Client Brain Surface anchors on Phase 5 Knowledge & Memory;
+Lead Workspace anchors on the CRM domain (Phase 1);
+Client Billing / Invoices Surface presents Finance-owned data (Phase 1);
+Credentials & Integrations references Phase 4 extensibility
+(provider / channel / model) and Phase 1 Governance policy touchpoints.
+
 ### Scope of definition in this file
-This file defines the Operating Surface concept.
-It does not enumerate concrete surfaces.
-Concrete surfaces are introduced as later Phase 2 refinements.
+This file defines the Operating Surface concept,
+the granularity rule, the naming convention,
+the persona reuse vocabulary,
+and the firm inventory of sixteen surfaces above.
+
+It does not populate the Permission Matrix,
+name portal contents per persona,
+or enumerate concrete Cross-Domain Views.
+The five flagged surfaces remain flagged
+in Open and Deferred Items
+and must not be silently resolved.
 
 ---
 
@@ -355,13 +467,48 @@ They are not designed in this pass.
 ### Deferred — Concrete enumeration
 The following enumerations are deferred to later Phase 2 refinement:
 
-- concrete Operating Surfaces by name
 - portal contents per persona
 - populated permission matrix rows and columns
 - concrete Cross-Domain Views by name
 
 These items require additional explicit decisions
 and must not be introduced silently.
+
+The firm Operating Surfaces inventory
+is no longer deferred; it is enumerated
+in the Operating Surfaces section above.
+
+### Flagged — Operating Surfaces carried forward
+Five Operating Surfaces are flagged, not firm,
+and are deferred until a separate explicit decision.
+They must not be silently resolved into the firm inventory:
+
+- **Client Profile** (Client persona) — tentative;
+  needs later confirmation that it is a real surface
+  and not absorbed by other Client-persona surfaces.
+- **Team Performance / Oversight Surface** (Manager) —
+  possibly a Cross-Domain View;
+  resolution belongs to the Cross-Domain Views sub-session.
+- **System Configuration / Settings** (System Administrator) —
+  depends on Phase 4 Extensibility / Phase 9 Infrastructure maturity
+  before its real shape can be named.
+- **Operator-finance gap** — the operator's view of
+  engagement revenue, contractor payment status, and similar;
+  currently absorbed by Client Brain Surface
+  and Reports & Analytics Surface;
+  may need its own surface later.
+- **Onboarding / first-time-use surfaces** — none named
+  for any persona; may be a Phase 2 oversight or out of scope; defer.
+
+Informational (FIND-024):
+the System Administrator surface count is growing
+(Admin Knowledge, Workflow & Agent Configuration,
+Credentials & Integrations, plus full reuse of
+Agent & Workflow Monitor, plus the flagged
+System Configuration / Settings).
+This is defensible because admin work is genuinely multi-headed,
+but it is a potential later refactor candidate.
+Informational only; no action in this pass.
 
 ---
 
@@ -396,6 +543,13 @@ Mitigation in this file:
 each sub-item section names what it is not
 and refers to the governing boundary test.
 
+Partial mitigation added with the Operating Surfaces population:
+the granularity rule, the naming convention,
+the persona reuse vocabulary,
+and the rename of "Workflow Control Panel"
+to "Agent & Workflow Monitor"
+all sharpen the Phase 2 / Phase 3 / Phase 6 altitude marker.
+
 This risk stays active
 until Phase 2 content matures and the boundary holds in practice.
 
@@ -407,6 +561,11 @@ Scope and definitions in this file derive from:
 - DEC-019 in `snapshots/Snapshot-013 - Phase 2 Experience Architecture Scope Defined.md`
 - the scoping capture in
   `brainstorms/2026-06-05-phase-2-experience-architecture.md`
+- DEC-020 in
+  `snapshots/Snapshot-016 - Phase 2 Operating Surfaces Scope Defined.md`
+  (the Operating Surfaces inventory and canon-worthy rules)
+- the scoping capture in
+  `brainstorms/2026-06-06-phase-2-operating-surfaces.md`
 - the Phase 2 sub-item list in `Faraz-OS-Canon.md`
 - Phase 1 references in `Faraz-OS-Canon/domains.md`
 

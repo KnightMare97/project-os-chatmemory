@@ -61,17 +61,20 @@ cross-phase references.
 It does not enumerate concrete surfaces, populate the
 permission matrix, or define portal contents.
 
-The Operating Surfaces sub-item is now scoped
-(see Snapshot-016 / DEC-020):
-the inventory is 16 firm + 5 flagged surfaces;
-the granularity rule, the persona reuse vocabulary
-(Full / Scoped / Distinct surface / —),
-and the naming convention are canon-worthy.
-Two renames decided:
-*Client Context Surface* → *Client Brain Surface*;
-*Workflow Control Panel* → *Agent & Workflow Monitor*.
-The canon write for the Operating Surfaces section
-is the next deliverable.
+The Operating Surfaces sub-item is now written into canon
+(see Snapshot-017): the Operating Surfaces section of
+`experience-architecture.md` carries the granularity rule,
+the naming convention, the persona reuse vocabulary
+(Full / Scoped / Distinct surface / —), the Scoped marker
+placement note, and the firm inventory of 16 surfaces with
+primary persona and reuse pattern. The 5 flagged surfaces are
+carried forward in that file's Open and Deferred Items and
+remain explicitly flagged. Both renames are applied
+(*Client Brain Surface*, *Agent & Workflow Monitor*).
+The Permission Matrix remains unpopulated; portal contents
+per persona and concrete Cross-Domain Views remain deferred.
+This was execution of DEC-020 (Snapshot-016); it produced no
+new decisions, findings, or open questions.
 
 Phase 11 Claude Code Operating System
 currently owns the operating method
@@ -240,15 +243,16 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-1. write the Operating Surfaces section of
-   `Faraz-OS-Canon/experience-architecture.md`
-   from the approved scope (Snapshot-016 / DEC-020),
-   under plan -> build -> review, in a separate session.
-   After that, sequence the remaining KNI-14 sub-items:
+1. sequence the remaining KNI-14 sub-items, in order:
    portal contents per persona,
-   then concrete Cross-Domain Views.
-   Permission Matrix population remains deferred until
-   Phase 1 Governance rules are concrete.
+   then concrete Cross-Domain Views
+   (which will resolve the Reports & Analytics Surface
+   and Team Performance / Oversight Surface flags).
+   The Operating Surfaces section is now written
+   (Snapshot-017). Permission Matrix population remains
+   deferred until Phase 1 Governance rules are concrete.
+   Revisit the 5 flagged Operating Surfaces in their owning
+   sessions; do not silently fold them into the firm inventory.
 2. keep Phase 2 scope distinct from
    Phase 3 Capability Map and Phase 6 Workflow Design,
    per the governing boundary test in
