@@ -138,6 +138,23 @@ Phase 2 sub-item status (7 canon sub-items):
 
 Phase 2 is therefore 5-of-7 populated.
 
+Phase 3 Capability Map is now scoped (see Snapshot-024 / DEC-024), content not
+yet written. A grill-me scoping session human-confirmed: the Capability
+definition (a reusable, UI-independent functional ability; owns no domain
+truth; not a sequence, not a surface; execution mode AI/human/hybrid is a
+per-capability attribute, never narrowed to AI-only per Core Principle #1); a
+closed six-boundary set (↔ Phase 2 presentation, ↔ Phase 6 sequence, ↔ Phase 1
+domain truth, ↔ Phase 4 provider/plugin, ↔ Phase 5 memory/knowledge); five
+operational rules (verb-test, sequence-test, workflow-agnostic,
+naming-altitude, granularity); the six-field per-capability skeleton; the
+non-goals; and the granularity rule (one capability per distinct reusable
+ability). All eight sub-items are firm; Video Creation is resolved as a
+genuine capability with its tooling deferred to Phase 4. `capabilities.md` is
+deferred to a separate plan -> build -> review session. New: Q-015 (Publishing
+scheduling/queueing P3 ↔ P6, deferred to the entry-writing pass), FIND-026
+(domains.md examples-list reconciliation), R-027 (entry-writing must not
+silently resolve an inherited Phase 1 question).
+
 Phase 11 Claude Code Operating System
 currently owns the operating method
 for how Claude collaboration and later Claude Code execution
@@ -305,7 +322,15 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-1. Phase 2 is 5-of-7 populated; the Navigation Model is written
+1. Write `Faraz-OS-Canon/capabilities.md` from the approved Phase 3 scope
+   (Snapshot-024 / DEC-024), under plan -> build -> review: eight entries on
+   the six-field skeleton, opening by referencing (not restating) the
+   Governing Boundary Test and the closed six-boundary checklist. Honor the
+   carried flags — Q-015 (Publishing scheduling/queueing), Reporting
+   sequence-risk, the hidden-sequence watch-list (Publishing, Content
+   Creation, Research, Strategy), the three inherited Phase 1 questions
+   (reference, never resolve), and the FIND-026 examples-list reconciliation.
+2. Phase 2 is 5-of-7 populated; the Navigation Model is written
    (Snapshot-023, KNI-17). Remaining Phase 2 work:
    - Channel Behaviors is soft-blocked for per-channel population
      on the Phase 4 Extensibility Channel Model (KNI-18,
@@ -317,19 +342,19 @@ The current recommended next focus is:
      routing, and deep-linking stay deferred (marked future items).
    - The three Operating-Surface flags (Client Profile, System
      Configuration / Settings, Onboarding) stay parked.
-2. keep Phase 2 scope distinct from
-   Phase 3 Capability Map and Phase 6 Workflow Design,
-   per the governing boundary test in
-   `Faraz-OS-Canon/experience-architecture.md`
-3. carry the Future Personas placeholder and the deferred
+3. keep Phase 2 and Phase 3 scope distinct from each other and from
+   Phase 6 Workflow Design, per the governing boundary test in
+   `Faraz-OS-Canon/experience-architecture.md` and the closed six-boundary
+   set in DEC-024
+4. carry the Future Personas placeholder and the deferred
    navigation sub-detail (notification routing, deep-linking)
    forward as marked future items
-4. (optional) consider extending
+5. (optional) consider extending
    `workflows/sync-protocol.md` to formalize
    tracker-backfill as a standing close-out step
    (per R-025 / FIND-023 mitigation); would be its own decision
-5. keep Claude Project input limited to high-signal current files
-6. prepare later controlled handoff to Claude Code
+6. keep Claude Project input limited to high-signal current files
+7. prepare later controlled handoff to Claude Code
 
 Tracker drift surfaced in Snapshot-014 / FIND-023
 is reconciled (see Snapshot-015):
