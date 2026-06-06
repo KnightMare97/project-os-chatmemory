@@ -567,6 +567,64 @@ Status:
 
 ---
 
+### DEC-022
+Cross-Domain Views scope for Phase 2 is defined
+and human-confirmed.
+
+Meaning:
+- Discovery method: persona-anchored, domain-keyed.
+- A Cross-Domain View is a named multi-domain composition
+  rendered on an Operating Surface. A surface may host more
+  than one view. Views are not portal entries; the host
+  surface is.
+- Granularity rule (canon-worthy): one view per coherent
+  persona decision-context composed from a stable domain-set.
+- Naming convention (canon-worthy): decision/subject + "View";
+  a persona word only when the composition is persona-specific.
+- Inventory — 7 firm views:
+  1. Client Brain View (host: Client Brain Surface)
+  2. Lead Context View (host: Lead Workspace)
+  3. Performance & Analytics View (host: Reports & Analytics Surface)
+  4. Team Oversight View (host: Reports & Analytics Surface, manager scope)
+  5. Engagement Health View (host deferred — DEC-020 follow-up)
+  6. Client Engagement Summary View (host deferred — DEC-020 follow-up)
+  7. Contractor Assignment-in-Context View (host: Contractor Assignments)
+  System Administrator: no Cross-Domain View.
+- Reports & Analytics Surface hosts two distinct, separately
+  named views (#3 and #4), so the "both" classification does
+  not collapse the two compositions.
+- Flag resolutions:
+  Reports & Analytics Surface → both (firm Operating Surface
+  from DEC-020 unchanged; hosts views #3 and #4);
+  Team Performance / Oversight Surface → pure Cross-Domain View
+  (the Team Oversight View), hosted on the Manager's Reports &
+  Analytics Surface; removed from the flagged-surface list.
+- Boundary: views consume multi-domain info; they do not own
+  (Phase 1) or compute (Phase 3). KPI: compute = P3, present = P2,
+  own = P1. The Intelligence(P1)-vs-Phase-3 computation question
+  is upstream and not resolved here.
+- Entitlement (who is exposed to which view) is deferred to the
+  Permission Matrix / Phase 1 Governance. This decision defines
+  WHICH views exist, not WHO sees them.
+
+Carried flags:
+- Operator-finance gap (DEC-020) remains flagged — the
+  Engagement Health View names the composition that will address
+  it, but its host and the gap's resolution are deferred.
+- Host surfaces for Engagement Health View and Client Engagement
+  Summary View — DEC-020 follow-up.
+
+Basis:
+- Captured in brainstorms/2026-06-06-phase-2-cross-domain-views.md.
+- Recorded in Snapshot-019.
+- Builds on DEC-019 (Phase 2 scope), DEC-020 (Operating Surfaces),
+  and DEC-021 (Portal contents).
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

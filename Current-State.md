@@ -86,6 +86,19 @@ noted as pending per portal where relevant. The Permission Matrix
 and concrete Cross-Domain Views remain unpopulated; multi-role
 reuse-mode overlap is deferred to the Permission Matrix.
 
+The Cross-Domain Views sub-item (KNI-14 final) is now scoped
+(see Snapshot-019 / DEC-022): 7 firm views across Operator,
+Manager, Client, and Contractor (System Administrator none), with
+a per-decision-context granularity rule and a decision/subject +
+"View" naming convention. A view is a named multi-domain
+composition rendered on an Operating Surface. Both flagged
+surfaces are resolved: Reports & Analytics Surface → both (it
+hosts two distinct views); Team Performance / Oversight Surface →
+pure Cross-Domain View. The operator-finance gap stays flagged
+(Engagement Health View names the composition; host deferred).
+Entitlement stays with the Permission Matrix (deferred). The
+canon write is the next deliverable.
+
 Phase 11 Claude Code Operating System
 currently owns the operating method
 for how Claude collaboration and later Claude Code execution
@@ -253,14 +266,18 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-1. the sole remaining KNI-14 sub-item is concrete Cross-Domain
-   Views (which will resolve the Reports & Analytics Surface and
-   Team Performance / Oversight Surface flags). The Operating
-   Surfaces and Portal Contents sections are now written
-   (Snapshot-017, Snapshot-018). Permission Matrix population
-   remains deferred until Phase 1 Governance rules are concrete.
-   Revisit the 5 flagged Operating Surfaces in their owning
-   sessions; do not silently fold them into the firm inventory.
+1. write the Cross-Domain Views section of
+   `Faraz-OS-Canon/experience-architecture.md` from the approved
+   scope (Snapshot-019 / DEC-022), under plan → build → review,
+   in a separate session. State the 7-view inventory, the two
+   canon-worthy rules, the surface↔view relationship, and that
+   Reports & Analytics Surface hosts two distinct views. After
+   that write, KNI-14's content sub-items are complete;
+   Permission Matrix population remains deferred until Phase 1
+   Governance rules are concrete. Resolve the deferred host
+   surfaces (Engagement Health View, Client Engagement Summary
+   View) as a DEC-020 follow-up; do not silently fold flagged
+   items into firm canon.
 2. keep Phase 2 scope distinct from
    Phase 3 Capability Map and Phase 6 Workflow Design,
    per the governing boundary test in
