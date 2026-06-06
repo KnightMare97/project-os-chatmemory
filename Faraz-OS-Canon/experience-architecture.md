@@ -15,7 +15,8 @@ This file is canon for Phase 2.
 It records the framework,
 enumerates the firm inventory of concrete Operating Surfaces,
 enumerates portal contents per persona,
-and enumerates the concrete Cross-Domain Views.
+enumerates the concrete Cross-Domain Views,
+and defines the Navigation Model (surface-movement).
 It does not populate the permission matrix.
 Permission matrix population is deferred to later Phase 2 work.
 
@@ -38,6 +39,9 @@ of that inventory.
 The Cross-Domain Views section now enumerates
 the seven firm views and their canon-worthy rules
 (see DEC-022 / Snapshot-019).
+The Navigation Model section now defines
+the surface-movement model
+(see KNI-17 / Snapshot-023).
 The Permission Matrix remains unpopulated.
 
 No Phase 1 domain truth,
@@ -428,18 +432,70 @@ The Navigation Model stays at surface-movement level.
 It defines movement between surfaces inside a portal,
 nothing deeper in this pass.
 
+### Movement model
+- Flat peer movement.
+  Within a persona's composed portal,
+  the Operating Surfaces are navigable peers.
+  The persona moves directly between them
+  with no prescribed order and no gate between surfaces.
+- Within-surface views.
+  Where an Operating Surface hosts Cross-Domain Views
+  (for example, the Reports & Analytics Surface),
+  the persona reaches those views within the host surface.
+  A view is not a separate portal entry (DEC-022);
+  reaching it is movement within its host surface.
+- Composed-portal navigation.
+  A multi-role human navigates across the union of surfaces
+  in the single composed portal
+  (per the persona-to-portal rule),
+  not across separate portals.
+- Within own portal only.
+  A persona does not navigate into another persona's portal.
+
+This model is uniform.
+It applies to each persona's composed portal
+over whatever surfaces that portal contains
+(see Portal Contents per Persona);
+it does not restate the per-persona surface lists.
+
+### What the Navigation Model does not decide
+- It does not assign an entry or landing surface,
+  and it does not order or group surfaces within a portal.
+  Landing-surface designation is a marked future item,
+  consistent with the Portals section.
+- It does not decide who may reach a surface.
+  Entitlement is a Permission Matrix concern and remains deferred.
+  Navigation describes movement, not permission.
+- Contextual item-level navigation
+  (moving from a list or entry surface
+  to a specific item's surface)
+  is deep-linking, a deferred sub-detail;
+  it is not populated here.
+
 ### Deferred future sub-detail
-Notification routing and deep-linking
+Notification routing, deep-linking,
+and landing-surface designation
 are deferred Phase 2 sub-detail.
 
-They are carried as a marked future item
+They are carried as marked future items
 and must not be silently resolved here.
 
 ### What Navigation is not
 - It is not workflow orchestration.
-  Ordered cross-step flow belongs to Phase 6.
+  Ordered cross-step flow and approval gates belong to Phase 6.
 - It is not channel integration.
   Channel integration belongs to Phase 4.
+- It is not the Permission Matrix.
+  Entitlement (who may reach a surface) is deferred.
+
+### Scope of definition in this file
+This file defines the surface-movement model
+for each persona's composed portal.
+
+It does not assign a landing surface,
+order or group surfaces within a portal,
+populate the Permission Matrix,
+or decide entitlement.
 
 ---
 
@@ -687,8 +743,9 @@ inside the Personas section.
 It is not designed in this pass.
 
 ### Deferred — Navigation sub-detail
-Notification routing and deep-linking
-are carried as a deferred sub-detail of the Navigation Model.
+Notification routing, deep-linking,
+and landing-surface designation
+are carried as deferred sub-detail of the Navigation Model.
 They are not designed in this pass.
 
 ### Deferred — Concrete enumeration
@@ -812,6 +869,10 @@ Scope and definitions in this file derive from:
   on the Reports & Analytics Surface)
   and the operator-finance gap resolution
   derive from DEC-023, recorded in Snapshot-021
+- the Navigation Model derives from composing over the
+  Operating Surfaces inventory (DEC-020)
+  and the Portal Contents (DEC-021),
+  per KNI-17, recorded in Snapshot-023
 - the Phase 2 sub-item list in `Faraz-OS-Canon.md`
 - Phase 1 references in `Faraz-OS-Canon/domains.md`
 

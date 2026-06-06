@@ -121,23 +121,22 @@ System Configuration / Settings, Onboarding). KNI-14 is unchanged
 — only the deferred Permission Matrix population remains.
 
 Phase 2 sub-item status (7 canon sub-items):
-- Populated (4): Personas (with the Future Personas placeholder
-  carried), Operating Surfaces, Portals, Cross-Domain Views.
-- Framework only, unblocked-but-unstarted: Navigation Model
-  (core surface-movement model; depends only on the now-populated
-  surfaces and portals; its notification-routing and deep-linking
-  sub-detail stays separately deferred).
+- Populated (5): Personas (with the Future Personas placeholder
+  carried), Operating Surfaces, Portals, Cross-Domain Views,
+  Navigation Model (surface-movement model; Snapshot-023).
+  Navigation Model's landing-surface designation, notification
+  routing, and deep-linking stay deferred (marked future items).
 - Framework only, soft-blocked for per-channel population:
   Channel Behaviors (channel-agnostic patterns may be writable
   now, but naming behaviors per channel depends on the Phase 4
-  Extensibility Channel Model becoming concrete).
+  Extensibility Channel Model becoming concrete; KNI-18).
 - Structure-defined, blocked: Permission Matrix (population
   requires concrete Phase 1 Governance rules; the cross-phase
-  dependency is tracked as Q-014).
+  dependency is tracked as Q-014 / KNI-16).
 - Parked flags (Operating Surfaces): Client Profile, System
   Configuration / Settings, Onboarding.
 
-Phase 2 is therefore 4-of-7 populated, not near-complete.
+Phase 2 is therefore 5-of-7 populated.
 
 Phase 11 Claude Code Operating System
 currently owns the operating method
@@ -306,17 +305,16 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-1. Phase 2 remaining work, now made visible (KNI-14's content
-   sub-items — Operating Surfaces, Portal contents, Cross-Domain
-   Views — are written: Snapshot-017 / 018 / 020):
-   - Navigation Model is the actionable next content (unblocked;
-     core surface-movement model, excluding the deferred
-     notification-routing / deep-linking sub-detail).
+1. Phase 2 is 5-of-7 populated; the Navigation Model is written
+   (Snapshot-023, KNI-17). Remaining Phase 2 work:
    - Channel Behaviors is soft-blocked for per-channel population
-     on the Phase 4 Extensibility Channel Model.
+     on the Phase 4 Extensibility Channel Model (KNI-18,
+     Canceled-with-reopen).
    - Permission Matrix population is blocked on concrete Phase 1
-     Governance rules (cross-phase dependency Q-014); it remains
-     KNI-14's open item, which keeps KNI-14 In Progress.
+     Governance rules (cross-phase dependency Q-014 / KNI-16); it
+     remains KNI-14's open item, which keeps KNI-14 In Progress.
+   - Navigation Model's landing-surface designation, notification
+     routing, and deep-linking stay deferred (marked future items).
    - The three Operating-Surface flags (Client Profile, System
      Configuration / Settings, Onboarding) stay parked.
 2. keep Phase 2 scope distinct from
