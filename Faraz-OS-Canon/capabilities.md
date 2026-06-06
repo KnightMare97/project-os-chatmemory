@@ -172,3 +172,73 @@ Each capability is recorded on six fields:
     standalone. "research → analyze → recommend" names a predecessor
     (the Research capability) — that ordering is Phase 6, not part of
     this capability. The entry does not encode "after Research."
+
+### Video Creation
+- **Definition.** The ability to produce a video asset.
+- **Serves.** Serves Service Delivery (Phase 3 inference, pending).
+- **Execution mode.** AI / human / hybrid.
+- **Produces.** A video asset.
+- **Provider dependency.** Video-generation tools (e.g. Runway, Sora,
+  Pika) (named only; deferred to Phase 4).
+- **Boundary notes.**
+  - Granularity seam (DEC-024): Video Creation covers video assets;
+    non-video content assets are the separate Content Creation
+    capability. Distinct production abilities, not one capability with
+    a medium parameter — the same seam stated in the Content Creation
+    entry, from the video side.
+  - Provider line (Phase 4): the Definition names the ability, not the
+    tool. The specific video tool/provider is Phase 4, not part of
+    this capability — the same shape Publishing uses for the channel.
+
+### Analytics
+- **Definition.** The ability to compute metrics and aggregations
+  from domain-held data.
+- **Serves.** Serves Intelligence (Phase 3 inference, pending — and
+  exposed to an unresolved Phase 1 question; see Boundary notes).
+- **Execution mode.** AI / human / hybrid.
+- **Produces.** Computed metrics and KPI values. (The display of
+  these on a dashboard is Phase 2; see Boundary notes.)
+- **Provider dependency.** Compute engines, if any (named only;
+  deferred to Phase 4).
+- **Boundary notes.**
+  - Granularity (DEC-024): Analytics is distinct from Reporting.
+    Analytics computes metrics/aggregations; Reporting assembles and
+    generates the report artifact. Two abilities, two verbs —
+    consistent with the Reporting entry.
+  - KPI altitude split, referenced not restated: KPI computation is
+    Phase 3; the dashboard surface that displays the computed KPI is
+    Phase 2 (presents / computes / owns). See
+    `experience-architecture.md:564-571`.
+  - Inherited Phase 1 question, referenced not resolved: what belongs
+    in the Intelligence domain versus the Analytics / Reporting
+    capability is open (`domains.md:1914-1915`; noted overlap at
+    `domains.md:1904`). The Serves value above is therefore a Phase 3
+    inference subject to that open question; this entry does not
+    settle it.
+
+### Lead Scoring
+- **Definition.** The ability to compute a score for a lead.
+- **Serves.** Serves CRM and Intelligence (Phase 3 inference,
+  pending — this is exactly the unresolved Phase 1 question at
+  `domains.md:1917-1918`; see Boundary notes). Stated at naming
+  altitude: this capability serves those domains; it does not own
+  the lead or the score.
+- **Execution mode.** AI / human / hybrid.
+- **Produces.** A lead score. Its authoritative home — where the
+  score lives of record — is a Phase 1 concern and is deferred (see
+  Boundary notes); this capability computes the score and hands it to
+  the owning domain.
+- **Provider dependency.** Scoring / AI model providers, if any
+  (named only; deferred to Phase 4).
+- **Boundary notes.**
+  - Phase 1 boundary (the sharp one): this capability computes a
+    score only. It does not define what a lead is, what "qualified"
+    means, or where the score authoritatively lives — those are
+    Phase 1 truth (CRM / Intelligence). The entry names "a lead" only
+    as the scored subject, at reference altitude; it defines nothing.
+  - Inherited Phase 1 question, referenced not resolved: whether lead
+    scoring lives fully inside Intelligence or partly inside CRM as
+    domain-local logic is open (`domains.md:1917-1918`; Intelligence's
+    Scoring & Prioritization context at `domains.md:1832-1837`). The
+    Serves value above is the Phase 3 inference sitting directly on
+    that question; this entry does not resolve it.
