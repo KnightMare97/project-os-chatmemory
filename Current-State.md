@@ -102,14 +102,23 @@ The Cross-Domain Views section is now written into canon as well
 (see Snapshot-020): experience-architecture.md enumerates the 7
 firm views with their decision-context, composed domains, host
 surface, and primary persona, plus the granularity rule, the
-naming convention, and the surface-and-view relationship. Reports
-& Analytics Surface is stated to host two distinct views. With
+naming convention, and the surface-and-view relationship. With
 this, KNI-14's content sub-items (Operating Surfaces, Portal
 contents, Cross-Domain Views) are complete; only the deferred
-Permission Matrix population remains. The operator-finance gap
-stays flagged and the host surfaces for the Engagement Health
-View and Client Engagement Summary View stay deferred (DEC-020
-follow-up).
+Permission Matrix population remains.
+
+The DEC-020 host follow-up is now resolved (see Snapshot-021 /
+DEC-023): the Engagement Health View and the Client Engagement
+Summary View are hosted on the Reports & Analytics Surface by
+scoped reuse (no new surface; the firm inventory stays at
+sixteen), so that surface now hosts four distinct views. The
+operator-finance gap is resolved for the per-engagement
+financial-context need (the operator reaches it via the
+Engagement Health View) and is removed from the flagged list; a
+cross-engagement financial rollup, if it surfaces, would be a new
+item. Three Operating-Surface flags remain (Client Profile,
+System Configuration / Settings, Onboarding). KNI-14 is unchanged
+— only the deferred Permission Matrix population remains.
 
 Phase 11 Claude Code Operating System
 currently owns the operating method
@@ -283,10 +292,7 @@ The current recommended next focus is:
    Snapshot-017, Snapshot-018, Snapshot-020). The only remaining
    KNI-14 item is the Permission Matrix population, which stays
    deferred until Phase 1 Governance rules in `domains.md` are
-   concrete. Separately, a DEC-020 follow-up should resolve the
-   deferred host surfaces (Engagement Health View, Client
-   Engagement Summary View) and the operator-finance gap; do not
-   silently fold flagged items into firm canon.
+   concrete.
 2. keep Phase 2 scope distinct from
    Phase 3 Capability Map and Phase 6 Workflow Design,
    per the governing boundary test in

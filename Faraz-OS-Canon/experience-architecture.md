@@ -233,7 +233,7 @@ they are carried in Open and Deferred Items, not here.
 | 4 | Client Brain Surface | Operator | Manager Full; Contractor Scoped (assigned client) |
 | 5 | Knowledge Workspace | Operator | Manager Full; Contractor Scoped (engagement-relevant); System Administrator → Distinct (*Admin Knowledge*) |
 | 6 | Agent & Workflow Monitor | Operator | Manager Full or Scoped; System Administrator Full |
-| 7 | Reports & Analytics Surface | Operator | Manager Full; Contractor Scoped; Client Scoped — hosts the Performance & Analytics View and Team Oversight View (see Cross-Domain Views) |
+| 7 | Reports & Analytics Surface | Operator | Manager Full; Contractor Scoped; Client Scoped — hosts four Cross-Domain Views (Performance & Analytics, Team Oversight, Engagement Health, Client Engagement Summary); see Cross-Domain Views |
 | 8 | Lead Workspace | Operator | Manager Full; Contractor — |
 | 9 | Client Notifications | Client | — |
 | 10 | Client Approval Queue | Client | — |
@@ -320,7 +320,7 @@ defined in the Operating Surfaces section
 | Client Brain Surface | Full | primary persona |
 | Knowledge Workspace | Full | primary persona |
 | Agent & Workflow Monitor | Full | primary persona |
-| Reports & Analytics Surface | Full | hosts the Performance & Analytics View and Team Oversight View (see Cross-Domain Views) |
+| Reports & Analytics Surface | Full | hosts the Performance & Analytics and Engagement Health views (see Cross-Domain Views) |
 | Lead Workspace | Full | primary persona |
 
 #### Manager portal
@@ -332,7 +332,7 @@ defined in the Operating Surfaces section
 | Client Brain Surface | Full | |
 | Knowledge Workspace | Full | |
 | Agent & Workflow Monitor | Full or Scoped | |
-| Reports & Analytics Surface | Full | |
+| Reports & Analytics Surface | Full | hosts the Performance & Analytics, Team Oversight, and Engagement Health views (see Cross-Domain Views) |
 | Lead Workspace | Full | |
 
 Projection note: the Manager portal does not include Production Workspace.
@@ -363,7 +363,7 @@ Projection note: the Contractor portal does not include Lead Workspace
 | Client Approval Queue | Full | primary persona |
 | Client Deliverable Library | Full | primary persona |
 | Client Billing / Invoices Surface | Full | primary persona; Finance owns the data |
-| Reports & Analytics Surface | Scoped | |
+| Reports & Analytics Surface | Scoped | hosts the Client Engagement Summary View (see Cross-Domain Views) |
 
 Pending / flagged: *Client Profile* — tentative; not added.
 
@@ -557,13 +557,14 @@ and its primary persona.
 | 2 | Lead Context View | understand this lead | CRM + Intelligence (lead scoring) + Client Success | Lead Workspace | Operator (Manager full) |
 | 3 | Performance & Analytics View | read performance | Intelligence + Finance + Service Delivery + CRM | Reports & Analytics Surface | Operator / Manager (Contractor / Client scoped) |
 | 4 | Team Oversight View | oversee the team | Workforce + Service Delivery + Client Success + Intelligence | Reports & Analytics Surface (manager scope) | Manager |
-| 5 | Engagement Health View | is this engagement healthy / profitable? | Service Delivery + Finance + Client Success + Workforce | deferred (DEC-020 follow-up) | Operator / Manager |
-| 6 | Client Engagement Summary View | how is my engagement going? | Service Delivery + Finance + Client Success | deferred (DEC-020 follow-up) | Client |
+| 5 | Engagement Health View | is this engagement healthy / profitable? | Service Delivery + Finance + Client Success + Workforce | Reports & Analytics Surface (operator / manager scope) | Operator / Manager |
+| 6 | Client Engagement Summary View | how is my engagement going? | Service Delivery + Finance + Client Success | Reports & Analytics Surface (client-scoped) | Client |
 | 7 | Contractor Assignment-in-Context View | my assigned work in context | Workforce + Service Delivery + Client Brain (scoped) + Knowledge | Contractor Assignments | Contractor |
 
-The **Reports & Analytics Surface hosts two distinct views**
-— the Performance & Analytics View and the Team Oversight View —
-kept separately named so the two compositions do not collapse
+The **Reports & Analytics Surface hosts four distinct views**
+— the Performance & Analytics View, the Team Oversight View,
+the Engagement Health View, and the Client Engagement Summary View —
+kept separately named so the compositions do not collapse
 into one.
 
 System Administrator has no Cross-Domain View.
@@ -598,15 +599,22 @@ Two previously flagged Operating Surfaces are resolved here:
   It is not a standalone Operating Surface
   and is removed from the flagged-surface list.
 
-### Deferred and flagged
-- The host surfaces for the Engagement Health View
-  and the Client Engagement Summary View are deferred
-  as a DEC-020 follow-up
-  (a possible new surface, or scoped reuse of an existing surface).
-- The operator-finance gap (DEC-020) remains flagged.
-  The Engagement Health View names the composition
-  that will address it,
-  but the view's host and the gap's resolution are deferred.
+### Host assignments
+The host surfaces for the Engagement Health View
+and the Client Engagement Summary View are resolved (DEC-023)
+by scoped reuse — both are hosted on the Reports & Analytics Surface
+(no new Operating Surface was added).
+
+The operator-finance gap (DEC-020) is resolved (DEC-023)
+for the per-engagement financial-context need:
+the operator reaches engagement revenue (Finance),
+contractor payment and effort (Workforce),
+delivery (Service Delivery), and health (Client Success)
+through the Engagement Health View
+on the Reports & Analytics Surface,
+a surface the operator already holds.
+A later cross-engagement financial-rollup need,
+if one surfaces, is a new item — not a reopening of this gap.
 
 ### Scope of definition in this file
 This file defines the Cross-Domain View concept,
@@ -700,7 +708,7 @@ The Cross-Domain Views are likewise no longer deferred;
 they are enumerated in the Cross-Domain Views section above.
 
 ### Flagged — Operating Surfaces carried forward
-Four Operating Surfaces are flagged, not firm,
+Three Operating Surfaces are flagged, not firm,
 and are deferred until a separate explicit decision.
 They must not be silently resolved into the firm inventory:
 
@@ -710,14 +718,16 @@ They must not be silently resolved into the firm inventory:
 - **System Configuration / Settings** (System Administrator) —
   depends on Phase 4 Extensibility / Phase 9 Infrastructure maturity
   before its real shape can be named.
-- **Operator-finance gap** — the operator's view of
-  engagement revenue, contractor payment status, and similar.
-  The Engagement Health View (see Cross-Domain Views)
-  names the composition that will address it,
-  but the view's host surface and the gap's resolution
-  are deferred (DEC-020 follow-up); the gap stays flagged.
 - **Onboarding / first-time-use surfaces** — none named
   for any persona; may be a Phase 2 oversight or out of scope; defer.
+
+The previously flagged *operator-finance gap* is resolved
+(DEC-023) for the per-engagement financial-context need:
+the operator reaches engagement financial context through
+the Engagement Health View on the Reports & Analytics Surface
+(no new Operating Surface was added).
+A later cross-engagement financial-rollup need,
+if one surfaces, is a new item — not a reopening of this gap.
 
 The previously flagged *Team Performance / Oversight Surface*
 is resolved (DEC-022): it is the Team Oversight View,
@@ -797,6 +807,11 @@ Scope and definitions in this file derive from:
 - the Cross-Domain Views inventory and rules derive from DEC-022,
   recorded in Snapshot-019 and captured in
   `brainstorms/2026-06-06-phase-2-cross-domain-views.md`
+- the Cross-Domain View host assignments
+  (Engagement Health View and Client Engagement Summary View
+  on the Reports & Analytics Surface)
+  and the operator-finance gap resolution
+  derive from DEC-023, recorded in Snapshot-021
 - the Phase 2 sub-item list in `Faraz-OS-Canon.md`
 - Phase 1 references in `Faraz-OS-Canon/domains.md`
 

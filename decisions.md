@@ -625,6 +625,57 @@ Status:
 
 ---
 
+### DEC-023
+The two deferred Cross-Domain View host surfaces and the
+operator-finance gap (the DEC-020 follow-up) are resolved
+and human-confirmed.
+
+Meaning:
+- Engagement Health View → hosted on the Reports & Analytics
+  Surface (operator / manager scope), by scoped reuse.
+- Client Engagement Summary View → hosted on the Reports &
+  Analytics Surface (client-scoped), by scoped reuse.
+- No new Operating Surface was added. The firm inventory stays
+  at sixteen surfaces; this is not a DEC-020 inventory amendment.
+  A new firm surface was considered for each host and not chosen.
+- Consequence: the Reports & Analytics Surface now hosts four
+  distinct, separately named Cross-Domain Views — the
+  Performance & Analytics View, the Team Oversight View, the
+  Engagement Health View, and the Client Engagement Summary View.
+- Operator-finance gap (DEC-020) → resolved for the
+  per-engagement financial-context need. The operator reaches
+  engagement revenue (Finance), contractor payment and effort
+  (Workforce), delivery (Service Delivery), and health
+  (Client Success) through the Engagement Health View on the
+  Reports & Analytics Surface, a surface the operator already
+  holds. The gap is removed from the flagged-surface list.
+- A later cross-engagement financial-rollup need, if one
+  surfaces, is a new item — not a reopening of this gap.
+
+Out of scope / unchanged:
+- The DEC-022 seven-view inventory, the granularity and naming
+  rules, and the two already-resolved flags (Reports & Analytics
+  Surface → both; Team Performance / Oversight Surface → pure
+  Cross-Domain View) are untouched.
+- The other flagged surfaces (Client Profile, System
+  Configuration / Settings, Onboarding) stay flagged.
+- Entitlement (who is exposed to which view) stays deferred to
+  the Permission Matrix / Phase 1 Governance. This decides where
+  the views live, not who sees them.
+- No Phase 1 domain truth reinterpreted.
+
+Basis:
+- Resolved as plan-then-write with a question gate (no separate
+  brainstorm; three bounded decisions).
+- Recorded in Snapshot-021.
+- Builds on DEC-020 (Operating Surfaces) and DEC-022
+  (Cross-Domain Views).
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
