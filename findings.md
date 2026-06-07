@@ -472,3 +472,20 @@ altitude scoping.
 
 Source:
 - Backfilled from Snapshot-031; not created here.
+
+---
+
+### FIND-030
+The DEC-026 G-3 acceptance criterion held on its decisive use: the Phase 2
+Permission Matrix derived from the landed Governance authorization rules
+(`domains.md`, "Authorization (accepted slice — DEC-026)") plus the Phase-2
+surface↔resource mapping reproduces the ratified DEC-020 reuse table across all 80
+surface×persona cells with **zero divergence** (full cell-by-cell derivation, not
+spot-checks). This confirms the round-trip of the two-altitude design — Phase 1
+authorizes (subject × verb × resource × condition), Phase 2 projects (persona ×
+surface exposure) — and is the second hold of the cross-phase
+acceptance-test-as-contract pattern (cf. FIND-029, the DEC-025 Channel-Model test).
+Citable precedent for future producer→consumer phase projections.
+
+Source:
+- Backfilled from Snapshot-033; not created here.

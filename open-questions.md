@@ -320,6 +320,15 @@ Why it matters:
   so the Permission Matrix is populated
   only when Governance truth exists.
 
+Resolved (DEC-026 / Snapshot-033):
+- Phase-1 half — the Governance authorization slice is concrete in `domains.md`
+  ("Authorization (accepted slice — DEC-026)"); DEC-026.
+- Phase-2 half — the Permission Matrix is populated as a read-only projection of
+  those rules through the surface↔resource mapping (`experience-architecture.md`;
+  Snapshot-033), reproducing the ratified DEC-020 exposure with zero divergence.
+  Phase 2 is now 7-of-7; KNI-14 → Done.
+- Closed.
+
 ---
 
 ### Q-015
@@ -349,6 +358,24 @@ Why it matters:
 - Defaulting Publishing toward "the queueing is part of the
   ability" would silently import workflow orchestration into a
   capability.
+
+---
+
+### Q-016
+Does the Client persona have scoped exposure to the Performance & Analytics View?
+View Inventory (:614) says scoped; Client portal table (:370) omits it.
+Pre-existing inconsistency between two ratified Phase-2 sources, surfaced by the
+matrix view projection (Snapshot-033). Resolution reopens DEC-022 view membership
+— its own small decision.
+
+Current direction:
+- Flagged in the Permission Matrix view projection as `‡`; not resolved there
+  (the matrix authors no decision; R-027/R-028).
+- The Client's surface-level Reports & Analytics exposure (Scoped, own-engagement)
+  is unaffected and reproduces the ratified surface table; this question is only
+  the view-membership nuance.
+- Deferred; its resolution is a small DEC reopening DEC-022 view membership.
+- Lives in this file as the system of record; tracked in Linear if/when scheduled.
 
 ---
 

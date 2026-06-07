@@ -121,23 +121,22 @@ System Configuration / Settings, Onboarding). KNI-14 is unchanged
 — only the deferred Permission Matrix population remains.
 
 Phase 2 sub-item status (7 canon sub-items):
-- Populated (6): Personas (with the Future Personas placeholder
+- Populated (7): Personas (with the Future Personas placeholder
   carried), Operating Surfaces, Portals, Cross-Domain Views,
-  Navigation Model (surface-movement model; Snapshot-023), and
-  Channel Behaviors (per channel type, written against the Phase 4
-  Channel Model taxonomy + three experience attributes;
-  Snapshot-031 / KNI-18).
+  Navigation Model (surface-movement model; Snapshot-023),
+  Channel Behaviors (per channel type; Snapshot-031 / KNI-18), and
+  the Permission Matrix (read-only projection of the DEC-026
+  authorization rules through the surface↔resource mapping;
+  Snapshot-033 / KNI-14; reproduces the ratified DEC-020 exposure,
+  zero divergence).
   Navigation Model's landing-surface designation, notification
   routing, and deep-linking stay deferred (marked future items).
-- Structure-defined, now unblocked: Permission Matrix. Q-014's Phase-1
-  half is resolved — the Governance authorization slice is concrete
-  (DEC-026 / Snapshot-032; domains.md "Authorization (accepted slice —
-  DEC-026)"). Population is the Phase 2 projection step (landing (ii),
-  KNI-14), not yet done.
 - Parked flags (Operating Surfaces): Client Profile, System
   Configuration / Settings, Onboarding.
 
-Phase 2 is therefore 6-of-7 populated.
+Phase 2 is therefore 7-of-7 populated — **Phase 2 Experience Architecture is
+complete.** (One flagged Phase-2 view-membership nuance, Q-016, is tracked
+separately and does not affect the 7-of-7 surface projection.)
 
 The five populated Phase 2 sub-items (Personas, Operating Surfaces, Portals,
 Cross-Domain Views, Navigation Model) were audited for internal consistency,
@@ -146,7 +145,7 @@ except for one drift: experience-architecture.md had asserted Phase 5 placement
 for the Client Brain concept in three places while its ownership is an open
 draft. That was corrected to reference altitude (commit edd4e55; FIND-027). The
 "final Client Brain ownership" draft area is unchanged; that audit populated no
-new sub-item (the count then stood at 5-of-7; it is now 6-of-7 — see the sub-item
+new sub-item (the count then stood at 5-of-7; it is now 7-of-7 — see the sub-item
 status above).
 
 Phase 3 Capability Map is now scoped and written (Snapshot-024 / DEC-024 for
@@ -387,19 +386,20 @@ The standing items below remain:
    surfaces (KNI-21). The inherited Phase 1 questions (domains.md:1914-1915,
    :1916, :1917-1918) stay referenced, not resolved, pending their owning
    Phase 1 work.
-2. Phase 2 is 6-of-7 populated. The one remaining sub-item, the Permission
-   Matrix, is now **unblocked**: Q-014's Phase-1 half is resolved and the
-   Governance authorization slice is concrete (DEC-026 / Snapshot-032). Its
-   population is the next Phase 2 step — a read-only projection of the landed
-   authorization rules through the surface↔resource mapping (authors no rules;
-   DEC-019 / FIND-022), tracked in KNI-14 as landing (ii); completing it brings
-   Phase 2 to 7-of-7. Other Phase 2 items:
+2. **Phase 2 Experience Architecture is complete — 7-of-7 populated.** The
+   Permission Matrix is populated (Snapshot-033 / KNI-14): a read-only projection
+   of the DEC-026 authorization rules through the surface↔resource mapping
+   (authors no rules; DEC-019 / FIND-022), reproducing the ratified DEC-020
+   exposure with zero divergence. **Q-014 is fully resolved** (DEC-026 +
+   the matrix population). Remaining Phase-2 carry-forwards are marked-future /
+   parked, not blockers:
    - Navigation Model's landing-surface designation, notification
      routing, and deep-linking stay deferred (marked future items).
    - The three Operating-Surface flags (Client Profile, System
      Configuration / Settings, Onboarding) stay parked.
-   The five originally populated sub-items were audited clean (Snapshot-026),
-   with the Client Brain placement drift corrected (FIND-027).
+   - Q-016 (one Phase-2 view-membership nuance: Client × Performance & Analytics
+     View) is tracked separately; it does not affect the 7-of-7 surface
+     projection.
 3. keep Phase 2 and Phase 3 scope distinct from each other and from
    Phase 6 Workflow Design, per the governing boundary test in
    `Faraz-OS-Canon/experience-architecture.md` and the closed six-boundary
