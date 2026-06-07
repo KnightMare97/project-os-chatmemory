@@ -50,6 +50,8 @@ phase map in `Faraz-OS-Canon.md` as authoritative if they differ.
 - **Milestones (one per active architecture phase):**
   - `Phase 1 — Domain Discovery`
   - `Phase 2 — Experience Architecture`
+  - `Phase 3 — Capability Map` (id `c4c6c84f-58ff-489e-8cc8-7cad12f68c25`)
+  - `Phase 4 — Extensibility Model` (id `6147e13d-540b-42ac-95a5-e315bd9f0560`)
   - Add a new milestone only when a phase becomes active in canon.
 - **Statuses:** `Backlog`, `Todo`, `In Progress`,
   `In Review`, `Done`, `Canceled`, `Duplicate`
@@ -57,7 +59,7 @@ phase map in `Faraz-OS-Canon.md` as authoritative if they differ.
   without an explicit decision):**
   - Parent `Type`: `documentation`, `scoping`, `boundary`,
     `architecture`, `snapshot`, `canon`
-  - Parent `Phase`: `Phase 1`, `Phase 2`
+  - Parent `Phase`: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4`
   - The default `Bug` / `Feature` / `Improvement` labels
     are unused for this project; do not apply them.
 
