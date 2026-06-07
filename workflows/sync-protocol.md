@@ -60,6 +60,7 @@ phase map in `Faraz-OS-Canon.md` as authoritative if they differ.
   - Parent `Type`: `documentation`, `scoping`, `boundary`,
     `architecture`, `snapshot`, `canon`
   - Parent `Phase`: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4`
+  - Exception: Parent `Phase` labels follow the milestone rule — add `Phase N` when phase N becomes active in canon.
   - The default `Bug` / `Feature` / `Improvement` labels
     are unused for this project; do not apply them.
 
