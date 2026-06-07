@@ -455,3 +455,20 @@ Impact:
 
 Source:
 - Backfilled from Snapshot-027; not created here.
+
+---
+
+### FIND-029
+The DEC-025 Channel Model acceptance test held under its first real load. Writing
+the Phase 2 Channel Behaviors for the one taxonomy channel type needed only the
+Channel Model's taxonomy and its three experience attributes
+(format/media constraints · preview affordance · notification capability) — the
+three Phase 2 dimensions key 1:1 to the three attributes — with no further Phase 4
+content required. This validates the OQ-C unblock-altitude decision (write the
+Channel Model only to the altitude that unblocks Phase 2) and the broader pattern
+of recording a verbatim cross-phase acceptance test as the contract between a
+producing phase and a consuming phase. Citable precedent for future unblock-
+altitude scoping.
+
+Source:
+- Backfilled from Snapshot-031; not created here.
