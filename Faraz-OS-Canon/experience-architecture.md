@@ -191,7 +191,7 @@ Subject-facing surfaces use distinct subject words
 rather than persona names.
 For example, the operator's current-client memory workspace
 is the Client Brain Surface
-(anchored on the cross-cutting Client Brain concept, whose ownership remains draft — Q-001/Q-004),
+(anchored on the cross-cutting Client Brain concept, owned by Knowledge per DEC-027; partitioning draft — Q-004),
 not "Client Context Surface,"
 so that "Client" is never overloaded between
 the persona doing the work
@@ -256,7 +256,7 @@ and is deferred (see the Permission Matrix section).
 
 The inventory references other phases at reference altitude only,
 without reinterpreting their ownership:
-Client Brain Surface anchors on the Client Brain concept (ownership draft, Q-001/Q-004);
+Client Brain Surface anchors on the Client Brain concept (owned by Knowledge per DEC-027; partitioning draft, Q-004);
 Lead Workspace anchors on the CRM domain (Phase 1);
 Client Billing / Invoices Surface presents Finance-owned data (Phase 1);
 Credentials & Integrations references Phase 4 extensibility
@@ -546,7 +546,7 @@ domain resource; the matrix below projects the DEC-026 authorization rules (in
 | Operator Inbox | operator work queue (Service Delivery) |
 | Production Workspace | production work items (Service Delivery) |
 | Review Queue | review / approval items (Service Delivery) |
-| Client Brain Surface | Client Brain (cross-cutting; ownership draft Q-001/Q-004) |
+| Client Brain Surface | Client Brain (cross-cutting; owned by Knowledge — DEC-027; partitioning draft Q-004) |
 | Knowledge Workspace | knowledge artifacts (Knowledge) |
 | Agent & Workflow Monitor | agent & workflow runtime state (Extensibility / execution) |
 | Reports & Analytics Surface | analytics & reporting outputs (Intelligence) |
@@ -713,7 +713,7 @@ and its primary persona.
 
 | # | View | Decision-context | Domains composed | Host surface | Primary persona |
 |---|------|------------------|------------------|--------------|-----------------|
-| 1 | Client Brain View | understand this client | Client Brain (ownership draft, Q-001/Q-004) + CRM + Service Delivery + Client Success + Finance + Brand | Client Brain Surface | Operator (Manager full; Contractor scoped) |
+| 1 | Client Brain View | understand this client | Client Brain (owned by Knowledge — DEC-027; partitioning draft Q-004) + CRM + Service Delivery + Client Success + Finance + Brand | Client Brain Surface | Operator (Manager full; Contractor scoped) |
 | 2 | Lead Context View | understand this lead | CRM + Intelligence (lead scoring) + Client Success | Lead Workspace | Operator (Manager full) |
 | 3 | Performance & Analytics View | read performance | Intelligence + Finance + Service Delivery + CRM | Reports & Analytics Surface | Operator / Manager (Contractor / Client scoped) |
 | 4 | Team Oversight View | oversee the team | Workforce + Service Delivery + Client Success + Intelligence | Reports & Analytics Surface (manager scope) | Manager |
