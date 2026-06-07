@@ -129,9 +129,11 @@ Phase 2 sub-item status (7 canon sub-items):
   Snapshot-031 / KNI-18).
   Navigation Model's landing-surface designation, notification
   routing, and deep-linking stay deferred (marked future items).
-- Structure-defined, blocked: Permission Matrix (population
-  requires concrete Phase 1 Governance rules; the cross-phase
-  dependency is tracked as Q-014 / KNI-16).
+- Structure-defined, now unblocked: Permission Matrix. Q-014's Phase-1
+  half is resolved — the Governance authorization slice is concrete
+  (DEC-026 / Snapshot-032; domains.md "Authorization (accepted slice —
+  DEC-026)"). Population is the Phase 2 projection step (landing (ii),
+  KNI-14), not yet done.
 - Parked flags (Operating Surfaces): Client Profile, System
   Configuration / Settings, Onboarding.
 
@@ -385,20 +387,19 @@ The standing items below remain:
    surfaces (KNI-21). The inherited Phase 1 questions (domains.md:1914-1915,
    :1916, :1917-1918) stay referenced, not resolved, pending their owning
    Phase 1 work.
-2. Phase 2 is 6-of-7 populated; Channel Behaviors is now written per channel
-   type against the Phase 4 Channel Model (Snapshot-031; KNI-18, moving to Done
-   on this landing). Remaining Phase 2 work:
-   - Permission Matrix population is the one remaining sub-item, blocked on
-     concrete Phase 1 Governance rules (cross-phase dependency Q-014 / KNI-16);
-     it remains KNI-14's open item, which keeps KNI-14 In Progress.
+2. Phase 2 is 6-of-7 populated. The one remaining sub-item, the Permission
+   Matrix, is now **unblocked**: Q-014's Phase-1 half is resolved and the
+   Governance authorization slice is concrete (DEC-026 / Snapshot-032). Its
+   population is the next Phase 2 step — a read-only projection of the landed
+   authorization rules through the surface↔resource mapping (authors no rules;
+   DEC-019 / FIND-022), tracked in KNI-14 as landing (ii); completing it brings
+   Phase 2 to 7-of-7. Other Phase 2 items:
    - Navigation Model's landing-surface designation, notification
      routing, and deep-linking stay deferred (marked future items).
    - The three Operating-Surface flags (Client Profile, System
      Configuration / Settings, Onboarding) stay parked.
-   No unblocked Phase 2 content remains: the one remaining sub-item, the
-   Permission Matrix, is blocked on concrete Phase 1 Governance rules
-   (Q-014 / KNI-16). The five originally populated sub-items were audited clean
-   (Snapshot-026), with the Client Brain placement drift corrected (FIND-027).
+   The five originally populated sub-items were audited clean (Snapshot-026),
+   with the Client Brain placement drift corrected (FIND-027).
 3. keep Phase 2 and Phase 3 scope distinct from each other and from
    Phase 6 Workflow Design, per the governing boundary test in
    `Faraz-OS-Canon/experience-architecture.md` and the closed six-boundary
