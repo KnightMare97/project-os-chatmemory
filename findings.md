@@ -410,3 +410,48 @@ Phase 1.
 
 Source:
 - Backfilled from Snapshot-024; not created here.
+
+---
+
+### FIND-027
+`experience-architecture.md` asserted Phase-5 placement for the Client Brain
+concept in three places (file lines 194, 259, 612) while Client Brain ownership
+is an open, protected draft (Q-001, Q-004; DEC-008; `domains.md` direction =
+Memory Object / Shared Service Artifact, unresolved). This was a
+reference-altitude overcommitment: naming a phase owner for a concept whose
+placement is undecided.
+
+Meaning:
+- The three phrases were corrected to reference altitude
+  ("ownership draft, Q-001/Q-004") in commit edd4e55.
+- The other Client Brain mentions are name-only Phase 2 objects
+  (Client Brain Surface, Client Brain View) and were left unchanged.
+
+Impact:
+- No architecture decision; no open question resolved. Client Brain ownership
+  stays draft. Generalized as risk R-028 (reference-altitude overcommitment).
+
+Source:
+- Backfilled from Snapshot-026; not created here.
+
+---
+
+### FIND-028
+Repo-wide citation drift on the inherited Phase 1 open-question line refs. The
+`domains.md` `### Open Questions` block (header at `:1914`) holds the three
+inherited questions at byte-accurate ranges `:1915-1916` (Intelligence vs
+Analytics / Reporting), `:1917` (when an insight becomes durable knowledge), and
+`:1918-1919` (lead-scoring home). Prior canon files cite these off by one —
+`capabilities.md:116/211` use `:1914-1915` and `:220/238` use `:1917-1918`; the
+same off-by-one appears in Snapshot-025/026 and `Current-State.md`.
+
+Meaning:
+- DEC-025 uses the byte-accurate ranges and registers the drift as a minor
+  normalization flag.
+
+Impact:
+- Alignment is deferred to a later normalization pass. It resolves no question
+  and changes no domain truth.
+
+Source:
+- Backfilled from Snapshot-027; not created here.
