@@ -536,11 +536,115 @@ and using them as columns would collapse the boundary.
 - It is not a Workforce identity model.
   Identity belongs to Phase 1.
 
-### Scope of definition in this file
-This file defines the matrix structure and altitude.
-It does not populate matrix rows and columns.
-Population requires concrete surfaces and Governance rules
-and is a later refinement.
+### Surface↔resource mapping
+Phase 2 owns this mapping (DEC-026, G-2c). Each firm Operating Surface presents one
+domain resource; the matrix below projects the DEC-026 authorization rules (in
+`domains.md`, "Authorization (accepted slice — DEC-026)") through it.
+
+| Operating Surface | Resource it presents (owning domain) |
+|---|---|
+| Operator Inbox | operator work queue (Service Delivery) |
+| Production Workspace | production work items (Service Delivery) |
+| Review Queue | review / approval items (Service Delivery) |
+| Client Brain Surface | Client Brain (cross-cutting; ownership draft Q-001/Q-004) |
+| Knowledge Workspace | knowledge artifacts (Knowledge) |
+| Agent & Workflow Monitor | agent & workflow runtime state (Extensibility / execution) |
+| Reports & Analytics Surface | analytics & reporting outputs (Intelligence) |
+| Lead Workspace | lead records (CRM) |
+| Client Notifications | client-facing notifications (Client Success / Service Delivery) |
+| Client Approval Queue | client approval items (Service Delivery / Client Success) |
+| Client Deliverable Library | client deliverables (Service Delivery) |
+| Client Billing / Invoices Surface | billing / invoices (Finance) |
+| Contractor Assignments | contractor assignment records (Workforce / Service Delivery) |
+| Admin Knowledge | admin knowledge (Knowledge) |
+| Workflow & Agent Configuration | workflow & agent configuration (Extensibility / Governance config) |
+| Credentials & Integrations | credentials & integrations (Extensibility; + Governance policy touchpoints) |
+
+### Populated matrix — surfaces × personas
+Read-only projection of the DEC-026 rules through the mapping above. Cells are
+{Full / Scoped / —}; a cell is an **exposure summary, not the full entitlement** —
+the verb (view / edit / approve / configure) and the exact condition live in the
+DEC-026 rules, not the cell. Scoped cells name the binding condition. Rows are the
+locked personas plus the carried Future Personas placeholder.
+
+| # | Surface | Operator | Manager | Client | Contractor | System Administrator | Future Personas |
+|---|---------|----------|---------|--------|------------|----------------------|-----------------|
+| 1 | Operator Inbox | Full | Full | — | — | — | — |
+| 2 | Production Workspace | Full | — | — | Scoped (own-engagement) | — | — |
+| 3 | Review Queue | Full | Full | — | — | — | — |
+| 4 | Client Brain Surface | Full | Full | — | Scoped (assigned-client) | — | — |
+| 5 | Knowledge Workspace | Full | Full | — | Scoped (engagement-relevant) | — | — |
+| 6 | Agent & Workflow Monitor | Full | Full | — | — | Full | — |
+| 7 | Reports & Analytics Surface | Full | Full | Scoped (own-engagement) | Scoped (own-engagement) | — | — |
+| 8 | Lead Workspace | Full | Full | — | — | — | — |
+| 9 | Client Notifications | — | — | Full † | — | — | — |
+| 10 | Client Approval Queue | — | — | Full † | — | — | — |
+| 11 | Client Deliverable Library | — | — | Full † | — | — | — |
+| 12 | Client Billing / Invoices Surface | — | — | Full † | — | — | — |
+| 13 | Contractor Assignments | — | — | — | Full † | — | — |
+| 14 | Admin Knowledge | — | — | — | — | Full | — |
+| 15 | Workflow & Agent Configuration | — | — | — | — | Full | — |
+| 16 | Credentials & Integrations | — | — | — | — | Full | — |
+
+**† Primary-persona precision (DEC-026, G-3/G-6).** For a primary persona on its
+own surface, a rule-level subject-binding condition derives as the ratified table's
+"Full (primary persona)" — the table's Full describes surface exposure;
+cross-subject data scope lives in the rules; this is not divergence. Cells 9–12
+(Client) and 13 (Contractor) carry `own-engagement` at the DEC-026 rule level (so
+the authoritative layer never authorizes cross-client / cross-contractor access),
+and project here as **Full** surface exposure.
+
+### Portal projection
+Each persona's portal is the set of its non-`—` surfaces above (Full or Scoped),
+per the persona-to-portal rule — reproducing the per-persona portal contents:
+- Operator: surfaces 1–8 (all Full).
+- Manager: 1, 3, 4, 5, 6, 7, 8 (Full); not 2 (Production Workspace).
+- Client: 7 (Scoped), 9, 10, 11, 12 (Full).
+- Contractor: 2, 4, 5, 7 (Scoped), 13 (Full).
+- System Administrator: 6, 14, 15, 16 (Full).
+A multi-role human receives one composed portal — the union of their roles' rows
+(see Multi-role resolution).
+
+### View projection
+Cross-Domain Views are host-surface-gated: a persona reaches a view only through
+its host surface, and at no broader exposure than that surface. Per-view persona
+membership follows the View Inventory and portal tables.
+
+| # | View | Host surface | Operator | Manager | Client | Contractor | System Administrator |
+|---|------|--------------|----------|---------|--------|------------|----------------------|
+| 1 | Client Brain View | Client Brain Surface | Full | Full | — | Scoped (assigned-client) | — |
+| 2 | Lead Context View | Lead Workspace | Full | Full | — | — | — |
+| 3 | Performance & Analytics View | Reports & Analytics Surface | Full | Full | ‡ | Scoped (own-engagement) | — |
+| 4 | Team Oversight View | Reports & Analytics Surface | — | Full | — | — | — |
+| 5 | Engagement Health View | Reports & Analytics Surface | Full | Full | — | — | — |
+| 6 | Client Engagement Summary View | Reports & Analytics Surface | — | — | Scoped (own-engagement) | — | — |
+| 7 | Contractor Assignment-in-Context View | Contractor Assignments | — | — | — | Full | — |
+
+System Administrator has no Cross-Domain View (see Cross-Domain Views section).
+
+**‡ Flagged pre-existing Phase-2 nuance (NOT resolved here; tracked as Q-016).**
+The View Inventory marks the Client "scoped" on the Performance & Analytics View,
+but the Client portal table lists only the Client Engagement Summary View on the
+Reports & Analytics Surface. These two ratified Phase-2 sources differ on whether
+the Client sees the Performance & Analytics View. This read-only projection does
+not resolve it (authoring no decision; R-027/R-028) — it is registered as **Q-016**
+(its resolution reopens DEC-022 view membership). The Client's surface-level
+Reports & Analytics exposure (Scoped, own-engagement) is unaffected and reproduces
+the ratified surface table.
+
+### Multi-role resolution
+A human carrying more than one role receives, for each surface/view, the **union of
+their roles' allows**, with an explicit `denied` outcome overriding any allow
+(DEC-026, G-5; no deny rules are currently authored). Each role's allow retains its
+own condition — the union never widens an individual grant's condition. This is the
+read-only projection of the DEC-026 combination rule; it authors none.
+
+### Status of this section
+The Permission Matrix is **populated** (DEC-026 / Snapshot-033): the surface×persona
+projection, the portal projection, and the view projection above. It is a read-only
+projection of Phase 1 Governance authorization rules; Phase 2 authors no rules
+(DEC-019 / FIND-022). With this, Phase 2 is **7-of-7**. Columns are surfaces /
+portals / views — never capabilities.
 
 ---
 
