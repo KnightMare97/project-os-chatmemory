@@ -170,6 +170,25 @@ scheduling/queueing P3 ↔ P6), FIND-026 (domains.md examples-list
 reconciliation), R-027 (entry-writing must not silently resolve an inherited
 Phase 1 question).
 
+Phase 4 Extensibility Model scope is now defined (Snapshot-027 / DEC-025;
+scoping only — no `extensibility.md` content written). DEC-025 records: an
+in-scope core of eight sub-items (Permission, Extension Contracts, Plugin Model,
+Provider Model, Channel Model, Model, AI Model Routing, Runtime vs Config-Time)
+and four deferred-and-flagged (Versioning & Compatibility, External Integrations,
+Feature Modules, Future Domains); the locked distinction set (Model and AI Model
+Routing kept separate; Channel Model first-class but typed as a Provider-Model
+specialization — recorded as a DEC-025 scoping inference, not pre-existing canon);
+the closed boundary set (definition/altitude + six cross-phase boundaries, P6 and
+P7 split, Phase 1 a single Governance boundary); the selection-vs-sequence test;
+the grant-altitude rule (R-028); the six-field per-sub-item skeleton; the
+non-goals (including human identity and implementation technology); and the
+Channel-Model unblock-altitude scope with its verbatim acceptance test. It
+resolves no Phase 1 question and writes no canon content. Registered open flags
+carried forward: agent/subagent identity (likely Phase 7), safety-controls
+vocabulary, the optional philosophy-#7 annotation, and a repo-wide
+inherited-question citation drift (FIND-028). The next Phase 4 work is the
+batched `extensibility.md` write.
+
 Phase 11 Claude Code Operating System
 currently owns the operating method
 for how Claude collaboration and later Claude Code execution
@@ -336,6 +355,22 @@ Avoid:
 
 ## Current Next Focus
 The current recommended next focus is:
+
+**Active focus — Phase 4 Extensibility.** Phase 4 is now scoped (Snapshot-027 /
+DEC-025; 8 in-scope / 4 deferred). The active next Phase 4 work is the batched
+`extensibility.md` write (à la the Phase 3 A/B split), prioritising the
+dependency-unblockers — the Channel Model (KNI-18, against its verbatim DEC-025
+acceptance test) and the Provider Model it specializes — then Permission,
+Extension Contracts, Plugin Model, Model, AI Model Routing, and the
+Runtime-vs-Config-Time framing section; batch sequencing is decided at write time.
+Carry the registered open flags (agent/subagent identity; safety-controls
+vocabulary; philosophy-#7 annotation; citation drift FIND-028) and honour the
+inbound flags (KNI-18; the eight capability provider-deps; Video Creation)
+without resolving any inherited Phase 1 question. Tracker reconciliation:
+backfill `findings.md` with FIND-027 (Snapshot-026) and FIND-028 (Snapshot-027).
+Do not write `extensibility.md` until its batched-write plan is approved.
+
+The standing items below remain:
 
 1. Phase 3 `Faraz-OS-Canon/capabilities.md` is written (all eight capabilities,
    Snapshot-025). The remaining Phase 3 open item is Q-015 (Publishing
