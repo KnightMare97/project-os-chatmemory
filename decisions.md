@@ -969,6 +969,178 @@ Status:
 
 ---
 
+### DEC-026
+The Phase 1 Governance **authorization slice** is defined and made concrete to
+unblock the Phase 2 Permission Matrix, resolving the Phase-1 half of Q-014. This
+is Phase 1 owning-phase content (authorization rules are domain truth), settled in
+an inline grill-me gate (G-1 through G-7); every citation re-verified against raw
+bytes. It promotes only the authorization slice of `Governance Draft v1`; the rest
+of that domain stays draft, untouched, markers preserved.
+
+- **Slice boundary (G-1).** *In-slice:* concrete `subject × action × resource ×
+  condition` authorization rules (per the Authorization Aggregate shape,
+  `domains.md:2284-2294`) sufficient to determine each locked persona's exposure
+  {Full / Scoped / —} to the sixteen firm Operating Surfaces and the portals/views
+  projected from them, including the Scoped conditions; entities touched are
+  `Authorization Rule` / `Permission Rule` / `Action Eligibility Rule` only as
+  needed for access exposure (`domains.md:2251-2254`). *Out-of-slice (stays
+  Governance Draft v1, untouched, markers preserved):* the other rule families in
+  `domains.md:2216-2231` (policies, risk classification, checkpoints, approval/
+  escalation/override, exceptions, safety rules, audit/traceability, policy-level
+  routing, extension compliance) and the Authorization-Aggregate fields not needed
+  for exposure (`validity window`, `linked policy refs`, `:2293-2294`), which an
+  in-slice rule may **reference at altitude** but not concretize.
+- **Slice-bleed risk — R-029 (new).** An in-slice authorization rule may reference
+  a draft neighbor (a condition, a policy ref, a risk tier) at altitude but must
+  not concretize it. If a needed exposure rule cannot be stated without finalizing
+  a draft neighbor, that is slice-bleed → **escalate, never silently absorb** (the
+  G-1 escalation rule).
+
+- **Rule shape (G-2).**
+  - *Altitude (G-2 Axis 1 = c):* authorization rules are authored at **data/action
+    altitude by reference** — `resource` = the domain resource the surface presents
+    (CRM, Service Delivery, Finance, Knowledge, Intelligence/Analytics, Client
+    Brain, Governance-config, Extensibility-config), **named at reference altitude**
+    (Governance references but does not own these, `domains.md:2233-2241`).
+    **Phase 2 owns the surface↔resource mapping**; the Permission Matrix **derives**
+    persona×surface exposure from the rules + that mapping. Phase-1 truth never
+    names Phase-2 surfaces as the resource.
+  - *Verb set (G-2 Axis 2 = b), closed and evidence-derived:* **view · edit ·
+    approve · configure** — each traced to DEC-020 surface names/notes (view = all
+    read surfaces; edit = Production Workspace / Knowledge Workspace authoring;
+    approve = Review Queue / Client Approval Queue; configure = Workflow & Agent
+    Configuration / Credentials & Integrations). New verbs enter only on new
+    evidence + explicit decision (same growth discipline as the channel taxonomy
+    and the condition set).
+  - *Approve-verb vs approval-gate boundary (parallel to the selection-vs-sequence
+    test):* **who *may* approve = Phase 1** (the `approve` authorization verb);
+    **when approval occurs in an ordered flow = Phase 6** (approval gates). Phase 1
+    authorizes the actor; Phase 6 sequences the gate.
+
+- **Ratified derived-projection baseline + Step-B acceptance criterion (G-3).** The
+  human-confirmed DEC-020 sixteen-surface reuse table (`experience-architecture.md:232-263`),
+  the per-portal membership/reuse tables (`:303-406`), and the view-host
+  relationships are **ratified as the expected *derived projection*** of the
+  matrix — **not** as authoritative rules. **Acceptance criterion for the Step-B
+  matrix population:** the matrix derived from the landed authorization rules + the
+  surface↔resource mapping must reproduce this ratified table; divergence signals
+  the rules or mapping are wrong (a verification check, parallel to the DEC-025
+  Channel-Model acceptance test). No decided DEC-020 cell value is amended; the
+  three previously ambiguous or under-specified cells are resolved here (see G-4).
+  **Acceptance-criterion precision:** for a primary persona on its own surface, a
+  rule-level subject-binding condition derives as the ratified table's "Full
+  (primary persona)" — the table's Full describes surface exposure; cross-subject
+  data scope lives in the rules; this is not divergence.
+
+- **Condition set (G-4), closed and evidence-derived (3):**
+  - **own-engagement** — defined at altitude as *"scoped to the engagement(s) the
+    subject is a party to."* This single condition serves **both** previously
+    under-specified Reports & Analytics Scoped cells (Contractor and Client,
+    `experience-architecture.md:240`); **resolving those two cells is decided here,
+    not pre-existing.**
+  - **assigned-client** — Contractor Scoped to the assigned client (Client Brain
+    Surface, `:237`).
+  - **engagement-relevant** — Contractor Scoped to engagement-relevant content
+    (Knowledge Workspace, `:238`).
+  Each condition **references a domain scoping concept at altitude** (Engagement
+  Scope `domains.md:2237`; client assignment) and is never redefined here. Growth
+  rule: new conditions only on new evidence + explicit decision.
+  - **Subject-binding on external personas (decided here):** the inherently
+    subject-bound external-persona resources — a Client's own deliverables,
+    approval items, notifications, and billing; a Contractor's own assignment
+    records — carry `own-engagement` at the rule level, so the authoritative layer
+    never authorizes cross-client or cross-contractor access. Unconditioned (Full)
+    rules are reserved for internal personas by design. (Per the G-3
+    acceptance-criterion precision, these still read as "Full (primary persona)"
+    in the matrix cell — exposure, not data scope.)
+  - **Manager · Agent & Workflow Monitor = Full at the `view` verb** (resolves the
+    one ambiguous "Full or Scoped" cell, `:239`/`:338`). The System-Administrator
+    distinction is carried by **verbs** (Manager `view`-Full vs SysAdmin
+    `configure`), not by scope; least-privilege is preserved through the verb set.
+    **`managed-scope` future-evidence door:** a `managed-scope` condition MAY enter
+    the closed set per the growth rule **if/when Phase 1 Workforce concretely
+    models the management relationship** — referenced as a future-evidence note,
+    not created now. The condition set stays at **three**.
+
+- **Multi-role overlap meta-rule (G-5).** When one human carries multiple roles,
+  effective authorization is the **union of allows**, with **an explicit `denied`
+  outcome beating any allow** — one rule at altitude, using the existing
+  `allowed or denied outcome` field (`domains.md:2292`); **no new construct.** Each
+  allow carries its own condition; **the union never widens an individual grant's
+  condition.** This honors the human-confirmed portal-composition canon
+  (`experience-architecture.md:293-295` "union of… entitlements"; intersection /
+  most-restrictive was rejected as it would re-open that canon). **Zero deny rules
+  are authored now** — denies are evidence-derived and explicit when needed, and
+  deny edge-case semantics (e.g. condition-scoped denies) are defined when the
+  first real deny rule is authored, not speculatively. Posture: **permissive by
+  default per the union canon; strictness is applied surgically via explicit
+  denies, not globally.**
+
+- **Matrix cell shape (G-6).** Cells summarize to **{Full / Scoped / —}**
+  (`experience-architecture.md:205-210`); "Distinct surface" is a separate
+  column/row, never a cell value; **verb + condition detail lives in the rules,
+  not the cell.** A cell is an *exposure summary, not the full entitlement* (e.g.
+  Manager `view`-Full and SysAdmin `configure`-Full both read "Full"); the
+  authoritative entitlement is the rule. **Acceptance-criterion precision:** for a
+  primary persona on its own surface, a rule-level subject-binding condition
+  derives as the ratified table's "Full (primary persona)" — the table's Full
+  describes surface exposure; cross-subject data scope lives in the rules; this is
+  not divergence.
+
+- **Two-step promotion (G-7), phase-separated, never mixed.**
+  - *Landing (i) — Phase 1:* one isolated commit = this DEC (`decisions.md`) **+**
+    the explicitly-called-out `domains.md` Governance authorization-slice edit;
+    then close-out (Snapshot-032 + Current-State; FIND/R backfilled same-commit).
+    Resolves Q-014's Phase-1 half; **KNI-16** (the unblock dependency) closeable
+    here.
+  - *Landing (ii) — Phase 2:* a separate gated content read → the
+    `experience-architecture.md` Permission Matrix population (projects the landed
+    rules via the surface↔resource mapping; **authors no rules**, DEC-019 /
+    FIND-022) → verifier against the G-3 acceptance criterion → close-out
+    (Snapshot-033 + Current-State **Phase 2 → 7-of-7**) → Linear close **KNI-14**
+    (+ KNI-16 if still open). Never combined with landing (i).
+
+- **`domains.md` edit plan (landing (i); executed in the same commit as this DEC).**
+  Promote the authorization slice of `Governance Draft v1` to a **scoped-accepted**
+  state — a new clearly-marked "Authorization (accepted slice — DEC-026)"
+  subsection, **plus one-line status pointers** on the existing Authorization
+  Aggregate sketch (`domains.md:2284`) and the Access and Authorization Control
+  bounded context (`:2352`) pointing to it — carrying the enumerated
+  `subject × verb × resource × condition` authorization rules that **project the
+  ratified DEC-020 baseline** at data/action altitude, plus the union+deny-override
+  meta-rule. The rest of `Governance Draft v1` is **byte-untouched** and its
+  `Draft v1` status preserved.
+
+- **Discipline.**
+  - **R-027 held:** this DEC resolves **no inherited Phase 1 open question** — the
+    inherited Phase-1 Open Questions in `domains.md:1915-1919` (in the *Intelligence
+    Draft v1* domain — Intelligence vs Analytics/Reporting, insight→durable
+    knowledge, lead-scoring home, optimization auto-apply) are untouched. Q-014,
+    the cross-phase dependency this DEC resolves, is not one of them.
+  - **R-028 held:** reference altitude — domain resources are referenced, never
+    redefined; the verb set and condition set are evidence-derived/closed.
+  - **Client Brain access-vs-ownership line (held):** authorizing access to the
+    Client Brain *Surface* (who may `view` it) is an authorization concern resolved
+    here; Client Brain *ownership* (Q-001 / Q-004) is **untouched**.
+  - **Q-001 / Q-004 and all other draft areas untouched.**
+
+This decision resolves the **Phase-1 half of Q-014**: the Governance authorization
+rules the Permission Matrix requires are decided here and made concrete in the
+`domains.md` authorization slice (same commit). The Phase-2 matrix population
+(Q-014's consuming half) completes at landing (ii). It resolves **no other open
+question**, finalizes **no other Governance area**, and changes **no other Phase 1
+domain truth**.
+
+Basis:
+- Inline grill-me question-gate (G-1 → G-7); capture in
+  `brainstorms/2026-06-08-governance-authorization-slice.md`.
+- Citations re-verified against raw bytes prior to this record.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

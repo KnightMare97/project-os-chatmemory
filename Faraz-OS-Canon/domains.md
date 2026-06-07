@@ -2282,6 +2282,7 @@ Possible contents:
 - exception references
 
 #### Authorization Aggregate
+*Accepted slice (DEC-026): the authorization rules realizing this aggregate for persona↔surface exposure are concrete in "Authorization (accepted slice — DEC-026)" below; the rest of this aggregate stays Draft v1.*
 Possible contents:
 - Authorization Rule
 - subject type
@@ -2349,6 +2350,7 @@ This Bounded Context is responsible for:
 - enforcement mode definition
 
 #### Access and Authorization Control
+*Accepted slice (DEC-026): persona↔surface authorization is concrete in "Authorization (accepted slice — DEC-026)" below; the rest of this bounded context stays Draft v1.*
 This Bounded Context is responsible for:
 - who may do what
 - human permissions
@@ -2398,6 +2400,122 @@ This Bounded Context is responsible for:
 - emergency bypass control
 - exception resolution tracking
 - governance-level exception auditability
+
+---
+
+### Authorization (accepted slice — DEC-026)
+This subsection is the **accepted** authorization slice of Governance (DEC-026).
+It makes concrete only the authorization rules sufficient to determine each locked
+persona's exposure to the Phase 2 Operating Surfaces. The rest of this domain
+remains **Governance Draft v1**, unchanged.
+
+**Model.** An authorization rule is `subject × verb × resource × condition →
+allow`, realizing the Authorization Aggregate sketch above. `resource` names the
+domain resource a surface presents, at **reference altitude** (Governance
+references but does not own these — see "What it owns" and "Governance may
+reference but should not own"). The authoritative surface↔resource mapping is
+Phase 2's (`experience-architecture.md`); the Phase 2 Permission Matrix
+**derives** persona↔surface exposure from these rules plus that mapping. Verb
+assignments per resource are Phase-1 authorization decisions grounded in each
+surface's function, within the closed verb set below.
+
+**Verbs (closed; evidence-derived):** view · edit · approve · configure. New
+verbs only on new evidence + explicit decision.
+
+**Conditions (closed; evidence-derived):**
+- **own-engagement** — scoped to the engagement(s) the subject is a party to.
+- **assigned-client** — scoped to the subject's assigned client(s).
+- **engagement-relevant** — scoped to engagement-relevant content.
+*Full* = no condition. New conditions only on new evidence + explicit decision; a
+`managed-scope` condition may enter only if Phase 1 Workforce concretely models
+the management relationship.
+
+**Combination rule.** Effective authorization is the union of the subject's
+per-role allows, each retaining its own condition; an explicit `denied` outcome
+beats any allow. No deny rules are authored here.
+
+**Resources (named at reference altitude; owning domain in parentheses):**
+operator work queue (Service Delivery) · production work items (Service Delivery) ·
+review / approval items (Service Delivery) · client deliverables (Service Delivery) ·
+client approval items (Service Delivery / Client Success) · client-facing notifications
+(Client Success / Service Delivery) · knowledge artifacts (Knowledge) · admin
+knowledge (Knowledge) · Client Brain (cross-cutting; ownership draft Q-001/Q-004 —
+access only, per the Domain Notes that Governance may constrain access but not own
+it) · analytics & reporting outputs (Intelligence) · lead records (CRM) ·
+billing / invoices (Finance — presentation; Finance owns) · contractor assignment
+records (Workforce / Service Delivery) · agent & workflow runtime state
+(Extensibility / execution) · workflow & agent configuration (Extensibility /
+Governance config) · credentials & integrations (Extensibility provider/channel/
+model; + Governance policy touchpoints).
+
+**Authorization rules (by subject).**
+
+*Operator —*
+- view, edit · production work items · Full
+- view · operator work queue · Full
+- view, approve · review / approval items · Full
+- view · Client Brain · Full (access only)
+- view, edit · knowledge artifacts · Full
+- view · agent & workflow runtime state · Full
+- view · analytics & reporting outputs · Full
+- view, edit · lead records · Full
+
+*Manager —*
+- view · operator work queue · Full
+- view, approve · review / approval items · Full
+- view · Client Brain · Full
+- view, edit · knowledge artifacts · Full
+- view · agent & workflow runtime state · Full
+- view · analytics & reporting outputs · Full
+- view, edit · lead records · Full
+- (no rule for production work items — Manager is not exposed to it; DEC-020 projection)
+
+*Contractor —*
+- view, edit · production work items · own-engagement
+- view · Client Brain · assigned-client
+- view, edit · knowledge artifacts · engagement-relevant
+- view · analytics & reporting outputs · own-engagement
+- view · contractor assignment records · own-engagement
+
+*Client —*
+- view · client-facing notifications · own-engagement
+- view, approve · client approval items · own-engagement
+- view · client deliverables · own-engagement
+- view · billing / invoices · own-engagement (presentation)
+- view · analytics & reporting outputs · own-engagement
+
+*System Administrator —*
+- view, configure · workflow & agent configuration · Full
+- view, configure · credentials & integrations · Full
+- view, configure · agent & workflow runtime state · Full
+- view, edit · admin knowledge · Full
+
+**Subject-binding note.** External-persona resources that are inherently
+subject-bound — a Client's own deliverables, approval items, notifications, and
+billing; a Contractor's own assignment records — carry the `own-engagement`
+condition at the rule level, so the authoritative layer never authorizes
+cross-client or cross-contractor access. Their Phase-2 table exposure remains
+*Full (primary persona)*: the table's Full describes surface exposure, while the
+cross-subject data scope lives in these rules (see the acceptance criterion
+below). Internal personas' unconditioned (Full) rules stand by design.
+
+**Mapping-facing note (at altitude; Phase 2 owns the authoritative mapping).**
+Each firm Operating Surface presents one of the resources above; projecting these
+rules through the Phase 2 surface↔resource mapping reproduces the ratified DEC-020
+exposure (the Permission Matrix population's acceptance criterion). Reference
+correspondence only: Operator Inbox → operator work queue; Production Workspace →
+production work items; Review Queue → review / approval items; Client Brain
+Surface → Client Brain; Knowledge Workspace → knowledge artifacts; Agent &
+Workflow Monitor → agent & workflow runtime state; Reports & Analytics Surface →
+analytics & reporting outputs; Lead Workspace → lead records; Client
+Notifications → client-facing notifications; Client Approval Queue → client
+approval items; Client Deliverable Library → client deliverables; Client Billing /
+Invoices Surface → billing / invoices; Contractor Assignments → contractor
+assignment records; Admin Knowledge → admin knowledge; Workflow & Agent
+Configuration → workflow & agent configuration; Credentials & Integrations →
+credentials & integrations. Distinct-surface relationships (e.g. Operator Inbox →
+Client receives the distinct Client Notifications) are separate surfaces on their
+own resources, not cross-persona exposure.
 
 ---
 
