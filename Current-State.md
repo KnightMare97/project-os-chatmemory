@@ -188,12 +188,15 @@ flags carried forward: agent/subagent identity (likely Phase 7), safety-controls
 vocabulary, the optional philosophy-#7 annotation, and a repo-wide
 inherited-question citation drift (FIND-028).
 
-Batches A and B of `extensibility.md` are now written (Snapshot-029; commits
-8e921a8, 1b148d4): the file skeleton; the Provider Model, Channel Model, Extension
-Contracts, Permission, and Plugin Model entries; the deferred-sub-item stubs;
-non-goals; and open flags. The Channel Model meets the DEC-025 acceptance test, so
-Phase 2 Channel Behaviors (KNI-18) is now unblockable pending a gated reopen. Only
-Batch C (Model, AI Model Routing, Runtime vs Config-Time) remains.
+All eight in-scope entries of `extensibility.md` are now written (Snapshot-030;
+Batches A–C, commits 8e921a8, 1b148d4, 082b261): the file skeleton; the Provider
+Model, Channel Model, Extension Contracts, Permission, Plugin Model, Model, and AI
+Model Routing entries; the Runtime vs Config-Time Extensions framing section; the
+deferred-sub-item stubs; non-goals; and open flags. The four deferred sub-items
+(Versioning & Compatibility, External Integrations, Feature Modules, Future
+Domains) remain flagged stubs per DEC-025. The Channel Model meets the DEC-025
+acceptance test, so Phase 2 Channel Behaviors (KNI-18) is now unblockable pending
+a gated reopen.
 
 Phase 11 Claude Code Operating System
 currently owns the operating method
@@ -362,19 +365,17 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-**Active focus — Phase 4 Extensibility (KNI-23, In Progress).** The batched-write
-plan is approved and **Batches A and B are landed** (Snapshot-029): the file
-skeleton; Provider Model, Channel Model, Extension Contracts, Permission, and
-Plugin Model. The Channel Model meets the DEC-025 acceptance test, so Phase 2
-Channel Behaviors (KNI-18) is now unblockable pending a gated reopen. **Next:
-Batch C** — Model, AI Model Routing, and the Runtime-vs-Config-Time framing
-section (the AI Model Routing entry applies the selection-vs-sequence test
-hardest: order-free selection = Phase 4, orchestration = Phase 6). Each batch:
-draft → verify → one content read → land. Carry the registered open flags
-(agent/subagent identity; safety-controls vocabulary; philosophy-#7 annotation;
-citation drift FIND-028) and honour the inbound flags (KNI-18; the eight
-capability provider-deps; Video Creation) without resolving any inherited Phase 1
-question.
+**Phase 4 Extensibility — first write complete.** All eight in-scope
+`extensibility.md` entries are written (Snapshot-030, Batches A–C); KNI-23's
+done-condition is met and it moves to Done after this close-out push is verified.
+The four deferred sub-items (Versioning & Compatibility, External Integrations,
+Feature Modules, Future Domains) remain flagged stubs; each becomes its own work
+item if/when un-deferred. The next Phase 4 decisions are fresh, gated topics:
+(a) the Phase 2 Channel Behaviors write against the now-landed Channel Model
+(KNI-18 reopen — awaiting explicit green-light); (b) un-deferring any of the four
+sub-items. Carry the registered open flags (agent/subagent identity;
+safety-controls vocabulary; philosophy-#7 annotation; citation drift FIND-028) and
+the inherited Phase 1 questions forward, unresolved.
 
 The standing items below remain:
 
