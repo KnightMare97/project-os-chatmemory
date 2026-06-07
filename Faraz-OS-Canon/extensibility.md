@@ -135,7 +135,7 @@ acceptance test, restated at the end of this entry.*
   already reference, and grows only as new references appear (it is not invented):
   - **Outbound content channel** — receives a dispatched, approved content item.
     Grounded in the Publishing capability ("push a piece of approved content to a
-    channel", `capabilities.md:82-83`).
+    channel", `capabilities.md:74-75`).
   Named platforms (e.g. Instagram, LinkedIn, YouTube) are **illustrative instances
   of a category, never core entities** (`non-goals.md:9`). Other candidate
   categories (e.g. notification-delivery, inbound/ingestion) are **not asserted**
