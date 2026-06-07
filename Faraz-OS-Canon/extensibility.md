@@ -17,11 +17,11 @@ It records each extension point on a fixed entry skeleton.
 ## Status
 Phase 4 scope is defined and human-confirmed (DEC-025 / Snapshot-027).
 
-This file is written in batches (DEC-025). **Batch A is landed:** the file
-skeleton, the Provider Model and Channel Model entries, the deferred-sub-item
-stubs, the non-goals, and the open/inherited flags. **Pending:** Batch B
-(Extension Contracts, Permission, Plugin Model) and Batch C (Model, AI Model
-Routing, Runtime vs Config-Time Extensions).
+This file is written in batches (DEC-025). **Batches A and B are landed:** the
+file skeleton; the Provider Model, Channel Model, Extension Contracts, Permission,
+and Plugin Model entries; the deferred-sub-item stubs; the non-goals; and the
+open/inherited flags. **Pending:** Batch C (Model, AI Model Routing, Runtime vs
+Config-Time Extensions).
 
 No Phase 1 domain truth, ownership, or boundary is changed by this file. Phase 4
 references Phase 1; it does not reinterpret it.
@@ -190,6 +190,118 @@ acceptance test, restated at the end of this entry.*
   no further Phase 4 content required."* This entry meets it: the taxonomy gives
   the channel type(s) and the typing axis, and the three attributes give Phase 2
   the per-type properties it needs — no further Phase 4 content required.
+
+### Extension Contracts
+- **Definition.** The contract surface itself: the explicit, versioned boundary
+  through which every extension — plugin, provider, channel, model — interacts
+  with the core. An intentional extension point (Philosophy #2): the contract is
+  the stable boundary that lets the core and extensions change independently.
+  Extensions reach the core **only** through explicit APIs, events, permissions,
+  schemas, and versioned interfaces, never through direct database access or
+  private internal state (Philosophy #4, `extensibility-philosophy.md:13-15`).
+- **Contract surface.** This entry names the surface the other extension points
+  reference. Its interaction modes — APIs, events, permissions, schemas, and
+  versioned interfaces (Philosophy #4) — are named here **at altitude**; the
+  concrete interface definitions, payload schemas, and versioning mechanics are
+  not specified. The core remains stable and independent of any specific
+  extension (Philosophy #3, `extensibility-philosophy.md:10-11`).
+- **Provider-agnostic note.** The contract is what makes provider-agnosticism
+  possible (Philosophy #6, `extensibility-philosophy.md:22-23`): because
+  extensions bind only through it, any provider, channel, model, or plugin is
+  swappable behind it without forcing core rewrites.
+- **Governance touchpoints.** The contract is the boundary at which governance is
+  enforced: every extension interaction must respect authentication,
+  authorization, validation, auditability, safety controls, and policy
+  enforcement (Philosophy #8, `extensibility-philosophy.md:29-30`) at altitude.
+  Permissions are one of the contract's interaction modes (Philosophy #4); the
+  authoritative rules are Phase 1 Governance (DEC-019 / FIND-022) and are not
+  enumerated here.
+- **Runtime vs Config-Time.** The contract is the stable element; whether a given
+  extension binds at runtime or through configuration / deployment policy is a
+  per-binding attribute (Philosophy #10, `extensibility-philosophy.md:36-38`).
+  Contract *evolution over time* (backward compatibility, Philosophy #11) belongs
+  to the deferred Versioning & Compatibility sub-item, not here.
+- **Boundary notes / inherited flags.**
+  - Within Phase 4: the Provider, Channel, Permission, and Plugin entries
+    reference this contract surface at altitude; this entry formalizes it. It
+    names the contract machinery; it does not specify it (contract-altitude rule).
+  - ↔ Phase 7: the contract is the Phase 4 boundary definition; the system wiring
+    that realizes it (transport, storage, runtime) is Phase 7.
+  - Deferral: concrete interface/schema specs are Phase 7 / External Integrations;
+    contract versioning is Versioning & Compatibility — both deferred.
+  - No inherited Phase 1 question is resolved here.
+
+### Permission
+- **Definition.** The model for **capability grants** to extensions — what a
+  plugin, provider, channel, or model is permitted to do — expressed as grants
+  carried through the contract surface. This is Phase 4's altitude in the
+  three-altitude permission separation: Phase 4 owns extension / plugin / provider
+  capability grants via contracts. The full triad is recorded in DEC-019 /
+  FIND-022 and **referenced there, not restated here**. (The boundary with Phase 1
+  Governance and the Phase 2 Permission Matrix is drawn in the Boundary notes
+  below.)
+- **Contract surface.** Grants are expressed through the contract's *permissions*
+  interaction mode (Philosophy #4): an extension declares the capabilities it
+  requires and is granted them through the contract, never by reaching past it.
+  Named at altitude; the concrete grant schema is not specified.
+- **Provider-agnostic note.** Because grants are contract-carried, any provider,
+  channel, or plugin is bound under the same grant model regardless of vendor
+  (Philosophy #6).
+- **Governance touchpoints.** A grant operates **within**, and is bounded by, the
+  governance concerns the core defines — authentication, authorization,
+  validation, auditability, safety controls, and policy enforcement (Philosophy
+  #8). A Phase 4 grant never authors or overrides a Governance rule; the
+  authoritative rules belong to Phase 1 Governance (DEC-019 / FIND-022) and no
+  concrete policy is enumerated here.
+- **Runtime vs Config-Time.** Grants may be issued or changed at runtime or
+  through configuration / deployment policy (Philosophy #10); which mode applies
+  is a per-grant attribute, not a rule set here.
+- **Boundary notes / inherited flags.**
+  - ↔ Phase 1 Governance (grants ≠ rules): Phase 4 grants capability to
+    extensions; Phase 1 Governance authors the authoritative authorization rules
+    that bound those grants. Referenced at altitude (DEC-019 / FIND-022); never
+    authored here.
+  - ↔ Phase 2: the Permission Matrix is the read-only experience projection of
+    Governance rules onto personas/surfaces — it is not this grant model, and this
+    grant model is not the matrix.
+  - Q-014 (Permission Matrix population ↔ concrete Phase 1 Governance rules) is
+    referenced, not resolved.
+  - No inherited Phase 1 question is resolved here.
+
+### Plugin Model
+- **Definition.** The model for a **plugin**: a packaged unit that attaches
+  extensions — channels, providers, or specialized integrations — to the core
+  through the contract surface. Plugins are the packaging / attachment axis,
+  distinct from domains (business responsibility) and capabilities (reusable
+  functions), and a plugin *attaches* channels, providers, or specialized
+  integrations (Philosophy #5, `extensibility-philosophy.md:17-20`). An
+  intentional extension point (Philosophy #2).
+- **Contract surface.** A plugin attaches and interacts only through the contract
+  surface (APIs, events, permissions, schemas, versioned interfaces — Philosophy
+  #4); it bundles one or more providers / channels / integrations and registers
+  them through the contract, never through private internal state. Named at
+  altitude; the concrete plugin manifest / registration schema is not specified.
+- **Provider-agnostic note.** A plugin can bundle any swappable provider or
+  channel behind the contract (Philosophy #6); the core depends on no specific
+  plugin (Philosophy #3).
+- **Governance touchpoints.** A plugin, and everything it attaches, must respect
+  the core's governance — authentication, authorization, validation, auditability,
+  safety controls, and policy enforcement (Philosophy #8) — at altitude; a
+  plugin's grants follow the Permission grant model above, and the authoritative
+  rules are Phase 1 Governance (DEC-019 / FIND-022), not enumerated here.
+- **Runtime vs Config-Time.** Plugins may be enabled, disabled, or changed at
+  runtime or through configuration / deployment policy (Philosophy #10); which
+  mode applies is a per-plugin attribute.
+- **Boundary notes / inherited flags.**
+  - Within Phase 4: the Plugin Model is the *packaging / attachment* axis;
+    Provider Model and Channel Model are *what* is attached. Distinct axes
+    (Philosophy #5) — a plugin is not a provider and not a channel.
+  - ↔ Phase 6: a plugin makes capabilities / providers *available* (order-free);
+    when they run, in what order, is Phase 6 orchestration (selection-vs-sequence
+    test).
+  - ↔ Phase 7: the plugin attachment contract is Phase 4; the runtime that loads,
+    enables, or disables plugins is Phase 7.
+  - No inherited Phase 1 question is resolved here.
 
 ---
 
