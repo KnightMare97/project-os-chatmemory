@@ -518,3 +518,33 @@ Impact:
 
 Source:
 - Snapshot-034 close-out; this session.
+
+---
+
+### FIND-032
+An LLM verification pass can **false-pass** line-number citations that point into a
+file edited earlier in the same session. During the DEC-027 landing (ii)
+(`memory.md` write), the independent verifier reported several `domains.md`
+citations "correct" (`:1254-1257`, `:2746-2752`, `:1262`) that were in fact off:
+the lines had shifted under the same-session DEC-027 edits (D4 −1 at `:145`, D8 +2
+at `:373`, D2a +1 at `:1263`, D1b −1 at `:2762`), and the draft had carried some
+citations from pre-landing reads. This is a sibling to FIND-031 (which named the
+grep-completeness lesson for reconciliation sweeps); the distinct lesson here is
+that **LLM citation-checking is unreliable across shifted ranges** and must not be
+the sole line-number guard.
+
+Meaning / corrective (adopted as a standing operating rule):
+- After any same-session canon landing, re-derive all draft citations from
+  **post-landing ground truth** (content-anchor grep for current line numbers),
+  never from pre-landing reads.
+- Run a **deterministic stale-token sweep** on the draft (grep the old line numbers)
+  before the verifier pass; do not rely on the LLM verifier alone for line-number
+  accuracy.
+
+Impact:
+- No architecture changed. The `memory.md` draft's ~25 citations were re-derived
+  from ground truth and confirmed byte-accurate by the sweep before landing. The
+  corrective is persisted as a standing operating rule.
+
+Source:
+- Snapshot-035 close-out; this session.

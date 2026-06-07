@@ -210,9 +210,12 @@ insight→durable-knowledge threshold, Phase-1 Intelligence truth pending, R-027
 ownership resolution was landed as the isolated Phase-1 `domains.md` ownership update
 (landing (i); commit `e44a201`, 13 sites) plus the `experience-architecture.md`
 citation refresh (commit `4550d46`, four sites, reference altitude). The
-`memory.md` first write (landing (ii)) is pending — six firm sub-items on the
-six-field skeleton, Client Brain entry written partition-agnostic; no `memory.md`
-content exists yet.
+`memory.md` first write (landing (ii)) is **complete** (Snapshot-035; commit
+`89f5034`): six firm entries (Client Brain, Agency Brain, Knowledge Base, Decision
+Logs, Learnings, Context Retrieval) on the six-field skeleton — Client Brain written
+partition-agnostic, Asset Intelligence a deferred stub. Every Owner field is a
+Phase-1 reference (Knowledge owns all six); authorization defers to DEC-026, physical
+retrieval/storage to Phase 7.
 
 Phase 11 Claude Code Operating System
 currently owns the operating method
@@ -383,8 +386,8 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-**Phase 5 Knowledge & Memory — scoped (DEC-027); first write pending.** The Phase 5
-question-gate is closed (DEC-027): the G-1–G-5 structural frame (logical altitude;
+**Phase 5 Knowledge & Memory — first write complete (Snapshot-035).** `memory.md` is
+written (landing (ii); commit `89f5034`). The Phase 5 question-gate was closed by DEC-027: the G-1–G-5 structural frame (logical altitude;
 closed seven-boundary set; six firm sub-items + Asset Intelligence deferred stub;
 six-field skeleton; non-goals); G-6 resolved **Q-001** (Client Brain owned by the
 Knowledge domain, as Memory Object / Shared Service Artifact; Client Success
@@ -393,11 +396,16 @@ insight→durable-knowledge threshold (Phase-1 Intelligence truth, pending; R-02
 Q-004 (Client Brain partitioning) is carried, entangled with Q-003; the eventual
 `memory.md` entry is written partition-agnostic. The ownership resolution landed as
 the isolated Phase-1 `domains.md` update (landing (i); commit `e44a201`) with the
-`experience-architecture.md` citation refresh (commit `4550d46`). **Landing (ii) —
-the `memory.md` Knowledge & Memory write — is the next Phase 5 work**: six firm
-sub-items (Client Brain, Agency Brain, Knowledge Base, Decision Logs, Learnings,
-Context Retrieval) on the six-field skeleton, with Asset Intelligence a
-deferred-flagged stub.
+`experience-architecture.md` citation refresh (commit `4550d46`). **Landing (ii) is
+complete**: `memory.md` carries six firm entries (Client Brain, Agency Brain,
+Knowledge Base, Decision Logs, Learnings, Context Retrieval) on the six-field
+skeleton — Client Brain partition-agnostic (Q-004 carried), Learnings referencing
+the insight→durable-knowledge threshold at altitude (R-027), every Owner a Phase-1
+reference (Knowledge owns all six) — with Asset Intelligence a deferred-flagged stub.
+The remaining Phase 5 items are carry-forwards, none blocking: Asset Intelligence
+un-defer (its own gated decision); Q-004 partitioning (resolves with Q-003); the
+Client Brain Aggregate-vs-Memory-Object and approval-before-durable canon flags.
+Candidate fresh threads: Phase 6 Workflow Design; the four Phase-4 deferred sub-items.
 
 **Phase 4 Extensibility — first write complete.** All eight in-scope
 `extensibility.md` entries are written (Snapshot-030, Batches A–C); KNI-23's
