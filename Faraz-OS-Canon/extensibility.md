@@ -17,11 +17,13 @@ It records each extension point on a fixed entry skeleton.
 ## Status
 Phase 4 scope is defined and human-confirmed (DEC-025 / Snapshot-027).
 
-This file is written in batches (DEC-025). **Batches A and B are landed:** the
-file skeleton; the Provider Model, Channel Model, Extension Contracts, Permission,
-and Plugin Model entries; the deferred-sub-item stubs; the non-goals; and the
-open/inherited flags. **Pending:** Batch C (Model, AI Model Routing, Runtime vs
-Config-Time Extensions).
+This file is written in batches (DEC-025). **All eight in-scope entries are
+written** (Batches A–C): the file skeleton; the Provider Model, Channel Model,
+Extension Contracts, Permission, Plugin Model, Model, and AI Model Routing
+entries; the Runtime vs Config-Time Extensions framing section; the
+deferred-sub-item stubs; the non-goals; and the open/inherited flags. The four
+deferred sub-items (Versioning & Compatibility, External Integrations, Feature
+Modules, Future Domains) remain flagged stubs per DEC-025.
 
 No Phase 1 domain truth, ownership, or boundary is changed by this file. Phase 4
 references Phase 1; it does not reinterpret it.
@@ -302,6 +304,119 @@ acceptance test, restated at the end of this entry.*
   - ↔ Phase 7: the plugin attachment contract is Phase 4; the runtime that loads,
     enables, or disables plugins is Phase 7.
   - No inherited Phase 1 question is resolved here.
+
+### Model
+- **Definition.** The abstraction for an **AI model** as a swappable unit — a
+  specific model (and tier) the system invokes through a provider. A Model is the
+  unit an AI model provider supplies; the Provider Model is the general
+  swappable-provider contract, and AI Model Routing (below) is the policy that
+  selects among Models — kept as separate concerns. An intentional extension
+  point (Philosophy #2): models change often and must be swappable. Backed by the
+  multi-model principle (`ai-philosophy.md:18-19`, multiple model providers and
+  model tiers).
+- **Contract surface.** A Model is reached through the provider contract surface —
+  the APIs, events, permissions, schemas, and versioned interfaces named by
+  Extension Contracts (Philosophy #4) — named at altitude; a model exposes its
+  capabilities and tier through that contract, not through private internal state.
+  Not specified here.
+- **Provider-agnostic note.** Models are swappable behind the contract (Philosophy
+  #6; `ai-philosophy.md:18-19`): the system supports multiple model providers and
+  tiers (paid / free / premium / fallback) without architectural rewrites, and the
+  core depends on no specific model (Philosophy #3).
+- **Governance touchpoints.** Model invocation must respect the core's governance
+  — authentication, authorization, validation, auditability, safety controls, and
+  policy enforcement (Philosophy #8, `extensibility-philosophy.md:29-30`) — at
+  altitude; the authoritative rules are Phase 1 Governance (DEC-019 / FIND-022)
+  and are not enumerated here.
+- **Runtime vs Config-Time.** A model may be swapped at runtime (e.g. tier or
+  fallback selection) or set through configuration / deployment policy (Philosophy
+  #10); which mode applies is a per-model / per-binding attribute, not a rule set
+  here (see the Runtime vs Config-Time Extensions framing section below).
+- **Boundary notes / inherited flags.**
+  - Within Phase 4: Model is the *unit*; Provider Model is the general provider
+    contract it is supplied through; AI Model Routing is the *policy* that selects
+    among Models — three distinct concerns (Model and AI Model Routing kept
+    separate per the locked distinction set).
+  - ↔ Phase 6: selecting *which* model by policy is routing (order-free, Phase 4 —
+    see AI Model Routing); *when* a model runs within an ordered workflow is
+    Phase 6.
+  - ↔ Phase 7: the model contract is Phase 4; the AI Architecture that executes
+    models is Phase 7.
+  - Agent / subagent identity (registered open flag): agents/subagents that wrap
+    models are likely Phase 7 AI Architecture (`experience-architecture.md:821`);
+    not resolved here.
+  - No inherited Phase 1 question is resolved here.
+
+### AI Model Routing
+- **Definition.** The **policy-driven selection** mechanism that chooses among
+  interchangeable models, providers, agents, and execution paths by policy — cost,
+  quality, latency, availability, risk, and task type. It is the order-free
+  selection layer over the Model and Provider abstractions; it is not a workflow.
+  Backed by both philosophies: routing is part of extensibility (Philosophy #7,
+  `extensibility-philosophy.md:25-27`) and model routing is a core architectural
+  capability (`ai-philosophy.md:21-22`). An intentional extension point
+  (Philosophy #2).
+- **Contract surface.** Routing selects among contract-bound providers and models;
+  it operates over the Extension Contracts surface (Philosophy #4) and the
+  selection policy is named at altitude — the concrete routing-policy schema and
+  engine are not specified (routing *execution* wiring is Phase 7).
+- **Provider-agnostic note.** Routing operationalizes provider-agnosticism at run
+  time (Philosophy #6; `ai-philosophy.md:18-19`, routing strategies across paid /
+  free / premium / fallback): it selects among swappable providers and models
+  without binding the core to any.
+- **Governance touchpoints.** Routing decisions must respect the core's governance
+  — authentication, authorization, validation, auditability, safety controls, and
+  policy enforcement (Philosophy #8) — at altitude. "Risk" as a routing dimension
+  *references* Governance / safety policy; it does not author it (authoritative
+  rules are Phase 1 Governance, DEC-019 / FIND-022). No concrete policy is
+  enumerated here.
+- **Runtime vs Config-Time.** Routing may operate at runtime (dynamic selection)
+  or be set through configuration / deployment policy (Philosophy #10; fallback
+  options per `ai-philosophy.md:18-19`); the mode is an attribute, not a rule set
+  here.
+- **Boundary notes / inherited flags.**
+  - ↔ Phase 6 (the sharpest line — the selection-vs-sequence test, verbatim): *"If
+    it defines how the system selects among interchangeable providers / models /
+    agents / execution paths by policy (cost, quality, latency, availability,
+    risk, task-type) — the swappable, order-free selection mechanism — it is
+    Phase 4. If it requires naming a predecessor, successor, gate, or
+    step-sequence — what runs, in what order, with which hand-offs — it is
+    Phase 6."* Routing is the Phase 4 side; orchestration — agent chains, approval
+    gates, workflow runtime — is Phase 6.
+  - Philosophy #7 refinement: `extensibility-philosophy.md:25` reads "routing and
+    orchestration are part of extensibility"; per DEC-025, within the phase map
+    orchestration is owned by Phase 6 and Phase 4 retains routing / selection only
+    (registered philosophy-#7 annotation flag).
+  - ↔ Phase 7: the routing policy is Phase 4; the engine that executes routing is
+    Phase 7 AI Architecture.
+  - Agent / subagent routing is in scope as *selection*; agent identity itself is
+    likely Phase 7 (registered open flag), not resolved here.
+  - No inherited Phase 1 question is resolved here.
+
+### Runtime vs Config-Time Extensions
+*Framing section (per DEC-025 / OQ-K) — it defines the cross-cutting attribute;
+it is not an extension point on the six-field skeleton, and it does not enumerate
+which extensions are runtime vs config-time (that is each entry's Runtime vs
+Config-Time field).*
+
+- **The attribute.** Extensibility supports both runtime and configuration-time
+  evolution (Philosophy #10, `extensibility-philosophy.md:36-38`): some providers
+  and execution paths are swappable **at runtime**, while other integrations and
+  plugins are enabled, disabled, or changed through **configuration or deployment
+  policy**.
+- **Cross-cutting use.** Every extension-point entry records, in its *Runtime vs
+  Config-Time* field, which mode(s) it supports. This is an **attribute** of the
+  binding — analogous to the Phase 3 execution-mode attribute — not the
+  deployment or governance policy that decides it.
+- **What this section does not do.** It does not enumerate extensions or assign
+  modes (that lives in each entry's field), and it does not author the deployment
+  or governance policy that selects a mode — concrete deployment policy is Phase 7,
+  and any governing rule is Phase 1 Governance (DEC-019 / FIND-022), referenced at
+  altitude.
+- **Boundary note.** Contract *evolution over time* (backward compatibility,
+  Philosophy #11) is a distinct concern owned by the deferred Versioning &
+  Compatibility sub-item, not by this attribute. No inherited Phase 1 question is
+  resolved here.
 
 ---
 
