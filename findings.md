@@ -489,3 +489,32 @@ Citable precedent for future producer→consumer phase projections.
 
 Source:
 - Backfilled from Snapshot-033; not created here.
+
+---
+
+### FIND-031
+Resolving a long-standing draft that is echoed across a canon file requires a
+grep-complete reconciliation sweep, not the initially-named edit sites. For DEC-027
+(Client Brain ownership → Knowledge), the first knock-on enumeration named two
+primary `domains.md` ownership statements plus the DEC-026 slice list; an
+independent verifier's full grep then surfaced four more ownership-assertion sites —
+including two that asserted **joint** Client Success + Knowledge ownership
+(`domains.md` Draft-v2 "Primary Owner"; the Proposed-Model line) — which, left
+stale, would have made `domains.md` self-contradict the resolution. This is the
+FIND-027 stale-citation failure mode one level deeper: not a citation drifting, but
+the source-of-truth file asserting the opposite of the decision. The independent
+verification pass caught the incomplete enumeration before commit.
+
+Meaning:
+- When a DEC resolves a draft area, enumerate every surviving assertion of that
+  draft's openness by independent grep, classify each as resolve vs
+  legitimately-carry, and treat the verifier's grep-completeness check as a landing
+  gate, not a formality.
+
+Impact:
+- No architecture changed by this finding. DEC-027's edit set was expanded to the
+  grep-complete set (13 `domains.md` sites) and verified contradiction-free before
+  landing.
+
+Source:
+- Snapshot-034 close-out; this session.

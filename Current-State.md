@@ -199,6 +199,21 @@ Domains) remain flagged stubs per DEC-025. The Channel Model meets the DEC-025
 acceptance test, so Phase 2 Channel Behaviors (KNI-18) is now unblockable pending
 a gated reopen.
 
+Phase 5 Knowledge & Memory Architecture is now scoped (Snapshot-034 / DEC-027). The
+Phase 5 question-gate (G-1 → G-7) is closed: the structural frame (G-1 logical
+altitude; G-2 closed seven-boundary set; G-3 six firm sub-items + Asset Intelligence
+deferred stub; G-4 six-field skeleton; G-5 non-goals), the Q-001 resolution (G-6:
+**Client Brain is owned by the Knowledge domain**, as a Memory Object / Shared
+Service Artifact; Client Success contributes and CRM references, both non-owning),
+and the carried items (G-6 Q-004 partitioning, entangled with Q-003; G-7
+insight→durable-knowledge threshold, Phase-1 Intelligence truth pending, R-027). The
+ownership resolution was landed as the isolated Phase-1 `domains.md` ownership update
+(landing (i); commit `e44a201`, 13 sites) plus the `experience-architecture.md`
+citation refresh (commit `4550d46`, four sites, reference altitude). The
+`memory.md` first write (landing (ii)) is pending — six firm sub-items on the
+six-field skeleton, Client Brain entry written partition-agnostic; no `memory.md`
+content exists yet.
+
 Phase 11 Claude Code Operating System
 currently owns the operating method
 for how Claude collaboration and later Claude Code execution
@@ -336,10 +351,12 @@ should be trusted before stale summary material.
 Some important architectural areas remain draft.
 
 These include:
-- final Client Brain ownership
+- Client Brain partitioning — per Client / per Brand (Q-004; entangled with Q-003).
+  Client Brain *ownership* is resolved to Knowledge (DEC-027); only partitioning
+  remains draft.
 - final Brand placement
 - final Service Agreement ownership
-- final Aggregate boundaries
+- final Aggregate boundaries (incl. Client Brain Aggregate vs Memory Object)
 - some cross-domain operational boundaries
 
 These draft areas should remain visible
@@ -365,6 +382,22 @@ Avoid:
 
 ## Current Next Focus
 The current recommended next focus is:
+
+**Phase 5 Knowledge & Memory — scoped (DEC-027); first write pending.** The Phase 5
+question-gate is closed (DEC-027): the G-1–G-5 structural frame (logical altitude;
+closed seven-boundary set; six firm sub-items + Asset Intelligence deferred stub;
+six-field skeleton; non-goals); G-6 resolved **Q-001** (Client Brain owned by the
+Knowledge domain, as Memory Object / Shared Service Artifact; Client Success
+contributes and CRM references, both non-owning); G-7 carried the
+insight→durable-knowledge threshold (Phase-1 Intelligence truth, pending; R-027).
+Q-004 (Client Brain partitioning) is carried, entangled with Q-003; the eventual
+`memory.md` entry is written partition-agnostic. The ownership resolution landed as
+the isolated Phase-1 `domains.md` update (landing (i); commit `e44a201`) with the
+`experience-architecture.md` citation refresh (commit `4550d46`). **Landing (ii) —
+the `memory.md` Knowledge & Memory write — is the next Phase 5 work**: six firm
+sub-items (Client Brain, Agency Brain, Knowledge Base, Decision Logs, Learnings,
+Context Retrieval) on the six-field skeleton, with Asset Intelligence a
+deferred-flagged stub.
 
 **Phase 4 Extensibility — first write complete.** All eight in-scope
 `extensibility.md` entries are written (Snapshot-030, Batches A–C); KNI-23's
