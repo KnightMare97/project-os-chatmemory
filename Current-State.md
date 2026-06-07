@@ -121,22 +121,21 @@ System Configuration / Settings, Onboarding). KNI-14 is unchanged
 — only the deferred Permission Matrix population remains.
 
 Phase 2 sub-item status (7 canon sub-items):
-- Populated (5): Personas (with the Future Personas placeholder
+- Populated (6): Personas (with the Future Personas placeholder
   carried), Operating Surfaces, Portals, Cross-Domain Views,
-  Navigation Model (surface-movement model; Snapshot-023).
+  Navigation Model (surface-movement model; Snapshot-023), and
+  Channel Behaviors (per channel type, written against the Phase 4
+  Channel Model taxonomy + three experience attributes;
+  Snapshot-031 / KNI-18).
   Navigation Model's landing-surface designation, notification
   routing, and deep-linking stay deferred (marked future items).
-- Framework only, soft-blocked for per-channel population:
-  Channel Behaviors (channel-agnostic patterns may be writable
-  now, but naming behaviors per channel depends on the Phase 4
-  Extensibility Channel Model becoming concrete; KNI-18).
 - Structure-defined, blocked: Permission Matrix (population
   requires concrete Phase 1 Governance rules; the cross-phase
   dependency is tracked as Q-014 / KNI-16).
 - Parked flags (Operating Surfaces): Client Profile, System
   Configuration / Settings, Onboarding.
 
-Phase 2 is therefore 5-of-7 populated.
+Phase 2 is therefore 6-of-7 populated.
 
 The five populated Phase 2 sub-items (Personas, Operating Surfaces, Portals,
 Cross-Domain Views, Navigation Model) were audited for internal consistency,
@@ -144,8 +143,9 @@ boundary adherence, and citation integrity (see Snapshot-026). They are clean
 except for one drift: experience-architecture.md had asserted Phase 5 placement
 for the Client Brain concept in three places while its ownership is an open
 draft. That was corrected to reference altitude (commit edd4e55; FIND-027). The
-"final Client Brain ownership" draft area is unchanged, and the 5-of-7 count is
-unchanged — no new sub-item was populated.
+"final Client Brain ownership" draft area is unchanged; that audit populated no
+new sub-item (the count then stood at 5-of-7; it is now 6-of-7 — see the sub-item
+status above).
 
 Phase 3 Capability Map is now scoped and written (Snapshot-024 / DEC-024 for
 scope; Snapshot-025 for the write). A grill-me scoping session human-confirmed: the Capability
@@ -385,21 +385,19 @@ The standing items below remain:
    surfaces (KNI-21). The inherited Phase 1 questions (domains.md:1914-1915,
    :1916, :1917-1918) stay referenced, not resolved, pending their owning
    Phase 1 work.
-2. Phase 2 is 5-of-7 populated; the Navigation Model is written
-   (Snapshot-023, KNI-17). Remaining Phase 2 work:
-   - Channel Behaviors is soft-blocked for per-channel population
-     on the Phase 4 Extensibility Channel Model (KNI-18,
-     Canceled-with-reopen).
-   - Permission Matrix population is blocked on concrete Phase 1
-     Governance rules (cross-phase dependency Q-014 / KNI-16); it
-     remains KNI-14's open item, which keeps KNI-14 In Progress.
+2. Phase 2 is 6-of-7 populated; Channel Behaviors is now written per channel
+   type against the Phase 4 Channel Model (Snapshot-031; KNI-18, moving to Done
+   on this landing). Remaining Phase 2 work:
+   - Permission Matrix population is the one remaining sub-item, blocked on
+     concrete Phase 1 Governance rules (cross-phase dependency Q-014 / KNI-16);
+     it remains KNI-14's open item, which keeps KNI-14 In Progress.
    - Navigation Model's landing-surface designation, notification
      routing, and deep-linking stay deferred (marked future items).
    - The three Operating-Surface flags (Client Profile, System
      Configuration / Settings, Onboarding) stay parked.
-   No unblocked Phase 2 content remains: both remaining sub-items are blocked
-   (Permission Matrix on Q-014 / KNI-16; Channel Behaviors on the Phase 4
-   Channel Model / KNI-18). The five populated sub-items were audited clean
+   No unblocked Phase 2 content remains: the one remaining sub-item, the
+   Permission Matrix, is blocked on concrete Phase 1 Governance rules
+   (Q-014 / KNI-16). The five originally populated sub-items were audited clean
    (Snapshot-026), with the Client Brain placement drift corrected (FIND-027).
 3. keep Phase 2 and Phase 3 scope distinct from each other and from
    Phase 6 Workflow Design, per the governing boundary test in
