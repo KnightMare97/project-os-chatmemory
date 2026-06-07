@@ -138,6 +138,15 @@ Phase 2 sub-item status (7 canon sub-items):
 
 Phase 2 is therefore 5-of-7 populated.
 
+The five populated Phase 2 sub-items (Personas, Operating Surfaces, Portals,
+Cross-Domain Views, Navigation Model) were audited for internal consistency,
+boundary adherence, and citation integrity (see Snapshot-026). They are clean
+except for one drift: experience-architecture.md had asserted Phase 5 placement
+for the Client Brain concept in three places while its ownership is an open
+draft. That was corrected to reference altitude (commit edd4e55; FIND-027). The
+"final Client Brain ownership" draft area is unchanged, and the 5-of-7 count is
+unchanged — no new sub-item was populated.
+
 Phase 3 Capability Map is now scoped and written (Snapshot-024 / DEC-024 for
 scope; Snapshot-025 for the write). A grill-me scoping session human-confirmed: the Capability
 definition (a reusable, UI-independent functional ability; owns no domain
@@ -346,6 +355,10 @@ The current recommended next focus is:
      routing, and deep-linking stay deferred (marked future items).
    - The three Operating-Surface flags (Client Profile, System
      Configuration / Settings, Onboarding) stay parked.
+   No unblocked Phase 2 content remains: both remaining sub-items are blocked
+   (Permission Matrix on Q-014 / KNI-16; Channel Behaviors on the Phase 4
+   Channel Model / KNI-18). The five populated sub-items were audited clean
+   (Snapshot-026), with the Client Brain placement drift corrected (FIND-027).
 3. keep Phase 2 and Phase 3 scope distinct from each other and from
    Phase 6 Workflow Design, per the governing boundary test in
    `Faraz-OS-Canon/experience-architecture.md` and the closed six-boundary
