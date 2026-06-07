@@ -706,6 +706,44 @@ In Phase 2, Channel Behaviors are narrowly scoped to:
 Channel Behaviors in Phase 2 stay on the human-experience side
 of the boundary.
 
+### Behaviors by channel type
+These behaviors are populated against the Phase 4 Channel Model's taxonomy and its
+three experience attributes (`extensibility.md`, Channel Model): *format / media
+constraints*, *preview affordance*, and *notification capability*. Phase 4
+provides those channel-level properties; Phase 2 here writes the human-experience
+behaviors that hang off them, on the human-experience side of the boundary.
+
+The Channel Model taxonomy currently holds one channel type, so there is one
+behavior set below. The structure grows with the taxonomy: each new channel type
+the Phase 4 Channel Model adds gets its own behavior set here. Phase 2 does not
+invent channel types.
+
+#### Outbound content channel
+The channel type that receives a dispatched, approved content item (Phase 4
+Channel Model taxonomy).
+
+- **Rendering differences.** The authoring and review surfaces compose and render
+  the content to the channel's *format / media constraints*: the human sees the
+  content shaped to what the channel accepts (supported media and format limits),
+  and content that exceeds those constraints is surfaced to the human as a
+  constraint flag rather than silently altered. The concrete constraint values
+  per platform are channel-integration detail (Phase 4 / External Integrations),
+  not named here; platforms are illustrative only.
+- **Preview behavior.** Where the channel's *preview affordance* supports it, the
+  human can preview the content as it will appear on the channel before dispatch;
+  where that affordance is limited or absent, the preview is presented as a
+  best-effort approximation, clearly marked as such. The preview mechanics
+  themselves are Phase 4; this covers only what the human sees.
+- **Notification UX.** The human is notified of channel-relevant outcomes
+  according to the channel's *notification capability*: whether dispatch
+  confirmation, failure, or status surfaces to the persona, and in what form,
+  follows that capability. The *events* that trigger such notifications (e.g. a
+  publish step completing) are workflow (Phase 6), referenced not defined; this
+  covers only how the notification is experienced.
+
+Persona note: which personas experience these behaviors follows the existing
+Phase 2 persona / surface model; no new persona or surface is introduced here.
+
 ---
 
 ## Non-Goals
