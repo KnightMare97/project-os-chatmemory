@@ -1141,6 +1141,95 @@ Status:
 
 ---
 
+### DEC-027
+Client Brain ownership is resolved: **Client Brain is owned by the Knowledge
+domain**, as a Memory Object / Shared Service Artifact. Client Success
+**contributes** relationship-relevant content but does not own it; CRM
+**references** it but does not own it. This resolves **Q-001** and is the
+foundation for the Phase 5 Knowledge & Memory write.
+
+Outcome of the Phase 5 question-gate (G-1 → G-7, run inline in grill-me form):
+
+- **G-1 Definition & altitude.** `memory.md` defines the *logical* architecture of
+  memory and knowledge — per sub-item: what it is, owner (Phase-1 reference),
+  contents (category level), lifecycle/durability, and retrieval + update contract.
+  Vocabulary reuses Memory Object / Shared Service Artifact / Knowledge Artifact /
+  Retrieval Context. Physical storage, indexing, schema, and AI-retrieval = Phase 7.
+- **G-2 Closed seven-boundary set.** ↔ P1 domain truth (Knowledge already owns
+  Agency Brain / Knowledge Base / Decision Logs / durable learnings / retrieval
+  structures — Phase 5 architects, does not re-own); ↔ P1 Governance (DEC-026 owns
+  access authorization; Phase 5 authors none); ↔ P2 (surfaces render memory,
+  name-only); ↔ P3 (capabilities produce "may become durable knowledge"; Phase 5
+  owns what persists); ↔ P4 (consumer of memory contracts; storage/retention
+  deferred here); ↔ P6 (Learn → Memory Update is the sequence; Phase 5 owns the
+  target/contract); ↔ P7 (storage / wiring / data architecture — OUT).
+- **G-3 In-scope.** Six firm (Client Brain, Agency Brain, Knowledge Base, Decision
+  Logs, Learnings, Context Retrieval); Asset Intelligence `[ADDED]` =
+  deferred-and-flagged stub (thin domain evidence).
+- **G-4 Six-field skeleton.** Definition · Owner (Phase-1 ref) · Contents (category
+  level) · Lifecycle/durability · Retrieval & update contract (authorization
+  deferred to DEC-026; physical retrieval to P7) · Boundary notes.
+- **G-5 Non-goals.** No physical storage/indexing/schema/AI-retrieval (P7); no
+  domain-entity ownership beyond what this DEC resolves (P1); no surfaces/views/
+  portals (P2); no sequences / Learn→Memory orchestration (P6); no capability
+  definitions (P3); no authorization/policy rules (P1 Governance / DEC-026); no
+  resolution of inherited Phase-1 questions; no implementation technology.
+- **G-6 Client Brain ownership (this decision's core).** Q-001 resolved to Knowledge
+  (above). **Q-004 (partitioning: per Client / per Brand / both) is carried** —
+  entangled with Q-003 Brand placement, which has no resolving evidence in canon.
+  Per the standing partition-agnostic rider, the eventual `memory.md` Client Brain
+  entry is written valid under all three partitioning answers, so it does not
+  silently resolve Q-004.
+- **G-7 Insight → durable-knowledge threshold (`domains.md:1917`).** Carried, not
+  resolved. The Phase-5 Learnings entry references the threshold as Phase-1
+  Intelligence truth, pending — defines nothing, names no mechanism shape (R-027).
+
+Landing (two phase-separated landings, per the DEC-026 precedent):
+- **(i) This DEC + the isolated `domains.md` ownership update + knock-on
+  reconciliation.** The `domains.md` ownership truth is made concrete (Knowledge
+  "What it owns" gains Client Brain; the Client Brain section's ownership block
+  becomes resolved; the Draft-v2 "Primary Owner" and the Proposed-Model joint-
+  ownership lines are corrected to Knowledge-owner + Client-Success-contributor; the
+  Knowledge↔Client Success boundary line is settled; the DEC-026 slice resource list
+  is refreshed; the in-file Open-Question echoes of Q-001 are marked resolved). Stale
+  ownership-draft echoes are reconciled so `domains.md` does not self-contradict.
+  Knock-on citations in `experience-architecture.md` (four sites) are refreshed to
+  the new truth as its own called-out commit. Q-004, Q-003, the aggregate-status
+  question, and all other Draft areas are left untouched.
+- **(ii) The `memory.md` Knowledge & Memory architecture** that builds on (i) — a
+  separate, later landing.
+
+Holds:
+- **Resolves only Q-001.** No other open question, Draft area, or Phase-1 domain
+  truth is changed. Q-004 / Q-003 / aggregate status / the inherited Intelligence
+  questions (`domains.md:1915-1920`) are untouched.
+- **R-028 (reference altitude):** `experience-architecture.md` citations are
+  refreshed as references, not reinterpretations; `memory.md` is not yet written.
+- **R-027:** no inherited Phase-1 question is resolved (G-7 carried).
+- **DEC-008:** the Client Brain ownership Draft area is resolved by *explicit
+  decision* (the permitted path), not silently; Brand placement, Service Agreement
+  ownership, and Aggregate boundaries remain Draft.
+- **DEC-026 access-only line held:** authorizing access to Client Brain is
+  Governance's; owning it is Knowledge's; the two do not collide.
+
+Tracker (same commit as the `domains.md` landing):
+- `open-questions.md`: Q-001 → Resolved/Closed; Q-004 stays open with the Q-003
+  entanglement + partition-agnostic note.
+
+Basis:
+- Phase 5 question-gate, inline grill-me (G-1 → G-7); Ali's calls on G-6 (Option A)
+  and G-7 (carry); capture in
+  `brainstorms/2026-06-08-phase5-knowledge-memory-gate.md`.
+- Citations re-verified against raw bytes prior to this record; the knock-on set was
+  confirmed grep-complete by an independent verifier, which surfaced four
+  ownership-assertion sites beyond the initial enumeration (including two joint-
+  ownership statements) now reconciled.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

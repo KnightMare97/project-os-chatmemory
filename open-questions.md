@@ -45,6 +45,15 @@ Why it matters:
   update authority,
   and cross-domain boundaries.
 
+Resolved (DEC-027):
+- Client Brain is owned by Knowledge as a Memory Object / Shared Service Artifact.
+- Client Success contributes relationship-relevant content but does not own it;
+  CRM references it but does not own it.
+- Made concrete in `domains.md` (Knowledge "What it owns"; Client Brain section)
+  in the same landing.
+- Partitioning (per Client / per Brand / both) remains open — that is Q-004, not Q-001.
+- Closed.
+
 ---
 
 ### Q-002
@@ -98,6 +107,12 @@ Why it matters:
   retrieval,
   ownership,
   and scaling of client context.
+
+Note (DEC-027):
+- Q-001 (Client Brain ownership) is resolved to Knowledge; Q-004 (partitioning)
+  stays open, entangled with Q-003 (Brand placement).
+- The Phase-5 Client Brain entry is written partition-agnostic — valid under
+  per-Client, per-Brand, or both — so it does not silently resolve Q-004.
 
 ---
 

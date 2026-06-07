@@ -125,7 +125,7 @@ Current working examples:
 - Engagement Scope
 
 Current working direction:
-- Client Brain = Memory Object, Shared Service Artifact direction
+- Client Brain = Memory Object, Shared Service Artifact (owned by Knowledge — DEC-027)
 - Engagement Scope = Memory Object, Domain Artifact direction
 
 ---
@@ -142,8 +142,7 @@ only when it clearly serves multiple Domains
 through a stable cross-domain role.
 
 Current working example:
-- Client Brain may be treated as a Shared Service Artifact direction,
-  but this remains draft
+- Client Brain is a Shared Service Artifact owned by Knowledge (DEC-027)
 
 ---
 
@@ -288,7 +287,7 @@ The current working directions are:
 - Client = Entity in CRM
 - Client Account = Entity or Candidate Aggregate in CRM
 - Client Relationship = Entity or Candidate Aggregate in Client Success
-- Client Brain = Memory Object, Shared Service Artifact direction
+- Client Brain = Memory Object, Shared Service Artifact (owned by Knowledge — DEC-027)
 - Engagement Scope = Memory Object, Domain Artifact direction
   aligned to Service Delivery
 - Human Operator = Entity in Workforce
@@ -372,8 +371,10 @@ are clarified more precisely.
 
 #### Client Brain
 Primary Owner:
+- Knowledge (DEC-027)
+
+Primary Contributor:
 - Client Success
-- Knowledge
 
 Primary Consumers:
 - Strategy
@@ -687,7 +688,7 @@ to assigned human operators.
 - Client -> CRM
 - Brand -> CRM or adjacent client context
 - Service Agreement -> CRM / Client Success
-- Client Brain -> Client Success + Knowledge
+- Client Brain -> Knowledge (owner; DEC-027); Client Success (contributor)
 - Engagement Scope -> Service Delivery
 - Human Operator -> Workforce
 
@@ -978,7 +979,7 @@ Candidate outbound events from CRM:
 - What is the exact boundary between:
   - CRM Client Account
   - Client Success account handling
-  - Client Brain memory ownership
+  - Client Brain memory (owned by Knowledge — DEC-027)
 
 ---
 
@@ -1259,6 +1260,7 @@ Knowledge owns the source of truth for:
 - retrieval-oriented knowledge structures
 - memory references and knowledge indexing
 - approved organizational memory artifacts
+- Client Brain (DEC-027; partitioning per Client/Brand draft — Q-004)
 
 Knowledge may reference but should not own:
 - CRM Client identity
@@ -1269,9 +1271,9 @@ Knowledge may reference but should not own:
 - financial records
 - raw analytics source systems
 
-Client Brain remains closely related to Knowledge,
-but its final ownership boundary with Client Success
-is still draft.
+Client Brain is owned by Knowledge (DEC-027);
+Client Success contributes relationship-relevant content but does not own it.
+Partitioning per Client/Brand remains draft (Q-004).
 
 ---
 
@@ -1432,7 +1434,7 @@ Candidate outbound events from Knowledge:
 - Knowledge may become an unbounded dumping ground
   if artifact types are not kept explicit.
 - Knowledge may overlap with Client Success
-  around Client Brain ownership.
+  around Client Brain contribution boundaries (ownership resolved — DEC-027).
 - Knowledge may overlap with Intelligence
   if interpretive analytics and reusable knowledge are mixed.
 - Retrieval structures may be overdesigned too early
@@ -1441,9 +1443,8 @@ Candidate outbound events from Knowledge:
 ---
 
 ### Open Questions
-- Is Client Brain primarily owned by Knowledge,
-  Client Success,
-  or jointly across both?
+- Resolved (DEC-027): Client Brain is owned by Knowledge; Client Success
+  contributes but does not own. (Partitioning per Client/Brand remains open — Q-004.)
 - Which artifact types require explicit approval
   before becoming durable reusable knowledge?
 - Should Decision Log and Learning Record
@@ -2439,9 +2440,9 @@ operator work queue (Service Delivery) · production work items (Service Deliver
 review / approval items (Service Delivery) · client deliverables (Service Delivery) ·
 client approval items (Service Delivery / Client Success) · client-facing notifications
 (Client Success / Service Delivery) · knowledge artifacts (Knowledge) · admin
-knowledge (Knowledge) · Client Brain (cross-cutting; ownership draft Q-001/Q-004 —
-access only, per the Domain Notes that Governance may constrain access but not own
-it) · analytics & reporting outputs (Intelligence) · lead records (CRM) ·
+knowledge (Knowledge) · Client Brain (cross-cutting; owned by Knowledge — DEC-027;
+partitioning draft Q-004 — access only, per the Domain Notes that Governance may
+constrain access but not own it) · analytics & reporting outputs (Intelligence) · lead records (CRM) ·
 billing / invoices (Finance — presentation; Finance owns) · contractor assignment
 records (Workforce / Service Delivery) · agent & workflow runtime state
 (Extensibility / execution) · workflow & agent configuration (Extensibility /
@@ -2737,8 +2738,8 @@ A useful working distinction is:
 ---
 
 #### Client Brain
-Client Brain is currently best treated as a Memory Object
-and a Shared Service Artifact direction,
+Client Brain is a Memory Object
+and a Shared Service Artifact, owned by Knowledge (DEC-027),
 not as a CRM Entity,
 not as a Client Success Entity,
 and not yet as a finalized Aggregate.
@@ -2758,12 +2759,11 @@ Client Brain should not represent:
 - workforce identity
 - secret values
 
-Working ownership direction:
+Ownership (resolved — DEC-027):
+- Knowledge owns Client Brain as durable, reusable memory
 - CRM references Client Brain but does not own it
-- Client Success contributes heavily to its relationship-relevant content
-- Knowledge remains the strongest long-term ownership direction
-  for durable reusable memory
-- final ownership is still draft
+- Client Success contributes heavily to its relationship-relevant content, but does not own it
+- partitioning (per Client / per Brand / both) remains draft — Q-004, entangled with Q-003 Brand placement
 
 ---
 
@@ -2977,8 +2977,8 @@ Workforce remains the source of truth for:
 ---
 
 ### Open Questions
-- Open Question: Is Client Brain ultimately owned by Knowledge,
-  Client Success, or a joint pattern with clearer update authority?
+- Resolved (DEC-027): Client Brain is owned by Knowledge; Client Success
+  contributes but does not own. (Partitioning per Client/Brand remains open — Q-004.)
 - Open Question: Should Client Brain exist per Client, per Brand,
   or support both levels?
 - Open Question: Is Service Agreement owned by CRM,
