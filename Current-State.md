@@ -188,12 +188,12 @@ flags carried forward: agent/subagent identity (likely Phase 7), safety-controls
 vocabulary, the optional philosophy-#7 annotation, and a repo-wide
 inherited-question citation drift (FIND-028).
 
-Batch A of `extensibility.md` is now written (Snapshot-028; commit 8e921a8): the
-file skeleton, the Provider Model and Channel Model entries, the
-deferred-sub-item stubs, non-goals, and open flags. The Channel Model meets the
-DEC-025 acceptance test, so Phase 2 Channel Behaviors (KNI-18) is now unblockable
-pending a gated reopen. Batches B (Extension Contracts, Permission, Plugin Model)
-and C (Model, AI Model Routing, Runtime vs Config-Time) remain.
+Batches A and B of `extensibility.md` are now written (Snapshot-029; commits
+8e921a8, 1b148d4): the file skeleton; the Provider Model, Channel Model, Extension
+Contracts, Permission, and Plugin Model entries; the deferred-sub-item stubs;
+non-goals; and open flags. The Channel Model meets the DEC-025 acceptance test, so
+Phase 2 Channel Behaviors (KNI-18) is now unblockable pending a gated reopen. Only
+Batch C (Model, AI Model Routing, Runtime vs Config-Time) remains.
 
 Phase 11 Claude Code Operating System
 currently owns the operating method
@@ -363,17 +363,18 @@ Avoid:
 The current recommended next focus is:
 
 **Active focus — Phase 4 Extensibility (KNI-23, In Progress).** The batched-write
-plan is approved and **Batch A is landed** (Snapshot-028): the file skeleton,
-Provider Model, and Channel Model. The Channel Model meets the DEC-025 acceptance
-test, so Phase 2 Channel Behaviors (KNI-18) is now unblockable pending a gated
-reopen. **Next: Batch B** — Extension Contracts, Permission, Plugin Model (the
-Permission entry applies the hybrid grant rule hardest: state Phase 4's grant
-altitude only, reference DEC-019 / FIND-022 for the triad) — then **Batch C**
-(Model, AI Model Routing, Runtime-vs-Config-Time framing). Each batch: draft →
-verify → one content read → land. Carry the registered open flags (agent/subagent
-identity; safety-controls vocabulary; philosophy-#7 annotation; citation drift
-FIND-028) and honour the inbound flags (KNI-18; the eight capability
-provider-deps; Video Creation) without resolving any inherited Phase 1 question.
+plan is approved and **Batches A and B are landed** (Snapshot-029): the file
+skeleton; Provider Model, Channel Model, Extension Contracts, Permission, and
+Plugin Model. The Channel Model meets the DEC-025 acceptance test, so Phase 2
+Channel Behaviors (KNI-18) is now unblockable pending a gated reopen. **Next:
+Batch C** — Model, AI Model Routing, and the Runtime-vs-Config-Time framing
+section (the AI Model Routing entry applies the selection-vs-sequence test
+hardest: order-free selection = Phase 4, orchestration = Phase 6). Each batch:
+draft → verify → one content read → land. Carry the registered open flags
+(agent/subagent identity; safety-controls vocabulary; philosophy-#7 annotation;
+citation drift FIND-028) and honour the inbound flags (KNI-18; the eight
+capability provider-deps; Video Creation) without resolving any inherited Phase 1
+question.
 
 The standing items below remain:
 
