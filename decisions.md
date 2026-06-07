@@ -746,6 +746,229 @@ Status:
 
 ---
 
+### DEC-025
+The Phase 4 Extensibility Model scope is defined and human-confirmed (scoping
+only; resolves no boundary, writes no `extensibility.md` content). Settled in an
+inline grill-me question-gate (OQ-E through OQ-M); every citation re-verified
+against raw bytes before this record.
+
+- **Phase 4 definition / altitude:** Phase 4 owns the *extensibility model* — the
+  intentional extension points, their contracts, and the capability grants by
+  which extensions, providers, channels, models, and (later) domains attach to a
+  stable core. Phase 4 defines **what is swappable and how it attaches at
+  altitude**; it authors no domain truth, no experience layer, no ordered
+  workflow, no authoritative governance rule, and no implementation technology.
+  Faithful to Extensibility Philosophy #1–#8 (`extensibility-philosophy.md:3-30`).
+
+- **Sub-item set (canon lists twelve — `Faraz-OS-Canon.md:93-104`):**
+  - **In-scope for the first write — eight:** Permission; Extension Contracts;
+    Plugin Model; Provider Model; Channel Model; Model; AI Model Routing;
+    Runtime vs Config-Time Extensions.
+  - **Deferred-and-flagged — four:** Versioning & Compatibility; External
+    Integrations; Feature Modules; Future Domains. Rationale: each is an
+    evolution / registry / forward-looking concern that presupposes the core
+    contract model this write establishes (Versioning ← Philosophy #11
+    `:40-41`; External Integrations ← Philosophy #9 `:32-34` + `non-goals.md:11`;
+    Feature Modules / Future Domains ← Philosophy #12 `:43-45`). Deferred items
+    are recorded as flagged, not dropped. **Future Domains is a carried,
+    marked-future placeholder and is not silently resolvable.**
+
+- **Locked distinction set (so sub-items do not collapse):**
+  1. **Model triad — kept as three distinct sub-items** (faithful to
+     `Faraz-OS-Canon.md:96,98,99`): *Provider Model* = the contract for any
+     swappable external provider (AI / media / channel / third-party);
+     *Model* = the AI-model abstraction specifically (unit / tier);
+     *AI Model Routing* = the policy that selects among models / providers /
+     paths. Model and AI Model Routing stay **separate** (not clustered) —
+     backed by both philosophies treating multi-model (`ai-philosophy.md:18-19`)
+     and routing (`ai-philosophy.md:21-22`; `extensibility-philosophy.md:25-27`)
+     as distinct principles.
+  2. **Plugin vs Provider vs Channel:** *Plugin Model* is the orthogonal
+     packaging / attachment axis — per Philosophy #5
+     (`extensibility-philosophy.md:17-20`), a plugin *attaches* channels,
+     providers, or integrations. *Channel Model* stays **first-class but is
+     typed as a Provider-Model specialization** that reuses the provider
+     contract and adds channel-specific elements; it does not duplicate
+     provider contract machinery. *This typing is a DEC-025 scoping inference,
+     not a literal pre-existing canon statement:* canon lists Channel Model and
+     Provider Model as parallel sub-items (`Faraz-OS-Canon.md:96-97`) and #5/#6
+     enumerate channels and providers in parallel; the specialization is
+     reasoned from those principles plus Publishing's provider-dependency field
+     naming "Channel / platform integrations" (`capabilities.md:82-83`), and is
+     recorded as a decided distinction for this phase — not asserted as canon
+     truth.
+
+- **Closed boundary set — the definition/altitude plus six cross-phase
+  boundaries** (mirrors the DEC-024 closed-set discipline, `decisions.md:689-700`):
+  1. **↔ Phase 1 Governance:** respect authentication / authorization / policy;
+     never author rules (Philosophy #8 `:29-30`; references DEC-019 / FIND-022).
+     Phase 1 is a single Governance boundary here; human identity is a non-goal.
+  2. **↔ Phase 2:** Phase 4 owns grants / contracts; authors no surfaces, views,
+     portals, or the Permission Matrix (the experience projection is Phase 2 —
+     `experience-architecture.md:514-515`).
+  3. **↔ Phase 3:** Phase 4 owns provider / tool binding; the capability names
+     the ability and Phase 4 names the tool (the inverse of DEC-024 boundary 5,
+     `decisions.md:697-698`).
+  4. **↔ Phase 5:** Phase 4 references memory / knowledge as a *consumer* of
+     contracts; defines no storage / retention / memory structure.
+  5. **↔ Phase 6:** Phase 4 owns routing / selection extensibility (order-free,
+     policy-driven); orchestration / sequence / agent-chains / approval-gates /
+     workflow-runtime are Phase 6 (`Faraz-OS-Canon.md` Phase 6 list). Governed
+     by the **selection-vs-sequence test** below.
+  6. **↔ Phase 7:** Phase 4 owns the extension *contract surface*; system
+     wiring / data-paths / AI Architecture (the implementation blueprint) are
+     Phase 7.
+
+- **Reusable operational rules:**
+  - **Selection-vs-sequence test (the sharpest altitude line, P4 ↔ P6):**
+    *If it defines how the system selects among interchangeable providers /
+    models / agents / execution paths by policy (cost, quality, latency,
+    availability, risk, task-type) — the swappable, order-free selection
+    mechanism — it is Phase 4. If it requires naming a predecessor, successor,
+    gate, or step-sequence — what runs, in what order, with which hand-offs —
+    it is Phase 6.* Litmus: remove all ordering — does it still hold? → Phase 4
+    routing. Does it need a predecessor / successor / gate? → Phase 6
+    orchestration. (Parallels the Phase 3 sequence-test, `decisions.md:701-704`.)
+  - **Grant-altitude rule (R-028):** Phase 4 grants and contracts **reference**
+    the Phase 1 Governance source-of-truth (and any open Governance question —
+    e.g. Q-014) **at altitude**; they **may name** the governance touchpoint
+    *categories* an extension must respect — *authentication, authorization,
+    validation, auditability, safety controls, and policy enforcement*, sourced
+    verbatim from Philosophy #8 (`extensibility-philosophy.md:30`) — but
+    **never enumerate concrete policies, rules, or values** (those are
+    Governance's to author, DEC-019 / FIND-022). Where Governance is
+    unresolved, `extensibility.md` cites the open question rather than assuming a
+    resolution (FIND-027 / R-028 precedent). *Provenance note:* of the six #8
+    terms, three are also verbatim in the authoritative Governance source
+    `domains.md` — policy enforcement (`:2182`), authorization (`:2183`; also
+    Authorization Rule / Authorization Aggregate at `:2252` / `:2284`),
+    auditability (`:2195`); three (authentication, validation, safety controls)
+    are #8-only — see the registered vocabulary flag.
+  - **Contract-altitude rule:** the Contract-surface field names how core and
+    extension interact (APIs / events / permissions / schemas / versioned
+    interfaces, Philosophy #4 `:13-15`) **at altitude** — it does not specify
+    them.
+  - **Runtime-vs-Config-Time attribute rule:** Runtime vs Config-Time is a
+    cross-cutting per-sub-item **attribute** (Philosophy #10 `:36-38`), framed
+    by its own canon sub-item section; naming the mode is the attribute, not the
+    deployment / governance policy that decides it.
+
+- **Per-sub-item skeleton (six fields):** Definition (intentional extension
+  point, Philosophy #2 `:6-8`); Contract surface (Philosophy #4; named at
+  altitude, includes versioned interfaces); Provider-agnostic note (what is
+  swappable, Philosophy #6 `:22-23`); Governance touchpoints (the #8 categories,
+  referenced per the grant-altitude rule, never authored); Runtime vs
+  Config-Time (the attribute per Philosophy #10); Boundary notes / inherited
+  flags (cross-phase deferrals + any inherited Phase 1 question, preserved
+  unresolved). Versioning is **not** a separate field — "versioned interfaces"
+  lives in the Contract-surface field; deep versioning belongs to the deferred
+  Versioning & Compatibility sub-item.
+
+- **Channel Model depth — unblock-altitude, with a recorded acceptance test.**
+  The Channel Model is written only to the altitude that unblocks Phase 2
+  Channel Behaviors / KNI-18, with deeper channel mechanics (credential / auth
+  contracts, API binding, delivery / dispatch semantics, rate limits) deferred
+  (largely to External Integrations). Required minimum content: (1) a minimal,
+  evidence-grounded channel taxonomy of *typed categories* derived only from
+  what domains / capabilities already reference (e.g. Publishing's
+  channel / platform integrations) — platforms illustrative only, never
+  core-hardcoded (`non-goals.md:9`); (2) the three experience attributes that
+  map 1:1 to Phase 2's three dimensions (`experience-architecture.md:696-698`);
+  (3) the Provider-Model-specialization statement; (4) an explicit deferral
+  boundary. **Acceptance test (verbatim):** *"The Channel Model is deep enough
+  iff Phase 2 can later write rendering / preview / notification behaviors for
+  each channel type using only the taxonomy and the three experience attributes
+  (format/media constraints · preview affordance · notification capability),
+  with no further Phase 4 content required."*
+
+- **Permission triad handling (hybrid):** `extensibility.md` states only the
+  altitude Phase 4 owns (Permission = extension / plugin / provider capability
+  grants via contracts; authors no authoritative rules) and **references**
+  DEC-019 (`decisions.md:394-404`) / FIND-022 (`findings.md:331-335`) for the
+  full three-altitude triad — it does not restate the triad (CLAUDE.md
+  one-canonical-definition; precedent `capabilities.md:33-43`).
+
+- **Philosophy → canon relationship:** `extensibility-philosophy.md` remains the
+  standing Phase 0 canon principles doc (`Faraz-OS-Canon.md:8`);
+  `extensibility.md` **references** it (cites principle numbers / lines) and does
+  not fold or retire it (precedent: DEC-024 cites `extensibility-philosophy.md:17`).
+  **Refinement reconciled to the phase map:** orchestration is owned by Phase 6
+  (`Faraz-OS-Canon.md` Phase 6 list); `extensibility-philosophy.md:25` ("routing
+  and orchestration are part of extensibility") is read, within the phase map, as
+  the extensibility of routing / selection only — not ownership of workflow
+  orchestration. Precedence = phase map; the principle stands as aspirational
+  intent. Phase 4 edits no Phase 0 doc; the optional philosophy-doc annotation is
+  a registered flag for a later normalization pass.
+
+- **Non-goals — `extensibility.md` will NOT contain:** UI / surfaces / views /
+  portals / the Permission Matrix (Phase 2); ordered sequences, approval gates,
+  agent-chain orchestration, or workflow runtime (Phase 6); domain-entity
+  definitions, ownership, or authoritative meaning (Phase 1); authoritative
+  permission / authorization / policy rules (Phase 1 Governance); **human
+  identity (Phase 1 Workforce)**; storage / retention / memory structure
+  (Phase 5); data-paths / read-write mechanics / system wiring / AI Architecture
+  implementation (Phase 7); capability *definitions* (Phase 3);
+  **implementation technology — language, runtime, packaging, deployment —
+  deferred to the build / handoff phase (flagged phase-map-general)**; build
+  order / MVP sequencing (Phase 10); the deep content of the four deferred
+  sub-items; and the resolution of ANY inherited Phase 1 open question
+  (wording adapted from `decisions.md:734`, not verbatim).
+
+- **Registered inbound flags (Phase 4 must satisfy; resolving them must NOT
+  resolve any inherited Phase 1 question):**
+  - **KNI-18** — Phase 2 Channel Behaviors per-channel population waits on the
+    Phase 4 Channel Model (`Snapshot-026:36`; `Snapshot-022:127-128`); satisfied
+    by the Channel Model above against its verbatim acceptance test.
+  - **Capability provider-dependencies** — all eight `capabilities.md` entries
+    defer their tool / provider to Phase 4 (entry Provider-dependency fields at
+    `:83, :106, :128, :150, :166, :179, :199, :229`).
+  - **Video Creation tooling** — deferred to Phase 4 (`decisions.md:717-718`).
+
+- **Registered open flags (carried, not resolved here):**
+  - **Agent / subagent identity** — Philosophy #7 / `ai-philosophy.md:24-25`
+    place agents in routing's scope, but Workforce owns *human* identity
+    (`experience-architecture.md:809`); agent identity is likely Phase 7 AI
+    Architecture (`experience-architecture.md:821`). Open cross-phase question.
+  - **Safety-controls vocabulary** — "safety controls" (#8,
+    `extensibility-philosophy.md:30`) vs Governance's "safety constraints /
+    safety rules / Safety Constraint" (`domains.md:2189, :2226, :2262`).
+    Cross-doc alignment deferred to a later normalization pass.
+  - **Philosophy #7 annotation** — optional pointer on
+    `extensibility-philosophy.md:25` noting the DEC-025 orchestration refinement;
+    a Phase 0 normalization edit, not done by Phase 4.
+  - **Inherited Phase 1 questions**, referenced not resolved — under
+    `domains.md` `### Open Questions` (`:1914`):
+    `domains.md:1915-1916` (Intelligence vs Analytics/Reporting),
+    `domains.md:1917` (when an insight becomes durable knowledge),
+    `domains.md:1918-1919` (lead-scoring home), and Q-014 (Permission Matrix ↔
+    Governance). *Note:* prior canon files cite these with off-by-one ranges
+    (`capabilities.md:116/211` use `:1914-1915`; `:220/238` use `:1917-1918`);
+    the byte-accurate ranges are used here and the repo-wide citation drift is
+    registered as a minor normalization flag below.
+  - **Citation-drift (repo-wide)** — the inherited-question line refs in
+    `capabilities.md`, `Snapshot-025/026`, and `Current-State.md` are off by one
+    against `domains.md` raw bytes; align in a later normalization pass, not by
+    Phase 4.
+
+This decision records scope only. It finalizes no Phase 1 boundary, resolves no
+open question, and writes no `extensibility.md` content. The eventual write is to
+be planned in batches (à la the Phase 3 A/B split) given eight in-scope
+sub-items; batch sequencing is decided separately at write time.
+
+Basis:
+- Inline grill-me question-gate (OQ-E → OQ-M); capture to be created at
+  `brainstorms/2026-06-07-phase-4-extensibility.md` on approval.
+- Citations re-verified against raw bytes prior to this record; the earlier
+  audit corrections are carried (three-altitude span is `decisions.md:394-404`
+  under DEC-019; the capability provider-dependency list drops `:64` and `:78`
+  as non-entry references; the inherited-Phase-1 non-goal quote is adapted, not
+  verbatim).
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
