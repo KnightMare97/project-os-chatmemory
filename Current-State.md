@@ -415,23 +415,26 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-**Phase 7 ↔ Phase 8 boundary — resolved (DEC-030 / Snapshot-041). Next: open the
-Step-2 full Phase 7 question-gate (G-1…G-7).** Q-012 is resolved (DEC-030, commit
-`fdbe0fe`; KNI-11 → Done): Phase 7 System Architecture Blueprint = the substantive
-cross-cutting concern-views (seven lenses); Phase 8 Puzzle Board Architecture = the
-layered assembly (seven layers, incl. Experience + AI); one-way dependency (Phase 7
-scoped/written first); a boundary test + disambiguation-not-rename convention (the
-AI Architecture P7 vs AI Layer P8 worked example) recorded verbatim. **The next open
-thread is the Step-2 Phase 7 question-gate — a full G-1…G-7 scope gate (as in
-DEC-024/025/027/028), fed by the Phase-7 Grounding Brief; no Phase-7 content before
-that scope DEC lands.** It must address the inversion guard (the R-028 flip:
-architects *how* vs re-defines *what*), the Feature-Modules / module-mounting
-dependency (deferred Phase-4 sub-item — reference vs un-defer is a gate call), the
-agent/subagent-identity flag and Q-013 (the AI Architecture seam), and the candidate
-non-goals. Other fresh/gated follow-ups: **Q-017** (system-administrator visual
-workflow management — multi-phase; any Phase-6 increment is marked-future, does not
-reopen the phase); the four Phase-4 deferred sub-items; Phase 5 Asset Intelligence
-un-defer.
+**Phase 4 Feature Modules — firm (DEC-032). Phase 7 — SCOPED (DEC-031); the
+Application/Logical prerequisite is cleared. Next: the Phase 7 content gate.** DEC-032
+un-deferred Feature Modules (Option A first-class — a mountable unit of product
+functionality that mounts on the base and may aggregate plugins, declared through the
+Extension Contracts surface; composes Plugin Model + Extension Contracts, never re-defines
+either), and the firm `extensibility.md` entry is written (commit `9c80bb3`); this
+**satisfies the DEC-031 G-6(c) prerequisite** for the Phase 7 Application / Logical
+Architecture view writes. Phase 7 System Architecture Blueprint is **scoped**
+(DEC-031 / Snapshot-042): seven cross-cutting concern-views; AI Architecture the spine but
+never AI-only; single-tenant (no multi-tenant isolation layer); **Q-013 resolved**
+(architecture-home → Phase 7 AI Architecture, agent/subagent identity un-deferred into
+Phase 7; surface rendering → Phase 2). The Phase 7 ↔ Phase 8 boundary is drawn (DEC-030 /
+Snapshot-041; KNI-11 → Done): concern-views (P7) vs layered assembly (P8), one-way
+dependency (P7 first). **The open path is the Phase 7 content gate — the full
+`system-architecture-blueprint.md` write (KNI-27), all seven concern-views now unblocked,
+in gated batches after Ali's go; no Phase-7 content before then.** Other fresh/gated
+follow-ups: **Q-017** (system-administrator visual workflow management — multi-phase; any
+Phase-6 increment is marked-future, does not reopen the phase); the **three** remaining
+Phase-4 deferred sub-items (Versioning & Compatibility, External Integrations, Future
+Domains); Phase 5 Asset Intelligence un-defer.
 
 **Phase 6 Workflow Design — complete at DEC-028's scope (DEC-029 / Snapshot-040).** `workflows.md`
 is written (Batches A–C; `6eefd90` / `a7de5ef` / `a0fe15d`), under DEC-028, via
@@ -460,14 +463,17 @@ reference (Knowledge owns all six) — with Asset Intelligence a deferred-flagge
 The remaining Phase 5 items are carry-forwards, none blocking: Asset Intelligence
 un-defer (its own gated decision); Q-004 partitioning (resolves with Q-003); the
 Client Brain Aggregate-vs-Memory-Object and approval-before-durable canon flags.
-Candidate fresh threads: the four Phase-4 deferred sub-items; Phase 5 Asset
+Candidate fresh threads: the three remaining Phase-4 deferred sub-items; Phase 5 Asset
 Intelligence un-defer. (Phase 6 Workflow Design first write is complete — see the lead above.)
 
-**Phase 4 Extensibility — first write complete.** All eight in-scope
-`extensibility.md` entries are written (Snapshot-030, Batches A–C); KNI-23's
-done-condition is met and it moves to Done after this close-out push is verified.
-The four deferred sub-items (Versioning & Compatibility, External Integrations,
-Feature Modules, Future Domains) remain flagged stubs; each becomes its own work
+**Phase 4 Extensibility — first write complete; Feature Modules now firm (DEC-032).**
+All eight in-scope `extensibility.md` entries are written (Snapshot-030, Batches A–C;
+KNI-23 Done). **Feature Modules is un-deferred and written as a firm six-field entry**
+(DEC-032 / Snapshot-043; commit `9c80bb3`) — Option A first-class (a mountable unit of
+product functionality that may aggregate plugins, declared through Extension Contracts),
+which satisfied the DEC-031 G-6(c) prerequisite for the Phase 7 Application / Logical
+view writes. The **three** remaining deferred sub-items (Versioning & Compatibility,
+External Integrations, Future Domains) remain flagged stubs; each becomes its own work
 item if/when un-deferred. The next Phase 4 decisions are fresh, gated topics:
 (a) the Phase 2 Channel Behaviors write against the now-landed Channel Model
 (KNI-18 reopen — awaiting explicit green-light); (b) un-deferring any of the four
@@ -529,6 +535,7 @@ multi-phase placement pending its own gated decision.
 Open question Q-012 (Phase 7 ↔ Phase 8) is resolved
 (see DEC-030 / Snapshot-041; KNI-11 → Done): Phase 7 = the cross-cutting
 concern-views, Phase 8 = the layered assembly, one-way dependency (P7 first).
-The next thread is the Step-2 full Phase 7 question-gate (scoping, not Phase-7 content).
-Open question Q-013 (AI / agent-surface home) is deferred
-and not blocking Phase 2.
+The Phase 7 scope gate is closed (DEC-031); the open path is the Phase 7 content gate.
+Open question Q-013 (AI / agent-surface home) is resolved
+(see DEC-031 / Snapshot-042): architecture-home → Phase 7 AI Architecture
+(agent/subagent identity un-deferred into Phase 7); surface rendering → Phase 2.
