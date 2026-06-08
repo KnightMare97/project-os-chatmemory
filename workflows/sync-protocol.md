@@ -48,10 +48,12 @@ phase map in `Faraz-OS-Canon.md` as authoritative if they differ.
 - **Team:** `Knightmare` (key `KNI`)
 - **Project:** `Faraz OS Architecture Progression`
 - **Milestones (one per active architecture phase):**
-  - `Phase 1 — Domain Discovery`
-  - `Phase 2 — Experience Architecture`
+  - `Phase 1 — Domain Discovery` (id `38d420d7-848e-4817-9252-92ff2cf5ec71`)
+  - `Phase 2 — Experience Architecture` (id `9867f9b9-5e06-42fd-b36d-3fc71514c36f`)
   - `Phase 3 — Capability Map` (id `c4c6c84f-58ff-489e-8cc8-7cad12f68c25`)
   - `Phase 4 — Extensibility Model` (id `6147e13d-540b-42ac-95a5-e315bd9f0560`)
+  - `Phase 5 — Knowledge & Memory` (id `04b7a345-1739-4431-9686-de5529e196dc`)
+  - `Phase 6 — Workflow Design` (id `6cb346be-1b0a-4777-a7f8-ac1f918bca7e`)
   - Add a new milestone only when a phase becomes active in canon.
 - **Statuses:** `Backlog`, `Todo`, `In Progress`,
   `In Review`, `Done`, `Canceled`, `Duplicate`
@@ -59,7 +61,8 @@ phase map in `Faraz-OS-Canon.md` as authoritative if they differ.
   without an explicit decision):**
   - Parent `Type`: `documentation`, `scoping`, `boundary`,
     `architecture`, `snapshot`, `canon`
-  - Parent `Phase`: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4`
+  - Parent `Phase`: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4`,
+    `Phase 5`, `Phase 6`
   - Exception: Parent `Phase` labels follow the milestone rule — add `Phase N` when phase N becomes active in canon.
   - The default `Bug` / `Feature` / `Improvement` labels
     are unused for this project; do not apply them.
@@ -150,6 +153,14 @@ source of truth; Linear (step 4) reconciles to the result.
 3. Record what happened. Do not finalize unresolved
    boundaries. Preserve Assumption / Open Question / Risk
    markers exactly.
+4. **Tracker backfill (same commit).** If the snapshot
+   introduces a new `DEC-0NN`, `FIND-0NN`, or actionable
+   `R-0NN`, write the full entry into the matching tracker
+   (`decisions.md` / `findings.md`) in the SAME close-out
+   commit as the snapshot — trackers are reconciled with the
+   change they record, never deferred. Whether that commit is
+   record-only or GATED follows the Execution Mode section of
+   `CLAUDE.md`.
 
 ### Step 2 — Refresh `Current-State.md` (repo)
 Update it to match the new snapshot's reality:
@@ -158,8 +169,10 @@ open questions. Prefer minimal diffs.
 
 ### Step 3 — Propose repo changes for review (gate)
 Present the snapshot content and the `Current-State.md`
-diff for human review. **Do not commit or push without
-explicit approval.** This is the DEC-011 gate.
+diff for human review. **Do not commit or push GATED work
+without explicit approval; record-only work lands per the
+Execution Mode section of `CLAUDE.md` (a reviewer CLEAR counts
+as the go).** This is the DEC-011 gate for GATED close-outs.
 Linear is not touched until repo changes are approved,
 so the board never mirrors an unapproved draft.
 
