@@ -3,7 +3,7 @@
 ## Purpose
 `workflows.md` defines the logical orchestration layer of Faraz OS: the ordered
 business workflows, their hand-offs, their human-approval gates, and the
-cross-cutting constructs (agent chains, runtime semantics, loop/exception
+cross-cutting constructs (agent chains, workflow runtime, loop/exception
 patterns) through which Phase-3 capabilities are sequenced into governed,
 end-to-end flows.
 
@@ -112,7 +112,8 @@ approve = Phase 1; *when* approval occurs in an ordered flow = Phase 6
   Governance territory).
 - **Boundary guard.** Gate placement and mode = Phase 6. Who may approve =
   Phase 1 / DEC-026. Auditability of what AI proposed / what the human changed /
-  what was approved / what was executed (`:44-49`) is a system property realized in
+  what was approved / what was executed (`human-in-the-loop-philosophy.md:44-49`) is
+  a system property realized in
   Phase 7; Phase 6 only marks where the gate sits.
 
 ---
