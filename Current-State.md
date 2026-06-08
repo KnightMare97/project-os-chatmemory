@@ -222,7 +222,7 @@ Phase 6 Workflow Design is now scoped (Snapshot-036 / DEC-028) and its **first w
 is complete** (Snapshot-037): `Faraz-OS-Canon/workflows.md` is written (428 lines;
 Batches A `6eefd90`, B `a7de5ef`, C `a0fe15d`) and consistency-reviewed clean
 (Snapshot-038). **Phase 6 is now complete at DEC-028's scope — 13/13 sub-items
-(DEC-029)**, which **fires Q-012's trigger**: Q-012 (Phase 7 ↔ Phase 8) moves
+(DEC-029 / Snapshot-040)**, which **fires Q-012's trigger**: Q-012 (Phase 7 ↔ Phase 8) moves
 deferred → active, and the Phase 7 ↔ Phase 8 **scoping** becomes the open thread
 (scoping only — no Phase-7/8 content before its own question-gate). Any future
 Q-017-driven Phase-6 increment is marked-future and does not reopen the phase. The
@@ -412,7 +412,7 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-**Phase 6 Workflow Design — complete at DEC-028's scope (DEC-029).** `workflows.md`
+**Phase 6 Workflow Design — complete at DEC-028's scope (DEC-029 / Snapshot-040).** `workflows.md`
 is written (Batches A–C; `6eefd90` / `a7de5ef` / `a0fe15d`), under DEC-028, via
 per-batch reviewer byte-reads (FIND-033), and consistency-reviewed **clean**
 (Snapshot-038; zero meaning-level findings). DEC-029 declares Phase 6 complete at
