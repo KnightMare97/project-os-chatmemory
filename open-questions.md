@@ -453,6 +453,36 @@ Why it matters:
 
 ---
 
+### Q-018
+What domain owns a Client Asset (raw + produced + client-uploaded client media)
+as a first-class entity, and does Asset Intelligence (P5) need un-deferring to
+support the Phase-7 Data Architecture view?
+
+Resolved (DEC-033):
+- A new Phase-1 domain — **Media & Assets** — owns the **Client Asset** entity (one
+  entity spanning raw uploads, client-uploaded content, AI-generated media, and
+  produced deliverables; it owns the asset + rights / provenance / retention-status).
+- **Asset Intelligence (P5) stays deferred** — Q-018 settles only the Phase-1 owner.
+- Five-seam boundary recorded: Asset entity = Media & Assets; `relevant_assets_refs`
+  (Engagement Scope) unchanged; produced-by = Phase 3; storage / scoping / ingest /
+  retention = Phase 7 Data + Phase 1 Governance (referenced); asset intelligence =
+  Phase 5, deferred.
+- This unblocks the Phase-7 Data Architecture view; it is the **first of the ~10
+  Phase-1 entity reopenings** the gap analysis surfaced
+  (`grounding/Gap-Analysis-and-Roadmap.md`, non-canon).
+
+Linear: KNI for Q-018 (after the resolving push is raw-verified on origin/main).
+
+Why it mattered:
+- Canon carried only asset *references* (`relevant_assets_refs`) and *produced
+  outputs* (Content / Video Creation); no domain owned the asset entity, so the
+  Phase-7 Data view had nothing to reference and the inversion guard (DEC-031 G-1)
+  forbade Phase 7 inventing the owner.
+- It was the keystone for asset rights / licensing, the Brand Kit / content library,
+  retention, and the client-upload / footage flows.
+
+---
+
 ## Question Review Rule
 Review this file regularly.
 

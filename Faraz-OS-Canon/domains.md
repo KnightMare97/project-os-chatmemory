@@ -3732,3 +3732,102 @@ and remain draft.
 - Risk: If Brand is over-modeled too early,
   the file may lock into a structure
   before enough evidence exists.
+
+---
+
+## Media & Assets (Draft v1)
+
+### Domain Position
+Media & Assets is a Domain responsible for owning the **Client Asset** —
+the media artifacts of client work inside Faraz OS,
+across all states: raw uploads, client-uploaded content,
+AI-generated media, and produced deliverables.
+
+Its existence and its ownership of the Client Asset entity
+are established by DEC-033 (resolving Q-018).
+Internal entity modeling below is Draft v1;
+neighbouring domains' Draft markers are unchanged.
+
+Media & Assets is not:
+- Service Delivery
+- CRM
+- Client Success
+- Knowledge
+- Engagement Scope
+
+Media & Assets may reference those Domains,
+but should not absorb their source-of-truth responsibilities.
+
+---
+
+### Responsibilities
+Media & Assets is responsible for:
+- Client Asset identity and lifecycle (as domain truth)
+- the asset across all states (raw upload, client-uploaded, AI-generated, produced)
+- asset rights / licensing / release status
+- asset provenance (origin, producing-capability reference)
+- asset retention status (the policy is Governance; the status is tracked here)
+- the reference targets other domains point at via asset references
+
+Media & Assets is not responsible for:
+- producing assets (Phase 3 Content / Video Creation capabilities)
+- physical storage, indexing, per-client data scoping, or ingest paths (Phase 7 Data Architecture)
+- the retention *policy* itself (Phase 1 Governance)
+- knowledge derived from assets / asset intelligence (Phase 5, deferred)
+- engagement execution state (Service Delivery)
+- durable client memory (Knowledge / Client Brain)
+
+---
+
+### What it owns
+Media & Assets owns the source of truth for:
+- the Client Asset entity
+- asset state (raw / uploaded / AI-generated / produced)
+- asset rights and licensing status
+- asset provenance metadata
+- asset retention status
+
+Media & Assets may reference but should not own:
+- the producing capability (Phase 3)
+- Engagement Scope `relevant_assets_refs` (Engagement Scope references assets; it does not own them)
+- Service Delivery deliverable execution state
+- Client Brain durable memory
+- storage / data-path implementation (Phase 7)
+- retention and governance policy (Phase 1 Governance)
+
+---
+
+### Candidate Entities
+- Client Asset
+- Asset Version (possible)
+- Asset Rights Record (possible)
+- Asset Provenance Record (possible)
+
+---
+
+### Boundaries
+- ↔ Service Delivery: Service Delivery executes / coordinates the work that produces
+  or uses assets; Media & Assets owns the asset entity those deliverables reference.
+  A Deliverable references a Client Asset; it does not own it.
+- ↔ Phase 3 Capabilities: Content / Video Creation *produce* assets; Media & Assets
+  owns the resulting entity, not the producing ability.
+- ↔ Engagement Scope: `relevant_assets_refs` is a *reference* into this domain's
+  entities; Engagement Scope is unchanged.
+- ↔ Knowledge / Client Brain: Knowledge owns reusable structured memory ("not merely
+  a document file"); Media & Assets owns the asset artifact itself. Knowledge-*about*-
+  assets (asset intelligence) is Phase 5, deferred.
+- ↔ Phase 7 Data Architecture (referenced, not owned): physical storage, per-client
+  data scoping, ingest / upload paths, and retention enforcement are the Phase-7
+  *how / where*, referencing this domain's *what*.
+- ↔ Phase 1 Governance: the retention *policy* (e.g. a default retention window) is
+  Governance; the asset's retention *status* is tracked here.
+
+---
+
+### Domain Notes
+- This domain's existence and its ownership of the Client Asset entity are accepted
+  (DEC-033 / Q-018); the internal entity modeling (Asset Version, Rights Record,
+  Provenance Record) is Draft v1, not finalized.
+- Asset Intelligence (Phase 5) remains **deferred** — Q-018 / DEC-033 settles only the
+  Phase-1 owner of the asset entity, not the knowledge derived from assets.
+- No inherited Phase-1 question is resolved by this domain (R-027 set untouched).

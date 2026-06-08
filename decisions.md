@@ -1757,6 +1757,70 @@ Status:
 
 ---
 
+### DEC-033
+**Q-018 resolved — Client Asset entity owned by a new Phase-1 domain (Media & Assets).**
+
+Phase: 1 (domain truth). Resolves: Q-018. Supersedes: none. The **first of the ~10
+Phase-1 entity reopenings** the gap analysis surfaced
+(`grounding/Gap-Analysis-and-Roadmap.md`, non-canon); scoped to **Client Asset only**.
+
+**Context.** The gap analysis (and Ali's asset / media / upload questions) exposed that
+canon carries only asset *references* (`relevant_assets_refs`, Engagement Scope →
+Operational References, `Faraz-OS-Canon/domains.md:517`) and asset *production* (Content /
+Video Creation "produce a … asset", `Faraz-OS-Canon/capabilities.md:121-125`, `:172-176`,
+both serving Service Delivery) — **no domain owns a Client Asset entity.** The Phase-7
+Data Architecture view cannot architect asset storage / per-client scoping / ingest /
+retention without an owning domain to reference; the inversion guard (DEC-031 G-1)
+forbids Phase 7 inventing the owner. This is Phase-1 domain truth (a *what / who-owns*
+question), settled at domain altitude. Mirrors the DEC-026 / DEC-027 owning-phase
+pattern: an isolated `domains.md` ownership landing with its own DEC; the downstream
+Phase-7 consumption is separate.
+
+**Decision.**
+- **A new Phase-1 domain — *Media & Assets* — owns the Client Asset entity.** A
+  **Client Asset** is one entity spanning all media states: **raw uploads,
+  client-uploaded content, AI-generated media, and produced deliverables.** The domain
+  owns the asset itself plus its **rights / provenance / retention-status** as domain
+  truth (the *what*, not the storage mechanism).
+- **Asset Intelligence (Phase 5) stays deferred** (G-3 = B): Q-018 settles only the
+  Phase-1 owner. Asset Intelligence (`Faraz-OS-Canon/memory.md:177-181`) — knowledge
+  *derived from* assets — remains its own gated un-defer, taken only when its memory
+  structure is actually needed. This decision does not un-defer it.
+- **Domain name:** *Media & Assets* (recommended; parallels Service Delivery / Client
+  Success). Alternatives for the byte-read: *Asset Management*, *Assets*.
+
+**Five-seam boundary (recorded).**
+1. **Asset entity** — owned by the new *Media & Assets* domain (this decision).
+2. **Asset references** — `relevant_assets_refs` in Engagement Scope
+   (`Faraz-OS-Canon/domains.md:517`) stays a *reference*, unchanged.
+3. **Produced-by** — Content / Video Creation (Phase 3,
+   `Faraz-OS-Canon/capabilities.md:121-125`, `:172-176`) *produce* assets; they do not
+   own the entity.
+4. **Storage / per-client scoping / ingest / retention-enforcement** — the *how / where*
+   is Phase-7 Data Architecture and Phase-1 Governance (retention policy);
+   **referenced, not decided here** (G-5). The 29-day retention default and the
+   dual-path-upload posture (grounding doc) are referenced, not authored.
+5. **Asset intelligence** — Phase-5 Asset Intelligence, **deferred** (above).
+
+**Structural gates (confirmed).** G-1: one entity spanning all media states. G-4: the
+five-seam boundary. G-5: scoping / retention / dual-path referenced-not-decided. G-6:
+carried set untouched.
+
+**Scope guard.** This resolves **Client Asset only.** The other ~9 Phase-1 entity
+reopenings the gap analysis implies — Engagement / Community set, Service Agreement →
+firm (Q-002), Brand (Q-003), Campaign, Cost-ledger / Prompt, Ticket, Ad-Account,
+Schedule, Consent — are **untouched**; each is its own future gated decision.
+
+**Carried / not-owned.** R-027 set (Q-003 Brand, Q-004 Client Brain partitioning, the
+insight→durable-knowledge threshold `Faraz-OS-Canon/domains.md:1918`) carried unresolved;
+Q-002 (Service Agreement), Q-016, Q-017 carried; no Phase-7 content and no storage
+technology (Phase-10) authored.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

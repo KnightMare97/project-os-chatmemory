@@ -307,6 +307,11 @@ for the Phase 1 domain model
 and must not be re-normalized or re-discovered
 without a new explicit decision.
 
+A new domain — **Media & Assets** — was added by DEC-033 (resolving Q-018):
+it owns the **Client Asset** entity. This is the first of the ~10 Phase-1 entity
+reopenings the non-canon gap analysis surfaced; each further reopening is its own
+explicit gated decision (domain truth is never re-discovered wholesale).
+
 ---
 
 ## Normalization Status and Rules
@@ -414,6 +419,18 @@ Avoid:
 
 ## Current Next Focus
 The current recommended next focus is:
+
+**Q-018 resolved (DEC-033): a new Phase-1 domain — Media & Assets — owns the Client
+Asset entity; the Phase-7 Data Architecture view is now unblocked.** DEC-033 places the
+Client Asset (one entity spanning raw / client-uploaded / AI-generated / produced media,
+plus rights / provenance / retention-status) in a new accepted domain; Asset
+Intelligence (P5) stays deferred. This is the **first of ~10 Phase-1 entity reopenings**
+the non-canon gap analysis (`grounding/Gap-Analysis-and-Roadmap.md`) surfaced — the
+others (Engagement / Community set, Service Agreement → firm [Q-002], Brand [Q-003],
+Campaign, Cost-ledger / Prompt, Ticket, Ad-Account, Schedule, Consent) are upcoming, each
+its own gated decision. **The Phase-7 content gate continues** (Logical + AI written; the
+Data view can now reference Media & Assets; Integration / Security / Runtime are clean
+"how").
 
 **Phase 4 Feature Modules — firm (DEC-032). Phase 7 — SCOPED (DEC-031); the
 Application/Logical prerequisite is cleared. Next: the Phase 7 content gate.** DEC-032
@@ -527,6 +544,9 @@ per the trackers' "active, still-relevant" rule;
 they remain in their originating snapshots as historical record.
 
 Open question Q-011 is resolved (see DEC-019 / Snapshot-013).
+Open question Q-018 (Client Asset domain ownership) is resolved
+(see DEC-033): a new Phase-1 domain, Media & Assets, owns the Client Asset entity;
+Asset Intelligence (P5) stays deferred.
 Open question Q-015 (Publishing scheduling/queueing, P3 ↔ P6)
 is resolved (see DEC-028 / Snapshot-036).
 Open question Q-017 (system-administrator visual workflow
