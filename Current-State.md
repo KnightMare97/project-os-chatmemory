@@ -420,6 +420,19 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
+**Phase 7 System Architecture Blueprint — first write COMPLETE (all seven concern-views;
+Batches A–E; Snapshot-044).** `system-architecture-blueprint.md` carries Logical,
+Application, Data, AI, Integration, Security, and Runtime Architecture on the six-field
+skeleton + Non-goals / Open-and-deferred / Carried (DEC-031 scope realized at logical
+altitude; KNI-27 → Done). **This is a first-write-complete milestone, NOT a phase-complete
+declaration** (Phase-2 / Phase-6 precedent) — Phase 7 carries open *referenced* items
+(the dual-path posture, deeper agent supervision) and a Phase-7 phase-complete call would
+be a separate later gated decision. **The open program is the ~9 remaining Phase-1 entity
+reopenings the non-canon gap analysis surfaced** (Engagement / Community, Service Agreement
+→ firm [Q-002], Brand [Q-003], Campaign, Cost-ledger / Prompt, Ticket, Ad-Account,
+Schedule, Consent) — each its own gated decision; Q-018 (Client Asset → Media & Assets,
+DEC-033) was the first. Phase 8 (Puzzle Board / layered assembly) is downstream (DEC-030).
+
 **Q-018 resolved (DEC-033): a new Phase-1 domain — Media & Assets — owns the Client
 Asset entity; the Phase-7 Data Architecture view is now unblocked.** DEC-033 places the
 Client Asset (one entity spanning raw / client-uploaded / AI-generated / produced media,
