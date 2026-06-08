@@ -112,9 +112,9 @@ Each capability is recorded on six fields:
     (Phase 6), not this capability; the entry records no ordering.
   - Inherited Phase 1 question, referenced not resolved: what belongs
     in the Intelligence domain versus the Analytics / Reporting
-    capability is open (`domains.md:1914-1915`; noted overlap at
-    `domains.md:1904`), and CRM models its own *CRM Reporting &
-    Dashboarding* bounded context (`domains.md:802`). The Serves value
+    capability is open (`domains.md:1916-1917`; noted overlap at
+    `domains.md:1906-1907`), and CRM models its own *CRM Reporting &
+    Dashboarding* bounded context (`domains.md:804`). The Serves value
     above is therefore a Phase 3 inference subject to that open
     question; this entry does not settle it.
 
@@ -133,7 +133,7 @@ Each capability is recorded on six fields:
   - Sequence (Phase 6): the produce-asset ability only. The
     "draft → review → revise" loop is Service Delivery's Revision
     Cycle / Revision Aggregate / Revision Handling
-    (`domains.md:3217`, `:3250`, `:3287`) — a workflow that invokes
+    (`domains.md:3336`, `:3369`, `:3406`) — a workflow that invokes
     this capability. Referenced at reference altitude; not
     reinterpreted.
 
@@ -207,8 +207,8 @@ Each capability is recorded on six fields:
     `experience-architecture.md:564-571`.
   - Inherited Phase 1 question, referenced not resolved: what belongs
     in the Intelligence domain versus the Analytics / Reporting
-    capability is open (`domains.md:1914-1915`; noted overlap at
-    `domains.md:1904`). The Serves value above is therefore a Phase 3
+    capability is open (`domains.md:1916-1917`; noted overlap at
+    `domains.md:1906-1907`). The Serves value above is therefore a Phase 3
     inference subject to that open question; this entry does not
     settle it.
 
@@ -216,7 +216,7 @@ Each capability is recorded on six fields:
 - **Definition.** The ability to compute a score for a lead.
 - **Serves.** Serves CRM and Intelligence (Phase 3 inference,
   pending — this is exactly the unresolved Phase 1 question at
-  `domains.md:1917-1918`; see Boundary notes). Stated at naming
+  `domains.md:1919-1920`; see Boundary notes). Stated at naming
   altitude: this capability serves those domains; it does not own
   the lead or the score.
 - **Execution mode.** AI / human / hybrid.
@@ -234,7 +234,7 @@ Each capability is recorded on six fields:
     as the scored subject, at reference altitude; it defines nothing.
   - Inherited Phase 1 question, referenced not resolved: whether lead
     scoring lives fully inside Intelligence or partly inside CRM as
-    domain-local logic is open (`domains.md:1917-1918`; Intelligence's
-    Scoring & Prioritization context at `domains.md:1832-1837`). The
+    domain-local logic is open (`domains.md:1919-1920`; Intelligence's
+    Scoring & Prioritization context at `domains.md:1834-1839`). The
     Serves value above is the Phase 3 inference sitting directly on
     that question; this entry does not resolve it.
