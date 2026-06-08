@@ -1453,6 +1453,106 @@ Status:
 
 ---
 
+### DEC-030
+**Phase 7 ↔ Phase 8 boundary — scope distinction (Q-012 resolution).**
+
+Phase: 7/8 boundary. **Resolves: Q-012** (only). Supersedes: none.
+Scoping only — authors **no** Phase-7 (`system-architecture-blueprint.md`) or
+Phase-8 (`architecture.md`) content; each phase awaits its own question-gate.
+
+**Context.** DEC-029 fired Q-012's trigger (`decisions.md:1436-1443`). Q-012
+(`open-questions.md:259-262`) asks the intended boundary between Phase 7 System
+Architecture Blueprint (`Faraz-OS-Canon.md:131`) and Phase 8 Puzzle Board
+Architecture (`Faraz-OS-Canon.md:140`), since both "appear to cover system-level
+concerns." This decision draws that one boundary only; it is **narrower** than full
+Phase 7 scoping (a separate later question-gate). It mirrors no content write.
+
+**Decision — the boundary.**
+- **Phase 7 = the substantive cross-cutting *concern-views* (lenses).** Its seven
+  sub-items (`Faraz-OS-Canon.md:132-138` — Logical, Application, Data, AI,
+  Integration, Security, Runtime Architecture) each answer *how the system handles a
+  cross-cutting concern*.
+- **Phase 8 = the *layered assembly* (the board).** Its **seven** layers
+  (`Faraz-OS-Canon.md:141-147` — Core, Domains, Capabilities, Plugins,
+  Infrastructure, plus Experience and AI, the latter two `[ADDED]` at `:146-147`)
+  organize the **concrete building blocks** into layers. Most are pieces already
+  owned elsewhere; Phase 8 is an *assembly view*, not a place that re-designs them.
+- **One-way dependency:** Phase 8 assembles to satisfy Phase 7; **Phase 7 is
+  scoped/written first** (consistent with the canon phase ordering 7→8).
+
+**Not a 1:1 mapping (pre-empts a false-symmetry error).** The seven P7 concern-views
+and the seven P8 layers are **not** a one-to-one correspondence despite the matching
+count. Phase 8 assembles blocks **owned across phases**: Domains Layer → Phase 1
+domain truth; Capabilities Layer → Phase 3; Plugins Layer → Phase 4; Experience Layer
+→ Phase 2; while Core, Infrastructure, and AI Layers are each assembled from multiple
+sources. No P7 view "becomes" a P8 layer; P7 views are lenses, P8 layers are
+assembled groupings.
+
+**Boundary test (recorded verbatim for reuse):**
+1. *"How does the system handle [data / execution / AI / integration / security /
+   runtime] as a cross-cutting concern?"* → **Phase 7** (a concern-view / lens).
+2. *"What concrete building blocks exist, and which layer do they sit in — Core /
+   Domains / Capabilities / Plugins / Infrastructure / Experience / AI?"* →
+   **Phase 8** (the assembled board).
+3. *Re-defines what a domain / capability / plugin / experience-surface **is**, who
+   owns it, or its sequence* → **neither**; that is Phases 1 / 2 / 3 / 4 / 6,
+   **referenced**.
+
+**Worked example — AI Architecture (P7) vs AI Layer (P8), the highest-collision
+seam.** This is the exact pair the boundary test must disambiguate, and the seam
+where Q-013 (AI / agent-surface home, `open-questions.md:292-293` — "Likely Phase 7
+System Architecture Blueprint (AI Architecture)" / "Possibly relates to Phase 8 AI
+Layer") and the registered
+agent / subagent-identity flag (`Faraz-OS-Canon/extensibility.md:345-347, :457-459`)
+both sit.
+- *How the system runs AI* — the chain-modelling / routing engine, agent execution,
+  model-per-part selection enforcement, human/hybrid paths as a cross-cutting
+  concern → **Phase 7 AI Architecture** (`Faraz-OS-Canon.md:135`).
+- *Where the assembled AI building blocks sit as a layer* in the board → **Phase 8
+  AI Layer** (`Faraz-OS-Canon.md:147`).
+- *What an agent/subagent **is** (identity), and the home of AI/agent-facing
+  surfaces* → **neither is resolved here**: Q-013 and the agent-identity flag are
+  **carried untouched** to their own later passes; this decision only names the seam,
+  it does not resolve what lives on either side of it.
+
+**Naming convention — disambiguation, not rename.** "Architecture" recurs across both
+phase names, all seven P7 sub-items, and P8's title; and "AI" names both a P7 view and
+a P8 layer. Per the proven three-way "runtime" disambiguation precedent
+(`Faraz-OS-Canon/extensibility.md:396-400`; DEC-028 G-6(c) `decisions.md:1341-1360`),
+the fix is **disambiguation, not a phase-map rename** (a rename is a
+wide-blast-radius change). The eventual Phase-7 scope doc opens by distinguishing
+**architecture-as-concern-view (Phase 7)** from **architecture-as-layered-assembly
+(Phase 8)**, and **must specifically disambiguate AI Architecture (P7, the how-AI-runs
+concern-view) from AI Layer (P8, the assembled AI grouping)** — not only the generic
+word "architecture." Optional working nicknames: *"the Blueprint" (P7) / "the Board"
+(P8)*. An actual rename is reserved only if a later gate finds a name conceptually
+wrong, not merely colliding.
+
+**Rejected alternative (recorded).** *"Phase 8 is the real architecture; Phase 7 is
+conceptual preamble."* Rejected: it leaves Phase 7 thin and wastes its seven-view
+structure; the seven views are classic architectural concern-views, the seven layers
+are mostly already-defined pieces being assembled.
+
+**Resolves.** Q-012 → resolved (the P7 ↔ P8 scope distinction). Linear **KNI-11 →
+Done** after the verified push.
+
+**Carried, NOT resolved here (verbatim).** This decision draws one boundary only. It
+does **not** open Phase 7 scope (a later question-gate) and authors no Phase-7/8
+content. Carried untouched: the **inversion guard** (the Phase-7 R-028 flip —
+*architects how vs re-defines what*) is a later Phase-7-gate call, not here; the
+**Feature-Modules / module-mounting** dependency (deferred Phase-4 sub-item) is a
+later-gate call; **Q-017** (multi-phase; marked-future); **Q-013** (AI / agent-surface
+home; deferred, repo-only); the registered **agent / subagent-identity Phase-7 flag**
+(`Faraz-OS-Canon/extensibility.md:345-347, :457-459`); the **R-027 set** — Q-003
+(Brand placement), Q-004 (Client Brain partitioning), the insight→durable-knowledge
+threshold (`Faraz-OS-Canon/domains.md:1918`); **Q-016**; the **Service Agreement**
+draft boundary; **R-028** reference-altitude discipline.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
