@@ -266,11 +266,40 @@ pushed and verified on `origin/main` with raw output shown.
 GitHub wins on any conflict; Linear never silently diverges.
 
 ### Verification discipline
-- An independent verifier pass runs before commits.
-- FIND-032 citation rule: after any same-session canon landing,
-  re-derive all draft citations from post-landing ground truth
-  and run a deterministic stale-token sweep BEFORE the verifier
-  pass (LLM verifiers false-pass shifted line ranges).
+- The independent reviewer session is retired. Claude is both executor
+  and self-reviewer; Ali is the human judgment on meaning and posture.
+  Before EVERY canon/posture commit, Claude MUST run the two-part
+  self-review below — never a single LLM "looks right" pass (it
+  false-passes its own shifted or mis-anchored citations, the
+  FIND-032/033/034 failure mode).
+
+- PART A — Mechanical citation verifier (deterministic shell, not
+  judgment). For every file:line / file:start-end citation introduced
+  or modified:
+  1. sed the exact range in the CURRENT working tree; confirm the
+     specific token/phrase the prose claims is literally there. If not,
+     grep the quoted text, re-derive the correct line, and fix the cite.
+  2. Stale-token sweep: grep changed files for old line-number tokens;
+     confirm none now point into a region this change shifted.
+  3. Same-session shift rule (FIND-032/033/034): after any same-session
+     canon landing, re-derive all draft citations from post-landing
+     ground truth; if the change inserts/deletes lines, re-derive every
+     LIVING-doc citation at or below the shift and update it. Do NOT
+     update immutable-history citations (snapshots/, brainstorms/,
+     decisions.md) — they resolve against their landing commits and are
+     never retro-edited (FIND-034); verify each still holds at its
+     landing commit.
+  4. Report raw sed/grep output for each citation — no "verified" claim
+     without the bytes (LLM verifiers false-pass shifted line ranges).
+
+- PART B — Semantic red-team (judgment, against the REPOSITORY, not the
+  draft buffer): the wording matches the ruling, with any litmus or
+  boundary test recorded VERBATIM where required; no carried-open item
+  was silently touched (list each, confirm still open / untouched); no
+  architecture was invented beyond repository evidence and no boundary
+  was crossed (R-028); the altitude is right; surface the diff plus the
+  Part-A raw output to Ali for the meaning call.
+
 - Same-commit tracker backfill is standing close-out discipline:
   trackers are reconciled in the same commit as the change they
   record, not deferred.
