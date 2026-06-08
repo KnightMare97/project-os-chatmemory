@@ -163,8 +163,9 @@ genuine capability with its tooling deferred to Phase 4. `capabilities.md` now
 records all eight capabilities on the six-field skeleton (commits 9be5cbc,
 288969a); the header references the Governing Boundary Test and six-boundary
 set rather than restating them; the Serves field is a Phase-3 inference at
-naming altitude; Q-015 and the inherited Phase 1 questions (domains.md:1914-1915,
-:1916, :1917-1918) remain open — referenced, not resolved. The FIND-026
+naming altitude; Q-015 (since resolved, DEC-028 / Snapshot-036), while the
+inherited Phase 1 questions (domains.md:1916-1917, :1918, :1919-1920) remain
+open — referenced, not resolved. The FIND-026
 examples-list touch-up (adding Video Creation to domains.md:184-191) is applied
 as a separate called-out commit. New this phase: Q-015 (Publishing
 scheduling/queueing P3 ↔ P6), FIND-026 (domains.md examples-list
@@ -187,7 +188,7 @@ Channel-Model unblock-altitude scope with its verbatim acceptance test. DEC-025
 itself wrote no canon content and resolved no Phase 1 question. Registered open
 flags carried forward: agent/subagent identity (likely Phase 7), safety-controls
 vocabulary, the optional philosophy-#7 annotation, and a repo-wide
-inherited-question citation drift (FIND-028).
+inherited-question citation drift (FIND-028; since resolved).
 
 All eight in-scope entries of `extensibility.md` are now written (Snapshot-030;
 Batches A–C, commits 8e921a8, 1b148d4, 082b261): the file skeleton; the Provider
@@ -449,7 +450,7 @@ item if/when un-deferred. The next Phase 4 decisions are fresh, gated topics:
 (a) the Phase 2 Channel Behaviors write against the now-landed Channel Model
 (KNI-18 reopen — awaiting explicit green-light); (b) un-deferring any of the four
 sub-items. Carry the registered open flags (agent/subagent identity;
-safety-controls vocabulary; philosophy-#7 annotation; citation drift FIND-028) and
+safety-controls vocabulary; philosophy-#7 annotation) and
 the inherited Phase 1 questions forward, unresolved.
 
 The standing items below remain:
@@ -459,7 +460,7 @@ The standing items below remain:
    now **resolved** (DEC-028 / Snapshot-036; KNI-21 → Done): atomic push and the
    scheduled-publish when-parameter are firm Phase 3, cross-item queueing is
    Phase 6 orchestration. Phase 3 has no remaining open item of its own. The
-   inherited Phase 1 questions (domains.md:1914-1915, :1916, :1917-1918) stay
+   inherited Phase 1 questions (domains.md:1916-1917, :1918, :1919-1920) stay
    referenced, not resolved, pending their owning Phase 1 work.
 2. **Phase 2 Experience Architecture is complete — 7-of-7 populated.** The
    Permission Matrix is populated (Snapshot-033 / KNI-14): a read-only projection
