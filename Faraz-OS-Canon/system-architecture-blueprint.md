@@ -205,7 +205,7 @@ each follows the six-field skeleton above and is bound by the three governing ru
 - **Referenced owned-truth (the *what*, by phase).**
   - Phase 1 domains (`Faraz-OS-Canon/domains.md`) — each domain owns its entity truth;
     Data persists / serves it, never re-owns.
-  - Phase 1 **Media & Assets** (DEC-033; `Faraz-OS-Canon/domains.md:3775`) — the Client
+  - Phase 1 **Media & Assets** (DEC-033; `Faraz-OS-Canon/domains.md:3778`) — the Client
     Asset entity + rights / provenance / retention-status; the asset persistence model
     references this owner.
   - Phase 1 Engagement Scope — `relevant_assets_refs` (`Faraz-OS-Canon/domains.md:517`) is
@@ -352,7 +352,7 @@ each follows the six-field skeleton above and is bound by the three governing ru
   named cryptography, key store, or auth product.
 - **Referenced owned-truth (the *what*, by phase).**
   - Phase 1 Governance — authorization rules (DEC-026, `decisions.md:972`; Governance
-    domain `Faraz-OS-Canon/domains.md:2155`): Security *enforces*, authors none.
+    domain `Faraz-OS-Canon/domains.md:2156`): Security *enforces*, authors none.
   - Phase 2 — the Permission Matrix (`Faraz-OS-Canon/experience-architecture.md:502`):
     Security enforces the exposure it defines.
   - Phase 7 Data Architecture (this file) — data sensitivity and per-client scoping:
@@ -473,8 +473,8 @@ Referenced by the views, owned elsewhere, not authored here:
   partitioning), the insight→durable-knowledge threshold (`Faraz-OS-Canon/domains.md:1918`).
 - Q-016 and Q-017 carried; Q-017's visual-workflow-management home is its own gated,
   multi-phase decision.
-- The ~9 remaining Phase-1 entity reopenings the non-canon gap analysis surfaced
-  (Engagement / Community, Service Agreement → firm [Q-002], Brand [Q-003], Campaign,
-  Cost-ledger / Prompt, Ticket, Ad-Account, Schedule, Consent) — each its own future gated
-  decision; only Q-018 (Client Asset) is resolved (DEC-033).
+- The Phase-1 entity reopenings the non-canon gap analysis surfaced: 5 of ~10 are now
+  resolved (DEC-033 Media & Assets, DEC-034 Service Agreement, DEC-035 Community,
+  DEC-036 Brand, DEC-038 AI Operations); ~5 remain (Campaign, Ticket, Ad-Account,
+  Schedule, Consent) — each its own future gated decision.
 - R-028 reference-altitude discipline held as the active G-1 inversion guard throughout.

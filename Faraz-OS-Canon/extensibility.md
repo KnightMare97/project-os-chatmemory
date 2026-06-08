@@ -509,7 +509,7 @@ noted inline):
 - **Safety-controls vocabulary** — resolved (mapping): "safety controls"
   (`extensibility-philosophy.md:30`, Philosophy #8) is the same governance
   touchpoint category as Governance's "safety constraints / safety rules / Safety
-  Constraint" (`domains.md:2190, :2227, :2263`) — a naming variance (Governance uses
+  Constraint" (`domains.md:2191, :2228, :2264`) — a naming variance (Governance uses
   "control" / "constraint" interchangeably), not an altitude distinction. Philosophy
   #8's wording is preserved; the OQ-H "#8-only" provenance (`decisions.md:845`) stands.
 - **Philosophy #7 annotation** — resolved (no Phase-0 edit): the refinement is

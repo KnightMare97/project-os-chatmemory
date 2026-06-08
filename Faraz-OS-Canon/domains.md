@@ -1977,6 +1977,7 @@ Finance may reference but should not own:
 - Client Brain
 - Knowledge artifacts
 - raw bank/provider infrastructure details outside domain contracts
+- per-job AI usage / cost record (AI Operations; DEC-038)
 
 ---
 
@@ -3221,6 +3222,8 @@ pending Q-006.
 ---
 
 ### Open Questions
+**Answered by DEC-034:** Service Agreement is a first-class Entity owned by CRM (Finance / Client Success / Service Delivery / Engagement Scope reference; not own). **Still open:** Q-006 (SA↔Engagement-Scope lifecycle — gates the Entity→Candidate-Aggregate upgrade); whether SA eventually needs its own Bounded Context; and which parts of Service Agreement are purely commercial vs operationally binding. The historical questions below are retained as record.
+
 - Open Question: Is Service Agreement best owned by CRM?
 - Open Question: Is Service Agreement best owned by Client Success?
 - Open Question: Does Service Agreement require
@@ -4047,7 +4050,7 @@ AI Operations may reference but should not own:
   per-client rollup, margin, and AI-vs-human-cost ratio (Intelligence is not raw source-of-truth,
   `domains.md:1742, :1746`).
 - ↔ Governance: the budget-cap **policy** is Governance (the Routing Governance Aggregate,
-  `domains.md:2329-2337`); AI Operations owns the cost record the policy is measured against, not
+  `domains.md:2330-2338`); AI Operations owns the cost record the policy is measured against, not
   the policy.
 - ↔ Phase 4 AI Model Routing: cost is a routing selection dimension and routing **enforces** the
   cap; AI Operations owns the record, not the selection / enforcement.

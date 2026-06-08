@@ -64,7 +64,7 @@ Boundary notes.
   silent overwrite of strategic fields, no unreviewed replacement of approved
   context. AI may propose / enrich / summarize / classify / recommend, never silently
   overwrite approved context (`:594-603`). *Access* authorization defers to **DEC-026**
-  (`domains.md:2458`, Client Brain "access only"); *physical* retrieval and storage
+  (`domains.md:2459`, Client Brain "access only"); *physical* retrieval and storage
   defer to **Phase 7**.
 - **Boundary notes.** **Partition-agnostic (Q-004):** nothing in this entry assumes a
   per-Client, per-Brand, or both instantiation; partitioning is open (Q-004,
@@ -198,7 +198,7 @@ deferred Asset Intelligence sub-item; and implementation technology.
 ## Cross-phase boundaries (closed seven-boundary set, DEC-027)
 - **↔ Phase 1 domain truth.** Knowledge owns these structures (`domains.md:1253-1263`);
   Client Brain owned by Knowledge (DEC-027). Phase 5 architects, never re-owns.
-- **↔ Phase 1 Governance.** Access authorization is DEC-026's (`domains.md:2458`);
+- **↔ Phase 1 Governance.** Access authorization is DEC-026's (`domains.md:2459`);
   `memory.md` authors none.
 - **↔ Phase 2.** Surfaces / views render memory (Client Brain Surface, Knowledge
   Workspace) — name-only.
