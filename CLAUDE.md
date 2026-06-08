@@ -205,7 +205,9 @@ Discipline:
   close-outs (any close-out containing new decisions
   or canon content); record-only close-outs land
   per the Execution Mode section.
-- Do not push or commit without explicit approval.
+- Do not push or commit GATED work without explicit
+  approval; record-only work lands per the Execution Mode
+  section (a reviewer CLEAR counts as the go).
 - Do not invent architecture in a snapshot.
   A snapshot records what happened;
   it does not finalize unresolved boundaries.
