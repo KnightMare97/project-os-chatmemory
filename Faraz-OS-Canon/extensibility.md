@@ -459,15 +459,15 @@ Carried from DEC-025 / Snapshot-027; referenced, not resolved:
   Architecture is the likely home of agent surfaces). Open cross-phase question.
 - **Safety-controls vocabulary** — "safety controls" (`extensibility-philosophy.md:30`)
   vs Governance's "safety constraints / safety rules / Safety Constraint"
-  (`domains.md:2189, :2226, :2262`); cross-doc alignment deferred to a later
+  (`domains.md:2190, :2227, :2263`); cross-doc alignment deferred to a later
   normalization pass.
 - **Philosophy #7 annotation** — `extensibility-philosophy.md:25` ("routing and
   orchestration are part of extensibility") is read, within the phase map, as
   routing/selection only; orchestration is Phase 6. Optional doc annotation
   deferred to normalization.
 - **Inherited Phase 1 questions** — referenced, not resolved:
-  `domains.md:1915-1916` (Intelligence vs Analytics/Reporting), `:1917` (when an
-  insight becomes durable knowledge), `:1918-1919` (lead-scoring home), and Q-014
+  `domains.md:1916-1917` (Intelligence vs Analytics/Reporting), `:1918` (when an
+  insight becomes durable knowledge), `:1919-1920` (lead-scoring home), and Q-014
   (Permission Matrix ↔ Governance).
-- **Citation drift (FIND-028)** — prior inherited-question refs are off by one;
-  alignment deferred to a normalization pass.
+- **Citation drift (FIND-028)** — resolved this normalization pass:
+  inherited-question refs re-derived from ground truth; see findings.md.
