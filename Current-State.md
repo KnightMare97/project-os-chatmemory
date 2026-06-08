@@ -483,10 +483,10 @@ The standing items below remain:
 4. carry the Future Personas placeholder and the deferred
    navigation sub-detail (notification routing, deep-linking)
    forward as marked future items
-5. (optional) consider extending
-   `workflows/sync-protocol.md` to formalize
-   tracker-backfill as a standing close-out step
-   (per R-025 / FIND-023 mitigation); would be its own decision
+5. **Done** (Snapshot-039): `workflows/sync-protocol.md` now formalizes
+   tracker-backfill as a standing close-out step (Step 1; per R-025 / FIND-023
+   mitigation), landed in the normalization-backlog thread alongside the
+   Fixed-Coordinates milestone-id harmonization.
 6. keep Claude Project input limited to high-signal current files
 7. prepare later controlled handoff to Claude Code
 
