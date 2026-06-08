@@ -436,10 +436,11 @@ action has an automated/AI path + a manual/human path with fallback when the aut
 unavailable (the founding Iran constraint; T1). Four-altitude seam: P1 Governance (when fallback
 is permitted), P6 (the semantic routing — a 4th loop/exception pattern), P7 (detect+switch
 engine + idempotency safety pre-req), P4 (the access-status signal), P3 (hybrid-capable enabler).
-Distinct from HITL (oversight) and execution-mode (capacity) — three orthogonal axes. **Open
-follow-ons (split landing):** the **Phase-6 4th-pattern write** (highest-R-028 surface,
-mechanism-free) and **Q-020** (the Phase-4 access-status / connection-health owner) — each its
-own later gate; nothing else authored here.
+Distinct from HITL (oversight) and execution-mode (capacity) — three orthogonal axes. **Split
+landing — step 2 done:** the **Phase-6 4th loop/exception pattern "Dual-Path / Manual-Fallback
+Routing" is written** (Snapshot-045; commit `2f9dd56`; KNI-33 Done; mechanism-free; Phase 6 stays
+complete at DEC-028's scope + this DEC-037 increment). **Remaining dual-path follow-on: Q-020**
+(the Phase-4 access-status / connection-health owner; KNI-32, open) — its own later gate.
 
 **Q-003 resolved (DEC-036): Brand is a first-class Entity owned by CRM** (reference-addressable,
 not absorbed into Client Account; mandatory Client reference, 1 Client : N Brand; aggregate
