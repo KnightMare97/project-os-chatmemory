@@ -222,9 +222,12 @@ Phase 6 Workflow Design is now scoped (Snapshot-036 / DEC-028) and its **first w
 is complete** (Snapshot-037): `Faraz-OS-Canon/workflows.md` is written (428 lines;
 Batches A `6eefd90`, B `a7de5ef`, C `a0fe15d`) and consistency-reviewed clean
 (Snapshot-038). **Phase 6 is now complete at DEC-028's scope — 13/13 sub-items
-(DEC-029 / Snapshot-040)**, which **fires Q-012's trigger**: Q-012 (Phase 7 ↔ Phase 8) moves
-deferred → active, and the Phase 7 ↔ Phase 8 **scoping** becomes the open thread
-(scoping only — no Phase-7/8 content before its own question-gate). Any future
+(DEC-029 / Snapshot-040)**, which **fired Q-012's trigger**: Q-012 (Phase 7 ↔ Phase 8) moved
+deferred → active, and the Phase 7 ↔ Phase 8 **scoping** became the open thread
+(scoping only — no Phase-7/8 content before its own question-gate). **Q-012 is now
+resolved (DEC-030 / Snapshot-041; commit `fdbe0fe`): Phase 7 = the cross-cutting
+concern-views, Phase 8 = the layered assembly, one-way dependency (P7 first) — see
+Current Next Focus.** Any future
 Q-017-driven Phase-6 increment is marked-future and does not reopen the phase. The
 file carries the skeleton; the three framing/construct
 sections (Human Approval Gates per G-6(a); Agent Chains per G-6(b) with the
@@ -412,17 +415,31 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
+**Phase 7 ↔ Phase 8 boundary — resolved (DEC-030 / Snapshot-041). Next: open the
+Step-2 full Phase 7 question-gate (G-1…G-7).** Q-012 is resolved (DEC-030, commit
+`fdbe0fe`; KNI-11 → Done): Phase 7 System Architecture Blueprint = the substantive
+cross-cutting concern-views (seven lenses); Phase 8 Puzzle Board Architecture = the
+layered assembly (seven layers, incl. Experience + AI); one-way dependency (Phase 7
+scoped/written first); a boundary test + disambiguation-not-rename convention (the
+AI Architecture P7 vs AI Layer P8 worked example) recorded verbatim. **The next open
+thread is the Step-2 Phase 7 question-gate — a full G-1…G-7 scope gate (as in
+DEC-024/025/027/028), fed by the Phase-7 Grounding Brief; no Phase-7 content before
+that scope DEC lands.** It must address the inversion guard (the R-028 flip:
+architects *how* vs re-defines *what*), the Feature-Modules / module-mounting
+dependency (deferred Phase-4 sub-item — reference vs un-defer is a gate call), the
+agent/subagent-identity flag and Q-013 (the AI Architecture seam), and the candidate
+non-goals. Other fresh/gated follow-ups: **Q-017** (system-administrator visual
+workflow management — multi-phase; any Phase-6 increment is marked-future, does not
+reopen the phase); the four Phase-4 deferred sub-items; Phase 5 Asset Intelligence
+un-defer.
+
 **Phase 6 Workflow Design — complete at DEC-028's scope (DEC-029 / Snapshot-040).** `workflows.md`
 is written (Batches A–C; `6eefd90` / `a7de5ef` / `a0fe15d`), under DEC-028, via
 per-batch reviewer byte-reads (FIND-033), and consistency-reviewed **clean**
-(Snapshot-038; zero meaning-level findings). DEC-029 declares Phase 6 complete at
-DEC-028's scope (13/13 sub-items) and **fires Q-012's trigger**. **The next open
-thread is the Phase 7 ↔ Phase 8 boundary scoping (Q-012; KNI-11 re-opens) — scoping
-only, no Phase-7/8 content before its own question-gate.** Other fresh/gated
-follow-ups: **Q-017** (system-administrator visual workflow management — multi-phase;
-any Phase-6 increment is marked-future, does not reopen the phase); the four Phase-4
-deferred sub-items; Phase 5 Asset Intelligence un-defer. Linear: **KNI-26 is Done**
-(Snapshot-037); **KNI-11 re-opens** (after the verified push).
+(Snapshot-038; zero meaning-level findings). DEC-029 declared Phase 6 complete at
+DEC-028's scope (13/13 sub-items) and **fired Q-012's trigger** (now resolved by
+DEC-030, above). Linear: **KNI-26 is Done** (Snapshot-037); **KNI-11 → Done**
+(Q-012 resolved, DEC-030 verified on origin/main).
 
 **Phase 5 Knowledge & Memory — first write complete (Snapshot-035).** `memory.md` is
 written (landing (ii); commit `89f5034`). The Phase 5 question-gate was closed by DEC-027: the G-1–G-5 structural frame (logical altitude;
@@ -509,8 +526,9 @@ is resolved (see DEC-028 / Snapshot-036).
 Open question Q-017 (system-administrator visual workflow
 viewing + management) is open and registered (see Snapshot-037);
 multi-phase placement pending its own gated decision.
-Open question Q-012 (Phase 7 ↔ Phase 8) is now active
-(unblocked by DEC-029 — Phase 6 complete at DEC-028's scope);
-Phase 7 ↔ Phase 8 scoping is the open thread (scoping only, not Phase-7/8 content).
+Open question Q-012 (Phase 7 ↔ Phase 8) is resolved
+(see DEC-030 / Snapshot-041; KNI-11 → Done): Phase 7 = the cross-cutting
+concern-views, Phase 8 = the layered assembly, one-way dependency (P7 first).
+The next thread is the Step-2 full Phase 7 question-gate (scoping, not Phase-7 content).
 Open question Q-013 (AI / agent-surface home) is deferred
 and not blocking Phase 2.

@@ -261,27 +261,36 @@ What is the intended boundary between
 Phase 7 System Architecture Blueprint
 and Phase 8 Puzzle Board Architecture?
 
-Current direction:
-- Both appear to cover system-level concerns
-  and need an explicit scope distinction
-  before working content is produced for either.
-- **Active — unblocked by DEC-029.** Phase 6 is complete at DEC-028's scope, so
-  this question's deferral condition ("until Phase 6 is complete") is met. The
-  Phase 7 ↔ Phase 8 boundary **scoping** is now the open thread — scoping only;
-  expressly NOT Phase 7 / Phase 8 content, each of which awaits its own
-  question-gate.
-- Lives in this file as the system of record; tracked in Linear as `KNI-11`,
-  which **re-opens** (the re-open-after-Phase-6 deferral is now triggered;
-  reconciled after the verified push).
+Resolved (DEC-030) — one boundary drawn (scoping only; no Phase-7/8 content):
+- **Phase 7 = the substantive cross-cutting concern-views** (seven lenses,
+  `Faraz-OS-Canon.md:132-138`): how the system handles data / execution / AI /
+  integration / security / runtime as cross-cutting concerns.
+- **Phase 8 = the layered assembly** (seven layers, `Faraz-OS-Canon.md:141-147`,
+  incl. Experience + AI `[ADDED]` at `:146-147`): the concrete building blocks
+  organized into layers, most owned across other phases — **not** a 1:1 mapping
+  of the seven P7 views.
+- **One-way dependency:** Phase 8 assembles to satisfy Phase 7; Phase 7 is
+  scoped/written first.
+- The boundary test and the disambiguation-not-rename convention are recorded
+  verbatim in DEC-030, with the AI Architecture (P7) vs AI Layer (P8) worked
+  example as the highest-collision seam.
 
-Why it matters:
-- This affects how Phase 7
+Carried, not resolved by DEC-030 (deferred to the Step-2 Phase 7 question-gate
+or their owning passes): Q-013 (AI / agent-surface home), the agent/subagent-
+identity Phase-7 flag, the inversion guard, Feature-Modules / module-mounting;
+Q-003, Q-004, Q-016, the R-027 set (incl. `domains.md:1918`), and R-028 carried
+untouched.
+
+Linear: KNI-11 → Done (DEC-030 raw-verified on origin/main, commit `fdbe0fe`).
+
+Why it mattered:
+- This affected how Phase 7
   (System Architecture Blueprint)
   and Phase 8 (Puzzle Board Architecture,
   including the Experience Layer and AI Layer)
-  are scoped and what each owns.
-- It prevents premature finalization of either phase's
-  responsibility before Phase 6 reveals concrete needs.
+  were scoped and what each owns.
+- It prevented premature finalization of either phase's
+  responsibility before Phase 6 revealed concrete needs.
 
 ---
 
