@@ -217,23 +217,26 @@ partition-agnostic, Asset Intelligence a deferred stub. Every Owner field is a
 Phase-1 reference (Knowledge owns all six); authorization defers to DEC-026, physical
 retrieval/storage to Phase 7.
 
-Phase 6 Workflow Design is now scoped (Snapshot-036 / DEC-028); `workflows.md` is
-**not yet written** (the first write is the next step, gated). The Phase 6
-question-gate (G-1 → G-7) is closed: the structural frame (G-1 logical orchestration
-altitude; G-2 closed seven-boundary set, Phase 1 split into two facets; G-3 thirteen
-firm sub-items in three structural forms — seven workflow entries on the skeleton,
-three referenced loop/path patterns, three framing/construct sections — **zero
-deferred stubs**; G-4 six-field skeleton; G-5 non-goals), the four G-6 posture
-decisions (HITL bounded adoption; Agent Chains bounded with the role-vs-identity
-litmus; Workflow Runtime a bounded framing section with the P6↔P7 litmus; Q-015
-resolved), and the carried set (R-027; Q-012 — whose unblock trigger is Phase-6
-completion; R-028, with the two new litmuses as active guards). **Q-015 is resolved**
-(DEC-028): atomic push and the scheduled-publish when-parameter are firm Phase 3;
-cross-item queueing/sequencing is Phase 6 orchestration. DEC-028 authored no
-`workflows.md` content; it landed as the decision (commit `e9c9296`, with the Q-015
-closure as same-commit tracker backfill) plus the isolated `capabilities.md`
-flag-note refresh (commit `623960e`, reference altitude). The session also persisted
-the execution-mode operating contract in `CLAUDE.md` (commit `7f1cda3`).
+Phase 6 Workflow Design is now scoped (Snapshot-036 / DEC-028) and its **first write
+is complete** (Snapshot-037): `Faraz-OS-Canon/workflows.md` is written (428 lines;
+Batches A `6eefd90`, B `a7de5ef`, C `a0fe15d`). **This is a first write, not
+phase-completion** — Q-012 (Phase 7 ↔ Phase 8), deferred "until Phase 6 is
+complete," stays unfired. The file carries the skeleton; the three framing/construct
+sections (Human Approval Gates per G-6(a); Agent Chains per G-6(b) with the
+role-vs-identity litmus verbatim; Workflow Runtime per G-6(c) with the P6↔P7 litmus
+verbatim); the three loop/exception patterns (Escalation, Revision,
+Failure/Exception); the seven flow entries on the six-field skeleton (Lead → Client,
+Client → Strategy, Strategy → Production, Production → Approval, Approval →
+Publishing, Publishing → Reporting, Learn → Memory Update); the non-goals; and the
+open/inherited flags. Capabilities are referenced name-only; gates place but never
+authorize (who-may-approve = Phase 1 / DEC-026); agent steps are at role altitude;
+no memory structure, threshold (R-027), or engine is authored. The scope itself was
+fixed by DEC-028 (commit `e9c9296`) with the Q-015 resolution and the isolated
+`capabilities.md` refresh (commit `623960e`); the execution-mode operating contract
+is persisted in `CLAUDE.md` (commits `7f1cda3`, `e96b435`). **Q-017** (new this
+session, registered): system-administrator visual workflow viewing + management —
+viewing partially covered by the Phase-2 Agent & Workflow Monitor surface, visual
+editing/management multi-phase placement pending its own gated decision.
 
 Phase 11 Claude Code Operating System
 currently owns the operating method
@@ -404,15 +407,15 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-**Phase 6 Workflow Design — scoped (Snapshot-036 / DEC-028); first write next,
-gated.** The question-gate is closed (G-1 → G-7; the four G-6 posture calls; Q-015
-resolved); `workflows.md` is not yet written. The recommended next thread is the
-gated `workflows.md` first write: the seven firm flow entries on the G-4 six-field
-skeleton, the three referenced loop/path patterns, and the three framing/construct
-sections (Human Approval Gates, Agent Chains, Workflow Runtime), each honoring its
-recorded G-6 conditions and the two verbatim litmuses (role-vs-identity; P6↔P7). It
-would also create its own Linear work issue. Q-015 is resolved (DEC-028) and
-KNI-21 → Done.
+**Phase 6 Workflow Design — first write complete (Snapshot-037).** `workflows.md`
+is written (Batches A–C; `6eefd90` / `a7de5ef` / `a0fe15d`), under DEC-028, via
+per-batch reviewer byte-reads with dependencies-first ordering (FIND-033). This is a
+first write, **not** Phase-6 completion — Q-012's unblock trigger stays unfired. No
+blocking next step; candidate follow-ups are all fresh/gated: a later consistency
+review of `workflows.md`; **Q-017** (system-administrator visual workflow viewing +
+management — its own multi-phase gated decision); the four Phase-4 deferred
+sub-items; Phase 5 Asset Intelligence un-defer. Linear: **KNI-26 → Done** after this
+close-out push verifies.
 
 **Phase 5 Knowledge & Memory — first write complete (Snapshot-035).** `memory.md` is
 written (landing (ii); commit `89f5034`). The Phase 5 question-gate was closed by DEC-027: the G-1–G-5 structural frame (logical altitude;
@@ -434,7 +437,7 @@ The remaining Phase 5 items are carry-forwards, none blocking: Asset Intelligenc
 un-defer (its own gated decision); Q-004 partitioning (resolves with Q-003); the
 Client Brain Aggregate-vs-Memory-Object and approval-before-durable canon flags.
 Candidate fresh threads: the four Phase-4 deferred sub-items; Phase 5 Asset
-Intelligence un-defer. (Phase 6 Workflow Design is now scoped — see the lead above.)
+Intelligence un-defer. (Phase 6 Workflow Design first write is complete — see the lead above.)
 
 **Phase 4 Extensibility — first write complete.** All eight in-scope
 `extensibility.md` entries are written (Snapshot-030, Batches A–C); KNI-23's
@@ -496,7 +499,10 @@ they remain in their originating snapshots as historical record.
 Open question Q-011 is resolved (see DEC-019 / Snapshot-013).
 Open question Q-015 (Publishing scheduling/queueing, P3 ↔ P6)
 is resolved (see DEC-028 / Snapshot-036).
+Open question Q-017 (system-administrator visual workflow
+viewing + management) is open and registered (see Snapshot-037);
+multi-phase placement pending its own gated decision.
 Open question Q-012 (Phase 7 ↔ Phase 8) is deferred
-until Phase 6 is complete.
+until Phase 6 is complete (first write does not fire this trigger).
 Open question Q-013 (AI / agent-surface home) is deferred
 and not blocking Phase 2.
