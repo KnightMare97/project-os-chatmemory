@@ -220,9 +220,13 @@ retrieval/storage to Phase 7.
 
 Phase 6 Workflow Design is now scoped (Snapshot-036 / DEC-028) and its **first write
 is complete** (Snapshot-037): `Faraz-OS-Canon/workflows.md` is written (428 lines;
-Batches A `6eefd90`, B `a7de5ef`, C `a0fe15d`). **This is a first write, not
-phase-completion** — Q-012 (Phase 7 ↔ Phase 8), deferred "until Phase 6 is
-complete," stays unfired. The file carries the skeleton; the three framing/construct
+Batches A `6eefd90`, B `a7de5ef`, C `a0fe15d`) and consistency-reviewed clean
+(Snapshot-038). **Phase 6 is now complete at DEC-028's scope — 13/13 sub-items
+(DEC-029)**, which **fires Q-012's trigger**: Q-012 (Phase 7 ↔ Phase 8) moves
+deferred → active, and the Phase 7 ↔ Phase 8 **scoping** becomes the open thread
+(scoping only — no Phase-7/8 content before its own question-gate). Any future
+Q-017-driven Phase-6 increment is marked-future and does not reopen the phase. The
+file carries the skeleton; the three framing/construct
 sections (Human Approval Gates per G-6(a); Agent Chains per G-6(b) with the
 role-vs-identity litmus verbatim; Workflow Runtime per G-6(c) with the P6↔P7 litmus
 verbatim); the three loop/exception patterns (Escalation, Revision,
@@ -408,16 +412,17 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-**Phase 6 Workflow Design — first write complete (Snapshot-037).** `workflows.md`
+**Phase 6 Workflow Design — complete at DEC-028's scope (DEC-029).** `workflows.md`
 is written (Batches A–C; `6eefd90` / `a7de5ef` / `a0fe15d`), under DEC-028, via
-per-batch reviewer byte-reads with dependencies-first ordering (FIND-033). This is a
-first write, **not** Phase-6 completion — Q-012's unblock trigger stays unfired. The
-first write was consistency-reviewed **clean** (Snapshot-038; zero meaning-level
-findings; two reference-altitude tidy-ups landed, commit `508dbd4`). No blocking next
-step; candidate follow-ups are all fresh/gated: **Q-017** (system-administrator
-visual workflow viewing + management — its own multi-phase gated decision); the four
-Phase-4 deferred sub-items; Phase 5 Asset Intelligence un-defer. Linear: **KNI-26 is
-Done** (Snapshot-037).
+per-batch reviewer byte-reads (FIND-033), and consistency-reviewed **clean**
+(Snapshot-038; zero meaning-level findings). DEC-029 declares Phase 6 complete at
+DEC-028's scope (13/13 sub-items) and **fires Q-012's trigger**. **The next open
+thread is the Phase 7 ↔ Phase 8 boundary scoping (Q-012; KNI-11 re-opens) — scoping
+only, no Phase-7/8 content before its own question-gate.** Other fresh/gated
+follow-ups: **Q-017** (system-administrator visual workflow management — multi-phase;
+any Phase-6 increment is marked-future, does not reopen the phase); the four Phase-4
+deferred sub-items; Phase 5 Asset Intelligence un-defer. Linear: **KNI-26 is Done**
+(Snapshot-037); **KNI-11 re-opens** (after the verified push).
 
 **Phase 5 Knowledge & Memory — first write complete (Snapshot-035).** `memory.md` is
 written (landing (ii); commit `89f5034`). The Phase 5 question-gate was closed by DEC-027: the G-1–G-5 structural frame (logical altitude;
@@ -504,7 +509,8 @@ is resolved (see DEC-028 / Snapshot-036).
 Open question Q-017 (system-administrator visual workflow
 viewing + management) is open and registered (see Snapshot-037);
 multi-phase placement pending its own gated decision.
-Open question Q-012 (Phase 7 ↔ Phase 8) is deferred
-until Phase 6 is complete (first write does not fire this trigger).
+Open question Q-012 (Phase 7 ↔ Phase 8) is now active
+(unblocked by DEC-029 — Phase 6 complete at DEC-028's scope);
+Phase 7 ↔ Phase 8 scoping is the open thread (scoping only, not Phase-7/8 content).
 Open question Q-013 (AI / agent-surface home) is deferred
 and not blocking Phase 2.

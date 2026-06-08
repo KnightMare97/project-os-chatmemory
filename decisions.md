@@ -1395,6 +1395,64 @@ Status:
 
 ---
 
+### DEC-029
+**Phase 6 Workflow Design — declared complete at DEC-028's scope; Q-012 trigger
+fired.**
+
+Phase: 6. Resolves: none (Q-012 is unblocked, not resolved). Supersedes: none.
+
+**Context.** This decision makes the gated phase-status call that the Phase 6
+first write (Snapshot-037) and consistency review (Snapshot-038) set up. It
+changes phase status; it authors no architecture and no Phase-7 content.
+
+**Decision.** **Phase 6 Workflow Design is complete at DEC-028's scope —
+13/13 sub-items.** All thirteen phase-map sub-items (`Faraz-OS-Canon.md:116-128`),
+declared firm with zero deferred stubs by DEC-028 (G-3), are written in
+`workflows.md` at logical orchestration altitude (G-1): the seven flow entries on
+the six-field skeleton, the three loop/exception patterns, and the three
+framing/construct sections. The first write is complete and verified (Snapshot-037;
+Batches A–C, commits `6eefd90` / `a7de5ef` / `a0fe15d`), and the consistency review
+found it clean at the meaning level (Snapshot-038; 33 citations content-verified,
+both litmuses verbatim, all G-6 conditions held). Completion is **scope-anchored to
+DEC-028**, not open-ended: it asserts that DEC-028's defined scope is fully realized
+at the scoped logical altitude, not that Phase 6 can never gain a further increment.
+
+**Q-017 preserved (not a blocker).** Q-017 (system-administrator visual workflow
+viewing + management) surfaced during Phase 6 as a **new, multi-phase** question
+(candidate homes P2 / P4 / P6 / P7) and is **outside DEC-028's defined scope**;
+`workflows.md` authors no visual workflow-management capability. Any **future
+Q-017-driven Phase-6 increment** (e.g. workflow definitions as configurable
+artifacts) is **marked-future** — it does **not** reopen this phase — following the
+Phase-2 precedent, where deferred/parked sub-details (Navigation Model
+landing-surface / notification-routing / deep-linking; Q-016) did not block the
+Phase-2 7-of-7 completion.
+
+**Cross-phase flags carried verbatim (not Phase 6's to resolve).** Agent / subagent
+identity remains the registered **Phase-7** flag (`extensibility.md:345-347`,
+`:457-459`). The R-027 inherited Phase-1 questions — Q-003 (Brand placement),
+Q-004 (Client Brain partitioning), and the insight→durable-knowledge threshold
+(`domains.md:1918`) — remain **Phase-1's** to resolve, referenced at altitude.
+
+**Q-012 trigger fired.** Q-012's deferral condition — *"Deferred until Phase 6 is
+complete"* — is met by this decision; `open-questions.md` is updated in the same
+change (Q-012 deferred → active). **Q-012 (Phase 7 ↔ Phase 8 boundary) moves
+deferred → active**, and the **Phase 7 ↔ Phase 8 boundary *scoping* becomes the next
+open thread**. This fires
+the *scoping* question only — it is **expressly NOT Phase-7 content**, which awaits
+its own question-gate (no Phase-7 / Phase-8 content is authored before then).
+Linear `KNI-11` re-opens (reconciled after the verified push).
+
+**Honest note (recorded).** Phase-2 completion was declared via a **snapshot record**
+(Snapshot-033), not a standalone DEC. Declaring Phase 6 complete via a **DEC** is a
+deliberate **elevation** over that precedent, chosen because this call **fires a
+cross-phase trigger** (Q-012) and therefore warrants a gated, decision-level record
+rather than a record-only snapshot statement.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

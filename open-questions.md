@@ -265,12 +265,14 @@ Current direction:
 - Both appear to cover system-level concerns
   and need an explicit scope distinction
   before working content is produced for either.
-- Deferred until Phase 6 is complete.
-- Not tracked as active work.
-- Lives in this file as the system of record;
-  tracked in Linear as `KNI-11`, Canceled with a
-  re-open-after-Phase-6 note (deferral pattern,
-  not a separate status).
+- **Active — unblocked by DEC-029.** Phase 6 is complete at DEC-028's scope, so
+  this question's deferral condition ("until Phase 6 is complete") is met. The
+  Phase 7 ↔ Phase 8 boundary **scoping** is now the open thread — scoping only;
+  expressly NOT Phase 7 / Phase 8 content, each of which awaits its own
+  question-gate.
+- Lives in this file as the system of record; tracked in Linear as `KNI-11`,
+  which **re-opens** (the re-open-after-Phase-6 deferral is now triggered;
+  reconciled after the verified push).
 
 Why it matters:
 - This affects how Phase 7
