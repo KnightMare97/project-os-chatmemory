@@ -417,9 +417,10 @@ Carried, referenced, not resolved here:
   architecture that executes it: the registered Phase-7 flag
   (`extensibility.md:345-347`, `:457-459`). Agent Chains name roles, never
   identities (role-vs-identity litmus).
-- **Q-012 (Phase 7 ↔ Phase 8 boundary)** — deferred until Phase 6 is complete
-  (`open-questions.md:268`); Phase-6 completion is its downstream unblock trigger.
-  Not resolved here.
+- **Q-012 (Phase 7 ↔ Phase 8 boundary)** — its deferral condition ("until Phase 6
+  is complete") is now met: Phase 6 is complete at DEC-028's scope (DEC-029), so
+  Q-012 is active and the Phase 7 ↔ Phase 8 *scoping* is the open thread. Not
+  resolved here (scoping only; no Phase-7/8 content).
 - **Inherited Phase-1 questions (R-027)** — Q-003 (Brand placement), Q-004 (Client
   Brain partitioning), and the insight→durable-knowledge threshold
   (`domains.md:1918`): referenced at altitude, resolved by their owning Phase-1
