@@ -406,6 +406,39 @@ Current direction:
 
 ---
 
+### Q-017
+Where do the system administrator's **visual viewing and management**
+(update / add / remove) of workflows belong across phases?
+
+Current direction:
+- **Viewing** is partially covered already: the Phase-2 **Agent & Workflow
+  Monitor** surface gives the System Administrator Full exposure
+  (`experience-architecture.md:239`).
+- The **new part is visual workflow editing / management** — updating, adding,
+  and removing workflows through a visual interface. This is not yet authored
+  anywhere.
+- Candidate homes span multiple phases and likely need more than one:
+  - Phase 2 (the surface / experience through which editing happens);
+  - Phase 6 (workflow definitions treated as **configurable artifacts** rather
+    than fixed canon flows);
+  - Phase 4 (config-time binding / extensibility of workflow definitions);
+  - Phase 7 (engine support for editable, runnable workflow definitions).
+- **Registered, not resolved.** Multi-phase placement is its own gated decision
+  later; do not default it. This question lives in this file as the system of
+  record; tracked in Linear if/when scheduled.
+
+Why it matters:
+- It keeps a real capability (administer workflows visually) from being silently
+  assumed or authored in the wrong phase. In particular, the Phase 6
+  `workflows.md` first write (Batch B flow entries) must **not** assume or author
+  a visual workflow editor / management capability; it carries this as a
+  registered flag.
+- The viewing-vs-editing split mirrors the Phase-2 vs Phase-6/4/7 altitude
+  boundaries already in canon; resolving where editing lives prevents collapsing
+  a surface concern, a definition-as-artifact concern, and an engine concern.
+
+---
+
 ## Question Review Rule
 Review this file regularly.
 
