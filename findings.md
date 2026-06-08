@@ -585,3 +585,44 @@ Impact:
 
 Source:
 - Snapshot-036 close-out; this session.
+
+### FIND-034
+**Living-doc `domains.md` citation drift, re-derived from ground truth.** A
+normalization pass over the living canon docs found that their `domains.md`
+line-number citations had drifted — sometimes by one line, sometimes several, and
+in some cases pointing at the wrong content entirely — because the cites were
+authored against **historical `domains.md` states** and verified, pre-FIND-033, by
+token presence rather than anchor content. `domains.md` grew and shifted over the
+project (e.g. the gated DEC-027 ownership update), so the cites silently fell out of
+alignment. **FIND-028** (the inherited Phase-1 question refs being "off by one") was
+the **surfacing subset** of this broader drift; the full re-derivation also caught a
+content-error (`:1904` Intelligence/**Knowledge** overlap cited where the
+Intelligence/**Reporting** overlap `:1906-1907` was meant) and a separate
+Service-Delivery Revision cluster (`:3217/:3250/:3287` → `:3336/:3369/:3406`).
+
+Ground-truth map (Intelligence Draft v1 Open Questions, current `domains.md`):
+Q1 Intelligence vs Analytics/Reporting `:1916-1917`; Q2 insight→durable-knowledge
+threshold `:1918`; Q3 lead-scoring placement `:1919-1920`.
+
+Meaning / corrective (adopted as a standing operating rule):
+- **Living docs** (current canon + trackers: `capabilities.md`, `extensibility.md`,
+  `Current-State.md`, etc.) track **current** `domains.md`; their cites are
+  re-derived from ground truth and content-verified (FIND-033), not token-matched.
+- **Immutable history** — snapshots, `brainstorms/`, and `decisions.md` (DEC entries
+  are point-in-time records) are **never retro-edited** for citation drift; their
+  cites **resolve against their landing commits**, which is the durable direction of
+  reference.
+- When a living-doc fix makes an open-flag stale (e.g. a "citation drift deferred"
+  flag), the flag is refreshed in the **same** fix commit.
+
+Impact:
+- No architecture changed. The three living docs were re-derived from ground truth
+  and content-verified, each as its own called-out commit: `capabilities.md`
+  (`79ec993`, 11 sites incl. the `:1904` content-fix and the Revision cluster),
+  `extensibility.md` (`b7b2b55`, incl. the stale FIND-028 flag), `Current-State.md`
+  (`35391bb`, incl. the stale-flag refresh and a Q-015 open/resolved consistency
+  fix). FIND-028 is hereby closed by this re-derivation; the immutability rule is
+  persisted. `domains.md` was read-only throughout.
+
+Source:
+- Normalization-backlog thread (item 3 / FIND-028); this session.
