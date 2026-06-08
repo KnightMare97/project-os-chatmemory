@@ -292,7 +292,7 @@ Resolved (DEC-030) — one boundary drawn (scoping only; no Phase-7/8 content):
 Carried, not resolved by DEC-030 (deferred to the Step-2 Phase 7 question-gate
 or their owning passes): Q-013 (AI / agent-surface home), the agent/subagent-
 identity Phase-7 flag, the inversion guard, Feature-Modules / module-mounting;
-Q-003, Q-004, Q-016, the R-027 set (incl. `domains.md:1918`), and R-028 carried
+Q-003, Q-004, Q-016, the R-027 set (incl. `domains.md:1941`), and R-028 carried
 untouched.
 
 Linear: KNI-11 → Done (DEC-030 raw-verified on origin/main, commit `fdbe0fe`).
@@ -593,6 +593,58 @@ Current direction:
 Why it matters:
 - Prompt / template versioning (A/B, rollback) is an AI-quality + cost lever; it needs an owning
   home distinct from the cost record it is referenced by.
+
+---
+
+### Q-023
+Where does the Ticket entity live, and which domain is its primary owner?
+
+Resolved (DEC-039):
+- **Ticket** is a first-class Entity in the **Client Success domain** — not a new domain
+  (orphan test fails: Client Success's Escalation Handling bounded context
+  `domains.md:1607-1614` already covers structured client issue intake; extend test passes).
+- Classification: **Entity**; lifecycle submitted → routed → in-progress → resolved / closed;
+  routes to a named handler destination; may trigger a CRM-notify side-effect; does not own
+  routing rules or the CRM record. **Aggregate placement draft/pending.**
+- Non-collapse: Ticket is explicitly distinct from **Escalation Case** (`domains.md:1525`)
+  and **Coordination Request** (`domains.md:1526`) — see DEC-039 for the four-dimension
+  separation.
+- **6th of the ~10 Phase-1 entity reopenings** the non-canon gap analysis surfaced
+  (`grounding/Gap-Analysis-and-Roadmap.md` §10).
+
+Surfaced by the three-lens gap analysis (no pre-existing number; registered + resolved in this
+package). Linear: KNI for Q-023 (after the resolving push is raw-verified on origin/main).
+
+Why it mattered:
+- Client Success carried no structured client-request entity; client-submitted issues,
+  complaints, and queries were implied by Escalation Case and Coordination Request but not
+  separately modeled with an explicit lifecycle and routing record.
+
+---
+
+### Q-024
+What is the lifecycle coupling between Ticket and Escalation Case — do they remain independent
+entities, or does a Ticket *become* an Escalation Case at a severity threshold?
+
+Current direction:
+- Two candidate models: (a) **two independent entities** — a Ticket *spawns* an Escalation
+  Case as a side-effect when severity is met (Ticket ≠ Escalation Case; Escalation Case may
+  reference the originating Ticket); (b) **one lifecycle** — a Ticket *becomes* an Escalation
+  Case at a severity threshold (state machine, single entity).
+- Model (a) is the default posture from DEC-039 (a Ticket *may spawn* an Escalation Case;
+  is not one). Model (b) is the alternate.
+- Cross-reference: the existing Client Success open question at `domains.md:1712-1714`
+  ("When a client repeatedly rejects proposed timing or deliverables, does that remain normal
+  coordination, or become an Escalation Case?") is a closely related lifecycle coupling
+  question — folded into Q-024 scope, not resolved separately.
+- **Open.** Its own gated Phase-1 decision (aggregate boundary + lifecycle design); not
+  resolved by DEC-039. Surfaced by DEC-039.
+- Tracked in Linear (KNI, if/when scheduled).
+
+Why it matters:
+- The answer determines whether Ticket and Escalation Case share a lifecycle root (one
+  Aggregate) or remain separate Aggregates with an event link — a meaningful Phase-1 boundary
+  that affects escalation routing, audit trail, and the Phase-6 Escalation Loop pattern.
 
 ---
 

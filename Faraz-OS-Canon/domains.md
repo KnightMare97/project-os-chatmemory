@@ -1524,6 +1524,7 @@ Client Success may reference but should not own:
 - Revision Communication
 - Escalation Case
 - Coordination Request
+- Ticket
 - Scheduling Confirmation
 - Relationship Note
 - Satisfaction Signal
@@ -1566,6 +1567,15 @@ Possible contents:
 - response timestamp
 - revision or feedback notes
 - linked deliverable or request ref
+
+#### Ticket Aggregate (Draft)
+Possible contents:
+- Ticket
+- submission channel reference
+- category / priority
+- routing-destination reference (handler)
+- status history
+- linked CRM-notify event reference
 
 ---
 
@@ -1629,6 +1639,18 @@ Client Success should own the client-facing confirmation state,
 while actual operational scheduling logic
 likely belongs elsewhere.
 
+Ticket is a distinct Entity from Escalation Case and Coordination Request.
+Escalation Case originates from an internal severity signal or a workflow condition;
+Ticket originates from explicit client submission.
+A Ticket may spawn an Escalation Case when a severity threshold is met,
+but is not one (Q-024 — lifecycle coupling, open).
+Coordination Request is an internally-generated operational signal;
+Ticket is client-submitted. Distinct trigger, distinct consumer, distinct lifecycle.
+Ticket does not own routing rules or the CRM record —
+it holds the structured request, lifecycle state, and routing-destination reference.
+Client Success owns; CRM / Service Delivery / Finance / Governance / Knowledge reference;
+Community excluded (B2C public ≠ B2B private); Phase 7 realizes storage and notify-dispatch.
+
 ---
 
 ### Inbound events
@@ -1690,6 +1712,7 @@ Candidate outbound events from Client Success:
 - When a client repeatedly rejects proposed timing or deliverables,
   does that remain normal coordination,
   or become an Escalation Case?
+  → Cross-referenced to Q-024 (Ticket ↔ Escalation Case lifecycle coupling, open).
 
 ---
 

@@ -509,7 +509,7 @@ noted inline):
 - **Safety-controls vocabulary** — resolved (mapping): "safety controls"
   (`extensibility-philosophy.md:30`, Philosophy #8) is the same governance
   touchpoint category as Governance's "safety constraints / safety rules / Safety
-  Constraint" (`domains.md:2191, :2228, :2264`) — a naming variance (Governance uses
+  Constraint" (`domains.md:2214, :2251, :2287`) — a naming variance (Governance uses
   "control" / "constraint" interchangeably), not an altitude distinction. Philosophy
   #8's wording is preserved; the OQ-H "#8-only" provenance (`decisions.md:845`) stands.
 - **Philosophy #7 annotation** — resolved (no Phase-0 edit): the refinement is
@@ -520,8 +520,8 @@ noted inline):
   preserved (the principle stays a principle; the phase-map narrowing lives in the
   decision / consuming layer), so the immutable DEC quotes of #7 stay verbatim.
 - **Inherited Phase 1 questions** — referenced, not resolved:
-  `domains.md:1916-1917` (Intelligence vs Analytics/Reporting), `:1918` (when an
-  insight becomes durable knowledge), `:1919-1920` (lead-scoring home), and Q-014
+  `domains.md:1939-1940` (Intelligence vs Analytics/Reporting), `:1941` (when an
+  insight becomes durable knowledge), `:1942-1943` (lead-scoring home), and Q-014
   (Permission Matrix ↔ Governance; since resolved, DEC-026).
 - **Citation drift (FIND-028)** — resolved this normalization pass:
   inherited-question refs re-derived from ground truth; see findings.md.

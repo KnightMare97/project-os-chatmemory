@@ -2153,6 +2153,80 @@ Status:
 
 ---
 
+### DEC-039
+**Q-023 resolved — Ticket is a first-class Entity in Client Success; non-collapse from Escalation Case and Coordination Request.**
+
+Phase: 1 (domain truth). Resolves: Q-023. Supersedes: none. Registers **Q-024** (Ticket ↔
+Escalation Case lifecycle coupling, open). The **6th of the ~10 Phase-1 entity reopenings**
+(Media & Assets, Service Agreement, Community, Brand, AI Operations were 1st–5th); scoped to
+the **Ticket entity + Client Success ownership + non-collapse discipline ONLY**.
+
+**Context.** The gap analysis (`grounding/Gap-Analysis-and-Roadmap.md` §10, non-canon —
+"Self-serve client controls + ticketing") exposed that Client Success carries no structured
+client-request entity: client-submitted issues, complaints, and queries were implied by
+Escalation Case and Coordination Request but not modeled as a distinct intake form with a
+lifecycle. The orphan test (DEC-033) fails: Client Success's Escalation Handling bounded
+context (`Faraz-OS-Canon/domains.md:1607-1614`) already covers structured client issue intake
+— Ticket does not need a new domain. The extend test (DEC-034) passes: Ticket is a new
+first-class Entity in the existing Client Success domain, not absorbed into Escalation Case
+or Coordination Request. Settled via the three-lens trio (PM + Workflow + System); unanimous
+on owner and classification.
+
+**Decision.**
+- **Ticket is a first-class Entity in the Client Success domain.** Not a new domain (extend
+  test, DEC-034 discipline). Not absorbed into Escalation Case
+  (`Faraz-OS-Canon/domains.md:1525`) or Coordination Request (`:1526`).
+- **Definition.** A structured private client-submitted request, complaint, or query:
+  submitted via a client-facing channel; carries a category, priority, and routing-destination
+  reference (named handler); lifecycle: submitted → routed → in-progress → resolved / closed.
+  May trigger a CRM-notify side-effect. Does not own routing rules or the CRM record.
+- **Non-collapse — explicit (DEC-034 discipline).** Ticket is structurally distinct from:
+  - *Escalation Case* (`Faraz-OS-Canon/domains.md:1525`): Escalation Case originates from an
+    internal severity signal or a workflow condition; Ticket originates from explicit client
+    submission. Routing is implicit (severity-driven) for Escalation; explicit
+    (destination-named) for Ticket. Lifecycle semantics differ: Escalation Case carries
+    resolution-and-root-cause semantics; Ticket carries request-fulfillment semantics. A
+    Ticket *may spawn* an Escalation Case when a severity threshold is met, but is not one
+    — Q-024.
+  - *Coordination Request* (`Faraz-OS-Canon/domains.md:1526`): Coordination Request is an
+    internally-generated operational coordination signal (meeting, scheduling, confirmation);
+    Ticket is a client-submitted structured request. Distinct trigger, distinct consumer,
+    distinct lifecycle.
+- **Classification.** Entity; identity + lifecycle + revision history (resubmissions / status
+  updates); **aggregate placement draft/pending** (pending Q-024 lifecycle coupling
+  resolution).
+- **Boundary set.**
+  - **Client Success OWNS** the Ticket entity.
+  - **CRM references** (receives the CRM-notify side-effect event; does not own the Ticket).
+  - **Service Delivery references** (routing-destination / handler reference; does not own
+    the Ticket).
+  - **Finance references** (a Ticket may reference billable scope context; does not own it).
+  - **Governance references** (policy on intake categories / SLA; does not own them).
+  - **Knowledge / Client Brain reference** (relationship context a Ticket may read; not own).
+  - **Community excluded** — Community is the B2C public audience axis; Ticket is private
+    B2B client-submitted. They share no lifecycle and no ownership boundary.
+  - **Phase 7 realizes** storage and notify-dispatch (inversion guard, DEC-031 G-1 — Phase 7
+    references the entity, does not own it).
+
+**Scope guard.** Resolves **Ticket ownership + classification + non-collapse ONLY.** Separate
+later gates: the **Phase-6 8th flow** "Client Ticket → Resolution"; the **Phase-2 self-serve
+submit surface**; the **Phase-4 inbound channel**; and the **Ticket ↔ Escalation Case
+aggregate boundary** (pending Q-024). No P6 / P2 / P4 mechanism content authored here.
+
+**Tier (guidance).** T3 — post-launch build concern; does not affect the Phase-1 entity
+decision.
+
+**Carried / not-owned.** Q-024 (Ticket ↔ Escalation Case lifecycle coupling) registered open.
+R-027 set (Q-004, the threshold `Faraz-OS-Canon/domains.md:1941`), Q-006, Q-016, Q-017,
+Q-020, Q-022, and the remaining ~4 Phase-1 reopenings (Campaign, Ad-Account, Schedule,
+Consent) untouched. DEC-026 / DEC-031 / DEC-034 / DEC-037 / DEC-038 disciplines referenced,
+not changed.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

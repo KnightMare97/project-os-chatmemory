@@ -24,7 +24,7 @@ ownership (Phase 1).
 Five of the six firm structures are already owned by the **Knowledge** domain per
 Phase 1 (`domains.md:1253-1263`, "Knowledge — What it owns"); **Client Brain**
 ownership was resolved to Knowledge by DEC-027 (`domains.md:374`, `:1263`,
-`:2762-2766`). Phase 5 gives these Knowledge-owned structures architectural form; it
+`:2785-2789`). Phase 5 gives these Knowledge-owned structures architectural form; it
 does not re-own them.
 
 Each entry uses the DEC-027 six-field skeleton: Definition · Owner (Phase-1
@@ -36,22 +36,22 @@ Boundary notes.
 ## Client Brain
 - **Definition.** Persistent durable memory holding the cross-workflow, cross-service
   context a client requires — strategic, brand, relationship, and learning context,
-  reusable by humans and AI (`domains.md:342-343`, `:2747-2753`). Its partitioning
+  reusable by humans and AI (`domains.md:342-343`, `:2770-2776`). Its partitioning
   unit (per Client, per Brand, or both) is **open — Q-004** — and is not fixed by
   this entry.
 - **Owner (Phase-1).** **Knowledge** (DEC-027; `domains.md:374`, Knowledge "What it
   owns" `:1263`). Client Success **contributes** relationship-relevant content but
   does not own it; CRM **references** it but does not own it (`:376-377`,
-  `:2764-2765`). Primary consumers: Strategy, Service Delivery, Intelligence,
+  `:2787-2788`). Primary consumers: Strategy, Service Delivery, Intelligence,
   Approval workflows, CRM (partial) (`:379-384`).
 - **Contents.** Identity; Brand context; Market context; Commercial & offer context;
   Rules & constraints; Strategic context; Relationship memory; Performance learnings;
   Learnings & decisions; References (the Client Brain field groups,
   `domains.md:399-461`). Holds durable client memory, strategic context, relationship
   memory, durable learnings, approved long-lived context, and reusable client
-  knowledge for humans and AI (`:2747-2753`). Does **not** hold the legal/commercial
+  knowledge for humans and AI (`:2770-2776`). Does **not** hold the legal/commercial
   account, operational delivery state, approval-queue state, workforce identity, or
-  secret values (`:2755-2760`; secrets boundary `:605-615`).
+  secret values (`:2778-2783`; secrets boundary `:605-615`).
 - **Lifecycle / durability.** Versioned: draft → active → approved → superseded
   (`domains.md:630-634`). Approved strategic context is long-lived and must not be
   silently overwritten (`:556-557`, `:594`).
@@ -64,13 +64,13 @@ Boundary notes.
   silent overwrite of strategic fields, no unreviewed replacement of approved
   context. AI may propose / enrich / summarize / classify / recommend, never silently
   overwrite approved context (`:594-603`). *Access* authorization defers to **DEC-026**
-  (`domains.md:2459`, Client Brain "access only"); *physical* retrieval and storage
+  (`domains.md:2482`, Client Brain "access only"); *physical* retrieval and storage
   defer to **Phase 7**.
 - **Boundary notes.** **Partition-agnostic (Q-004):** nothing in this entry assumes a
   per-Client, per-Brand, or both instantiation; partitioning is open (Q-004,
   entangled with Q-003 Brand placement). Aggregate-vs-Memory-Object status stays draft
   (`domains.md:1322-1333`). Client Brain may hold durable Brand-related memory without
-  owning Brand identity (`:3698-3699`); Brand placement is Q-003.
+  owning Brand identity (`:3698-3700`); Brand placement is Q-003.
 
 ## Agency Brain
 - **Definition.** The organization-wide reusable memory layer — agency-level
@@ -138,7 +138,7 @@ Boundary notes.
 - **Lifecycle / durability.** Inbound: learning generated → learning approved
   (`domains.md:1403-1404`); surfaced via "learning published" (`:1424`). **The
   threshold at which an insight becomes durable knowledge is Phase-1 Intelligence
-  truth, pending (`domains.md:1918`) — this entry references it at altitude and defines
+  truth, pending (`domains.md:1941`) — this entry references it at altitude and defines
   no threshold and no mechanism (G-7 / R-027).** Which artifact types require explicit
   approval before becoming durable is likewise open (`:1448-1449`).
 - **Retrieval & update contract.** Reusable across workflows — the continuous learning
@@ -192,13 +192,13 @@ memory, name-only); ordered sequences or the Learn → Memory Update orchestrati
 (Phase 6); capability *definitions* (Phase 3 — capabilities *produce* outputs that
 may become durable knowledge); authorization / access / policy rules (Phase 1
 Governance / DEC-026); resolution of inherited Phase-1 questions (incl. the
-insight→durable-knowledge threshold, `domains.md:1918`); the deep content of the
+insight→durable-knowledge threshold, `domains.md:1941`); the deep content of the
 deferred Asset Intelligence sub-item; and implementation technology.
 
 ## Cross-phase boundaries (closed seven-boundary set, DEC-027)
 - **↔ Phase 1 domain truth.** Knowledge owns these structures (`domains.md:1253-1263`);
   Client Brain owned by Knowledge (DEC-027). Phase 5 architects, never re-owns.
-- **↔ Phase 1 Governance.** Access authorization is DEC-026's (`domains.md:2459`);
+- **↔ Phase 1 Governance.** Access authorization is DEC-026's (`domains.md:2482`);
   `memory.md` authors none.
 - **↔ Phase 2.** Surfaces / views render memory (Client Brain Surface, Knowledge
   Workspace) — name-only.
@@ -216,7 +216,7 @@ deferred Asset Intelligence sub-item; and implementation technology.
 - **Q-004** — Client Brain partitioning (per Client / per Brand / both); entangled with
   Q-003 Brand placement; the Client Brain entry is written partition-agnostic.
 - **Client Brain Aggregate vs Memory Object** — draft (`domains.md:1322-1333`).
-- **Insight → durable-knowledge threshold** — `domains.md:1918`; Phase-1 Intelligence
+- **Insight → durable-knowledge threshold** — `domains.md:1941`; Phase-1 Intelligence
   truth, pending (G-7 / R-027); referenced at altitude by the Learnings entry.
 - **Approval-before-durable** and **Decision Log / Learning Record aggregate
   granularity** — open in canon (`domains.md:1448-1452`).

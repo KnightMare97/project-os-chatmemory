@@ -164,7 +164,7 @@ records all eight capabilities on the six-field skeleton (commits 9be5cbc,
 288969a); the header references the Governing Boundary Test and six-boundary
 set rather than restating them; the Serves field is a Phase-3 inference at
 naming altitude; Q-015 (since resolved, DEC-028 / Snapshot-036), while the
-inherited Phase 1 questions (domains.md:1916-1917, :1918, :1919-1920) remain
+inherited Phase 1 questions (domains.md:1939-1940, :1941, :1942-1943) remain
 open — referenced, not resolved. The FIND-026
 examples-list touch-up (adding Video Creation to domains.md:184-191) is applied
 as a separate called-out commit. New this phase: Q-015 (Publishing
@@ -320,14 +320,18 @@ by CRM** (reference-addressable, not absorbed into Client Account; mandatory Cli
 partitioning, still open). Then a new domain — **AI Operations** — was added by DEC-038
 (resolving Q-021): it owns the per-job **UsageRecord** Entity (raw AI usage/cost; per-client cost
 is derived → Intelligence; four-way seam P1-owns / P7-meters / Intelligence-margin /
-Governance-cap + P4-enforce; Finance-sub-ledger carried fallback). These are the **first five**
-of the ~10 Phase-1 entity reopenings the non-canon gap analysis surfaced; **~5 remain** (Ticket,
-Ad-Account, Schedule, Consent, Campaign); each further reopening is its own explicit gated
-decision (domain truth is never re-discovered wholesale). The Community Phase-3 capability /
-Phase-4 inbound-channel category / Phase-6 post-publish workflow, the Brand-Kit / brand-style /
-Brand-aggregate follow-ons, and the AI-Operations P7-metering / Intelligence-margin /
-Governance-cap / P4-enforcement / **prompt-versioning (Q-022)** follow-ons, are separate later
-gates.
+Governance-cap + P4-enforce; Finance-sub-ledger carried fallback). Then **Ticket** was made a
+first-class Entity in **Client Success** by DEC-039 (resolving Q-023): not a new domain (extend
+test; Escalation Handling BC covers structured client issue intake); explicitly distinct from
+Escalation Case and Coordination Request (non-collapse discipline, DEC-034 pattern); aggregate
+placement pending Q-024. These are the **first six** of the ~10 Phase-1 entity reopenings the
+non-canon gap analysis surfaced; **~4 remain** (Campaign, Ad-Account, Schedule, Consent); each
+further reopening is its own explicit gated decision (domain truth is never re-discovered
+wholesale). The Community Phase-3 capability / Phase-4 inbound-channel category / Phase-6
+post-publish workflow, the Brand-Kit / brand-style / Brand-aggregate follow-ons, the
+AI-Operations P7-metering / Intelligence-margin / Governance-cap / P4-enforcement /
+**prompt-versioning (Q-022)** follow-ons, and the **Ticket P6-8th-flow / P2-submit-surface /
+P4-inbound-channel / aggregate-boundary (Q-024)** follow-ons, are separate later gates.
 
 ---
 
@@ -437,13 +441,23 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
+**Q-023 resolved (DEC-039): Ticket is a first-class Entity in Client Success** — extend test
+(not a new domain); non-collapse from Escalation Case (`:1525`) and Coordination Request
+(`:1526`) explicit. Lifecycle: submitted → routed → in-progress → resolved/closed; routes to
+a named handler; may trigger CRM-notify side-effect; does not own routing rules or the CRM
+record. Aggregate placement pending Q-024. **6th of the ~10 Phase-1 reopenings; ~4 remain**
+(Campaign, Ad-Account, Schedule, Consent). **Q-024** (Ticket ↔ Escalation Case lifecycle
+coupling — two-entity vs single-lifecycle) registered open; cross-references `domains.md:1712-1714`.
+Separate later gates: P6 8th flow "Client Ticket → Resolution"; P2 submit surface; P4 inbound
+channel; Ticket ↔ Escalation Case aggregate boundary (Q-024).
+
 **Q-021 resolved (DEC-038): a new Phase-1 domain — AI Operations — owns the per-job UsageRecord
-Entity** (raw AI usage/cost). The 5th of the ~10 reopenings; **~5 remain** (Ticket, Ad-Account,
-Schedule, Consent, Campaign). Per-client cost is derived (Intelligence); four-way seam (P1-owns /
-P7-meters / Intelligence-margin / Governance-cap + P4-enforce); budget-cap gate reuses the
-Routing Governance Aggregate + the existing Escalation Loop (no new P6 pattern). **Q-022**
-(prompt/template versioning) registered open. The P7-metering / Intelligence-margin /
-Governance-cap-policy / P4-enforcement / prompt-versioning pieces are separate later gates.
+Entity** (raw AI usage/cost). The 5th of the ~10 reopenings. Per-client cost is derived
+(Intelligence); four-way seam (P1-owns / P7-meters / Intelligence-margin / Governance-cap +
+P4-enforce); budget-cap gate reuses the Routing Governance Aggregate + the existing Escalation
+Loop (no new P6 pattern). **Q-022** (prompt/template versioning) registered open. The P7-metering
+/ Intelligence-margin / Governance-cap-policy / P4-enforcement / prompt-versioning pieces are
+separate later gates.
 
 **Dual-Path / Manual-Fallback recorded as a cross-phase principle (DEC-037).** Every external
 action has an automated/AI path + a manual/human path with fallback when the automated path is
@@ -571,7 +585,7 @@ The standing items below remain:
    now **resolved** (DEC-028 / Snapshot-036; KNI-21 → Done): atomic push and the
    scheduled-publish when-parameter are firm Phase 3, cross-item queueing is
    Phase 6 orchestration. Phase 3 has no remaining open item of its own. The
-   inherited Phase 1 questions (domains.md:1916-1917, :1918, :1919-1920) stay
+   inherited Phase 1 questions (domains.md:1939-1940, :1941, :1942-1943) stay
    referenced, not resolved, pending their owning Phase 1 work.
 2. **Phase 2 Experience Architecture is complete — 7-of-7 populated.** The
    Permission Matrix is populated (Snapshot-033 / KNI-14): a read-only projection
@@ -634,6 +648,12 @@ Open question Q-021 (AI usage/cost ledger ownership) is resolved
 per-client cost is derived (Intelligence).
 Open question Q-022 (prompt/template versioning home) is registered and open
 (see DEC-038): candidate home Media & Assets or Knowledge; not yet decided.
+Open question Q-023 (Ticket entity ownership) is resolved
+(see DEC-039): Ticket is a first-class Entity in Client Success (extend test; 6th of ~10
+reopenings; non-collapse from Escalation Case / Coordination Request; aggregate pending Q-024).
+Open question Q-024 (Ticket ↔ Escalation Case lifecycle coupling) is registered and open
+(see DEC-039): two-entity vs single-lifecycle; cross-references `domains.md:1712-1714`; its own
+gated Phase-1 decision.
 Open question Q-015 (Publishing scheduling/queueing, P3 ↔ P6)
 is resolved (see DEC-028 / Snapshot-036).
 Open question Q-017 (system-administrator visual workflow
