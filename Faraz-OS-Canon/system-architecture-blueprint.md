@@ -377,3 +377,104 @@ each follows the six-field skeleton above and is bound by the three governing ru
 - **Open / deferred items.** AI-monitoring privacy and prompt-injection defense (per the
   non-canon gap analysis) are referenced as future-gated, not authored here. Resolves no
   inherited Phase-1 question (R-027).
+
+---
+
+## Runtime Architecture
+- **Definition / concern.** How workflows and jobs actually execute: the **engine** that
+  runs them — scheduling, queues, the process model, execution-state persistence,
+  async / long-running jobs, retry / recovery, and the deployment runtime. The
+  highest-firewall view: it owns the *engine*, never the workflow *meaning*.
+- **What it architects (the *how*).** A runtime / execution engine over the Phase-6
+  workflows and the AI Architecture's agent chains: schedulers and queues that run and
+  order jobs; the process model and execution-state persistence; async / long-running
+  content and AI job execution; retry / backoff and failure recovery; the deployment
+  runtime (single instance, single-tenant). It carries the dual-path / degraded-mode
+  posture at runtime — the manual fallback path is independently runnable. Described at
+  altitude — the *concept* of scheduler / queue / process-model, with **no named
+  scheduler, queue, runtime, or cloud** (Phase-10).
+- **Referenced owned-truth (the *what*, by phase).**
+  - Phase 6 — workflow-runtime *semantics* (`Faraz-OS-Canon/workflows.md:167-171`): what a
+    workflow *means* while running (lifecycle states, suspend / resume at gates,
+    loop / exception semantics) is Phase 6; Runtime executes it. Retry / recovery is
+    explicitly Phase-7 Runtime per Phase 6 (`Faraz-OS-Canon/workflows.md:233-236`).
+  - Phase 7 AI Architecture (this file) — agent / subagent execution; Runtime schedules
+    and runs the AI jobs the AI view defines.
+  - Phase 7 Data Architecture (this file) — Runtime persists *execution state*,
+    referencing where data lives (Data owns the persistence model).
+  - Phase 4 — the Runtime-vs-Config-Time binding attribute
+    (`Faraz-OS-Canon/extensibility.md:399`): which bindings are runtime vs config-time is
+    the Phase-4 attribute; Runtime executes accordingly.
+  - Phase 3 / Q-015 — cross-item publishing queueing is Phase-6 orchestration and the
+    scheduled-publish when-parameter is Phase-3; the *queue engine* that runs them is here.
+- **Key decisions / mechanisms at logical altitude.**
+  - The execution engine: schedulers, queues, process model, execution-state persistence —
+    runs Phase-6 workflows and AI-Architecture agent chains.
+  - Async / long-running jobs: content and AI jobs that do not complete synchronously;
+    failure → retry / backoff / recovery (the *mechanism* behind the Phase-6
+    Failure / Exception pattern).
+  - Deployment runtime: a single instance for the single tenant (DEC-031 G-5); no
+    multi-tenant isolation.
+  - Dual-path / degraded-mode at runtime: the manual fallback is independently runnable
+    (the agency runs by hand if the engine is down) — referenced posture.
+  - Idempotency / duplicate-post prevention and rate-limit / quota handling are runtime
+    mechanisms architected here at altitude. No named technology (Phase-10).
+- **Cross-phase boundary notes (G-1 litmus). P6↔P7 litmus carried verbatim**
+  (`Faraz-OS-Canon/workflows.md:167-171`; DEC-028 `decisions.md:1348-1353`): *"Defines what
+  a workflow means while running — its logical lifecycle states, what suspends/resumes at
+  a gate, how a loop/exception behaves semantically → Phase 6 Workflow Runtime. Defines the
+  engine that executes workflows — schedulers, queues, process model, state persistence,
+  deployment runtime → Phase 7 Runtime Architecture."*
+  - ↔ Phase 6: owns the engine; Phase 6 owns the semantics; never re-defines what a
+    workflow means.
+  - ↔ Phase 7 AI (this file): runs the AI jobs / agent chains the AI view defines.
+  - ↔ Phase 7 Data (this file): persists execution state; the data persistence model is
+    Data's.
+  - ↔ Phase 4: honors the Runtime-vs-Config-Time binding attribute
+    (`Faraz-OS-Canon/extensibility.md:399`).
+  - ↔ Phase 8 / Phase 9: the *assembled* runtime layer is Phase 8 and the physical
+    infrastructure is Phase 9; this view is the runtime concern-view.
+- **Open / deferred items.** Concrete engine technology (scheduler / queue / process /
+  deployment) is Phase-10. Resolves no inherited Phase-1 question (R-027).
+
+---
+
+## Non-goals
+Per DEC-031 G-5, this file authors no:
+- named technology / vendor / language / cloud (deferred to the Build / Phase-10 handoff —
+  this preserves the generalizable-pattern value);
+- implementation code;
+- re-decided Phase-1 domain truth or authorization, Phase-3 capability definitions, or
+  Phase-6 workflow sequences / semantics;
+- Phase-8 layered-assembly content.
+
+Single-tenant constraint (DEC-031 G-5): Faraz OS is single-tenant — no multi-tenant
+isolation layer is architected.
+
+---
+
+## Open and deferred items
+Referenced by the views, owned elsewhere, not authored here:
+- The **dual-path / manual-fallback** posture (publish / upload / payment / OAuth re-auth) —
+  a cross-cutting principle referenced across Integration / Data / Runtime; its decision is
+  the dual-path principle (and a candidate Phase-6 fourth loop/exception pattern), not
+  Phase 7.
+- Deeper **agent supervision / observability** (beyond the agent / subagent identity defined
+  in AI Architecture, G-6(a)) is flagged for its own pass.
+- **Asset Intelligence** (Phase 5) deferred — DEC-033 / Q-018 settled only the Phase-1 owner
+  of the Client Asset.
+- Further gap-analysis items, owned by their phases, referenced as future-gated: inbound
+  community / engagement ingest, AI-monitoring privacy, prompt-injection defense.
+
+---
+
+## Carried / not-owned (DEC-031 G-7)
+- R-027 set carried unresolved: Q-003 (Brand placement), Q-004 (Client Brain
+  partitioning), the insight→durable-knowledge threshold (`Faraz-OS-Canon/domains.md:1918`).
+- Q-016 and Q-017 carried; Q-017's visual-workflow-management home is its own gated,
+  multi-phase decision.
+- The ~9 remaining Phase-1 entity reopenings the non-canon gap analysis surfaced
+  (Engagement / Community, Service Agreement → firm [Q-002], Brand [Q-003], Campaign,
+  Cost-ledger / Prompt, Ticket, Ad-Account, Schedule, Consent) — each its own future gated
+  decision; only Q-018 (Client Asset) is resolved (DEC-033).
+- R-028 reference-altitude discipline held as the active G-1 inversion guard throughout.
