@@ -291,3 +291,89 @@ each follows the six-field skeleton above and is bound by the three governing ru
 - **Open / deferred items.** Q-017 (system-administrator visual workflow management) notes
   a candidate Phase-7 home but is its own gated, multi-phase decision — carried, not
   resolved here. Resolves no inherited Phase-1 question (R-027).
+
+---
+
+## Integration Architecture
+- **Definition / concern.** How the system integrates with external providers, channels,
+  and APIs: outbound dispatch (publish / upload to platforms), provider / channel / model
+  invocation, and inbound ingest — answering *how the system reaches and is reached by the
+  outside world*, referencing (never re-deciding) the bindings.
+- **What it architects (the *how*).** An integration architecture over the Phase-4
+  bindings: the system invokes external providers / channels / models through their
+  Phase-4 contracts. Integration carries the **dual-path posture** — an automated API path
+  and a manual / human path with automatic fallback when the automated one is unavailable
+  (the Iran platform-access reality). Inbound ingest paths bring external uploads / signals
+  in (the data lands via the Data view). Described at altitude — no named APIs, SDKs, or
+  platform endpoints.
+- **Referenced owned-truth (the *what*, by phase).**
+  - Phase 4 — Provider Model (`Faraz-OS-Canon/extensibility.md:84`), Channel Model
+    (`:120`), Model (`:308`), AI Model Routing (`:351`): the bindings and the selection
+    policy. Selection / binding *policy* is Phase 4; the *integration architecture that
+    executes against them* is Phase 7 (`Faraz-OS-Canon/extensibility.md:391-392`).
+  - Phase 7 Data Architecture (this file) — inbound ingest / upload persists via Data;
+    Integration carries it in.
+  - Phase 7 Runtime Architecture (this file, pending) — async / long-running external
+    calls, retries, and rate-limit handling are Runtime; Integration is the connection
+    shape.
+- **Key decisions / mechanisms at logical altitude.**
+  - External dispatch (publish / upload) goes through the Phase-4 channel / provider
+    contract; Integration architects *how it connects*, not which provider (Phase 4
+    selects).
+  - **Dual-path integration posture:** every external action has an automated path and a
+    manual / human fallback, auto-engaged on unavailability (referenced principle, not
+    authored here as policy).
+  - Inbound ingest: external uploads / signals enter through defined ingest paths; the
+    data lands via Data Architecture. No named API / SDK / endpoint (Phase-10).
+- **Cross-phase boundary notes (G-1 litmus).**
+  - ↔ Phase 4: invokes provider / channel / model bindings; defines neither them nor
+    their selection policy (`Faraz-OS-Canon/extensibility.md:391-392`).
+  - ↔ Phase 7 Data (this file): ingest carries data in; Data persists it.
+  - ↔ Phase 7 Runtime (this file): retries / rate-limits / async execution are Runtime;
+    Integration is the connection shape.
+  - ↔ Phase 8: the *assembled* integration / plugins layer is Phase 8 (DEC-030).
+- **Open / deferred items.** The dual-path posture and inbound community / engagement
+  ingest (a candidate future domain / flow per the non-canon gap analysis) are referenced,
+  not decided here. Resolves no inherited Phase-1 question (R-027).
+
+---
+
+## Security Architecture
+- **Definition / concern.** How the system secures access and data: enforcement of
+  authorization and the Permission Matrix, per-client data isolation, credential / secret
+  handling, and protection of sensitive data — answering *how access and data are secured*,
+  referencing (never re-authoring) the rules.
+- **What it architects (the *how*).** A security architecture that **enforces** what other
+  phases author: it enforces the Phase-1 Governance authorization rules and the Phase-2
+  Permission Matrix at the application and data boundaries; it architects **per-client data
+  isolation enforcement** (the Data view's per-client scoping, made an access boundary);
+  and it architects credential / OAuth / secret handling *as architecture* (how credentials
+  are scoped, held, rotated, and re-authed) — not implementation. Described at altitude — no
+  named cryptography, key store, or auth product.
+- **Referenced owned-truth (the *what*, by phase).**
+  - Phase 1 Governance — authorization rules (DEC-026, `decisions.md:972`; Governance
+    domain `Faraz-OS-Canon/domains.md:2155`): Security *enforces*, authors none.
+  - Phase 2 — the Permission Matrix (`Faraz-OS-Canon/experience-architecture.md:502`):
+    Security enforces the exposure it defines.
+  - Phase 7 Data Architecture (this file) — data sensitivity and per-client scoping:
+    Security enforces isolation over it.
+- **Key decisions / mechanisms at logical altitude.**
+  - Authorization enforcement: the Phase-2 Permission Matrix and the Phase-1 Governance
+    rules (DEC-026) are enforced at the application and data boundaries; Security adds no
+    rule.
+  - **Per-client isolation enforcement:** the Data view's per-client logical scoping is
+    enforced as an access boundary (one client's data unreachable from another's context),
+    within single-tenant (DEC-031 G-5).
+  - Credential / OAuth / secret handling as architecture: how credentials are scoped, held,
+    rotated, and re-authed (including the dual-path manual re-auth) — not the crypto /
+    implementation (Phase-10).
+- **Cross-phase boundary notes (G-1 litmus).**
+  - ↔ Phase 1 Governance: enforces authorization (DEC-026); authors no rule.
+  - ↔ Phase 2: enforces the Permission Matrix (`Faraz-OS-Canon/experience-architecture.md:502`);
+    authors no surface or rule.
+  - ↔ Phase 7 Data (this file): enforces isolation over per-client-scoped and sensitive
+    data.
+  - ↔ Phase 8: the *assembled* security layer is Phase 8 (DEC-030).
+- **Open / deferred items.** AI-monitoring privacy and prompt-injection defense (per the
+  non-canon gap analysis) are referenced as future-gated, not authored here. Resolves no
+  inherited Phase-1 question (R-027).
