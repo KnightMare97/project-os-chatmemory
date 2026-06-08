@@ -143,7 +143,7 @@ contract **only**.
   Principle #1, "AI-first, but not AI-only," `principles.md:3`).
 - **Identity stays deferred.** Agent / subagent **identity** — what an agent *is*,
   its surface, the AI architecture that executes it — remains the registered
-  Phase-7 open flag (`extensibility.md:345-347`, `:461-463`), cited here as
+  Phase-7 open flag (`extensibility.md:345-347`, `:505-508`), cited here as
   deferred, not partially resolved.
 
 ---
@@ -415,7 +415,7 @@ Carried, referenced, not resolved here:
   `open-questions.md` (Q-017).
 - **Agent / subagent identity** — what an agent *is*, its surface, and the AI
   architecture that executes it: the registered Phase-7 flag
-  (`extensibility.md:345-347`, `:461-463`). Agent Chains name roles, never
+  (`extensibility.md:345-347`, `:505-508`). Agent Chains name roles, never
   identities (role-vs-identity litmus).
 - **Q-012 (Phase 7 ↔ Phase 8 boundary)** — its deferral condition ("until Phase 6
   is complete") is now met: Phase 6 is complete at DEC-028's scope (DEC-029), so

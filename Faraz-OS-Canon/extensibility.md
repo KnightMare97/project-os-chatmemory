@@ -423,8 +423,54 @@ Config-Time field).*
 
 ---
 
+### Feature Modules
+- **Definition.** A **Feature Module**: a first-class, **mountable unit of product
+  functionality** — a cohesive, base-mountable slice of the product — that mounts on the
+  base and **may aggregate plugins**, declared to the core through the Extension Contracts
+  surface. Per DEC-032 (Option A) it **composes** the Plugin Model and Extension Contracts
+  and **never re-defines** either. Module-vs-plugin altitude line (DEC-032, verbatim): *"A
+  plugin attaches a single extension — a channel, provider, or integration — to the core
+  through the contract surface (the Plugin Model entry, `:273-284`). A Feature Module is a
+  coarser-grained, mountable unit of product functionality that may aggregate plugins; it
+  composes the Plugin Model and Extension Contracts, and never re-defines either."* An
+  intentional extension point (Philosophy #2); the foreseen un-defer of the DEC-025
+  deferral (Philosophy #12).
+- **Contract surface.** A module declares and registers itself to the core **only**
+  through the Extension Contracts surface (APIs, events, permissions, schemas, versioned
+  interfaces — Philosophy #4); it aggregates one or more plugins / providers / channels and
+  exposes them as a single mountable unit, never through private internal state. Named at
+  altitude; the concrete module manifest / registration schema is not specified. The
+  contract also carries the **Philosophy-#12 promotion hook** — the contract-level seam by
+  which a widely-used, strategically-central module *could* be promoted into the
+  configurable core; the actual promotion-to-core decision is a product / governance call
+  (`extensibility-philosophy.md:43-45`), not Phase 4's per-module business decision and not
+  authored here.
+- **Provider-agnostic note.** A module composes whatever swappable plugins, providers, or
+  channels it aggregates behind the contract (Philosophy #6); the core depends on no
+  specific module (Philosophy #3).
+- **Governance touchpoints.** A module, and everything it aggregates, must respect the
+  core's governance — authentication, authorization, validation, auditability, safety
+  controls, and policy enforcement (Philosophy #8) — at altitude; grants follow the
+  Permission grant model above, and the authoritative rules are Phase 1 Governance
+  (DEC-019 / FIND-022), not enumerated here.
+- **Runtime vs Config-Time.** A module may be mounted, enabled, disabled, or updated at
+  runtime or through configuration / deployment policy (Philosophy #10); which mode applies
+  is a per-module attribute. The **mounting / running / composing mechanism** itself is
+  Phase 7, not this attribute.
+- **Boundary notes / inherited flags.**
+  - Within Phase 4: a Feature Module is the *mountable product-unit* axis; the Plugin Model
+    is the *attachment* axis and Provider / Channel Models are *what* is attached. A module
+    composes plugins; it is not a plugin (DEC-032).
+  - ↔ Phase 7: Phase 4 owns *what a module is / its contract*; the runtime that **mounts,
+    runs, or composes** modules is Phase 7 — referenced, never defined here (DEC-031 G-6(c)).
+  - ↔ Phase 8: the **assembled** set of mounted modules is the Phase 8 Plugins Layer
+    (`Faraz-OS-Canon.md:144`); no assembled-layer content here.
+  - No inherited Phase 1 question is resolved here.
+
+---
+
 ## Deferred sub-items (flagged, not written)
-These four in-scope-for-Phase-4-overall sub-items are deferred per DEC-025 and
+These three remaining sub-items are deferred per DEC-025 and
 carry flagged stubs only — no content this phase:
 - **Versioning & Compatibility** — deferred per DEC-025 (Philosophy #11,
   backward compatibility). How extension contracts evolve over time; needs the
@@ -433,8 +479,6 @@ carry flagged stubs only — no content this phase:
   third-party-ready but internal-first; `non-goals.md:11`). The concrete
   channel/provider integration mechanics deferred from the Channel Model land
   here.
-- **Feature Modules** — deferred per DEC-025 (Philosophy #12, repeated extensions
-  may become core).
 - **Future Domains** — carried, **marked-future placeholder; not silently
   resolvable** (DEC-025).
 
