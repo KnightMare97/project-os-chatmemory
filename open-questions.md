@@ -83,18 +83,23 @@ Why it mattered:
 ### Q-003
 What is the final placement of Brand?
 
-Current direction:
-- Brand should not be treated casually
-  as just a field inside Client Brain.
-- It may require its own Entity treatment
-  or more explicit scoped modeling.
-- Final placement remains draft.
+Resolved (DEC-036):
+- Brand is a **first-class Entity owned by CRM** — addressable by reference, not absorbed
+  into the CRM Client Account entity; carries a mandatory Client reference (1 Client : N
+  Brand); **aggregate placement draft/pending** (not a child-entity under a Client aggregate).
+- **Identity-vs-memory seam:** Brand identity is the CRM Entity (holds voice / style
+  references); brand voice / tone / style *content* stays in Client Brain (owned by
+  Knowledge, DEC-027 untouched).
+- Extend pattern (DEC-034 mirror); orphan test (DEC-033) failed. Carried fallback: the
+  DEC-034 Commercial / Agreements domain if CRM strains.
+- **Unblocks Q-004** (Client Brain partitioning), which stays open. The 4th of the ~10
+  Phase-1 reopenings the non-canon gap analysis surfaced.
 
-Why it matters:
-- This affects client structure,
-  memory design,
-  account structure,
-  and scope modeling.
+Linear: KNI for Q-003 (after the resolving push is raw-verified on origin/main).
+
+Why it mattered:
+- It affected client structure, memory design, account structure, and scope modeling — and
+  it blocked Q-004 (per-Brand Client Brain partitioning had no Brand object to key on).
 
 ---
 
@@ -114,9 +119,12 @@ Why it matters:
   ownership,
   and scaling of client context.
 
-Note (DEC-027):
+Note (DEC-027 / DEC-036):
 - Q-001 (Client Brain ownership) is resolved to Knowledge; Q-004 (partitioning)
-  stays open, entangled with Q-003 (Brand placement).
+  stays open — **unblocked by Q-003 (DEC-036)**, no longer entangled: Brand is now a
+  first-class CRM-owned Entity, so per-Brand partitioning has an addressable object to key
+  on. The partitioning decision itself (per-Client / per-Brand / both) remains a Phase-5 /
+  Knowledge call.
 - The Phase-5 Client Brain entry is written partition-agnostic — valid under
   per-Client, per-Brand, or both — so it does not silently resolve Q-004.
 

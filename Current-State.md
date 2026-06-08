@@ -314,10 +314,14 @@ absorbed into the Client Account entity; Aggregate-pending-Q-006). Then a new do
 **Community** — was added by DEC-035 (resolving Q-019): it owns post-publish audience
 engagement (Comment, Direct Message, Conversation/Thread, Engagement Reply as Entities;
 Sentiment Signal left contested; B2C audience axis distinct from the B2B CRM/Client-Success
-axes). These are the **first three** of the ~10 Phase-1 entity reopenings the non-canon gap
-analysis surfaced; each further reopening is its own explicit gated decision (domain truth
-is never re-discovered wholesale). The Community Phase-3 capability / Phase-4 inbound-channel
-category / Phase-6 post-publish workflow are separate later gates.
+axes). Then **Brand** was made firm by DEC-036 (resolving Q-003): a **first-class Entity owned
+by CRM** (reference-addressable, not absorbed into Client Account; mandatory Client reference,
+1 Client : N Brand; aggregate placement draft/pending) — which **unblocks Q-004** (Client Brain
+partitioning, still open). These are the **first four** of the ~10 Phase-1 entity reopenings
+the non-canon gap analysis surfaced; each further reopening is its own explicit gated decision
+(domain truth is never re-discovered wholesale). The Community Phase-3 capability / Phase-4
+inbound-channel category / Phase-6 post-publish workflow, and the Brand-Kit / brand-style /
+Brand-aggregate follow-ons, are separate later gates.
 
 ---
 
@@ -427,11 +431,19 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
+**Q-003 resolved (DEC-036): Brand is a first-class Entity owned by CRM** (reference-addressable,
+not absorbed into Client Account; mandatory Client reference, 1 Client : N Brand; aggregate
+placement draft/pending) — extend pattern (DEC-034 mirror). **Unblocks Q-004** (Client Brain
+partitioning, now unblocked-but-open). The **4th** of the ~10 Phase-1 reopenings; **~6 remain**
+(Campaign, Cost-ledger / Prompt, Ticket, Ad-Account, Schedule, Consent — each its own gated
+decision). Brand's identity-vs-memory seam (CRM identity vs Client-Brain/Knowledge voice-style
+content) holds; Brand Kit → Media & Assets, brand-style enforcement → P3/Governance, Brand
+aggregate placement = separate later gates.
+
 **Q-019 resolved (DEC-035): a new Phase-1 domain — Community — owns post-publish audience
 engagement (Comment / Direct Message / Conversation / Engagement Reply as Entities; Sentiment
 Signal contested/draft).** The 3rd of the ~10 Phase-1 entity reopenings (Media & Assets / DEC-033
-and Service Agreement / DEC-034 were 1st and 2nd); ~7 remain (Brand [Q-003], Campaign, Cost-ledger /
-Prompt, Ticket, Ad-Account, Schedule, Consent — each its own gated decision). Community's
+and Service Agreement / DEC-034 were 1st and 2nd). Community's
 Phase-3 capability, Phase-4 inbound-channel category, and Phase-6 8th workflow (the post-publish
 flow) are **separate later gates**, not yet taken.
 
@@ -583,8 +595,12 @@ Asset Intelligence (P5) stays deferred.
 Open question Q-019 (post-publish audience-engagement ownership) is resolved
 (see DEC-035): a new Phase-1 domain, Community, owns comments/DMs/conversations/replies;
 Sentiment Signal ownership left contested/draft.
-Open question Q-002 (Service Agreement ownership) is resolved
-(see DEC-034): a first-class Entity owned by CRM; Aggregate-pending-Q-006.
+Open question Q-003 (Brand placement) is resolved
+(see DEC-036): Brand is a first-class Entity owned by CRM (reference-addressable, not
+absorbed into Client Account; 1 Client : N Brand; aggregate placement draft/pending).
+Open question Q-004 (Client Brain partitioning) is unblocked by Q-003 (DEC-036) but
+stays open — a Phase-5 / Knowledge memory-partitioning call; Client Brain entry stays
+partition-agnostic.
 Open question Q-015 (Publishing scheduling/queueing, P3 ↔ P6)
 is resolved (see DEC-028 / Snapshot-036).
 Open question Q-017 (system-administrator visual workflow

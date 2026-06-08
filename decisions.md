@@ -1949,6 +1949,65 @@ Status:
 
 ---
 
+### DEC-036
+**Q-003 resolved — Brand is a first-class Entity owned by CRM (Client-reference 1:N; Aggregate-pending; unblocks Q-004).**
+
+Phase: 1 (domain truth). Resolves: Q-003. Supersedes: none. The **4th of the ~10 Phase-1
+entity reopenings** (Q-018 Media & Assets, Q-002 Service Agreement, Q-019 Community were
+1st–3rd); scoped to **Brand ownership + classification ONLY**.
+
+**Context.** Q-003 (final placement of Brand) was a long-carried draft entangled with Q-004
+(Client Brain partitioning). The Brand Decision section (`Faraz-OS-Canon/domains.md:3537`)
+already leaned this way: Brand ≠ Client (Brand is the market-facing identity *under* a
+Client); CRM is SoT for Client identity and may reference Brand; Client Brain stores durable
+brand memory but is not the owner of Brand identity; the Candidate Direction read "Client =
+Entity in CRM; Brand = Entity candidate." Settled via the three-lens trio (PM + Workflow +
+System). This is the **DEC-034 extend pattern** — Brand is an identity concept inside CRM's
+commercial-relationship responsibility; the orphan test (DEC-033) fails, the extend test
+(DEC-034) controls.
+
+**Decision.**
+- **Brand is a first-class Entity owned by CRM**, addressable **by reference**, explicitly
+  **NOT absorbed into the CRM Client Account entity** (mirrors DEC-034's Service-Agreement
+  shape). Carried fallback: the DEC-034 "Commercial / Agreements" domain if CRM later strains.
+- **Classification = Entity** carrying a **mandatory Client reference; 1 Client : N Brand**.
+  **Aggregate placement is draft/pending** — Brand is **not** modeled as a child-entity under
+  a Client aggregate (that would pre-draw an aggregate boundary; the DEC-034 "not absorbed /
+  aggregate-pending" discipline).
+- **Identity-vs-memory seam (recorded):** Brand *identity* is the CRM Entity (holding voice /
+  style *references*); brand *voice / tone / style content* stays in **Client Brain, owned by
+  Knowledge (DEC-027, untouched)**. The Entity is the key; Client Brain is the content keyed
+  by it. Same raw-vs-derived seam as DEC-033 / DEC-035.
+
+**Boundary set (reference-vs-own).** CRM owns Brand identity; **references, does not own:**
+Client Brain brand memory (Knowledge / DEC-027); Engagement Scope (references Brand for
+brand-specific execution); Service Delivery (references for creative alignment); Client
+Success (references for communication continuity).
+
+**Q-004 unblocked, NOT resolved.** Q-003 supplies the addressable Brand object per-Brand
+partitioning needs; DEC-027 carried Q-004 as "entangled with Q-003 … no resolving evidence"
+(`decisions.md:1178-1179`). Q-004 (Client Brain per-Client / per-Brand / both) is now
+**unblocked but stays OPEN** — a Phase-5 / Knowledge memory-partitioning call; the Phase-5
+Client Brain entry stays partition-agnostic. Q-004's note is updated (unblocked-by-Q-003),
+not resolved.
+
+**Scope guard.** Resolves **Brand ownership + classification ONLY.** Separate later gates:
+the `Client Brain` Identity `brand_name` denormalization (`Faraz-OS-Canon/domains.md:403`) —
+flagged, **not edited here** (a Q-004 / Phase-5 memory-pass concern); **Brand Kit** → Media &
+Assets (DEC-033); **brand-style enforcement** → Phase 3 / Governance; **Brand aggregate
+placement** → later. The `domains.md:689` Proposed-Model line is narrowed (Brand → CRM owner,
+reference-addressable). No P3 / P5 content authored.
+
+**Carried / not-owned.** DEC-027 (Client Brain → Knowledge) untouched; **Q-004 carried,
+now unblocked** (not resolved); the R-027 insight→durable-knowledge threshold
+(`Faraz-OS-Canon/domains.md:1918`), Q-006, Q-016, Q-017 carried; the other ~6 Phase-1
+reopenings untouched.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

@@ -686,7 +686,7 @@ to assigned human operators.
 
 ### Proposed Model
 - Client -> CRM
-- Brand -> CRM or adjacent client context
+- Brand -> CRM (owner; first-class Entity, reference-addressable, 1 Client : N Brand; DEC-036)
 - Service Agreement -> CRM (owner; DEC-034), Client Success (references)
 - Client Brain -> Knowledge (owner; DEC-027); Client Success (contributor)
 - Engagement Scope -> Service Delivery
@@ -3562,7 +3562,10 @@ The safest current direction is:
 - but should remain explicitly modeled as a concept
   rather than hidden inside unstructured memory
 
-This remains draft.
+**Resolved (DEC-036):** Brand is a **first-class Entity owned by CRM** — addressable by
+reference, **not absorbed into the CRM Client Account entity**; it carries a mandatory
+Client reference (1 Client : N Brand); **aggregate placement remains draft/pending**. The
+internal modeling below stays draft except this ownership and classification.
 
 ---
 
@@ -3663,9 +3666,12 @@ even if many brand-related conversations happen there.
 The safest current modeling direction is:
 
 - Client = Entity in CRM
-- Brand = Entity candidate or client-scoped child Entity candidate
+- **Brand = first-class Entity owned by CRM (DEC-036)** — a standalone Entity carrying a
+  mandatory Client reference (1 Client : N Brand); aggregate placement draft/pending; **not**
+  a child-entity under a Client aggregate
 - Client Brain = Memory Object that may contain
-  durable Brand-related memory
+  durable Brand-related memory (the voice / tone / style *content*, owned by Knowledge per
+  DEC-027 — not Brand identity)
 - Engagement Scope = Domain Artifact / Memory Object
   that may reference Brand for active execution context
 
@@ -3706,6 +3712,13 @@ and remain draft.
 ---
 
 ### Open Questions
+**Answered by DEC-036:** Brand is a first-class Entity owned by CRM (not a child entity);
+owned in CRM (not an adjacent Bounded Context); identity-level attributes live on the Brand
+Entity while voice / style memory stays in Client Brain (Knowledge). **Still open:** Q-004
+(Client Brain partitioning — unblocked by DEC-036, not resolved); whether one Engagement
+Scope may reference more than one Brand; and whether Brand needs its own Aggregate boundary
+(aggregate placement draft/pending). The historical questions below are retained as record.
+
 - Open Question: Is Brand its own Entity,
   or a child Entity under Client?
 - Open Question: Should Brand be owned primarily in CRM,
@@ -3734,6 +3747,28 @@ and remain draft.
 - Risk: If Brand is over-modeled too early,
   the file may lock into a structure
   before enough evidence exists.
+
+---
+
+### Ownership (accepted — DEC-036)
+- **Brand is a first-class Entity owned by CRM** (resolving Q-003): reference-addressable,
+  not absorbed into the Client Account entity; carries a mandatory **Client reference**
+  (1 Client : N Brand); **aggregate placement draft/pending** — not a child-entity under a
+  Client aggregate (that would pre-draw an aggregate boundary).
+- **Identity-vs-memory seam:** Brand identity (this CRM Entity; holds voice / style
+  *references*) is distinct from brand **voice / tone / style content**, which stays in
+  Client Brain, owned by **Knowledge (DEC-027, untouched)**.
+- **Q-004** (Client Brain per-Client / per-Brand / both) is **unblocked by DEC-036 but stays
+  OPEN** — a Phase-5 / Knowledge memory-partitioning call; the Phase-5 Client Brain entry
+  stays partition-agnostic.
+- **Flagged, not edited here:** the Client Brain Identity `brand_name` field (this file,
+  Client Brain Identity field group) becomes denormalized once Brand is a CRM Entity —
+  carried to the Q-004 / Phase-5 memory pass.
+- **Separate later gates:** Brand Kit → Media & Assets (DEC-033); brand-style enforcement →
+  Phase 3 / Governance; Brand aggregate placement → later.
+- Carried fallback: the DEC-034 "Commercial / Agreements" domain if CRM later strains.
+- No inherited Phase-1 question other than Q-003 is resolved here (Q-004 unblocked-not-
+  resolved; the R-027 threshold and Q-006 untouched).
 
 ---
 
