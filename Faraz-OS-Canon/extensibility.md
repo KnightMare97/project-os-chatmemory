@@ -453,21 +453,27 @@ question.
 ---
 
 ## Open and inherited flags
-Carried from DEC-025 / Snapshot-027; referenced, not resolved:
+Carried from DEC-025 / Snapshot-027 (some since resolved this normalization pass,
+noted inline):
 - **Agent / subagent identity** — likely Phase 7 AI Architecture
   (`experience-architecture.md:809` Workforce owns *human* identity; `:821` AI
   Architecture is the likely home of agent surfaces). Open cross-phase question.
-- **Safety-controls vocabulary** — "safety controls" (`extensibility-philosophy.md:30`)
-  vs Governance's "safety constraints / safety rules / Safety Constraint"
-  (`domains.md:2190, :2227, :2263`); cross-doc alignment deferred to a later
-  normalization pass.
-- **Philosophy #7 annotation** — `extensibility-philosophy.md:25` ("routing and
-  orchestration are part of extensibility") is read, within the phase map, as
-  routing/selection only; orchestration is Phase 6. Optional doc annotation
-  deferred to normalization.
+- **Safety-controls vocabulary** — resolved (mapping): "safety controls"
+  (`extensibility-philosophy.md:30`, Philosophy #8) is the same governance
+  touchpoint category as Governance's "safety constraints / safety rules / Safety
+  Constraint" (`domains.md:2190, :2227, :2263`) — a naming variance (Governance uses
+  "control" / "constraint" interchangeably), not an altitude distinction. Philosophy
+  #8's wording is preserved; the OQ-H "#8-only" provenance (`decisions.md:845`) stands.
+- **Philosophy #7 annotation** — resolved (no Phase-0 edit): the refinement is
+  already recorded at reference altitude — `extensibility-philosophy.md:25`
+  ("routing and orchestration are part of extensibility") is read, within the phase
+  map, as routing/selection only, with orchestration owned by Phase 6 (DEC-025 /
+  DEC-028; see `extensibility.md:386-388`). Philosophy #7's wording is intentionally
+  preserved (the principle stays a principle; the phase-map narrowing lives in the
+  decision / consuming layer), so the immutable DEC quotes of #7 stay verbatim.
 - **Inherited Phase 1 questions** — referenced, not resolved:
   `domains.md:1916-1917` (Intelligence vs Analytics/Reporting), `:1918` (when an
   insight becomes durable knowledge), `:1919-1920` (lead-scoring home), and Q-014
-  (Permission Matrix ↔ Governance).
+  (Permission Matrix ↔ Governance; since resolved, DEC-026).
 - **Citation drift (FIND-028)** — resolved this normalization pass:
   inherited-question refs re-derived from ground truth; see findings.md.
