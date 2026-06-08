@@ -1673,6 +1673,90 @@ Status:
 
 ---
 
+### DEC-032
+**Phase 4 Feature Modules — un-defer; scope / posture decision (the DEC-031 prerequisite).**
+
+Phase: 4. Resolves: none (un-defers a DEC-025-deferred sub-item). Supersedes: none.
+This is the un-defer **DEC-025 anticipated** — DEC-025 recorded the deferred sub-items as
+"flagged, not dropped" (`decisions.md:772-773`), so un-deferring Feature Modules is the
+foreseen path, not a correction; DEC-025 itself is not retro-touched (its other three
+deferrals stand).
+
+**Context.** DEC-031 G-6(c) (`decisions.md:1651-1660`) recorded that Phase-4 "Feature
+Modules" must be **un-deferred as its own gated Phase-4 decision before the Phase 7
+Application / Logical Architecture view writes.** DEC-025 deferred Feature Modules as a
+forward-looking concern presupposing the core contract model
+(`decisions.md:768-772`; Philosophy #12, `extensibility-philosophy.md:43-45`); that
+core contract model now exists (the `extensibility.md` first write, Snapshot-030). This
+decision **un-defers** Feature Modules and fixes the scope / posture for its
+`extensibility.md` entry. It authors **no** entry content; the stub→firm write is a
+separate gated content batch.
+
+**Decision — un-defer + Option A (first-class).** Feature Modules
+(`Faraz-OS-Canon.md:103`) moves deferred → in-scope. A **Feature Module is
+first-class:** a **mountable unit of product functionality** that mounts on the base
+and **may aggregate plugins**, declared through the existing **Extension Contracts**
+surface (`Faraz-OS-Canon/extensibility.md:196-203`). It **composes** Extension Contracts
++ Plugin Model; it does **not** re-define plugins.
+
+**Definition / altitude of the Feature-Module CONTRACT (logical altitude — recorded
+verbatim for the write to apply):**
+- *What a Feature Module is:* a first-class, mountable unit of product functionality — a
+  cohesive, base-mountable slice of the product — that declares itself to the core
+  through the Extension Contracts surface and may aggregate one or more plugins,
+  providers, or channels.
+- *Its boundary:* the entry defines the module **contract** — what a module is, how it
+  declares / registers itself, its interface to the core — at logical altitude; it names
+  no mounting / runtime mechanism and no concrete module inventory.
+- *Module-vs-plugin altitude line (verbatim):* **"A plugin attaches a single extension
+  — a channel, provider, or integration — to the core through the contract surface
+  (`Faraz-OS-Canon/extensibility.md:273-284`). A Feature Module is a coarser-grained,
+  mountable unit of product functionality that may aggregate plugins; it composes the
+  Plugin Model and Extension Contracts, and never re-defines either."**
+
+**Boundary held verbatim (from DEC-031 G-6(c), `decisions.md:1651-1660`):** **Phase 4
+owns what a module is / its contract; Phase 7 references — never defines —
+(mounting / running / composing); Phase 8 is the assembled Plugins Layer**
+(`Faraz-OS-Canon.md:144`). The Feature-Module entry authors no mounting / runtime /
+composition mechanism and no assembled-layer content.
+
+**Promotion-path stance (Philosophy #12, `extensibility-philosophy.md:43-45`).** Phase 4
+defines the **promotion CONTRACT HOOK only** — the contract-level seam by which a
+widely-used, strategically-central module *could* be promoted into the configurable core.
+The actual **promotion-to-core decision** is referenced as a **product / governance
+call**, not Phase 4's per-module business decision; the entry names the hook and
+references the decision — it authors no promotion rule and makes no promotion.
+
+**Entry skeleton (the existing DEC-025 six-field shape, `decisions.md:856-863`).** The
+stub→firm write uses: Definition · Contract surface (incl. versioned interfaces) ·
+Provider-agnostic note (what the module composes / aggregates) · Governance touchpoints
+(the #8 categories, referenced, never authored) · Runtime vs Config-Time (the attribute)
+· Boundary notes / inherited flags (the DEC-031 P4 / P7 / P8 boundary; any inherited
+Phase-1 question preserved). Stub (`Faraz-OS-Canon/extensibility.md:436-437`) → firm
+entry; the "deferred per DEC-025" stub line flips to the firm entry in that content
+batch, not here.
+
+**Non-goals.** The Feature-Module entry authors no: mounting / runtime / composition
+engine (Phase 7); assembled-layer content (Phase 8 Plugins Layer); named technology /
+vendor / language / cloud; re-decided Plugin Model or Extension Contracts (composed, not
+re-defined); promotion-to-core rule or any actual promotion (product / governance).
+
+**Carried / not-owned.** The other three deferred Phase-4 sub-items —
+**Versioning & Compatibility, External Integrations, Future Domains** — stay deferred per
+DEC-025, untouched. The **R-027** set (Q-003 Brand placement, Q-004 Client Brain
+partitioning, the insight→durable-knowledge threshold `Faraz-OS-Canon/domains.md:1918`)
+is referenced, carried, unresolved.
+
+**Prerequisite satisfied (recorded).** This un-defer **satisfies the DEC-031 G-6(c)
+prerequisite** for the Phase 7 Application / Logical Architecture view writes — those two
+writes unblock once the Feature-Module entry (the stub→firm content batch) lands. The
+other five Phase-7 concern-views were never blocked by it.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
