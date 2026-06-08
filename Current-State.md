@@ -317,11 +317,17 @@ Sentiment Signal left contested; B2C audience axis distinct from the B2B CRM/Cli
 axes). Then **Brand** was made firm by DEC-036 (resolving Q-003): a **first-class Entity owned
 by CRM** (reference-addressable, not absorbed into Client Account; mandatory Client reference,
 1 Client : N Brand; aggregate placement draft/pending) — which **unblocks Q-004** (Client Brain
-partitioning, still open). These are the **first four** of the ~10 Phase-1 entity reopenings
-the non-canon gap analysis surfaced; each further reopening is its own explicit gated decision
-(domain truth is never re-discovered wholesale). The Community Phase-3 capability / Phase-4
-inbound-channel category / Phase-6 post-publish workflow, and the Brand-Kit / brand-style /
-Brand-aggregate follow-ons, are separate later gates.
+partitioning, still open). Then a new domain — **AI Operations** — was added by DEC-038
+(resolving Q-021): it owns the per-job **UsageRecord** Entity (raw AI usage/cost; per-client cost
+is derived → Intelligence; four-way seam P1-owns / P7-meters / Intelligence-margin /
+Governance-cap + P4-enforce; Finance-sub-ledger carried fallback). These are the **first five**
+of the ~10 Phase-1 entity reopenings the non-canon gap analysis surfaced; **~5 remain** (Ticket,
+Ad-Account, Schedule, Consent, Campaign); each further reopening is its own explicit gated
+decision (domain truth is never re-discovered wholesale). The Community Phase-3 capability /
+Phase-4 inbound-channel category / Phase-6 post-publish workflow, the Brand-Kit / brand-style /
+Brand-aggregate follow-ons, and the AI-Operations P7-metering / Intelligence-margin /
+Governance-cap / P4-enforcement / **prompt-versioning (Q-022)** follow-ons, are separate later
+gates.
 
 ---
 
@@ -430,6 +436,14 @@ Avoid:
 
 ## Current Next Focus
 The current recommended next focus is:
+
+**Q-021 resolved (DEC-038): a new Phase-1 domain — AI Operations — owns the per-job UsageRecord
+Entity** (raw AI usage/cost). The 5th of the ~10 reopenings; **~5 remain** (Ticket, Ad-Account,
+Schedule, Consent, Campaign). Per-client cost is derived (Intelligence); four-way seam (P1-owns /
+P7-meters / Intelligence-margin / Governance-cap + P4-enforce); budget-cap gate reuses the
+Routing Governance Aggregate + the existing Escalation Loop (no new P6 pattern). **Q-022**
+(prompt/template versioning) registered open. The P7-metering / Intelligence-margin /
+Governance-cap-policy / P4-enforcement / prompt-versioning pieces are separate later gates.
 
 **Dual-Path / Manual-Fallback recorded as a cross-phase principle (DEC-037).** Every external
 action has an automated/AI path + a manual/human path with fallback when the automated path is
@@ -615,6 +629,11 @@ partition-agnostic.
 Open question Q-020 (Phase-4 access-status / connection-health owner) is registered and
 open (see DEC-037): the per-client/per-platform signal Dual-Path routing reads; candidate
 home is the Phase-4 Channel Model, not yet decided.
+Open question Q-021 (AI usage/cost ledger ownership) is resolved
+(see DEC-038): a new Phase-1 domain, AI Operations, owns the per-job UsageRecord Entity;
+per-client cost is derived (Intelligence).
+Open question Q-022 (prompt/template versioning home) is registered and open
+(see DEC-038): candidate home Media & Assets or Knowledge; not yet decided.
 Open question Q-015 (Publishing scheduling/queueing, P3 ↔ P6)
 is resolved (see DEC-028 / Snapshot-036).
 Open question Q-017 (system-administrator visual workflow

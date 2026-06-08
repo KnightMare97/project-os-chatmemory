@@ -2083,6 +2083,76 @@ Status:
 
 ---
 
+### DEC-038
+**Q-021 resolved — AI usage/cost ledger owned by a new Phase-1 domain (AI Operations); UsageRecord Entity.**
+
+Phase: 1 (domain truth). Resolves: Q-021. Supersedes: none. Registers **Q-022** (prompt /
+template versioning, open). The **5th of the ~10 Phase-1 entity reopenings** (Media & Assets,
+Service Agreement, Community, Brand were 1st–4th); scoped to the **AI Operations domain + the
+UsageRecord entity + the cost seam ONLY**.
+
+**Context.** The gap analysis (`grounding/Gap-Analysis-and-Roadmap.md` §3, non-canon — the AI
+P&L: token/model cost per job + per client, margin view, budget caps) exposed that no domain
+owns an AI usage/cost record. Finance owns the outward-facing commercial monetary layer
+(invoices/payments), not internal per-job AI cost; Intelligence owns derived findings and
+explicitly disowns raw source-of-truth + financial-ledger ownership
+(`Faraz-OS-Canon/domains.md:1742, :1746`); Governance constrains usage/cost as policy and
+disowns raw execution telemetry (`:2245`); Phase 7 meters but cannot own the record (inversion
+guard). The per-job AI-cost record is therefore orphaned — the clearest orphan since Community.
+Settled via the three-lens trio (PM + Workflow + System); mirrors the DEC-033 / DEC-035
+owning-phase pattern.
+
+**Decision.**
+- **A new Phase-1 domain — *AI Operations* — owns the per-job AI usage/cost record.** The
+  entity is a **UsageRecord** (raw, per-job AI usage/cost source-of-truth: job reference,
+  model / provider reference, usage measures, computed cost, client reference, timestamp).
+  Classification = **Entity**; per-job grain; **aggregate placement draft/pending**.
+- **Per-client cost is DERIVED, not a second entity** — per-client rollup, margin view, and
+  AI-vs-human-cost ratio are Intelligence's derived analytics over the ledger (Intelligence
+  owns the finding, not the raw record). Same raw-vs-derived seam as DEC-033 / DEC-035.
+- **Finance-sub-ledger = carried fallback** (DEC-034 precedent): if AI Operations proves too
+  thin, the UsageRecord folds under Finance as an operational sub-ledger. Default is the new
+  domain (orphan grounds).
+
+**The four-way seam (each at its altitude; recorded).**
+- **AI Operations (P1)** owns the **UsageRecord** entity (the WHAT).
+- **Phase 7 Runtime / AI Architecture** *meters* token / model cost during execution and emits
+  the record — **references the entity, does not own it** (inversion guard, DEC-031 G-1).
+  Cost-recording is **P7-realized telemetry** — the cost twin of the Audit Record, which is "a
+  system property realized in Phase 7" (`Faraz-OS-Canon/workflows.md:113-117`) — **not a
+  workflow step**.
+- **Intelligence (P1)** owns the **derived** margin / per-client / ratio views.
+- **Governance (P1)** authors the **budget-cap policy** (the existing Routing Governance
+  Aggregate, `Faraz-OS-Canon/domains.md:2329-2337`, "cost or quality constraints"); **Phase-4
+  AI Model Routing enforces** it (cost is already a routing selection dimension,
+  `Faraz-OS-Canon/extensibility.md:353, :381`).
+- **Budget-cap gate (workflow):** reuses the existing **Routing Governance Aggregate** (P4
+  routing-refusal — route to a cheaper path) + the existing **Escalation Loop** (P6 — an
+  over-budget condition is a policy-violation intensify-when, `Faraz-OS-Canon/workflows.md:206`).
+  **No new Phase-6 pattern; the Dual-Path / Manual-Fallback pattern (DEC-037) is NOT re-scoped**
+  (its trigger stays availability, not cost / policy).
+
+**Scope guard.** Resolves the **AI Operations domain + UsageRecord entity + the seam ONLY.**
+Separate later gates: the **Phase-7 metering mechanism**; the **Intelligence margin / ratio
+views**; the **Governance budget-cap-policy authoring** + **Phase-4 enforcement** content; and
+**prompt / template versioning (Q-022)**. No P7 / Intelligence / Governance / P4 content and no
+new P6 pattern is authored here.
+
+**Tier (guidance).** Per-job metering + a hard budget cap = **T1.5** (defensive — uncontrolled
+spend is a launch risk; rides on routing); the per-client margin view = **T2**; the
+AI-vs-human-cost ratio and prompt-versioning = **T3**. Build sequencing is Phase-10.
+
+**Carried / not-owned.** R-027 set (Q-004 unblocked, the threshold
+`Faraz-OS-Canon/domains.md:1918`), Q-006, Q-016, Q-017, Q-020 (open dual-path follow-on), and
+the other ~5 Phase-1 reopenings untouched. DEC-026 / DEC-027 / DEC-034 / DEC-037 and Governance's
+existing cost-constraint ownership + Phase-4's cost-as-selection-dimension referenced, not
+changed.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

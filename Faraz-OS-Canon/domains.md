@@ -3973,3 +3973,97 @@ Community may reference but should not own:
   the Phase-6 post-publish engagement workflow are **separate later gates**, not authored
   here.
 - No inherited Phase-1 question is resolved by this domain (R-027 set untouched).
+
+---
+
+## AI Operations (Draft v1)
+
+### Domain Position
+AI Operations is a Domain responsible for owning the **per-job AI usage and cost record** —
+the raw source-of-truth of what each AI job consumed (model / provider, usage measures,
+computed cost) inside Faraz OS.
+
+Its existence and its ownership of the UsageRecord entity
+are established by DEC-038 (resolving Q-021).
+Internal entity modeling below is Draft v1;
+neighbouring domains' Draft markers are unchanged.
+
+AI Operations owns **internal operational AI-cost telemetry** — distinct from the commercial
+monetary layer. It is not:
+- Finance (the outward-facing commercial money layer: invoices, payments, receivables)
+- Intelligence (derived analytics over the record, not the raw record)
+- Governance (the budget-cap policy, not the cost record)
+- Phase 4 AI Model Routing (selection / enforcement, not the record)
+- Phase 7 Runtime (the metering mechanism that emits the record, not its ownership)
+
+AI Operations may reference those Domains and phases,
+but should not absorb their source-of-truth responsibilities.
+
+---
+
+### Responsibilities
+AI Operations is responsible for:
+- the per-job AI usage / cost record (UsageRecord) as raw domain truth
+- the per-job grain: one record per AI job execution
+- the references a record carries (job, model / provider, client) — as references, not owned copies
+
+AI Operations is not responsible for:
+- metering / measuring cost during execution (Phase 7 Runtime emits the record)
+- per-client rollups, margin, or AI-vs-human-cost ratio (Intelligence — derived)
+- the budget-cap policy (Phase 1 Governance) or its enforcement (Phase 4 AI Model Routing)
+- the commercial monetary layer — invoices, payments (Finance)
+- prompt / template definitions or versioning (Q-022, separate gate)
+
+---
+
+### What it owns
+AI Operations owns the source of truth for:
+- UsageRecord (per-job AI usage / cost record)
+- usage measures and computed cost per job
+- the per-job cost grain
+
+AI Operations may reference but should not own:
+- the job / capability that ran (Phase 3 / Phase 6)
+- the Model / Provider (Phase 4)
+- the Client (CRM)
+- the derived margin / per-client / ratio views (Intelligence)
+- the budget-cap policy (Governance) and its routing enforcement (Phase 4)
+- the metering mechanism (Phase 7)
+
+---
+
+### Candidate Entities
+- UsageRecord (per-job AI usage / cost; the firm entity)
+- (per-client / margin / ratio views are DERIVED — Intelligence, not entities here)
+
+---
+
+### Boundaries
+- ↔ Finance: AI Operations owns internal per-job AI cost (operational telemetry); Finance owns
+  the commercial monetary layer (invoices / payments). Finance references AI-cost only via
+  Intelligence's derived margin view; it does not own the UsageRecord. **Finance-sub-ledger is
+  the carried fallback** (DEC-038) if this domain proves too thin.
+- ↔ Intelligence: AI Operations owns the raw record; Intelligence owns the **derived**
+  per-client rollup, margin, and AI-vs-human-cost ratio (Intelligence is not raw source-of-truth,
+  `domains.md:1742, :1746`).
+- ↔ Governance: the budget-cap **policy** is Governance (the Routing Governance Aggregate,
+  `domains.md:2329-2337`); AI Operations owns the cost record the policy is measured against, not
+  the policy.
+- ↔ Phase 4 AI Model Routing: cost is a routing selection dimension and routing **enforces** the
+  cap; AI Operations owns the record, not the selection / enforcement.
+- ↔ Phase 7 Runtime / AI Architecture: Phase 7 **meters** cost during execution and emits the
+  record (referenced, not owned here) — cost-recording is a P7-realized system property (the
+  cost twin of the Audit Record), not a workflow step.
+
+---
+
+### Domain Notes
+- This domain's existence and its ownership of the UsageRecord entity are accepted
+  (DEC-038 / Q-021); the internal entity modeling and aggregate placement are Draft v1.
+- **Per-client cost is derived (Intelligence), not a second entity here.**
+- The Phase-7 metering mechanism, the Intelligence margin / ratio views, the Governance
+  budget-cap policy + Phase-4 enforcement, and **prompt / template versioning (Q-022)** are
+  **separate later gates**, not authored here. The budget-cap gate reuses the Routing
+  Governance Aggregate (P4) + the existing Escalation Loop (P6); no new Phase-6 pattern, and
+  the Dual-Path / Manual-Fallback pattern (DEC-037) is not re-scoped.
+- No inherited Phase-1 question other than Q-021 is resolved here (R-027 set untouched).

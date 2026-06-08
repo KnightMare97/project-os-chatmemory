@@ -552,6 +552,50 @@ Why it matters:
 
 ---
 
+### Q-021
+Which domain owns the AI usage / cost record (per-job token/model cost; the AI P&L)?
+
+Resolved (DEC-038):
+- A new Phase-1 domain — **AI Operations** — owns the per-job **UsageRecord** Entity (raw AI
+  usage / cost source-of-truth; per-job grain; aggregate placement draft/pending).
+- **Per-client cost is DERIVED (Intelligence)**, not a second entity. Four-way seam: AI
+  Operations owns the record; Phase 7 meters (references-not-owns); Intelligence derives
+  margin / ratio; Governance authors the budget-cap policy + Phase 4 AI Model Routing enforces it.
+- Budget-cap gate reuses the Routing Governance Aggregate (P4) + the existing Escalation Loop
+  (P6) — no new Phase-6 pattern; the Dual-Path pattern (DEC-037) is not re-scoped.
+- Finance-sub-ledger = carried fallback. Prompt / template versioning split out to Q-022.
+- The 5th of the ~10 Phase-1 reopenings the non-canon gap analysis surfaced
+  (`grounding/Gap-Analysis-and-Roadmap.md` §3).
+
+Surfaced by the three-lens gap analysis (no pre-existing number; registered + resolved in this
+package). Linear: KNI for Q-021 (after the resolving push verifies).
+
+Why it mattered:
+- The AI P&L (cost per job / client, margin, budget caps) had no source-of-truth record; Finance
+  is commercial money, Intelligence disowns raw, Governance disowns raw telemetry, Phase 7 only
+  meters — the record was orphaned, blocking cost governance and the per-client margin view.
+
+---
+
+### Q-022
+Where do prompt / template definitions and their versioning (version, A/B test, roll back) live?
+
+Current direction:
+- Split out of the cost-ledger decision (DEC-038): a prompt / template is a **versioned
+  artifact**; its only link to cost is referential (a UsageRecord may reference which prompt
+  version ran).
+- Candidate home: **Media & Assets** (the existing versioned-artifact domain, DEC-033) or
+  **Knowledge** (durable reusable content / playbooks-templates library) — not decided.
+- **Open.** Its own gated Phase-1 decision (orphan-vs-extend against Media & Assets / Knowledge).
+  Surfaced by DEC-038 + the non-canon gap analysis (`grounding/Gap-Analysis-and-Roadmap.md` §3).
+- Tracked in Linear (KNI, if/when scheduled).
+
+Why it matters:
+- Prompt / template versioning (A/B, rollback) is an AI-quality + cost lever; it needs an owning
+  home distinct from the cost record it is referenced by.
+
+---
+
 ## Question Review Rule
 Review this file regularly.
 
