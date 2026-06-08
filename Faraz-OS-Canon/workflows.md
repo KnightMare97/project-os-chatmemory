@@ -192,7 +192,7 @@ entry. It defines the **logical runtime semantics** the ordered flows presuppose
 ---
 
 ## Loop and Exception Patterns
-Three cross-cutting patterns, **defined once here and referenced by each flow's
+Four cross-cutting patterns, **defined once here and referenced by each flow's
 field-5** (DEC-028 G-3 form B / G-4) — they are not restated per flow. Each
 describes *semantic* behavior and defers runtime mechanism to *Workflow Runtime*
 (and ultimately Phase 7).
@@ -234,6 +234,31 @@ describes *semantic* behavior and defers runtime mechanism to *Workflow Runtime*
   **no** retry mechanism, scheduler, or queue — retry/backoff and execution
   recovery are Phase 7 Runtime Architecture, referenced at altitude per the P6↔P7
   litmus.
+
+### Dual-Path / Manual-Fallback Routing
+- **What it is.** A pattern in which an external action carries **two
+  semantically-equivalent execution paths** — an automated / AI path and a manual / human
+  path — and the workflow routes to the manual path when the automated path is unavailable.
+  It is the Phase-6 expression of the **Dual-Path / Manual-Fallback cross-phase principle**
+  (DEC-037); the manual path is first-class — it produces the same business outcome, not a
+  degraded substitute.
+- **When it triggers.** **Pre-dispatch** — before an external action is dispatched, when the
+  automated path is unavailable (the platform is unreachable or the connection has lapsed).
+  This is distinct from the Failure/Exception Path, which triggers **after** an attempt fails
+  to complete: dual-path routes *before* the attempt, on availability; if the chosen path then
+  cannot complete (or both paths are exhausted), the workflow **falls through to the
+  Failure/Exception Path**.
+- **Semantic behavior.** The workflow routes the external-action step to the manual / human
+  path instead of the automated one and continues along that branch to the same outcome; on
+  the manual path a human performs the action and the flow resumes. The pattern names only
+  *that* the routing occurs and *which* path control goes to. It does **not** name how
+  availability is determined, how the switch is performed, or how duplicate execution is
+  prevented: the availability **signal** is Phase 4 (the access-status / connection-health
+  state, open per Q-020); **whether** fallback is permitted is Phase 1 Governance; the
+  detect-and-switch engine and the idempotency that keeps the two paths from double-executing
+  are Phase 7 Runtime Architecture (referenced at altitude per the P6↔P7 litmus). The manual
+  path's availability rests on the capability's Phase-3 execution-mode (hybrid-capable),
+  referenced not redefined.
 
 ---
 
