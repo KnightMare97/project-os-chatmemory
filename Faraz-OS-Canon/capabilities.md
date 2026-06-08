@@ -86,12 +86,11 @@ Each capability is recorded on six fields:
     ability. It does not encode what precedes or follows it — the
     `Approval → Publishing → Reporting` path is a Phase 6 workflow
     that *invokes* this capability, not part of it.
-  - Open question Q-015 (P3 ↔ P6), flagged not resolved: the altitude
-    of scheduling/queueing. An atomic push is clearly in-capability;
-    a scheduled-publish *when-parameter* is probably still
-    in-capability; cross-item **queueing** may be orchestration
-    (Phase 6) and needs a deliberate decision. See `open-questions.md`
-    (Q-015) / KNI-21. This entry flags it and does not default it.
+  - Q-015 (P3 ↔ P6) — **resolved by DEC-028:** the atomic push and the
+    scheduled-publish *when-parameter* are firm Phase 3 (this capability);
+    cross-item **queueing / sequencing** is Phase 6 orchestration (it is a
+    sequence, not part of this single, order-free ability). See
+    `open-questions.md` (Q-015) / DEC-028 / KNI-21.
 
 ### Reporting
 - **Definition.** The ability to assemble and generate a report
