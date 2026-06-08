@@ -410,12 +410,13 @@ The current recommended next focus is:
 **Phase 6 Workflow Design — first write complete (Snapshot-037).** `workflows.md`
 is written (Batches A–C; `6eefd90` / `a7de5ef` / `a0fe15d`), under DEC-028, via
 per-batch reviewer byte-reads with dependencies-first ordering (FIND-033). This is a
-first write, **not** Phase-6 completion — Q-012's unblock trigger stays unfired. No
-blocking next step; candidate follow-ups are all fresh/gated: a later consistency
-review of `workflows.md`; **Q-017** (system-administrator visual workflow viewing +
-management — its own multi-phase gated decision); the four Phase-4 deferred
-sub-items; Phase 5 Asset Intelligence un-defer. Linear: **KNI-26 → Done** after this
-close-out push verifies.
+first write, **not** Phase-6 completion — Q-012's unblock trigger stays unfired. The
+first write was consistency-reviewed **clean** (Snapshot-038; zero meaning-level
+findings; two reference-altitude tidy-ups landed, commit `508dbd4`). No blocking next
+step; candidate follow-ups are all fresh/gated: **Q-017** (system-administrator
+visual workflow viewing + management — its own multi-phase gated decision); the four
+Phase-4 deferred sub-items; Phase 5 Asset Intelligence un-defer. Linear: **KNI-26 is
+Done** (Snapshot-037).
 
 **Phase 5 Knowledge & Memory — first write complete (Snapshot-035).** `memory.md` is
 written (landing (ii); commit `89f5034`). The Phase 5 question-gate was closed by DEC-027: the G-1–G-5 structural frame (logical altitude;
