@@ -2008,6 +2008,81 @@ Status:
 
 ---
 
+### DEC-037
+**Dual-Path / Manual-Fallback — cross-phase principle (every external action has an automated and a manual path).**
+
+Phase: cross-phase principle (no single owning phase; not a Phase-1 entity). Resolves: none
+(records a principle; registers **Q-020** for the access-status owner). Supersedes: none.
+
+**Context.** The Iran platform-access reality (platforms get blocked / throttled) makes a
+manual fallback for every external action a founding operational constraint, surfaced by the
+gap analysis (`grounding/Gap-Analysis-and-Roadmap.md`, non-canon; tiered T1) and already
+referenced as a *posture* across the Phase-7 blueprint, where it is explicitly flagged as "a
+cross-cutting principle … the dual-path principle (and a candidate Phase-6 fourth loop/
+exception pattern), not Phase-7" (`Faraz-OS-Canon/system-architecture-blueprint.md:458-460`).
+Settled via the three-lens trio (PM + Workflow + System). This decision records the
+**principle and the cross-phase seam only**; the Phase-6 pattern write and the Phase-4
+access-status owner are separate later gates.
+
+**The principle.** **Every external action has two semantically-equivalent execution paths —
+an automated / AI path and a manual / human path — and routing selects between them based on
+whether the automated path is currently available.** The manual path is a first-class,
+independently-runnable path producing the same business outcome (not a degraded substitute).
+When the automated path is unavailable (platform blocked, OAuth lapsed, provider unreachable),
+routing diverts to the manual path; the agency can run by hand if automation is down
+(degraded-mode continuity).
+
+**Three orthogonal axes (recorded; no-collapse).** Dual-path is **distinct** from:
+- **Oversight (HITL)** — *who judges / approves* (gates, escalation;
+  `Faraz-OS-Canon/human-in-the-loop-philosophy.md:18-32`). The dual-path human **executes**;
+  the HITL human **judges**.
+- **Execution-capacity (Phase-3 execution-mode)** — *which modes a capability can run in*
+  (AI / human / hybrid; `Faraz-OS-Canon/capabilities.md:56-57`), a design-time attribute.
+Dual-path is the **availability-fallback** axis: a hybrid-capable capability *enables* it, but
+it is **not a 4th execution mode and not HITL**.
+
+**The four-altitude seam (each phase implements at its altitude).**
+- **Phase 1 Governance** authors **WHEN fallback is permitted and what the manual path may
+  do** (policy / authorization; the DEC-026 who-may-approve analogue).
+- **Phase 6** owns the **semantic routing** — a 4th loop/exception pattern ("on unavailability
+  of the automated path → route to the manual path"), to be defined-once and field-5-referenced
+  like Escalation / Revision / Failure (`Faraz-OS-Canon/workflows.md:194-238`),
+  **mechanism-free** per the P6↔P7 firewall (`Faraz-OS-Canon/workflows.md:183-190`, the
+  highest-R-028 surface). Its trigger is **pre-dispatch availability-routing** — distinct from
+  Failure/Exception's **post-attempt non-completion**; dual-path **falls through to**
+  Failure/Exception when both paths are exhausted. *(The pattern WRITE is a separate gated
+  Phase-6 increment — not authored here.)*
+- **Phase 7** owns the **engine** — detect unavailability + switch, degraded-mode runnability;
+  and **idempotency / duplicate-prevention** (`Faraz-OS-Canon/system-architecture-blueprint.md:420`)
+  is the **safety pre-requisite** (the automated and manual paths must never double-execute —
+  double-post / double-payment).
+- **Phase 4** owns the **access-status / connection-health signal** the routing reads
+  (availability is already a routing dimension, `Faraz-OS-Canon/extensibility.md:354, :381`; the
+  Channel Model `:120` is the candidate home). **Owner registered as Q-020 (open) — not decided
+  here.**
+- **Phase 3** provides the **enabler** (a hybrid-capable capability,
+  `Faraz-OS-Canon/capabilities.md:56-57`).
+
+**Tier (T1 — founding constraint).** v1 minimal form: **manual-toggle on explicit
+access-status** for **publish / upload / payment-confirm / OAuth-re-auth**, plus
+**idempotency**. **Auto-detection → auto-fallback** and **whole-system degraded-mode** are
+**T2** (hardening the same principle). Tiering is recorded as guidance; concrete build
+sequencing is Phase-10.
+
+**Scope guard.** Records the **principle + the cross-phase seam ONLY.** Separate later gates:
+the **Phase-6 4th-pattern write** (`workflows.md`; the highest-R-028 surface, mechanism-free);
+the **Phase-4 access-status owner** (Q-020); the Phase-7 engine mechanism (its own content). No
+Phase-6 / Phase-7 mechanism content and no canon entity is authored here.
+
+**Carried / not-owned.** No Phase-1 entity resolved; the R-027 set (Q-004 unblocked, the
+threshold `Faraz-OS-Canon/domains.md:1918`), Q-006, Q-016, Q-017, and the remaining ~6 Phase-1
+reopenings untouched. DEC-026 / DEC-028 / DEC-031 disciplines referenced, not changed.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

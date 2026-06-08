@@ -529,6 +529,29 @@ Why it mattered:
 
 ---
 
+### Q-020
+Which Phase-4 construct owns the per-client / per-platform access-status / connection-health
+signal that Dual-Path / Manual-Fallback routing reads?
+
+Current direction:
+- Dual-Path / Manual-Fallback (DEC-037) routes an external action to the manual path when the
+  automated path is unavailable; it **reads** a per-client / per-platform **access-status**
+  signal but does not author it.
+- Availability is already a routing dimension in Phase-4 (`extensibility.md:354, :381`); the
+  **Channel Model** (`extensibility.md:120`) is the candidate home for a channel-level
+  access-status / connection-health state.
+- **Open** — whether access-status is a Phase-4 Channel-Model attribute, a separate Phase-4
+  construct, or partly a Phase-1 Governance / policy state, is not decided. Surfaced by DEC-037
+  and the non-canon gap analysis (`grounding/Gap-Analysis-and-Roadmap.md`).
+- Tracked in Linear (KNI, if/when scheduled).
+
+Why it matters:
+- Dual-path's routing trigger has no signal to read until this owner is fixed; it is the
+  Phase-4 follow-on the dual-path principle depends on (the connection-health / manual-re-auth
+  item the gap analysis tiered T1).
+
+---
+
 ## Question Review Rule
 Review this file regularly.
 

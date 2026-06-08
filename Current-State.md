@@ -431,6 +431,16 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
+**Dual-Path / Manual-Fallback recorded as a cross-phase principle (DEC-037).** Every external
+action has an automated/AI path + a manual/human path with fallback when the automated path is
+unavailable (the founding Iran constraint; T1). Four-altitude seam: P1 Governance (when fallback
+is permitted), P6 (the semantic routing — a 4th loop/exception pattern), P7 (detect+switch
+engine + idempotency safety pre-req), P4 (the access-status signal), P3 (hybrid-capable enabler).
+Distinct from HITL (oversight) and execution-mode (capacity) — three orthogonal axes. **Open
+follow-ons (split landing):** the **Phase-6 4th-pattern write** (highest-R-028 surface,
+mechanism-free) and **Q-020** (the Phase-4 access-status / connection-health owner) — each its
+own later gate; nothing else authored here.
+
 **Q-003 resolved (DEC-036): Brand is a first-class Entity owned by CRM** (reference-addressable,
 not absorbed into Client Account; mandatory Client reference, 1 Client : N Brand; aggregate
 placement draft/pending) — extend pattern (DEC-034 mirror). **Unblocks Q-004** (Client Brain
@@ -601,6 +611,9 @@ absorbed into Client Account; 1 Client : N Brand; aggregate placement draft/pend
 Open question Q-004 (Client Brain partitioning) is unblocked by Q-003 (DEC-036) but
 stays open — a Phase-5 / Knowledge memory-partitioning call; Client Brain entry stays
 partition-agnostic.
+Open question Q-020 (Phase-4 access-status / connection-health owner) is registered and
+open (see DEC-037): the per-client/per-platform signal Dual-Path routing reads; candidate
+home is the Phase-4 Channel Model, not yet decided.
 Open question Q-015 (Publishing scheduling/queueing, P3 ↔ P6)
 is resolved (see DEC-028 / Snapshot-036).
 Open question Q-017 (system-administrator visual workflow
