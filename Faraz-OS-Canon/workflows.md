@@ -29,17 +29,15 @@ them.
 ## Status
 Phase 6 scope is defined and human-confirmed (**DEC-028 / Snapshot-036**).
 
-This file is written in batches. **Batch A is written**: the file skeleton; the
-three framing/construct sections (Human Approval Gates, Agent Chains, Workflow
-Runtime); and the three cross-cutting loop/exception patterns (Escalation Loop,
-Revision Loop, Failure/Exception Path). Batch A lands first because every flow
-entry's field-3/4/5 references these cross-cutting sections — they exist before
-any flow leans on them (FIND-033).
-
-**Pending:** Batch B — the seven flow entries (Lead → Client, Client → Strategy,
-Strategy → Production, Production → Approval, Approval → Publishing, Publishing →
-Reporting, Learn → Memory Update) on the six-field skeleton. Batch C — non-goals,
-open/inherited flags, and header cross-reference tidy.
+This file was written in batches (dependencies-first, FIND-033). **The first write
+is complete** (Batches A–C): the file skeleton; the three framing/construct sections
+(Human Approval Gates, Agent Chains, Workflow Runtime); the three cross-cutting
+loop/exception patterns (Escalation Loop, Revision Loop, Failure/Exception Path);
+the seven flow entries (Lead → Client, Client → Strategy, Strategy → Production,
+Production → Approval, Approval → Publishing, Publishing → Reporting, Learn → Memory
+Update) on the six-field skeleton; the non-goals; and the open/inherited flags. The
+cross-cutting sections were written before the flow entries that reference them, so
+no flow's field-3/4/5 ever pointed at unwritten content.
 
 No Phase 1 domain truth, ownership, or boundary is changed by this file. Phase 6
 references Phase 1; it does not reinterpret it. It resolves no inherited Phase-1
@@ -65,7 +63,7 @@ sections below, per DEC-028 G-6(b)/(c).
 
 ---
 
-## Per-workflow entry skeleton (for the Batch-B flows)
+## Per-workflow entry skeleton (the seven flow entries below)
 Each flow entry carries six fields (DEC-028 G-4):
 1. **Definition** — what the workflow accomplishes; the ordered intent.
 2. **Trigger / entry condition** — what starts it.
@@ -378,3 +376,53 @@ authorization rule, agent identity, or visual workflow-management capability
   Phase 5, `memory.md`); the **insight→durable-knowledge threshold** is inherited
   Phase-1 Intelligence truth, referenced at altitude and **not resolved here**
   (R-027, `domains.md:1918`). Authors no memory structure and no threshold.
+
+---
+
+## Non-goals
+Per DEC-028 (G-5), `workflows.md` does **not** contain:
+- capabilities — reusable functional abilities are Phase 3 (`capabilities.md`),
+  referenced by name only;
+- surfaces, views, portals, or the Permission Matrix — Phase 2
+  (`experience-architecture.md`);
+- authorization / permission / policy rules, or who may approve — Phase 1
+  Governance / DEC-026 (workflows place gates, they do not authorize actors);
+- memory / knowledge structure, or the insight→durable-knowledge threshold —
+  Phase 5 (`memory.md`) and inherited Phase-1 truth;
+- provider / channel / model selection or routing — Phase 4 (`extensibility.md`);
+- domain-entity ownership or authoritative meaning — Phase 1 (`domains.md`);
+- the execution engine, scheduler, queue, state persistence, data paths,
+  deployment runtime, or AI architecture — Phase 7;
+- agent / subagent identity, surface, or executing architecture — the registered
+  Phase-7 flag.
+
+It resolves no inherited Phase-1 question (R-027) and holds reference altitude
+throughout (R-028).
+
+---
+
+## Open and inherited flags
+Carried, referenced, not resolved here:
+- **Q-017 (new this gate, registered).** The system administrator's **visual
+  viewing and management** (update / add / remove) of workflows. Viewing is
+  partially covered by the Phase-2 Agent & Workflow Monitor surface (System
+  Administrator Full, `experience-architecture.md:239`); the new part — visual
+  workflow **editing / management** — has candidate homes across Phase 2 (surface),
+  Phase 6 (workflow definitions as configurable artifacts), Phase 4 (config-time
+  binding), and Phase 7 (engine support). **Multi-phase placement is its own gated
+  decision later**; this file authors no visual workflow-management capability. See
+  `open-questions.md` (Q-017).
+- **Agent / subagent identity** — what an agent *is*, its surface, and the AI
+  architecture that executes it: the registered Phase-7 flag
+  (`extensibility.md:345-347`, `:457-459`). Agent Chains name roles, never
+  identities (role-vs-identity litmus).
+- **Q-012 (Phase 7 ↔ Phase 8 boundary)** — deferred until Phase 6 is complete
+  (`open-questions.md:268`); Phase-6 completion is its downstream unblock trigger.
+  Not resolved here.
+- **Inherited Phase-1 questions (R-027)** — Q-003 (Brand placement), Q-004 (Client
+  Brain partitioning), and the insight→durable-knowledge threshold
+  (`domains.md:1918`): referenced at altitude, resolved by their owning Phase-1
+  work, not here.
+- **R-028 reference-altitude guards** — the role-vs-identity and P6↔P7 litmuses are
+  the active guards; Workflow Runtime is the highest-overcommitment surface and
+  carries a standing policing note.
