@@ -1886,6 +1886,69 @@ Status:
 
 ---
 
+### DEC-035
+**Q-019 resolved — post-publish audience engagement owned by a new Phase-1 domain (Community).**
+
+Phase: 1 (domain truth). Resolves: Q-019. Supersedes: none. The **3rd of the ~10 Phase-1
+entity reopenings** the non-canon gap analysis surfaced (Q-018 Media & Assets 1st, Q-002
+Service Agreement 2nd); scoped to the **Community domain + its entity set + classification
+ONLY**.
+
+**Context.** The gap analysis (`grounding/Gap-Analysis-and-Roadmap.md`, non-canon) flagged
+post-publish audience engagement as the biggest coverage gap: the canon workflow chain stops
+at Publishing → Reporting (`Faraz-OS-Canon/workflows.md:343`); no domain owns comments / DMs /
+conversations; `Faraz-OS-Canon/capabilities.md` has no community / reply capability. This is
+the clearest **orphan** since Client Asset (DEC-033): a B2C audience↔brand responsibility no
+existing domain has declared. The extend test (DEC-034) fails on every candidate — CRM and
+Client Success are B2B (commercial pipeline / private client coordination), Intelligence owns
+*derived findings, not raw* (`Faraz-OS-Canon/domains.md:1741-1742`). Settled via the
+three-lens trio (PM + Workflow + System) reconciled recommendation; mirrors the
+DEC-033 / DEC-034 owning-phase pattern (isolated `domains.md` ownership landing, own DEC).
+
+**Decision.**
+- **A new Phase-1 domain — *Community* — owns post-publish audience engagement.** Named
+  **Community** deliberately, **not "Engagement"** (which would collide with the existing
+  Service-Delivery "Engagement Scope" concept, `Faraz-OS-Canon/domains.md:125, :172, :354`).
+- **Owns four Entities:** **Comment** (public inbound reaction on a published item),
+  **Direct Message** (private inbound message on a channel), **Conversation / Thread** (the
+  aggregate-root candidate grouping interactions + replies), **Engagement Reply** (the
+  AI-drafted, human-escalated outbound response record). Classification = **Entity**;
+  **aggregate boundaries draft** (Conversation as candidate root).
+- **Sentiment Signal — ownership contested, left DRAFT.** A raw classification tag may sit on
+  a Community interaction, but the derived / analytical sentiment + crisis finding is
+  Intelligence (Anomaly / Trend Signal). This decision does **not** assign Sentiment ownership.
+- **B2C ≠ B2B axis (recorded):** Community owns the *client's-audience ↔ brand* (public,
+  1:many) relationship — a distinct axis from CRM (commercial pipeline) and Client Success
+  (private agency↔client coordination); they must not be collapsed.
+
+**Boundary set (reference-vs-own).** Community owns the raw inbound interactions + the reply
+record; it **references, does not own:**
+- **Lead** → CRM (an inbound interaction flagged as a sales signal becomes a CRM Lead).
+- **Escalation Case** → Client Success (a client-specific issue escalates there).
+- **sentiment / crisis *finding*** → Intelligence (the derived analytical layer;
+  `Faraz-OS-Canon/domains.md:1741-1742`).
+- **Publishing capability + channel** → Phase 3 / Phase 4 (a reply is an outbound push —
+  reuses Publishing, `Faraz-OS-Canon/capabilities.md:73`).
+- **published item** → Publishing / Service Delivery.
+- **approval-of-record / IR-sensitivity** → Governance.
+
+**Scope guard.** Resolves the **Community domain + entity set + classification ONLY.** Each
+cross-phase follow-on is its own later gate, NOT resolved here: a **Phase-3** classify /
+engagement-reply capability; a **Phase-4** inbound-channel category (all current channels are
+outbound); a **Phase-6** 8th workflow (the post-publish engagement flow, attaching after
+Publishing → Reporting); and **Sentiment-Signal final ownership**. Phase-7 storage / ingest is
+downstream "how," referenced not decided (inversion guard, DEC-031 G-1).
+
+**Carried / not-owned.** R-027 set (Q-003 Brand, Q-004 Client Brain partitioning, the
+insight→durable-knowledge threshold `Faraz-OS-Canon/domains.md:1918`) carried; Q-006
+(SA↔Engagement-Scope), Q-016, Q-017 carried; the other ~7 Phase-1 reopenings untouched (each
+its own gate). No P3/P4/P6 content and no storage technology authored.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

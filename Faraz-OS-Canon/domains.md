@@ -3833,3 +3833,108 @@ Media & Assets may reference but should not own:
 - Asset Intelligence (Phase 5) remains **deferred** — Q-018 / DEC-033 settles only the
   Phase-1 owner of the asset entity, not the knowledge derived from assets.
 - No inherited Phase-1 question is resolved by this domain (R-027 set untouched).
+
+---
+
+## Community (Draft v1)
+
+### Domain Position
+Community is a Domain responsible for owning **post-publish audience engagement** —
+the interactions between a client's public audience and the client's brand on social
+channels after content is published: comments, direct messages, conversations, and the
+agency's replies.
+
+Its existence and its ownership of the engagement entities
+are established by DEC-035 (resolving Q-019).
+Internal entity modeling below is Draft v1;
+neighbouring domains' Draft markers are unchanged.
+
+The name is deliberate — **Community, not "Engagement"** — to avoid collision with the
+existing Service-Delivery "Engagement Scope" concept (a scope-of-work artifact), which is
+a different thing.
+
+Community is the **B2C axis** (client's-audience ↔ brand; public; 1:many). It is not:
+- CRM (the B2B commercial pipeline: prospects, leads, accounts)
+- Client Success (the B2B private agency ↔ client coordination)
+- Intelligence (derived findings, not raw interactions)
+- Service Delivery (production execution)
+- Publishing (the outbound dispatch mechanism)
+
+Community may reference those Domains and capabilities,
+but should not absorb their source-of-truth responsibilities.
+
+---
+
+### Responsibilities
+Community is responsible for:
+- post-publish audience-interaction identity and lifecycle (as domain truth)
+- inbound public interactions (comments) and private interactions (direct messages)
+- the conversation / thread that groups interactions and replies
+- the agency's engagement replies (AI-drafted, human-escalated) as records
+- routing signals out to the domains that own the consequence (lead, escalation, crisis)
+
+Community is not responsible for:
+- deriving sentiment / crisis findings (Intelligence; Community may carry a raw tag only)
+- the Lead entity (CRM) — an inbound sales signal becomes a CRM Lead
+- the Escalation Case (Client Success)
+- producing or dispatching content (Phase 3 capabilities / Publishing)
+- the inbound-channel integration mechanism (Phase 4)
+- storage / ingest / data paths (Phase 7)
+- approval-of-record or IR-sensitivity policy (Governance)
+
+---
+
+### What it owns
+Community owns the source of truth for:
+- Comment (public inbound interaction on a published item)
+- Direct Message (private inbound interaction on a channel)
+- Conversation / Thread (the grouping of interactions + replies; aggregate-root candidate)
+- Engagement Reply (the agency's AI-drafted, human-escalated outbound response record)
+
+Community may reference but should not own:
+- Lead (CRM) — derived from an inbound sales signal
+- Escalation Case (Client Success)
+- sentiment / crisis finding (Intelligence)
+- the Publishing capability + channel (Phase 3 / Phase 4) used to send a reply
+- the published item (Publishing / Service Delivery)
+- approval-of-record / IR-sensitivity policy (Governance)
+
+---
+
+### Candidate Entities
+- Comment
+- Direct Message
+- Conversation / Thread (aggregate-root candidate)
+- Engagement Reply
+- Sentiment Signal — **ownership contested / draft** (a raw tag may sit here; the derived
+  analytical sentiment + crisis finding is Intelligence). Not assigned by DEC-035.
+
+---
+
+### Boundaries
+- ↔ CRM: an inbound interaction flagged as a sales signal becomes a **CRM Lead**; Community
+  owns the interaction, CRM owns the Lead. Reference, not shared ownership.
+- ↔ Client Success: a client-specific issue **escalates** to a Client Success Escalation
+  Case; the two relationship axes stay distinct (Community = B2C audience; Client Success =
+  B2B client).
+- ↔ Intelligence: Community owns raw interactions; **Intelligence owns the derived sentiment
+  / crisis finding** (Intelligence is not raw source-of-truth, `domains.md:1741-1742`).
+- ↔ Publishing (Phase 3) / Channel (Phase 4): a reply is an outbound push — it **reuses the
+  Publishing capability** (`capabilities.md:73`); the inbound-channel category is a Phase-4
+  follow-on, not authored here.
+- ↔ Service Delivery / Publishing: the published item an interaction responds to is owned
+  upstream; Community references it.
+- ↔ Governance: AI-drafted replies are governed content — approval-of-record and
+  IR-sensitivity apply by reference, not re-authored here.
+
+---
+
+### Domain Notes
+- This domain's existence and its ownership of the four engagement entities are accepted
+  (DEC-035 / Q-019); the internal entity modeling and aggregate boundaries (Conversation as
+  root) are Draft v1, not finalized.
+- **Sentiment Signal ownership is contested and left draft** — not assigned here.
+- The Phase-3 engagement / classify capability, the Phase-4 inbound-channel category, and
+  the Phase-6 post-publish engagement workflow are **separate later gates**, not authored
+  here.
+- No inherited Phase-1 question is resolved by this domain (R-027 set untouched).

@@ -310,10 +310,14 @@ without a new explicit decision.
 A new domain — **Media & Assets** — was added by DEC-033 (resolving Q-018):
 it owns the **Client Asset** entity. **Service Agreement** was then made firm by DEC-034
 (resolving Q-002): a first-class **Entity owned by CRM** (reference-addressable, not
-absorbed into the Client Account entity; Aggregate-pending-Q-006). These are the first
-two of the ~10 Phase-1 entity reopenings the non-canon gap analysis surfaced; each
-further reopening is its own explicit gated decision (domain truth is never
-re-discovered wholesale).
+absorbed into the Client Account entity; Aggregate-pending-Q-006). Then a new domain —
+**Community** — was added by DEC-035 (resolving Q-019): it owns post-publish audience
+engagement (Comment, Direct Message, Conversation/Thread, Engagement Reply as Entities;
+Sentiment Signal left contested; B2C audience axis distinct from the B2B CRM/Client-Success
+axes). These are the **first three** of the ~10 Phase-1 entity reopenings the non-canon gap
+analysis surfaced; each further reopening is its own explicit gated decision (domain truth
+is never re-discovered wholesale). The Community Phase-3 capability / Phase-4 inbound-channel
+category / Phase-6 post-publish workflow are separate later gates.
 
 ---
 
@@ -422,6 +426,14 @@ Avoid:
 
 ## Current Next Focus
 The current recommended next focus is:
+
+**Q-019 resolved (DEC-035): a new Phase-1 domain — Community — owns post-publish audience
+engagement (Comment / Direct Message / Conversation / Engagement Reply as Entities; Sentiment
+Signal contested/draft).** The 3rd of the ~10 Phase-1 entity reopenings (Media & Assets / DEC-033
+and Service Agreement / DEC-034 were 1st and 2nd); ~7 remain (Brand [Q-003], Campaign, Cost-ledger /
+Prompt, Ticket, Ad-Account, Schedule, Consent — each its own gated decision). Community's
+Phase-3 capability, Phase-4 inbound-channel category, and Phase-6 8th workflow (the post-publish
+flow) are **separate later gates**, not yet taken.
 
 **Phase 7 System Architecture Blueprint — first write COMPLETE (all seven concern-views;
 Batches A–E; Snapshot-044).** `system-architecture-blueprint.md` carries Logical,
@@ -568,6 +580,11 @@ Q-006 stays open.
 Open question Q-018 (Client Asset domain ownership) is resolved
 (see DEC-033): a new Phase-1 domain, Media & Assets, owns the Client Asset entity;
 Asset Intelligence (P5) stays deferred.
+Open question Q-019 (post-publish audience-engagement ownership) is resolved
+(see DEC-035): a new Phase-1 domain, Community, owns comments/DMs/conversations/replies;
+Sentiment Signal ownership left contested/draft.
+Open question Q-002 (Service Agreement ownership) is resolved
+(see DEC-034): a first-class Entity owned by CRM; Aggregate-pending-Q-006.
 Open question Q-015 (Publishing scheduling/queueing, P3 ↔ P6)
 is resolved (see DEC-028 / Snapshot-036).
 Open question Q-017 (system-administrator visual workflow

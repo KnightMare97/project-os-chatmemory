@@ -489,6 +489,38 @@ Why it mattered:
 
 ---
 
+### Q-019
+Which domain owns post-publish audience engagement
+(comments, direct messages, conversations, and the agency's replies)?
+
+Resolved (DEC-035):
+- A new Phase-1 domain — **Community** — owns post-publish audience engagement, with four
+  Entities: Comment, Direct Message, Conversation / Thread (aggregate-root candidate), and
+  Engagement Reply. Classification = Entity; aggregate boundaries draft.
+- Named **Community** deliberately, **not "Engagement"** (which collides with the existing
+  Service-Delivery "Engagement Scope" concept).
+- **Sentiment Signal ownership is contested and left draft** (a raw tag may sit here; the
+  derived analytical finding is Intelligence).
+- Boundary set: references Lead → CRM, Escalation → Client Success, sentiment / crisis
+  finding → Intelligence, Publishing capability + channel → P3 / P4, published item →
+  Publishing / Service Delivery, approval-of-record / IR-sensitivity → Governance. B2C
+  audience axis ≠ B2B client axis.
+- The **3rd of the ~10 Phase-1 entity reopenings** the non-canon gap analysis surfaced
+  (`grounding/Gap-Analysis-and-Roadmap.md`); the biggest coverage gap.
+
+Surfaced by the three-lens gap analysis (no pre-existing open-question number; registered
+here and resolved by DEC-035 in the same package). Linear: KNI for Q-019 (after the
+resolving push is raw-verified on origin/main).
+
+Why it mattered:
+- The canon workflow chain stopped at Publishing → Reporting; no domain owned comments /
+  DMs / conversations and no community capability existed — the entire post-publish stage
+  (community management, inbound lead capture, sentiment / crisis) was unmodeled.
+- Resolving the owner unblocks the Phase-6 post-publish workflow and the Phase-3 / Phase-4
+  follow-ons (each its own later gate).
+
+---
+
 ## Question Review Rule
 Review this file regularly.
 
