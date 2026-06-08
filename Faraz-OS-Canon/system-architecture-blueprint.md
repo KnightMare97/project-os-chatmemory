@@ -109,3 +109,92 @@ each follows the six-field skeleton above and is bound by the three governing ru
 - Integration Architecture
 - Security Architecture
 - Runtime Architecture
+
+---
+
+## Logical Architecture
+- **Definition / concern.** The overall logical shape of the Faraz OS platform: the
+  configurable core, the mountable Feature-Modules that compose onto it, and the domains
+  rendered as logical components with their relationships. It answers, at architecture
+  altitude, *what the system's logical building blocks are and how they relate.*
+- **What it architects (the *how*).** A **base-plus-modules** shape: a configurable core
+  onto which Feature-Modules mount (the module-mounting thesis — base and modules both
+  extensible and updatable). Domains appear as logical components bounded by their Phase-1
+  meaning, wired by their relationships; capabilities and plugins attach through the
+  Phase-4 contract surface. Described at altitude — no named framework, runtime, or
+  topology.
+- **Referenced owned-truth (the *what*, by phase).**
+  - Phase 1 — the domain set (`Faraz-OS-Canon/domains.md`): each domain is a logical
+    component here, referenced by its owned meaning, never re-defined.
+  - Phase 3 — capabilities (`Faraz-OS-Canon/capabilities.md`): the reusable abilities the
+    components expose; invoked, not defined.
+  - Phase 4 — the Feature-Module contract (`Faraz-OS-Canon/extensibility.md:426`), the
+    Plugin Model (`:273`), and Extension Contracts (`:196`): the mount / attachment
+    contracts the shape composes; referenced, never re-defined.
+- **Key decisions / mechanisms at logical altitude.**
+  - Base + mountable modules is the platform's organizing shape; modules mount through the
+    Phase-4 Feature-Module contract, and the core depends on no specific module.
+  - Domains-as-components: each Phase-1 domain is one logical component; cross-domain
+    relationships are wiring at altitude, not new domain truth.
+  - Single-tenant: a single platform instance; no multi-tenant isolation layer
+    (DEC-031 G-5). No named technology.
+- **Cross-phase boundary notes (G-1 litmus).**
+  - ↔ Phase 1: components *reference* domain meaning; this view re-owns no entity,
+    ownership, or boundary.
+  - ↔ Phase 4: the shape *mounts* the Feature-Module / plugin contract; it does not
+    re-define what a module or plugin is (`Faraz-OS-Canon/extensibility.md:426`, `:273`).
+  - ↔ Phase 8: the *assembled* layered board — which components / modules are assembled
+    where — is Phase 8 (DEC-030); this view is the concern-view shape, not the assembly.
+- **Open / deferred items.** None new. Resolves no inherited Phase-1 question (R-027).
+
+---
+
+## AI Architecture
+- **Definition / concern.** The **spine** of the blueprint (Faraz OS is AI-native): how
+  the system *executes AI* — the model-invocation / routing execution, agent and subagent
+  execution and **identity**, and the human / hybrid execution paths. AI-native, **never
+  AI-only**.
+- **What it architects (the *how*).** A **chain-modelling / routing** execution
+  architecture: the system invokes models and composes agent / subagent execution into
+  chains, selecting per part by policy. **Agent / subagent identity is defined here**
+  (Q-013; DEC-031 G-6(a)): what an agent / subagent *is* architecturally — a defined
+  executing entity with a lifecycle-as-architecture (instantiated, executes, hands off,
+  retires) — distinct from the *role* it plays in a Phase-6 sequence. AI is the default
+  executor; human and hybrid paths are first-class. The engine is described at altitude —
+  no named runtime, framework, model, or vendor.
+- **Referenced owned-truth (the *what*, by phase).**
+  - Phase 3 — capabilities (`Faraz-OS-Canon/capabilities.md:85-88`): the abilities AI and
+    agents execute; invoked, not defined.
+  - Phase 4 — the Model abstraction (`Faraz-OS-Canon/extensibility.md:308`) and AI Model
+    Routing (`:351`): the swappable-model unit and the policy-driven selection layer. This
+    view *executes* the routing engine but authors no selection policy — Phase 4 owns it
+    (`:390-391`). The agent / subagent-identity flag is scoped here (`:345-347`).
+  - Phase 2 — agent-facing **surface rendering** stays Phase 2 (the Q-013 split,
+    DEC-031 G-6(b)).
+  - Core Principle #1 (`Faraz-OS-Canon/principles.md:3`) and the HITL mode vocabulary
+    (`Faraz-OS-Canon/human-in-the-loop-philosophy.md:18-22`).
+- **Key decisions / mechanisms at logical altitude.**
+  - Chain-modelling execution: agent / subagent steps compose into chains; per-part
+    model / agent selection is enforced by *invoking* the Phase-4 routing policy, not
+    re-deciding it.
+  - Agent / subagent identity model: a defined executing entity (identity,
+    lifecycle-as-architecture, and the AI architecture that executes it) — the Phase-7
+    side of the role-vs-identity litmus.
+  - Human / hybrid execution paths are first-class alternatives to AI-default execution
+    (HITL), never an afterthought. No named model, runtime, or vendor; selection *policy*
+    is referenced (Phase 4), not authored.
+- **Cross-phase boundary notes (G-1 litmus).**
+  - ↔ Phase 3: executes capabilities; defines none (`Faraz-OS-Canon/capabilities.md:85-88`).
+  - ↔ Phase 4: executes the routing / selection *engine*; Phase 4 owns the routing /
+    selection *policy* and the Model / Provider contracts
+    (`Faraz-OS-Canon/extensibility.md:351`, `:390-391`).
+  - ↔ Phase 2: defines agent / subagent *identity and executing architecture*; agent-facing
+    *surface rendering* is Phase 2 (the Q-013 split, DEC-031 G-6(b)).
+  - ↔ Phase 6: **role vs identity.** Phase 6 names where an agent-performed step sits in a
+    sequence (its *role*); Phase 7 defines what the agent *is*. Role-vs-identity litmus
+    (`Faraz-OS-Canon/workflows.md:129-133`; DEC-028 `decisions.md:1325-1332`), Phase-7
+    clause verbatim: *"Defines what the agent is (identity, surface, executing AI
+    architecture) → Phase 7."*
+- **Open / deferred items.** Q-017 (system-administrator visual workflow management) notes
+  a candidate Phase-7 home but is its own gated, multi-phase decision — carried, not
+  resolved here. Resolves no inherited Phase-1 question (R-027).
