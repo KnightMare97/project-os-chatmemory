@@ -149,6 +149,99 @@ each follows the six-field skeleton above and is bound by the three governing ru
 
 ---
 
+## Application Architecture
+- **Definition / concern.** How the system is structured as runnable applications: the
+  persona portals, the base-plus-mountable-modules platform that hosts them, and the
+  services structure — answering, at architecture altitude, *what application structures
+  run and how they compose.*
+- **What it architects (the *how*).** A base-plus-modules application shape (the runnable
+  projection of the Logical view): a configurable core hosts the persona portals (the
+  Phase-2 surfaces, run here — not authored here) and **mounts Feature-Modules** through
+  the Phase-4 contract; agent / subagent execution inside an application references the AI
+  Architecture (the spine). Described at altitude — no named framework, runtime, or
+  deployment topology.
+- **Referenced owned-truth (the *what*, by phase).**
+  - Phase 2 — the portals / Operating Surfaces and the Permission Matrix
+    (`Faraz-OS-Canon/experience-architecture.md:280` Portals, `:151` Operating Surfaces):
+    the application *runs* what Phase 2 defines; it authors no surface.
+  - Phase 4 — the Feature-Module contract (`Faraz-OS-Canon/extensibility.md:426`): the
+    module-mount the application composes.
+  - Phase 7 Logical Architecture (this file) — the base+modules shape this view projects
+    into runnable applications.
+  - Phase 7 AI Architecture (this file) — agent / subagent execution within applications.
+- **Key decisions / mechanisms at logical altitude.**
+  - The configurable core hosts persona portals and mounts Feature-Modules (the
+    module-mount platform — the base-product thesis made runnable).
+  - Services structure: the application composes capabilities and modules into the
+    surfaces personas use; it *runs* them, it does not define them.
+  - Single-tenant: one application instance for the platform operator (DEC-031 G-5). No
+    named technology.
+- **Cross-phase boundary notes (G-1 litmus).**
+  - ↔ Phase 2: hosts / runs the portals; authors no surface, view, or permission rule.
+  - ↔ Phase 4: mounts the Feature-Module contract; does not re-define it
+    (`Faraz-OS-Canon/extensibility.md:426`).
+  - ↔ Phase 7 Logical / AI (this file): projects the Logical shape into runnable
+    applications; defers agent execution to AI Architecture.
+- **Open / deferred items.** None new. Resolves no inherited Phase-1 question (R-027).
+
+---
+
+## Data Architecture
+- **Definition / concern.** How data persists and stays consistent: where each domain's
+  truth lives, the asset / media persistence model, per-client data scoping, ingest /
+  upload data paths, and retention enforcement — answering *how / where data is stored and
+  kept consistent*, referencing (never re-owning) what the data **is**.
+- **What it architects (the *how*).** A persistence-and-consistency model over the
+  Phase-1 domains: each domain's truth persists in its owning store (referenced, not
+  re-owned); the **Client Asset** (owned by the new **Media & Assets** domain, DEC-033)
+  gets an asset / media persistence model across its raw / uploaded / AI-generated /
+  produced states; cross-domain consistency keeps referencing-domains in sync without
+  re-owning them. **Per-client data scoping** logically separates one client's data from
+  another. **Ingest / upload data paths** carry assets in — including the **manual-upload
+  hook** for the dual-path posture (the automated path and its human / manual fallback
+  both persist data here). **Retention enforcement** acts on the asset's retention-status
+  per the Governance retention policy. Described at altitude — no named storage / database
+  / cloud technology.
+- **Referenced owned-truth (the *what*, by phase).**
+  - Phase 1 domains (`Faraz-OS-Canon/domains.md`) — each domain owns its entity truth;
+    Data persists / serves it, never re-owns.
+  - Phase 1 **Media & Assets** (DEC-033; `Faraz-OS-Canon/domains.md:3738`) — the Client
+    Asset entity + rights / provenance / retention-status; the asset persistence model
+    references this owner.
+  - Phase 1 Engagement Scope — `relevant_assets_refs` (`Faraz-OS-Canon/domains.md:517`) is
+    the reference Data resolves to the asset store.
+  - Phase 1 Governance — the retention *policy*; Data *enforces*, does not author it.
+  - Phase 5 (`Faraz-OS-Canon/memory.md`) — memory / knowledge structure; Data persists it,
+    does not define it.
+- **Key decisions / mechanisms at logical altitude.**
+  - **Per-client logical data scoping is distinct from single-tenant** (DEC-031 G-5):
+    single-tenant = one platform operator (no multi-tenant isolation layer); per-client
+    scoping = data organization *within* that one operator (one client's media not mixed
+    with another's).
+  - Asset / media persistence model for the Client Asset (Media & Assets, DEC-033) across
+    all media states.
+  - Ingest / upload data paths including the dual-path **manual-upload hook** (automated +
+    human/manual fallback both persist here; the dual-path *posture* is referenced, not
+    decided here).
+  - Retention enforcement on the asset retention-status per the Governance policy.
+  - Cross-domain data consistency without re-owning domain truth. No named storage / cloud
+    technology (Phase-10).
+- **Cross-phase boundary notes (G-1 litmus).**
+  - ↔ Phase 1 domains: persists / serves domain truth; re-owns no entity — including the
+    Client Asset (owned by Media & Assets, DEC-033).
+  - ↔ Phase 1 Governance: enforces the retention policy; authors none.
+  - ↔ Phase 5: persists memory / knowledge structure; defines none
+    (`Faraz-OS-Canon/memory.md`).
+  - ↔ Phase 2: per-client scoping serves the surfaces; authors no surface.
+  - ↔ Phase 8: the *assembled* data layer is Phase 8 (DEC-030); this view is the data
+    concern-view.
+- **Open / deferred items.** The dual-path manual-upload *posture* and the retention
+  *window* (the 29-day default, non-canon grounding) are referenced — their policy is the
+  dual-path principle / Phase-1 Governance / Phase-10, not decided here. Asset Intelligence
+  (Phase 5) deferred. Resolves no inherited Phase-1 question (R-027).
+
+---
+
 ## AI Architecture
 - **Definition / concern.** The **spine** of the blueprint (Faraz OS is AI-native): how
   the system *executes AI* — the model-invocation / routing execution, agent and subagent
