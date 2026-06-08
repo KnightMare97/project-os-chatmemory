@@ -1553,6 +1553,126 @@ Status:
 
 ---
 
+### DEC-031
+**Phase 7 System Architecture Blueprint — scope and question-gate closure.**
+
+Phase: 7. Resolves: Q-013 (AI / agent-surface architecture-home). Supersedes: none.
+Closes the Phase 7 question-gate G-1 → G-7. Un-defers the agent / subagent-identity
+flag into Phase 7 scope.
+
+**Context.** Phase 7 scoping via question-gate before any content is produced for
+`Faraz-OS-Canon/system-architecture-blueprint.md` (the target file, per the canonical
+phase map `Faraz-OS-Canon.md:131`). Mirrors the DEC-024 (`decisions.md:679`), DEC-025
+(`decisions.md:749`), DEC-027, and DEC-028 scope pattern. It authors **no** blueprint
+content; the first write is a separate gated content batch after this decision lands.
+The Phase 7 ↔ Phase 8 boundary is already drawn (DEC-030): Phase 7 = the cross-cutting
+concern-views; Phase 8 = the layered assembly; referenced, not re-opened.
+
+**G-1 — Altitude (the inversion guard).** `system-architecture-blueprint.md` sits at
+system-architecture altitude: it architects **how** the system runs, stores, secures,
+integrates, and executes AI as cross-cutting concerns, **referencing** — never
+re-deciding — **what** things are and who owns them (Phases 1/2/3/6). This is the
+**R-028 inversion** from earlier phases: through Phase 6 the risk was
+engine/mechanism talk bleeding *into* logical phases; in Phase 7 it flips — the risk is
+Phase 7 re-deciding domain / capability / workflow / experience truth instead of
+referencing it. **Governing litmus, recorded verbatim:** *"Architects how the system
+runs / stores / secures / integrates / executes X → Phase 7. Re-defines what X is, who
+owns it, its sequence, or its surface → Phases 1 / 2 / 3 / 6, referenced."* If a view
+cannot be written without re-defining owned truth, the litmus has fired — escalate, do
+not write around it.
+
+**G-2 — Closed boundary set.** A definition/altitude line plus six cross-phase
+boundaries:
+- Definition/altitude: governed by the G-1 inversion litmus.
+- ↔ Phase 1 domain truth & Governance — Phase 7 architects how domain truth is
+  persisted / secured / served; it never re-owns entity meaning or authorization
+  (who-may-approve = Phase 1 / DEC-026, `decisions.md:972`).
+- ↔ Phase 2 Experience — Phase 7 Security Architecture *enforces* the Permission
+  Matrix and Application Architecture *runs* the portals; it authors no surfaces,
+  views, or permission rules. Agent-facing **surface rendering** stays Phase 2; the
+  AI/agent **architecture** is Phase 7 (the Q-013 split, G-6(b)).
+- ↔ Phase 3 Capability — capabilities are the units the architecture executes; Phase 7
+  invokes / runs, never defines them (`capabilities.md:85-88`).
+- ↔ Phase 4 Extensibility — Phase 4 owns selection / routing policy and the
+  Feature-Module **contract**; Phase 7 architects the **engine** that executes routing
+  and the **mounting / running / composing** of modules (`extensibility.md:390-391`).
+- ↔ Phase 6 Workflow — Phase 6 owns workflow-runtime *semantics*; Phase 7 Runtime
+  Architecture owns the *engine*. **P6↔P7 litmus carried verbatim**
+  (`Faraz-OS-Canon/workflows.md:167-171`; DEC-028 `decisions.md:1348-1353`): *"Defines
+  what a workflow means while running — its logical lifecycle states, what
+  suspends/resumes at a gate, how a loop/exception behaves semantically → Phase 6
+  Workflow Runtime. Defines the engine that executes workflows — schedulers, queues,
+  process model, state persistence, deployment runtime → Phase 7 Runtime
+  Architecture."*
+- ↔ Phase 8 Puzzle Board — the DEC-030 boundary: concern-views (P7) vs layered
+  assembly (P8); Phase 7 authors no Phase-8 layer content.
+
+**G-3 — Sub-item classification.** All seven phase-map sub-items
+(`Faraz-OS-Canon.md:132-138`) are firm concern-views; zero deferred stubs — Logical,
+Application, Data, AI, Integration, Security, Runtime Architecture. **AI Architecture
+is the spine** (AI-native), but **never AI-only**: every view honors Core Principle #1
+(`Faraz-OS-Canon/principles.md:3`, "AI-first, but not AI-only") and the HITL mode
+vocabulary (`Faraz-OS-Canon/human-in-the-loop-philosophy.md:18-22`) — AI as default
+executor with human / hybrid paths first-class.
+
+**G-4 — Per-view skeleton.** Each concern-view carries a six-field skeleton (parallels
+DEC-024 / 025 / 027 / 028): 1 Definition / concern · 2 What it architects (the *how*) ·
+3 Referenced owned-truth (the *what*, by phase — an explicit reference list) · 4 Key
+decisions / mechanisms at logical altitude (no named technology) · 5 Cross-phase
+boundary notes (the G-1 litmus) · 6 Open / deferred items. The skeleton is firm at
+scope; field content is the gated write.
+
+**G-5 — Non-goals.** Phase 7 authors no: named technology / vendor / language / cloud
+(deferred to the Claude Code handoff — preserves the generalizable-pattern value);
+implementation code; re-decided Phase-1 domain truth or authorization, Phase-3
+capability definitions, or Phase-6 workflow sequences / semantics; Phase-8 layered-
+assembly content. **Single-tenant constraint (new, this decision):** Faraz OS is
+single-tenant — **no multi-tenant isolation layer is architected.** Recorded as a
+Phase-7 scoping constraint / non-goal, sourced to the strategic framing (Ali's
+direction), not pre-existing canon.
+
+**G-6 — Posture decisions.**
+
+(a) *Agent / subagent identity — un-deferred into Phase 7 scope.* The registered
+agent / subagent-identity flag (`Faraz-OS-Canon/extensibility.md:345-347, :457-459`) is
+**un-deferred**: **Phase 7 AI Architecture owns agent / subagent identity.** It is
+**defined in the content write**, not in this gate. On landing, the Phase-4 flag and
+the philosophy-#7 routing annotation (`Faraz-OS-Canon/extensibility.md:388-391`) get a
+reference-altitude refresh ("scoped to Phase 7 per DEC-031"); the Phase-4 selection /
+routing scope itself is unchanged.
+
+(b) *Q-013 resolved — architecture-home split.* Q-013 (`open-questions.md:297`,
+`:301-302`) is **resolved**: the **architecture / engine home of AI & agent-facing
+capability is Phase 7 AI Architecture**; **surface rendering** of agent-facing surfaces
+stays **Phase 2 Experience** (which already owns surfaces). Only a genuinely pure
+surface-rendering nuance, should one surface, is a Phase-2 item; no new Phase-2 work is
+implied by this resolution.
+
+(c) *Feature Modules — boundary + required sequencing.* The boundary is crisp:
+**Phase 4 owns the Feature-Module contract** (`Faraz-OS-Canon/extensibility.md:433-434`,
+currently a deferred stub); **Phase 7 architects the mounting / running / composing**;
+**Phase 8 is the assembled Plugins Layer.** Phase 7 **references, never defines** what a
+module is. **Required sequencing prerequisite (recorded):** Phase-4 "Feature Modules"
+must be **un-deferred as its own gated Phase-4 decision BEFORE the Phase 7 Application /
+Logical Architecture content write.** This prerequisite does **not** block this scope
+DEC or the other five view writes; it blocks only those two specific view writes until
+the Phase-4 contract exists.
+
+**G-7 — Carried / not-owned.**
+- R-027 set carried unresolved: Q-003 (Brand placement), Q-004 (Client Brain
+  partitioning), the insight→durable-knowledge threshold
+  (`Faraz-OS-Canon/domains.md:1918`).
+- Q-016 (Phase-2 view-membership nuance) carried; Q-017 (system-administrator visual
+  workflow management, multi-phase) carried — a candidate Phase-7 home is noted, but its
+  placement is its own gated decision, not resolved here.
+- Service Agreement draft boundary carried (Phase-1 owned).
+- R-028 discipline held as the active G-1 inversion guard.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
