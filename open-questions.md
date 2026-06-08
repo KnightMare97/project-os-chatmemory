@@ -351,28 +351,40 @@ At what altitude does Publishing scheduling/queueing sit —
 within the Publishing capability (Phase 3),
 or orchestration (Phase 6)?
 
-Current direction:
-- Atomic "push approved content to a channel" is clearly the
-  Publishing capability (Phase 3).
-- A scheduled-publish *when-parameter* is probably still within
-  the capability.
-- Cross-item **queueing** may be orchestration (Phase 6),
-  not a capability, and needs a deliberate decision.
-- Deferred to the Publishing entry-writing pass; resolve
-  deliberately — flag, do not default. Not resolve-now.
-- This question lives in this file as the system of record;
-  tracked in Linear as a `boundary` + `Phase 3` issue (KNI-21),
-  related to the write-`capabilities.md` issue (KNI-20).
-- Resolution is a recorded `DEC-0NN` during the write of
-  `capabilities.md`.
+Resolved (DEC-028) — split three ways:
+- Atomic "push approved content to a channel" = Phase 3
+  Publishing capability.
+- A scheduled-publish *when-parameter* = **firm Phase 3** (moved
+  from "probably in-capability"); it carries no cross-item ordering.
+- Cross-item **queueing / sequencing** = **Phase 6 orchestration**:
+  it names an ordering across items (a sequence), so the
+  selection-vs-sequence test (`decisions.md:823-830`) places it
+  in Phase 6.
 
-Why it matters:
-- It keeps the Phase 3 ↔ Phase 6 boundary clean: a capability
-  is a single, order-free, gate-free ability, while ordered
-  cross-item sequencing belongs to Phase 6 Workflow Design.
-- Defaulting Publishing toward "the queueing is part of the
-  ability" would silently import workflow orchestration into a
-  capability.
+Venue-change note (recorded in DEC-028):
+- Q-015's own text named the `capabilities.md` write as its
+  resolution venue; that pass deliberately chose flag-not-resolve —
+  the flag note, now refreshed at `Faraz-OS-Canon/capabilities.md:89-93`.
+  The venue moved to the
+  Phase 6 question-gate because the deciding instrument — the
+  ratified selection-vs-sequence test (DEC-025) — now exists.
+  A deliberate re-venue, applying the litmus as a recorded decision,
+  not a default.
+
+Knock-on (reference altitude, isolated commit):
+- The `capabilities.md` Publishing entry flag note (`:89-93`) is
+  refreshed to "resolved by DEC-028"; the capability itself stays
+  atomic, order-free, unchanged.
+
+Linear: KNI-21 → Done (after the resolving push is raw-verified on
+origin/main).
+
+Why it mattered:
+- It kept the Phase 3 ↔ Phase 6 boundary clean: a capability is a
+  single, order-free, gate-free ability, while ordered cross-item
+  sequencing belongs to Phase 6 Workflow Design. Defaulting
+  Publishing toward "the queueing is part of the ability" would
+  have silently imported workflow orchestration into a capability.
 
 ---
 

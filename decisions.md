@@ -1230,6 +1230,171 @@ Status:
 
 ---
 
+### DEC-028
+**Phase 6 Workflow Design — scope and question-gate closure.**
+
+Phase: 6. Resolves: Q-015 (only). Supersedes: none.
+Closes the Phase 6 question-gate G-1 → G-7.
+
+**Context.** Phase 6 scoping via question-gate before any content is
+produced for `Faraz-OS-Canon/workflows.md` (the target file, per the
+canonical phase map `Faraz-OS-Canon.md:115`). This decision records the
+structural frame, the four posture decisions, the sub-item classification,
+and the single boundary resolution. It mirrors the DEC-025 (Phase 4) and
+DEC-027 (Phase 5) scope pattern. It authors **no** `workflows.md` content;
+the first write is a separate gated content batch after this decision lands.
+
+**G-1 — Logical altitude.** `workflows.md` sits at logical orchestration
+altitude: it names ordered flows, gates, hand-offs, and the sequencing
+contract over Phase-3 capabilities. It defines no execution engine, runtime
+technology, data paths, or AI architecture (Phase 7). Parallels DEC-025 /
+DEC-027 altitude framing.
+
+**G-2 — Closed boundary set.** A definition/altitude line plus seven
+cross-phase boundaries (Phase 1 split into two facets, per the DEC-027
+precedent `Faraz-OS-Canon/memory.md:198-202`):
+- Definition/altitude: governed by the **selection-vs-sequence test**
+  (`decisions.md:823-830`) and the **approve-verb vs approval-gate test**
+  (`decisions.md:1015-1018`).
+- ↔ Phase 1 domain truth — flows traverse domain entities; referenced,
+  never re-owned.
+- ↔ Phase 1 Governance — Phase 1 authorizes *who may approve*; Phase 6
+  sequences *when the gate fires* (`decisions.md:1015-1018`; DEC-026).
+- ↔ Phase 2 Experience — surfaces render/experience workflows; Phase 6 owns
+  the *triggering events* Phase 2 references
+  (`Faraz-OS-Canon/experience-architecture.md:844-846`); authors no surfaces
+  (Phase 2 non-goal `:859`).
+- ↔ Phase 3 Capability — capabilities are order-free abilities; Phase 6
+  *invokes, does not define* them (`Faraz-OS-Canon/capabilities.md:85-88`;
+  sequence-test `decisions.md:702-703`).
+- ↔ Phase 4 Extensibility — selection/routing is order-free (Phase 4);
+  ordered run / orchestration is Phase 6
+  (`Faraz-OS-Canon/extensibility.md:378-385`).
+- ↔ Phase 5 Knowledge & Memory — Learn → Memory Update target and update
+  contract is Phase 5; the orchestration is Phase 6
+  (`Faraz-OS-Canon/memory.md:210-211`).
+- ↔ Phase 7 System Architecture — runtime technology, wiring, data paths,
+  AI Architecture; the engine-that-executes principle
+  (`Faraz-OS-Canon/extensibility.md:343-344, :390-391`).
+
+**G-3 — Sub-item classification.** All thirteen phase-map sub-items
+(`Faraz-OS-Canon.md:116-128`) are firm; zero deferred stubs. They take three
+structural forms in `workflows.md`:
+- (A) Firm workflow entries on the G-4 skeleton — seven: the six named flows
+  (`:116-121`) plus Learn → Memory Update (`:125`).
+- (B) Firm cross-cutting pattern definitions, referenced by field 5 — three:
+  Escalation Loop, Revision Loop, Failure/Exception Path (`:122-124`) —
+  defined once, not restated per flow.
+- (C) Firm framing / construct sections (not per-flow skeleton) — three:
+  Human Approval Gates (`:127`; G-6(a)), Agent Chains (`:126`; G-6(b)),
+  Workflow Runtime (`:128`; G-6(c)).
+
+**G-4 — Per-workflow six-field skeleton.** Each form-(A) entry carries:
+1 Definition · 2 Trigger / entry condition · 3 Ordered steps & hand-offs
+(capabilities invoked — Phase-3 reference, name-only) · 4 Gates &
+human-involvement mode (G-6(a) vocabulary) · 5 Exception / loop behavior
+(references the form-(B) patterns) · 6 Cross-phase boundary notes (R-028
+altitude). Parallels the DEC-024 / DEC-027 skeletons. Structural sub-call:
+the three loop/path items are defined once as form-(B) patterns and
+referenced via field 5, not duplicated per flow.
+
+**G-5 — Non-goals.** Phase 6 authors no: capabilities (Phase 3);
+surfaces / views / portals / the Permission Matrix (Phase 2);
+authorization / permission rules (Phase 1 Governance / DEC-026);
+memory / knowledge structure (Phase 5); provider / channel / model
+selection or routing (Phase 4); domain-entity ownership or meaning (Phase 1
+domain truth); runtime technology, data paths, execution engine, deployment
+runtime, or AI architecture (Phase 7). It resolves no inherited Phase-1
+question (R-027).
+
+**G-6 — Posture decisions.**
+
+(a) *HITL default model — bounded adoption.* Field 4 uses the
+human-in-the-loop philosophy #5 mode vocabulary
+(`Faraz-OS-Canon/human-in-the-loop-philosophy.md:18-22`) as the referenced
+owning definition, carrying "hybrid by design" verbatim, not redefined. The
+client-facing-publishing default-on checkpoint (#7, `:31-32`) carries the
+verbatim override phrase "configurable based on workflow policy"; the policy
+mechanism is left to Phase 4 / Phase 7. Philosophy #6 (`:24-29`) is a cited
+guiding principle a field-4 placement may name as motivation, never an
+enumerated Phase-6 rule table. Boundary guard: gate placement and mode =
+Phase 6; who may approve = Phase 1 / DEC-026.
+
+(b) *Agent Chains — bounded orchestration construct.* Owns the orchestration
+contract only (ordered agent-performed steps, hand-offs, gates, per-step
+execution mode). **Role-vs-identity litmus, recorded verbatim:** *"Names
+where an agent-performed step sits in a sequence and what it hands off →
+Phase 6. Defines what the agent is (identity, surface, executing AI
+architecture) → Phase 7. Defines how the agent is chosen among
+interchangeable agents by policy → Phase 4."* Role placeholders are named at
+capability altitude only (e.g. "content-drafting agent role"), never a
+concrete agent / product / architecture; if a step cannot be written without
+identity vocabulary, the litmus has fired — escalate, do not write around it.
+Per-step execution mode references the Phase-3 capability execution-mode
+attribute and the G-6(a) field-4 vocabulary (no redefinition). The registered
+Phase-7 agent / subagent-identity flag
+(`Faraz-OS-Canon/extensibility.md:345-347, :457-459`) stays registered and
+untouched — cited as deferred, not partially resolved. Backed by ai-philosophy
+#8 (`Faraz-OS-Canon/ai-philosophy.md:24-25`) and DEC-025
+(`Faraz-OS-Canon/extensibility.md:378-385`).
+
+(c) *Workflow Runtime — bounded framing section.* A framing section (modeled
+on the Runtime vs Config-Time Extensions precedent,
+`Faraz-OS-Canon/extensibility.md:396-400`), not a skeleton entry. It opens
+with the three-way "runtime" disambiguation, citing all three canon
+locations: the Phase-4 Runtime-vs-Config-Time binding attribute
+(`Faraz-OS-Canon/extensibility.md:396-415`), the Phase-6 logical
+workflow-runtime semantics, and the Phase-7 Runtime Architecture engine
+(`Faraz-OS-Canon.md:138`). **P6↔P7 litmus, recorded verbatim:** *"Defines
+what a workflow means while running — its logical lifecycle states, what
+suspends/resumes at a gate, how a loop/exception behaves semantically →
+Phase 6 Workflow Runtime. Defines the engine that executes workflows —
+schedulers, queues, process model, state persistence, deployment runtime →
+Phase 7 Runtime Architecture."* Explicit firewall list: no engine,
+scheduler, queue, process model, state persistence, or deployment-runtime
+vocabulary. Vocabulary test: every lifecycle state is defined in semantic
+terms ("awaiting human decision at a gate"), never mechanism terms; if a
+state cannot be written without engine vocabulary, the litmus has fired —
+escalate, do not write around it. Field-5 entries reference this section,
+they do not restate it. Standing policing note: any future edit re-applies
+the litmus in review. This is the highest-R-028 surface in Phase 6.
+
+(d) *Q-015 — resolved (see below).*
+
+**Q-015 resolution (the only question this decision resolves).** Resolved in
+three parts, each stated as a decision:
+1. Atomic push ("push approved content to a channel") = Phase 3 Publishing
+   capability (confirms the existing lean, `Faraz-OS-Canon/capabilities.md:90`).
+2. Scheduled-publish *when-parameter* = firm Phase 3 — moved from "probably
+   in-capability" to firm; it carries no cross-item ordering. Called out as a
+   decision, not a restatement.
+3. Cross-item queueing / sequencing = Phase 6 orchestration — it names an
+   ordering across items (a sequence), so the selection-vs-sequence test
+   (`decisions.md:823-830`) places it in Phase 6.
+Venue-change note (recorded): Q-015's own text named the `capabilities.md`
+write as its resolution venue; that pass deliberately chose flag-not-resolve —
+the flag note, now refreshed at `Faraz-OS-Canon/capabilities.md:89-93`. The venue moves to this gate
+because the deciding instrument — the ratified selection-vs-sequence test
+(DEC-025) — now exists. This is a deliberate re-venue, applying the litmus as
+a recorded decision, not a default — the opposite of the "silently fold
+queueing into the capability" failure mode the flag warned against.
+
+**G-7 — Carried / not-owned.**
+- R-027 set carried unresolved: Q-003 (Brand placement), Q-004 (Client Brain
+  partitioning), the insight→durable-knowledge threshold
+  (`Faraz-OS-Canon/domains.md:1918`), and the inherited Intelligence-Draft-v1
+  questions.
+- Q-012 carried unchanged — Phase-6 completion is its downstream unblock
+  trigger ("Deferred until Phase 6 is complete," `open-questions.md:268`).
+  This decision does not resolve it.
+- R-028 reference-altitude discipline held, with the two new verbatim litmus
+  tests (b, c) as the active guards on the highest-risk surfaces.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
