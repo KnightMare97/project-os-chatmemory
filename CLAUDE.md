@@ -302,7 +302,12 @@ GitHub wins on any conflict; Linear never silently diverges.
 
 - Same-commit tracker backfill is standing close-out discipline:
   trackers are reconciled in the same commit as the change they
-  record, not deferred.
+  record, not deferred. `Current-State.md` is part of this same-commit
+  close-out set (alongside the snapshot and tracker files): EVERY
+  close-out brings `Current-State.md` current through every decision /
+  finding it records, in the same close-out commit. A snapshot landed
+  without a corresponding `Current-State.md` reconciliation is an
+  incomplete close-out.
 
 ---
 
