@@ -245,6 +245,19 @@ human go-ahead:
   canon-content batches read source before writing; structural
   and procedure changes are proposed for review before landing.
 
+### Reviewer CLEAR as the explicit go
+To reduce approval load, a reviewer CLEAR (the byte-read review
+approval) counts as the explicit go for the lower-risk classes:
+- record-only close-outs (snapshot + `Current-State.md` +
+  same-commit tracker backfill);
+- record commits and tracker backfills;
+- reference-altitude knock-on refreshes (e.g. citation-pointer
+  updates after a landed decision).
+Ali's explicit go remains required only for: new canon content
+batches (incl. `domains.md` Phase-1 edits); procedure-file changes
+(incl. this file); structural Linear changes; and posture /
+architecture calls.
+
 ### Evidence discipline
 Report only raw command output. Nothing is "done" until it is
 pushed and verified on `origin/main` with raw output shown.
