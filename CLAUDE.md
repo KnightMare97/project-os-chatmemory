@@ -132,7 +132,9 @@ Do not:
 - merge distinct concepts just because they sound similar
 
 Examples of draft areas that must remain explicit unless separately resolved:
-- final Client Brain ownership
+- final Client Brain partitioning — per Client / per Brand / both
+  (Q-004, entangled with Q-003 Brand placement); Client Brain
+  *ownership* is resolved to Knowledge (DEC-027) and is no longer draft
 - final Brand placement
 - final Service Agreement ownership
 - final Aggregate boundaries
@@ -199,12 +201,64 @@ Discipline:
   `Current-State.md` diff for human review
   before committing, consistent with the
   draft-plus-review model (DEC-011).
+  This propose-then-review gate applies to GATED
+  close-outs (any close-out containing new decisions
+  or canon content); record-only close-outs land
+  per the Execution Mode section.
 - Do not push or commit without explicit approval.
 - Do not invent architecture in a snapshot.
   A snapshot records what happened;
   it does not finalize unresolved boundaries.
 - Preserve Assumption, Open Question, and Risk
   markers exactly as they stand.
+
+---
+
+## Execution Mode and Approval Gates
+
+This section persists the operating contract for AI-assisted
+execution on Faraz OS so it survives session swaps.
+It records how work is run; it introduces no architecture.
+
+### Default mode
+Direct execution. Claude acts as design partner, reviewer,
+and direct executor. GitHub is the source of truth;
+nothing is considered done until it is pushed AND verified
+on `origin/main`.
+
+### The four approval gates (GATED — require explicit go)
+These four categories must not land without an explicit
+human go-ahead:
+1. New canon content — one content read per batch / DEC.
+2. `domains.md` edits — landed as isolated, called-out commits,
+   each with its own DEC (Phase 1 domain truth).
+3. Structural Linear changes.
+4. Procedure-file changes (e.g. this file,
+   `workflows/sync-protocol.md`).
+
+### AUTO vs GATED split
+- AUTO (post-hoc, record-only): record commits, including
+  same-commit tracker backfill; commit → push → verify as one
+  motion once content is approved; Linear mirroring only after
+  verified pushes; non-blocking questions are batched.
+- GATED (the four gates above): each requires explicit go;
+  canon-content batches read source before writing; structural
+  and procedure changes are proposed for review before landing.
+
+### Evidence discipline
+Report only raw command output. Nothing is "done" until it is
+pushed and verified on `origin/main` with raw output shown.
+GitHub wins on any conflict; Linear never silently diverges.
+
+### Verification discipline
+- An independent verifier pass runs before commits.
+- FIND-032 citation rule: after any same-session canon landing,
+  re-derive all draft citations from post-landing ground truth
+  and run a deterministic stale-token sweep BEFORE the verifier
+  pass (LLM verifiers false-pass shifted line ranges).
+- Same-commit tracker backfill is standing close-out discipline:
+  trackers are reconciled in the same commit as the change they
+  record, not deferred.
 
 ---
 
