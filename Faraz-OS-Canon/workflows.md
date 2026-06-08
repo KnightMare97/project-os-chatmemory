@@ -235,3 +235,146 @@ describes *semantic* behavior and defers runtime mechanism to *Workflow Runtime*
   **no** retry mechanism, scheduler, or queue — retry/backoff and execution
   recovery are Phase 7 Runtime Architecture, referenced at altitude per the P6↔P7
   litmus.
+
+---
+
+## Workflows
+Each entry uses the six-field skeleton above. Capabilities are referenced **by
+name only** (Phase 3); gates and modes follow *Human Approval Gates*;
+exception/loop behavior references the patterns above. No capability, surface,
+authorization rule, agent identity, or visual workflow-management capability
+(Q-017, registered open) is authored here.
+
+### Lead → Client
+- **Definition.** Converts a qualified inbound lead into an established client
+  relationship.
+- **Trigger / entry condition.** A new lead enters the pipeline (lead-intake
+  event).
+- **Ordered steps & hand-offs.** Lead intake → **Lead Scoring**
+  (`capabilities.md:215`) produces a score/qualification → hand-off to a human
+  conversion decision → on conversion, the client relationship is established and
+  hands off to *Client → Strategy*.
+- **Gates & human-involvement mode.** A conversion **approval** gate; typically
+  **human-in-the-loop** (a person owns the convert/decline decision). Who may
+  approve = Phase 1 / DEC-026.
+- **Exception / loop behavior.** Decline or "needs more info" routes via the
+  **Revision Loop** (back to qualification) or ends without completing; a
+  scoring/provider failure follows the **Failure/Exception Path**.
+- **Cross-phase boundary notes.** Invokes Lead Scoring (P3, name-only); lead and
+  client entity meaning is Phase 1; presenting surfaces are Phase 2; who may
+  convert is DEC-026. Authors none of these.
+
+### Client → Strategy
+- **Definition.** Turns an established client's context into an approved strategy.
+- **Trigger / entry condition.** A client is established (hand-off from *Lead →
+  Client*) or a new strategy cycle begins.
+- **Ordered steps & hand-offs.** **Research** (`capabilities.md:140`) gathers
+  inputs → **Strategy** (`capabilities.md:156`) synthesizes a strategy artifact →
+  hand-off to a client approval gate → approved strategy hands off to *Strategy →
+  Production*.
+- **Gates & human-involvement mode.** A client-facing strategy **approval** gate;
+  **hybrid by design** (AI drafts, human and client review).
+- **Exception / loop behavior.** Client correction/rejection routes via the
+  **Revision Loop** to Strategy (or Research); scope beyond the team's authority
+  follows the **Escalation Loop**; capability failure follows the
+  **Failure/Exception Path**.
+- **Cross-phase boundary notes.** Invokes Research and Strategy (P3, name-only);
+  strategy-artifact ownership/meaning is Phase 1; client-approval surfaces are
+  Phase 2; authorization is DEC-026.
+
+### Strategy → Production
+- **Definition.** Produces the content assets an approved strategy calls for.
+- **Trigger / entry condition.** A strategy is approved (hand-off from *Client →
+  Strategy*).
+- **Ordered steps & hand-offs.** **Content Creation** (`capabilities.md:121`) and,
+  where the asset is video, **Video Creation** (`capabilities.md:172`) produce
+  draft assets → hand-off to *Production → Approval*. Where a step is
+  agent-performed it is named at **role altitude** (e.g. a content-drafting agent
+  role); naming a concrete agent identity fires the role-vs-identity litmus →
+  escalate.
+- **Gates & human-involvement mode.** Production may run **human-on-the-loop** (AI
+  produces, human monitors) or **hybrid by design**; humans may also be the
+  primary producer (`human-in-the-loop-philosophy.md:34-36`). Per-step execution
+  mode references the capability execution-mode attribute (`capabilities.md:79-80`).
+- **Exception / loop behavior.** An asset later corrected/rejected at approval
+  returns here via the **Revision Loop**; a production/provider failure follows the
+  **Failure/Exception Path**.
+- **Cross-phase boundary notes.** Invokes Content Creation / Video Creation (P3,
+  name-only); tooling/providers are Phase 4; agent identity is the deferred
+  Phase-7 flag; asset domain meaning is Phase 1.
+
+### Production → Approval
+- **Definition.** Moves produced assets through internal review and client
+  approval.
+- **Trigger / entry condition.** Assets are produced (hand-off from *Strategy →
+  Production*).
+- **Ordered steps & hand-offs.** Produced asset → internal **review** gate →
+  client **approval** gate → approved asset hands off to *Approval → Publishing*.
+- **Gates & human-involvement mode.** Two gates — an internal **review** and a
+  client-facing **approval**; **human-in-the-loop** by default. Review intensity
+  is guided by the intensify-when principle (`human-in-the-loop-philosophy.md:24-29`),
+  named per gate, not enumerated as a rule.
+- **Exception / loop behavior.** Correction/rejection at either gate routes via the
+  **Revision Loop** to *Strategy → Production*; an authority-exceeding decision
+  follows the **Escalation Loop**.
+- **Cross-phase boundary notes.** Authors no capability (this flow is gates +
+  hand-offs); who may review/approve = Phase 1 / DEC-026; the review/approval
+  surfaces (e.g. Review Queue, Client Approval Queue) are Phase 2.
+
+### Approval → Publishing
+- **Definition.** Dispatches an approved asset to its channel.
+- **Trigger / entry condition.** An asset is approved (hand-off from *Production →
+  Approval*).
+- **Ordered steps & hand-offs.** Approved asset → **Publishing**
+  (`capabilities.md:73`, the atomic push) → dispatched item; a publish-completing
+  event hands off to *Publishing → Reporting*. **Cross-item queueing/sequencing is
+  orchestration here, not the capability** (Q-015 resolved → Phase 6, DEC-028).
+- **Gates & human-involvement mode.** Client-facing publishing carries a human
+  checkpoint **by default, but this checkpoint must remain configurable based on
+  workflow policy** (`human-in-the-loop-philosophy.md:31-32`); Phase 6 places the
+  default gate, the policy mechanism is Phase 4 / Phase 7. Mode:
+  **human-in-the-loop** for client-facing publishing by default.
+- **Exception / loop behavior.** A dispatch failure follows the
+  **Failure/Exception Path** (retry/recovery is Phase 7); a late rejection routes
+  via the **Revision Loop**.
+- **Cross-phase boundary notes.** Invokes Publishing (P3, name-only); the channel
+  integration is Phase 4; cross-item queueing altitude is Phase 6 (Q-015 /
+  DEC-028) — this flow owns the sequencing, not a capability.
+
+### Publishing → Reporting
+- **Definition.** Turns dispatched content and its outcomes into reporting.
+- **Trigger / entry condition.** A **publish step completing** — a workflow event
+  (Phase 6) that Phase 2 references for notification UX
+  (`experience-architecture.md:844-846`).
+- **Ordered steps & hand-offs.** Dispatched item → **Analytics**
+  (`capabilities.md:189`) computes metrics → **Reporting** (`capabilities.md:95`)
+  composes the report → report delivered; outcomes hand off to *Learn → Memory
+  Update*.
+- **Gates & human-involvement mode.** Often **human-on-the-loop** (AI
+  computes/composes, human reviews before client delivery); a client-facing report
+  delivery may carry an approval gate per policy.
+- **Exception / loop behavior.** A metrics/data failure follows the
+  **Failure/Exception Path**; a report correction routes via the **Revision Loop**
+  to Reporting.
+- **Cross-phase boundary notes.** Invokes Analytics and Reporting (P3, name-only);
+  the triggering events are Phase 6 (referenced by Phase 2 for notifications);
+  KPI/metric meaning is Phase 1 / Phase 3.
+
+### Learn → Memory Update
+- **Definition.** Captures outcomes, corrections, and decisions from across the
+  workflows into durable memory and knowledge.
+- **Trigger / entry condition.** A learning event — any approval, rejection, edit,
+  escalation, override, or outcome (`human-in-the-loop-philosophy.md:41-42`);
+  realizes Core Principle #9 (continuous learning loops, `principles.md:27-28`).
+- **Ordered steps & hand-offs.** Outcome/feedback captured → routed into the
+  Phase-5 memory/knowledge **update contract** (the Learnings structure and related
+  memory; `memory.md:210-211` — Phase 6 owns this orchestration, Phase 5 owns the
+  target and the update contract).
+- **Gates & human-involvement mode.** Typically **human-on-the-loop**; a human may
+  confirm before an insight becomes durable, where policy requires.
+- **Exception / loop behavior.** A capture/update failure follows the
+  **Failure/Exception Path**.
+- **Cross-phase boundary notes.** Updates Phase-5 memory (target + contract are
+  Phase 5, `memory.md`); the **insight→durable-knowledge threshold** is inherited
+  Phase-1 Intelligence truth, referenced at altitude and **not resolved here**
+  (R-027, `domains.md:1918`). Authors no memory structure and no threshold.
