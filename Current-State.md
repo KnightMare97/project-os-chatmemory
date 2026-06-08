@@ -217,6 +217,24 @@ partition-agnostic, Asset Intelligence a deferred stub. Every Owner field is a
 Phase-1 reference (Knowledge owns all six); authorization defers to DEC-026, physical
 retrieval/storage to Phase 7.
 
+Phase 6 Workflow Design is now scoped (Snapshot-036 / DEC-028); `workflows.md` is
+**not yet written** (the first write is the next step, gated). The Phase 6
+question-gate (G-1 → G-7) is closed: the structural frame (G-1 logical orchestration
+altitude; G-2 closed seven-boundary set, Phase 1 split into two facets; G-3 thirteen
+firm sub-items in three structural forms — seven workflow entries on the skeleton,
+three referenced loop/path patterns, three framing/construct sections — **zero
+deferred stubs**; G-4 six-field skeleton; G-5 non-goals), the four G-6 posture
+decisions (HITL bounded adoption; Agent Chains bounded with the role-vs-identity
+litmus; Workflow Runtime a bounded framing section with the P6↔P7 litmus; Q-015
+resolved), and the carried set (R-027; Q-012 — whose unblock trigger is Phase-6
+completion; R-028, with the two new litmuses as active guards). **Q-015 is resolved**
+(DEC-028): atomic push and the scheduled-publish when-parameter are firm Phase 3;
+cross-item queueing/sequencing is Phase 6 orchestration. DEC-028 authored no
+`workflows.md` content; it landed as the decision (commit `e9c9296`, with the Q-015
+closure as same-commit tracker backfill) plus the isolated `capabilities.md`
+flag-note refresh (commit `623960e`, reference altitude). The session also persisted
+the execution-mode operating contract in `CLAUDE.md` (commit `7f1cda3`).
+
 Phase 11 Claude Code Operating System
 currently owns the operating method
 for how Claude collaboration and later Claude Code execution
@@ -386,6 +404,16 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
+**Phase 6 Workflow Design — scoped (Snapshot-036 / DEC-028); first write next,
+gated.** The question-gate is closed (G-1 → G-7; the four G-6 posture calls; Q-015
+resolved); `workflows.md` is not yet written. The recommended next thread is the
+gated `workflows.md` first write: the seven firm flow entries on the G-4 six-field
+skeleton, the three referenced loop/path patterns, and the three framing/construct
+sections (Human Approval Gates, Agent Chains, Workflow Runtime), each honoring its
+recorded G-6 conditions and the two verbatim litmuses (role-vs-identity; P6↔P7). It
+would also create its own Linear work issue. Q-015 is resolved (DEC-028) and
+KNI-21 → Done.
+
 **Phase 5 Knowledge & Memory — first write complete (Snapshot-035).** `memory.md` is
 written (landing (ii); commit `89f5034`). The Phase 5 question-gate was closed by DEC-027: the G-1–G-5 structural frame (logical altitude;
 closed seven-boundary set; six firm sub-items + Asset Intelligence deferred stub;
@@ -405,7 +433,8 @@ reference (Knowledge owns all six) — with Asset Intelligence a deferred-flagge
 The remaining Phase 5 items are carry-forwards, none blocking: Asset Intelligence
 un-defer (its own gated decision); Q-004 partitioning (resolves with Q-003); the
 Client Brain Aggregate-vs-Memory-Object and approval-before-durable canon flags.
-Candidate fresh threads: Phase 6 Workflow Design; the four Phase-4 deferred sub-items.
+Candidate fresh threads: the four Phase-4 deferred sub-items; Phase 5 Asset
+Intelligence un-defer. (Phase 6 Workflow Design is now scoped — see the lead above.)
 
 **Phase 4 Extensibility — first write complete.** All eight in-scope
 `extensibility.md` entries are written (Snapshot-030, Batches A–C); KNI-23's
@@ -422,11 +451,12 @@ the inherited Phase 1 questions forward, unresolved.
 The standing items below remain:
 
 1. Phase 3 `Faraz-OS-Canon/capabilities.md` is written (all eight capabilities,
-   Snapshot-025). The remaining Phase 3 open item is Q-015 (Publishing
-   scheduling/queueing altitude, P3 ↔ P6) — a deliberate decision when it
-   surfaces (KNI-21). The inherited Phase 1 questions (domains.md:1914-1915,
-   :1916, :1917-1918) stay referenced, not resolved, pending their owning
-   Phase 1 work.
+   Snapshot-025). Q-015 (Publishing scheduling/queueing altitude, P3 ↔ P6) is
+   now **resolved** (DEC-028 / Snapshot-036; KNI-21 → Done): atomic push and the
+   scheduled-publish when-parameter are firm Phase 3, cross-item queueing is
+   Phase 6 orchestration. Phase 3 has no remaining open item of its own. The
+   inherited Phase 1 questions (domains.md:1914-1915, :1916, :1917-1918) stay
+   referenced, not resolved, pending their owning Phase 1 work.
 2. **Phase 2 Experience Architecture is complete — 7-of-7 populated.** The
    Permission Matrix is populated (Snapshot-033 / KNI-14): a read-only projection
    of the DEC-026 authorization rules through the surface↔resource mapping
@@ -464,6 +494,8 @@ per the trackers' "active, still-relevant" rule;
 they remain in their originating snapshots as historical record.
 
 Open question Q-011 is resolved (see DEC-019 / Snapshot-013).
+Open question Q-015 (Publishing scheduling/queueing, P3 ↔ P6)
+is resolved (see DEC-028 / Snapshot-036).
 Open question Q-012 (Phase 7 ↔ Phase 8) is deferred
 until Phase 6 is complete.
 Open question Q-013 (AI / agent-surface home) is deferred

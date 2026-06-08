@@ -548,3 +548,40 @@ Impact:
 
 Source:
 - Snapshot-035 close-out; this session.
+
+### FIND-033
+Citation verification must validate **anchor content**, not only token freshness.
+During the DEC-028 landing (Phase 6 scope), a draft citation `memory.md:196-199`
+was **mis-anchored**: line 196 is unrelated trailing text and the range stopped
+before the second Phase-1 facet the citation claimed (the two-facet boundary-set
+precedent). The content actually sat at `:198-202`. Two distinct failure modes
+surfaced:
+- A **stale-token sweep does not catch a mis-anchor** — no token shifted; the
+  citation was simply wrong at authoring time. Only re-deriving from ground truth
+  and byte-reading the cited range's *content* caught it.
+- The **independent LLM verifier false-passed** the mis-anchored citation — the
+  same unreliability FIND-032 named for shifted ranges also applies to
+  authored-wrong ranges.
+- Separately, the deterministic `89-94` sweep surfaced a **third** stale
+  occurrence beyond the human reviewer's two-item enumeration, confirming the
+  sweep must be run rather than trusting any manual list.
+
+This is a sibling to FIND-032 (same-session shift) and FIND-031
+(grep-completeness for reconciliation sweeps); the distinct lesson is that
+**citation-checking must verify content at the anchor, not just token freshness.**
+
+Meaning / corrective (adopted as a standing operating rule; extends FIND-032):
+- The pre-commit verifier must **byte-read each cited range and confirm it
+  contains the claimed content** (anchor-content check), not only sweep for stale
+  tokens.
+- Always run the **deterministic sweep** rather than trusting a manual
+  enumeration of fixes — both, not either.
+
+Impact:
+- No architecture changed. The DEC-028 trio's citations were re-derived from
+  post-landing ground truth, the mis-anchor corrected to `:198-202`, all three
+  `89-94` occurrences corrected to `:89-93`, and all anchors content-verified
+  before landing.
+
+Source:
+- Snapshot-036 close-out; this session.
