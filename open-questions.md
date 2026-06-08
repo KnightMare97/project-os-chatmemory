@@ -297,18 +297,21 @@ Why it mattered:
 ### Q-013
 What is the exact home of AI / agent-facing surfaces?
 
-Current direction:
-- Likely Phase 7 System Architecture Blueprint (AI Architecture).
-- Possibly relates to Phase 8 AI Layer.
-- Deferred to a later Phase 7 / 8 scoping pass.
-- Not blocking Phase 2.
-- Repo-only; not tracked as an active Linear issue
-  (see Snapshot-013).
+Resolved (DEC-031) — the architecture-home split:
+- The **architecture / engine home** of AI & agent-facing capability is
+  **Phase 7 AI Architecture**, which also owns **agent / subagent identity**
+  (un-deferred into Phase 7 scope by DEC-031).
+- **Surface rendering** of agent-facing surfaces stays **Phase 2 Experience**
+  (which already owns surfaces). Only a genuinely pure surface-rendering nuance,
+  should one surface, is a Phase-2 item; no new Phase-2 work is implied.
+- The agent / subagent architecture is defined in the Phase 7 content write
+  (AI Architecture view), not in the scope gate.
+- Repo-only; not tracked as an active Linear issue (see Snapshot-013).
 
-Why it matters:
-- This affects where agent-driven and AI-driven surfaces
-  belong in canon.
-- It prevents Phase 2 from silently absorbing
+Why it mattered:
+- This affected where agent-driven and AI-driven surfaces
+  belonged in canon.
+- It prevented Phase 2 from silently absorbing
   AI / agent-facing surfaces.
 
 ---

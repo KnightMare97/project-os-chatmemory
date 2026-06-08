@@ -344,7 +344,8 @@ acceptance test, restated at the end of this entry.*
     models is Phase 7.
   - Agent / subagent identity (registered open flag): agents/subagents that wrap
     models are likely Phase 7 AI Architecture (`experience-architecture.md:821`);
-    not resolved here.
+    not resolved here. **Scoped to Phase 7 per DEC-031** (un-deferred into Phase 7
+    AI Architecture; defined in the Phase 7 content write).
   - No inherited Phase 1 question is resolved here.
 
 ### AI Model Routing
@@ -390,7 +391,9 @@ acceptance test, restated at the end of this entry.*
   - ↔ Phase 7: the routing policy is Phase 4; the engine that executes routing is
     Phase 7 AI Architecture.
   - Agent / subagent routing is in scope as *selection*; agent identity itself is
-    likely Phase 7 (registered open flag), not resolved here.
+    likely Phase 7 (registered open flag), not resolved here. **Scoped to Phase 7
+    per DEC-031** (routing/selection stays Phase 4; identity is Phase 7 AI
+    Architecture).
   - No inherited Phase 1 question is resolved here.
 
 ### Runtime vs Config-Time Extensions
@@ -457,7 +460,8 @@ Carried from DEC-025 / Snapshot-027 (some since resolved this normalization pass
 noted inline):
 - **Agent / subagent identity** — likely Phase 7 AI Architecture
   (`experience-architecture.md:809` Workforce owns *human* identity; `:821` AI
-  Architecture is the likely home of agent surfaces). Open cross-phase question.
+  Architecture is the likely home of agent surfaces). **Resolved: scoped to Phase 7
+  per DEC-031** (un-deferred into Phase 7 AI Architecture; defined in the content write).
 - **Safety-controls vocabulary** — resolved (mapping): "safety controls"
   (`extensibility-philosophy.md:30`, Philosophy #8) is the same governance
   touchpoint category as Governance's "safety constraints / safety rules / Safety
@@ -468,7 +472,7 @@ noted inline):
   already recorded at reference altitude — `extensibility-philosophy.md:25`
   ("routing and orchestration are part of extensibility") is read, within the phase
   map, as routing/selection only, with orchestration owned by Phase 6 (DEC-025 /
-  DEC-028; see `extensibility.md:386-388`). Philosophy #7's wording is intentionally
+  DEC-028; see `extensibility.md:387-389`). Philosophy #7's wording is intentionally
   preserved (the principle stays a principle; the phase-map narrowing lives in the
   decision / consuming layer), so the immutable DEC quotes of #7 stay verbatim.
 - **Inherited Phase 1 questions** — referenced, not resolved:

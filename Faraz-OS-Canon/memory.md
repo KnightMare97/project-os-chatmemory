@@ -206,7 +206,7 @@ deferred Asset Intelligence sub-item; and implementation technology.
   (`capabilities.md:61, 104, 148, 164`); `memory.md` owns what persists, not the
   producing ability.
 - **↔ Phase 4.** Extensibility is a consumer of memory contracts; it deferred
-  storage / retention / memory-structure here (`extensibility.md:446`).
+  storage / retention / memory-structure here (`extensibility.md:449`).
 - **↔ Phase 6.** Learn → Memory Update is the sequence (`Faraz-OS-Canon.md:125`);
   `memory.md` owns the target and the update contract, not the orchestration.
 - **↔ Phase 7.** Physical storage, indexing, data architecture, and AI-retrieval

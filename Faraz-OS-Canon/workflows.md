@@ -123,7 +123,7 @@ An **agent chain** is an ordered sequence of **agent-performed steps** with
 hand-offs, sequenced inside a governed workflow. Faraz OS supports agents,
 subagents, and orchestrated execution patterns collaborating **inside governed
 workflows** (`ai-philosophy.md:24-25`); the *orchestration* of those chains is
-Phase 6 (DEC-025, `extensibility.md:378-385`). This section owns the orchestration
+Phase 6 (DEC-025, `extensibility.md:379-386`). This section owns the orchestration
 contract **only**.
 
 **Role-vs-identity litmus (recorded verbatim, DEC-028 G-6(b)):**
@@ -143,20 +143,20 @@ contract **only**.
   Principle #1, "AI-first, but not AI-only," `principles.md:3`).
 - **Identity stays deferred.** Agent / subagent **identity** — what an agent *is*,
   its surface, the AI architecture that executes it — remains the registered
-  Phase-7 open flag (`extensibility.md:345-347`, `:457-459`), cited here as
+  Phase-7 open flag (`extensibility.md:345-347`, `:461-463`), cited here as
   deferred, not partially resolved.
 
 ---
 
 ## Workflow Runtime
 This is a **framing section** (modeled on the Runtime vs Config-Time Extensions
-framing precedent, `extensibility.md:396-415`); it is not a per-workflow skeleton
+framing precedent, `extensibility.md:399-418`); it is not a per-workflow skeleton
 entry. It defines the **logical runtime semantics** the ordered flows presuppose.
 
 **Three senses of "runtime" — disambiguated:**
 1. **Phase 4 — Runtime vs Config-Time:** a *binding attribute* — *when* an
    extension binding may change (runtime versus configuration/deployment-time)
-   (`extensibility.md:396-415`). Not this section.
+   (`extensibility.md:399-418`). Not this section.
 2. **Phase 6 — Workflow Runtime (this section):** what a workflow *means while
    running* — its logical lifecycle, gate suspend/resume semantics, and how
    loops/exceptions behave semantically.
@@ -415,7 +415,7 @@ Carried, referenced, not resolved here:
   `open-questions.md` (Q-017).
 - **Agent / subagent identity** — what an agent *is*, its surface, and the AI
   architecture that executes it: the registered Phase-7 flag
-  (`extensibility.md:345-347`, `:457-459`). Agent Chains name roles, never
+  (`extensibility.md:345-347`, `:461-463`). Agent Chains name roles, never
   identities (role-vs-identity litmus).
 - **Q-012 (Phase 7 ↔ Phase 8 boundary)** — its deferral condition ("until Phase 6
   is complete") is now met: Phase 6 is complete at DEC-028's scope (DEC-029), so
