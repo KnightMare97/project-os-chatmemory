@@ -1821,6 +1821,71 @@ Status:
 
 ---
 
+### DEC-034
+**Q-002 resolved — Service Agreement is a first-class Entity owned by CRM (Aggregate-pending-Q-006).**
+
+Phase: 1 (domain truth). Resolves: Q-002. Supersedes: none. The **second of the ~10
+Phase-1 entity reopenings** the non-canon gap analysis surfaced
+(`grounding/Gap-Analysis-and-Roadmap.md`); scoped to **Service Agreement ownership +
+classification ONLY** — the commercial spine's keystone.
+
+**Context.** Q-002 (`open-questions.md:59-72`) asked the final ownership model for
+Service Agreement — drafted as a Business Artifact with unresolved ownership
+(`Faraz-OS-Canon/domains.md:3016-3210`). The three-lens trio (Product / Workflow /
+System) analyzed it; the reconciled call is recorded here. Mirrors the DEC-026 /
+DEC-027 / DEC-033 owning-phase pattern: an isolated `domains.md` ownership landing with
+its own DEC.
+
+**Decision.**
+- **Service Agreement is owned by CRM** as a **first-class Entity**, addressable **by
+  reference** — explicitly **not absorbed into the CRM Client Account entity.** CRM is
+  the commercial-relationship domain (`Faraz-OS-Canon/domains.md:714-715`; owns
+  "high-level service relationship visibility" `:751-754`); Service Agreement is the
+  formalized commercial commitment of that relationship. **Orphan test** (DEC-033
+  precedent): a new domain wins only when no existing domain's responsibility covers the
+  entity — Service Agreement is *not* orphaned; CRM is its natural home.
+- **Classification: Entity** — identity continuity + revision history + the drafted
+  lifecycle (draft → proposed → agreed → active → revised → closed → superseded).
+  **NOT yet a Candidate Aggregate** — Aggregate placement is **pending Q-006** (the
+  SA ↔ Engagement-Scope consistency boundary); promoting to Aggregate now would silently
+  draw the boundary Q-006 owns.
+- **Reference-vs-own boundary (recorded):** Finance references SA for billing
+  (`Faraz-OS-Canon/domains.md:1972-1974`, must not own); Service Delivery treats SA as a
+  *constraining* artifact and owns execution / Engagement Scope, not the agreement;
+  Client Success references SA for expectation management; Engagement Scope is
+  derived-from / constrained-by SA (`Faraz-OS-Canon/domains.md:665-672`). All reference,
+  none own.
+- **Carried fallback (recorded):** a new "Commercial / Agreements" domain remains the
+  fallback if the downstream commercial-spine reopenings (Proposal / Service Package /
+  SLA) later show CRM straining — recorded so a future decision can take it without
+  re-litigating.
+
+**Two narrowings (Phase-1 owning-phase content — narrowing existing ambiguity, not new
+architecture).**
+1. `Faraz-OS-Canon/domains.md:690` Proposed Model `Service Agreement → CRM / Client
+   Success` is narrowed to **CRM owns / Client Success references**.
+2. The Finance open note (`Faraz-OS-Canon/domains.md:2141`, *"Is Service Agreement owned
+   outside Finance…?"*) is **answered: yes — owned by CRM, Finance references** (marked
+   resolved-by-DEC-034). Finance's *other* open questions (contractor payouts, the
+   invoice / proposal / SA boundary, accounting detail) **stay open.**
+
+**Scope guard.** Resolves **Service Agreement ownership + classification only.** The
+dependents — Proposal, Service Package, SLA, Contract-lifecycle / renewal / e-sign,
+Scope-change / Amendment — are each their own later gated decision; **Q-006**
+(SA ↔ Engagement-Scope lifecycle) is **carried, untouched** (it is the gate that later
+upgrades SA Entity → Candidate Aggregate). The other ~8 Phase-1 reopenings are untouched.
+
+**Carried / not-owned.** Q-006 carried; R-027 set (Q-003 Brand, Q-004 Client Brain
+partitioning, the insight→durable-knowledge threshold `Faraz-OS-Canon/domains.md:1918`)
+carried; Q-016, Q-017, Q-007, Q-008 carried; the other ~8 entity reopenings each their
+own gate. No Phase-7 content, no dependents resolved, no new architecture beyond the
+trio-endorsed ownership call.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

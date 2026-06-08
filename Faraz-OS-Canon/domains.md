@@ -687,7 +687,7 @@ to assigned human operators.
 ### Proposed Model
 - Client -> CRM
 - Brand -> CRM or adjacent client context
-- Service Agreement -> CRM / Client Success
+- Service Agreement -> CRM (owner; DEC-034), Client Success (references)
 - Client Brain -> Knowledge (owner; DEC-027); Client Success (contributor)
 - Engagement Scope -> Service Delivery
 - Human Operator -> Workforce
@@ -2138,9 +2138,9 @@ Candidate outbound events from Finance:
 ---
 
 ### Open Questions
-- Is Service Agreement owned outside Finance,
-  with Finance only referencing it,
-  or does Finance own some financial sub-artifacts of it?
+- **Resolved (DEC-034): Service Agreement is owned outside Finance — by CRM; Finance
+  only references it** (Finance may still own finance-specific sub-artifacts later if
+  that becomes necessary).
 - Should contractor payouts live fully inside Finance,
   or partly in Workforce with Finance as settlement owner?
 - What is the final boundary between:
@@ -3030,20 +3030,22 @@ but it should reduce ambiguity between:
 ---
 
 ### Current Classification
-Service Agreement is currently best treated as a Business Artifact.
+Service Agreement is a first-class **Entity owned by CRM** (DEC-034, resolving Q-002):
+identity continuity + revision history + the drafted lifecycle. It is addressable **by
+reference** and is **not absorbed into the CRM Client Account entity.**
 
 It is important enough to shape scope,
 coordination,
 delivery,
-and financial interpretation,
-but its final ownership and final Aggregate placement
-should remain draft for now.
+and financial interpretation. Its **ownership and Entity classification are accepted**
+(DEC-034); its **Aggregate placement remains pending Q-006**, and the candidate contents
+and lifecycle detail below remain draft.
 
-Service Agreement is not currently treated as:
+Service Agreement is not treated as:
 - a Domain
 - a Memory Object
 - a Shared Service
-- a finalized Aggregate
+- a Candidate Aggregate (pending Q-006)
 
 ---
 
@@ -3167,15 +3169,14 @@ and should not yet be treated as final.
 ---
 
 ### Ownership Direction
-The safest current direction is:
+Resolved (DEC-034):
 
-- Final ownership remains unresolved.
-- Service Agreement should currently be treated
-  as a distinct Business Artifact.
-- CRM, Client Success, Service Delivery, and Finance
-  may all reference it.
-- No Domain should yet absorb it casually
-  without an explicit later decision.
+- **Service Agreement is owned by CRM** as a first-class Entity, addressable by
+  reference, and **not absorbed into the CRM Client Account entity.**
+- **CRM owns; Client Success, Service Delivery, and Finance reference** it (none own).
+- Carried fallback: a new "Commercial / Agreements" domain if the commercial-spine
+  dependents (Proposal / Service Package / SLA) later show CRM straining.
+- Aggregate placement remains **pending Q-006**.
 
 ---
 
@@ -3185,14 +3186,15 @@ The safest current direction is:
 Service Agreement is not currently modeled as a Domain.
 
 #### Entity
-Service Agreement may later become an Entity
-if identity continuity and revision history become central.
+Service Agreement **is** a first-class Entity (DEC-034): identity continuity and
+revision history are central (the lifecycle above), owned by CRM.
 
 #### Aggregate
-Service Agreement may later become a Candidate Aggregate
+Service Agreement may **still** later become a Candidate Aggregate
 if scope commitments,
 revision rules,
-and consistency boundaries need stronger control.
+and consistency boundaries need stronger control —
+**pending Q-006** (the SA ↔ Engagement-Scope consistency boundary). Not yet an Aggregate.
 
 #### Memory Object
 Service Agreement is not a Memory Object.
@@ -3200,9 +3202,9 @@ It is an agreement artifact,
 not primarily a reusable memory structure.
 
 #### Business Artifact
-Business Artifact is currently the best classification
-because the concept is clearly important
-but not yet finally placed.
+Service Agreement was previously classified a Business Artifact; DEC-034 promotes it to
+a first-class **Entity owned by CRM** (Q-002 resolved). Aggregate placement stays
+pending Q-006.
 
 ---
 

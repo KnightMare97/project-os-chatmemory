@@ -133,7 +133,7 @@ Each capability is recorded on six fields:
   - Sequence (Phase 6): the produce-asset ability only. The
     "draft → review → revise" loop is Service Delivery's Revision
     Cycle / Revision Aggregate / Revision Handling
-    (`domains.md:3336`, `:3369`, `:3406`) — a workflow that invokes
+    (`domains.md:3338`, `:3371`, `:3408`) — a workflow that invokes
     this capability. Referenced at reference altitude; not
     reinterpreted.
 

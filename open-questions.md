@@ -59,18 +59,24 @@ Resolved (DEC-027):
 ### Q-002
 What is the final ownership model for Service Agreement?
 
-Current direction:
-- Service Agreement is currently treated as a Business Artifact.
-- It is distinct from CRM Client Account,
-  Client Brain,
-  and Engagement Scope.
-- Final ownership remains draft.
+Resolved (DEC-034):
+- **Service Agreement is owned by CRM as a first-class Entity** — addressable by
+  reference, not absorbed into the CRM Client Account entity.
+- Classification: **Entity** (identity + revision history + lifecycle); **Aggregate
+  placement pending Q-006** (not yet an Aggregate).
+- Reference-vs-own: Finance / Service Delivery / Client Success / Engagement Scope
+  reference it; none own. Carried fallback: a new Commercial / Agreements domain if the
+  commercial spine later strains CRM.
+- Narrowings: the `domains.md:690` `CRM / Client Success` ambiguity → CRM-owns /
+  Client-Success-references; the Finance open note answered (owned by CRM).
+- Scope: ownership + classification only — the dependents (Proposal / Package / SLA /
+  Contract / Amendment) and **Q-006** are each their own later gate. The second of the
+  ~10 Phase-1 entity reopenings (Q-018 was first).
 
-Why it matters:
-- This affects agreement truth,
-  scope control,
-  service coordination,
-  and future aggregate or bounded context design.
+Why it mattered:
+- It affected agreement truth, scope control, service coordination, and future
+  aggregate / bounded-context design; the commercial spine (pre-sales → proposal →
+  package → agreement → SLA → contract → billing) had no firm owner to hang off.
 
 ---
 

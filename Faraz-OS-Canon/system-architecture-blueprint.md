@@ -205,7 +205,7 @@ each follows the six-field skeleton above and is bound by the three governing ru
 - **Referenced owned-truth (the *what*, by phase).**
   - Phase 1 domains (`Faraz-OS-Canon/domains.md`) — each domain owns its entity truth;
     Data persists / serves it, never re-owns.
-  - Phase 1 **Media & Assets** (DEC-033; `Faraz-OS-Canon/domains.md:3738`) — the Client
+  - Phase 1 **Media & Assets** (DEC-033; `Faraz-OS-Canon/domains.md:3740`) — the Client
     Asset entity + rights / provenance / retention-status; the asset persistence model
     references this owner.
   - Phase 1 Engagement Scope — `relevant_assets_refs` (`Faraz-OS-Canon/domains.md:517`) is

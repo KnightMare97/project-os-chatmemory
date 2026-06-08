@@ -308,9 +308,12 @@ and must not be re-normalized or re-discovered
 without a new explicit decision.
 
 A new domain — **Media & Assets** — was added by DEC-033 (resolving Q-018):
-it owns the **Client Asset** entity. This is the first of the ~10 Phase-1 entity
-reopenings the non-canon gap analysis surfaced; each further reopening is its own
-explicit gated decision (domain truth is never re-discovered wholesale).
+it owns the **Client Asset** entity. **Service Agreement** was then made firm by DEC-034
+(resolving Q-002): a first-class **Entity owned by CRM** (reference-addressable, not
+absorbed into the Client Account entity; Aggregate-pending-Q-006). These are the first
+two of the ~10 Phase-1 entity reopenings the non-canon gap analysis surfaced; each
+further reopening is its own explicit gated decision (domain truth is never
+re-discovered wholesale).
 
 ---
 
@@ -427,11 +430,12 @@ skeleton + Non-goals / Open-and-deferred / Carried (DEC-031 scope realized at lo
 altitude; KNI-27 → Done). **This is a first-write-complete milestone, NOT a phase-complete
 declaration** (Phase-2 / Phase-6 precedent) — Phase 7 carries open *referenced* items
 (the dual-path posture, deeper agent supervision) and a Phase-7 phase-complete call would
-be a separate later gated decision. **The open program is the ~9 remaining Phase-1 entity
-reopenings the non-canon gap analysis surfaced** (Engagement / Community, Service Agreement
-→ firm [Q-002], Brand [Q-003], Campaign, Cost-ledger / Prompt, Ticket, Ad-Account,
-Schedule, Consent) — each its own gated decision; Q-018 (Client Asset → Media & Assets,
-DEC-033) was the first. Phase 8 (Puzzle Board / layered assembly) is downstream (DEC-030).
+be a separate later gated decision. **The open program is the ~8 remaining Phase-1 entity
+reopenings the non-canon gap analysis surfaced** (Engagement / Community, Brand [Q-003],
+Campaign, Cost-ledger / Prompt, Ticket, Ad-Account, Schedule, Consent) — each its own
+gated decision; **Q-018 (Client Asset → Media & Assets, DEC-033) and Q-002 (Service
+Agreement → CRM-owned Entity, DEC-034) were the first two.** Phase 8 (Puzzle Board /
+layered assembly) is downstream (DEC-030).
 
 **Q-018 resolved (DEC-033): a new Phase-1 domain — Media & Assets — owns the Client
 Asset entity; the Phase-7 Data Architecture view is now unblocked.** DEC-033 places the
@@ -557,6 +561,10 @@ per the trackers' "active, still-relevant" rule;
 they remain in their originating snapshots as historical record.
 
 Open question Q-011 is resolved (see DEC-019 / Snapshot-013).
+Open question Q-002 (Service Agreement ownership) is resolved
+(see DEC-034): Service Agreement is a first-class Entity owned by CRM
+(reference-addressable, not absorbed into Client Account; Aggregate-pending-Q-006);
+Q-006 stays open.
 Open question Q-018 (Client Asset domain ownership) is resolved
 (see DEC-033): a new Phase-1 domain, Media & Assets, owns the Client Asset entity;
 Asset Intelligence (P5) stays deferred.
