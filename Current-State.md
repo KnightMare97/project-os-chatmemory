@@ -678,3 +678,9 @@ Core 7 blocks + AI 5 blocks + 2 deferred slots named at altitude; Core↔Infrast
 **first write COMPLETE (Snapshot-046; 2026-06-09; Batches A–C; KNI-39 Done).** All eight
 architecture phases (1–8) now have first writes — milestone, not a phase-complete
 declaration. Q-017 and agent-supervision carried as deferred slots.
+Phase 9 Infrastructure Design: all-GCP stack approved (DEC-041, 2026-06-09) — Cloud SQL
+(Persistent Store) · pg-boss (Job Queue / Event Bus) · Cloud Run (Worker / Job Runtime)
+· Firebase Auth (Auth Backing Service) · GCP Secret Manager (Secret Store) · Cloud
+Logging + Monitoring + Grafana Cloud (Observability) · Schema-per-client + RLS
+(Per-Client Data Scoping Scheme). `infrastructure.md` **first write COMPLETE
+(Snapshot-047; 2026-06-09; 706 lines; KNI-40 Done).** Q-017, Q-020, Q-022 carried open.

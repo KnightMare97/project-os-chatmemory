@@ -2499,6 +2499,111 @@ Status:
 
 ---
 
+### DEC-041
+**Phase 9 Infrastructure Design — scope approved; all-GCP stack ruling;
+schema-per-client data separation.**
+
+Phase: 9 (infrastructure design). Resolves: Phase 9 scope. Supersedes: none.
+Carries open: Q-017, Q-020, Q-022 (unchanged; see Carried / not-owned below).
+Target file: `Faraz-OS-Canon/infrastructure.md` (new — Phase 9 first-write canon).
+
+**Context.** Phase 8 Puzzle Board Architecture is first-write complete
+(Snapshot-046; `architecture.md`; 535 lines; all 7 layers; KNI-39 Done). Phase 9
+Infrastructure Design is the direct downstream: it assigns physical technology to
+each of the 7 abstract Infrastructure Layer blocks defined in
+`architecture.md:184-190`. Per CLAUDE.md gate discipline, a six-team analysis
+(senior PM + Workflow Designer + System Designer + IT Expert + Backend Dev + Frontend
+Dev) was run before any `infrastructure.md` content was authored.
+
+**What was analyzed.** The analysis evaluated three options against hard requirements:
+30+ clients, structural data separation, cost-conscious, secure, expansion headroom,
+all on GCP (no VPS assumed in production data path):
+
+| Option | Stack | Est. monthly | Data separation | Ops burden | SPOF risk |
+|---|---|---|---|---|---|
+| A — Self-hosted Supabase on GCE | Supabase OSS on GCE n2-standard-2 + Cloud Storage | $61–90/month | Schema-per-client viable (session-mode pooler configurable) | High — Supabase infra owned by operator | GCE SPOF; disk = SPOF |
+| **B — All-GCP managed** (chosen) | Cloud SQL + Firebase Auth + Cloud Run + GCS + Secret Manager + Cloud Logging | **$29–57/month** | **Schema-per-client viable (Cloud SQL session-mode via Auth Proxy)** | **Zero — all managed** | **No SPOF; GCP SLA** |
+| C — Supabase Cloud Pro | Supabase Cloud Pro + Cloud Run | $36–65/month | Schema-per-client BLOCKED (Supabase Cloud uses transaction-mode pooler; SET search_path dropped) | Low — managed | Multi-vendor; schema-per-client blocked |
+
+**Decision — Option B approved (2026-06-09).**
+
+All-GCP, no VPS. Stack:
+
+| Infrastructure block (`architecture.md`) | Assigned technology |
+|---|---|
+| Persistent Store | Cloud SQL for PostgreSQL |
+| Job Queue / Event Bus | pg-boss (Postgres-native queue, runs in Cloud SQL) |
+| Worker / Job Runtime | Cloud Run — API server (minInstances=1) + AI workers (scale-to-zero) |
+| Auth Backing Service | Firebase Authentication |
+| Secret Store | GCP Secret Manager |
+| Observability Infrastructure | Cloud Logging + Cloud Monitoring + Grafana Cloud free tier |
+| Per-Client Data Scoping Scheme | Schema-per-client (structural isolation) + RLS (belt-and-suspenders) |
+| Frontend Serving | Firebase Hosting (default) / Cloudflare Pages (AU-edge alternative) |
+| Object Storage | GCP Cloud Storage (binaries; metadata refs in client schema) |
+
+**Why Option B won over Option A.**
+Option A (self-hosted Supabase on GCE) introduces the highest ops burden (operator owns
+the Supabase infra, Postgres, pooler, and GCE VM), the highest cost ($61–90/month vs
+$29–57/month for B), and a single-tenant GCE SPOF. Although self-hosted Supabase CAN
+configure session-mode pooling (unlike Supabase Cloud), there is no reason to pay more
+for greater ops risk when the managed GCP stack achieves the same or better result. Cloud
+SQL session-mode via the Cloud SQL Auth Proxy gives the same schema-per-client routing
+pattern without the operational overhead.
+
+**Why Option B won over Option C.**
+Supabase Cloud Pro (Option C) blocks schema-per-client because Supabase Cloud uses a
+transaction-mode pooler (PgBouncer / Supavisor transaction mode) that drops
+`SET search_path` between statements. This means Supabase Cloud is structurally
+incompatible with the schema-per-client routing chain (Block 7). Falling back to RLS-only
+on Supabase Cloud is weaker isolation than the schema-per-client + RLS combination
+available on Cloud SQL. Option C also costs comparably to B while introducing a second
+vendor.
+
+**Per-Client Data Scoping Scheme — schema-per-client ruling.**
+One `public` schema (OS-level: clients, workforce_identities, governance_policies,
+platform-level tables) plus one `client_{uuid}` schema per client account (all
+per-client domain tables: CRM, Service Delivery, Client Success, Knowledge, Community,
+Intelligence, AI Operations, plus workflow_instances, publish_intents, ai_operations_*,
+etc.). Routing chain: Firebase Auth JWT with `app_metadata.client_id` → API middleware
+verifies JWT, extracts `client_id` → `SET search_path TO client_{uuid}, public` on Cloud
+SQL connection checkout via Cloud SQL Auth Proxy in session mode → all queries scoped to
+`client_{uuid}` schema. RLS deny-by-default base policies are applied to every
+tenant-scoped table as a second defense layer (`USING (false)` base; named policies
+GRANT explicitly). Security invariant: the Cloud SQL service account (admin/migration) is
+NEVER used by client-facing API handlers or AI workers; violation exposes all schemas.
+Client lifecycle: onboard = `CREATE SCHEMA client_{uuid}` + migration set; offboard =
+`DROP SCHEMA client_{uuid} CASCADE` + delete GCS objects under `clients/{uuid}/`.
+
+**Job queue selection — pg-boss over BullMQ.**
+HITL "awaiting approval" state must survive Cloud SQL restarts; a pg-boss job is a durable
+Postgres row, not a volatile Redis key. Correctness requirement, not a performance
+preference.
+
+**Frontend serving.**
+Firebase Hosting is the default (single GCP account; no second vendor). Cloudflare Pages
+is the AU-edge alternative; the flip is one deployment-target change — no infrastructure
+re-architecture required.
+
+**Scope guard.** This DEC assigns physical technology to the 7 abstract Infrastructure
+Layer blocks. It does not re-define what any abstract block IS (Phase 8). It does not
+specify build procedures, exact instance SKUs, or deployment scripts (Phase 10). It
+authors no domain truth (Phase 1). It resolves no carried-open question.
+
+**Carried / not-owned.** Q-004 (Client Brain partitioning), Q-006 (Service Agreement
+aggregate boundary), Q-016 (inherited Phase-1 set), Q-017 (visual workflow management —
+open; if resolved to AI Layer, Block 3 worker topology may gain a dedicated Cloud Run
+service), Q-020 (access-status / connection-health owner — open; affects Dual-Path
+routing signal surface in infrastructure), Q-022 (prompt / template versioning — open;
+may add a versioned prompt store to Block 1 or Block 9), Q-024 (Ticket ↔ Escalation Case
+lifecycle coupling), R-027 set — all carried, none resolved. DEC-037 (Dual-Path /
+Manual-Fallback), DEC-038 (AI Operations domain), DEC-039 (Ticket entity) disciplines
+referenced, not changed.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
