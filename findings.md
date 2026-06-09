@@ -626,3 +626,46 @@ Impact:
 
 Source:
 - Normalization-backlog thread (item 3 / FIND-028); this session.
+
+---
+
+### FIND-038
+FIND-032 shift-sweep after DEC-043/044/045 `domains.md` edits (Snapshot-048
+commit 4 context): net line shifts (+4 at ~766, +4 at ~1519, +1 at ~1265,
++1 at ~1294, -1 at ~660) produced 51+ stale cites in `memory.md`. Corrected
+via Python reverse-lexicographic replacement script + targeted manual fixes
+for collision edge cases.
+
+Note: FIND-035, FIND-036, FIND-037 appear in old bootstrap snapshots
+(snapshot-003.md, snapshot-004.md) but were never promoted to this tracker
+per the "active, still-relevant" rule; they remain in historical snapshots
+only. FIND-038 continues the live tracker sequence from FIND-034.
+
+Source:
+- Snapshot-048 (commit `14e2bb2` / `64c34e7` context); 2026-06-09.
+
+---
+
+### FIND-039
+Stale-token sweep for Q-016/Q-017 across living docs (Snapshot-048 commit 6
+context) surfaced 4 additional locations: `architecture.md` carried-open list,
+`infrastructure.md` carried-open list, `system-architecture-blueprint.md`
+Open/deferred block, `system-architecture-blueprint.md` Carried/not-owned block.
+All 4 updated, including `domains.md:1941` → `:1946` cite correction in
+`system-architecture-blueprint.md`.
+
+Source:
+- Snapshot-048 (commit `d45eb1a` context); 2026-06-09.
+
+---
+
+### FIND-040
+All 25 line-number cites introduced in `roadmap.md` (Phase 10 first write)
+mechanically verified with `sed`/`grep` raw bytes before the canon commit
+(PART A, Snapshot-049 session). No same-session line-shift risk: `roadmap.md`
+is a new file; no existing living-doc cites were shifted by this write.
+PART B semantic red-team passed: altitude correct, no carried-open item resolved,
+wording matches all five Ali rulings from DEC-049, R-028 held.
+
+Source:
+- Snapshot-049 (commit `193790e` context); 2026-06-09.

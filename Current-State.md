@@ -48,11 +48,15 @@ Its normalized model in `domains.md`
 is the accepted Phase 1 reference.
 
 The current most active work is:
-- Phase 10 Claude Code Architecture (Phase 10 question-gate is the recommended next step)
+- Phase 11 Claude Code Operating System (next recommended step after Phase 10 completion)
 
-Phases 1–9 all have first-write entries. Architecture reconciliation sweep (Snapshot-048)
-resolved all 7 deferred open questions (DEC-042–DEC-048) and landed G-01–G-05 content
-fixes. The canon is at GREEN coherence.
+Phases 1–10 all have first-write entries. **All ten architecture content phases
+(Phases 1–10) now have first-write entries** (Snapshot-049 / DEC-049 / commit `193790e`).
+Phase 10 Build Roadmap — `roadmap.md` (589 lines) — is the Phase 10 deliverable:
+a dependency-ordered Build Roadmap (Foundation → Core Layer → T1 Launch → V1 →
+V2 → Future) on the six-field skeleton. DEC-049 mints the Phase 10 scope gate
+(six rulings: MVP/V1 showcase framing, Q-006/Q-024 pre-build gates,
+bilingual/IR-sensitivity as first-class T1 build constraints).
 
 *(Prior active work — for historical context:)*
 - Phase 2 Experience Architecture
@@ -450,11 +454,18 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
-**Reconciliation sweep COMPLETE (Snapshot-048, 2026-06-09).** DEC-042–DEC-048 minted;
-all seven deferred open questions resolved; G-01–G-05 content fixes landed. Architecture
-canon is at GREEN coherence. **Phase 10 Claude Code Architecture is now unblocked** —
-recommended next step is the Phase 10 question-gate to scope sub-items before any content
-is written.
+**Phase 10 Build Roadmap COMPLETE (Snapshot-049, 2026-06-09).** DEC-049 minted;
+`roadmap.md` first write pushed and verified at SHA `193790e`. **All ten architecture
+content phases (Phases 1–10) now have first-write entries.** Next recommended steps:
+
+1. **Q-006 Phase-1 gate** — Service Agreement / Engagement Scope aggregate boundary;
+   mandatory before CRM domain schema can be written in Phase 11.
+2. **Q-024 Phase-1 gate** — Ticket ↔ Escalation Case lifecycle coupling; mandatory
+   before Client Success domain schema can be written in Phase 11.
+3. **Phase 11 Claude Code Operating System** — `claude-operating-system.md`, the
+   final phase file.
+4. **Q-003 Phase-1 gate** — Brand aggregate placement; preferably before V1
+   schema finalization.
 
 Remaining open items (do not touch without explicit gate):
 - Q-003 (Brand aggregate placement), Q-006, Q-007, Q-024 (`domains.md:1720`),
