@@ -498,7 +498,11 @@ reopenings the non-canon gap analysis surfaced** (Engagement / Community, Brand 
 Campaign, Cost-ledger / Prompt, Ticket, Ad-Account, Schedule, Consent) — each its own
 gated decision; **Q-018 (Client Asset → Media & Assets, DEC-033) and Q-002 (Service
 Agreement → CRM-owned Entity, DEC-034) were the first two.** Phase 8 (Puzzle Board /
-layered assembly) is downstream (DEC-030).
+layered assembly) scope gate is **CLOSED (DEC-040)**: G-1…G-8 ruled; 7 layers
+first-write firm; Core Layer (7 blocks) and AI Layer (5 blocks + 2 deferred slots)
+named at altitude; Core↔Infrastructure + Experience↔AI cuts governed; Phase-6-not-Core
+guard explicit. The `architecture.md` **first-write content batch is the next gated
+step** — separate event requiring Ali's go. (P7↔P8 boundary: DEC-030.)
 
 **Q-018 resolved (DEC-033): a new Phase-1 domain — Media & Assets — owns the Client
 Asset entity; the Phase-7 Data Architecture view is now unblocked.** DEC-033 places the
@@ -666,3 +670,8 @@ The Phase 7 scope gate is closed (DEC-031); the open path is the Phase 7 content
 Open question Q-013 (AI / agent-surface home) is resolved
 (see DEC-031 / Snapshot-042): architecture-home → Phase 7 AI Architecture
 (agent/subagent identity un-deferred into Phase 7); surface rendering → Phase 2.
+Phase 8 scope gate (G-1…G-8) is closed (see DEC-040, 2026-06-09): 7 layers firm;
+Core 7 blocks + AI 5 blocks + 2 deferred slots named at altitude; Core↔Infrastructure
++ Experience↔AI cuts governed; Phase-6-not-Core guard explicit; architecture.md
+first-write content batch = next gated step (Ali's go required). Q-017 and
+agent-supervision carried as deferred slots, not new open questions.

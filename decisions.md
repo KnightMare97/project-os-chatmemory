@@ -2227,6 +2227,278 @@ Status:
 
 ---
 
+### DEC-040
+**G-1…G-8 gate closure — Phase 8 Puzzle Board Architecture scope, layer definitions,
+and assembled block placements.**
+
+Phase: 8 (scope gate / question-gate). Resolves: G-1…G-8 (Phase 8 question-gate).
+Supersedes: none. Registers no new open question (Q-017 and agent-supervision carried
+explicitly open, below).
+Scoped to Phase 8 **scope, altitude, seven-layer definition, and named block placements**
+at layer altitude ONLY. Target file: `Faraz-OS-Canon/architecture.md` (new — the
+first-write content batch is a separate gated event after this DEC lands; **NO
+`architecture.md` content is authored here**).
+
+**Context.** DEC-030 (`decisions.md:1456-1554`) drew the Phase 7 ↔ Phase 8 boundary
+(Q-012) and recorded the boundary test verbatim. Phase 7 System Architecture Blueprint
+is FIRST-WRITE COMPLETE (all seven concern-views; `Faraz-OS-Canon/system-architecture-
+blueprint.md`; Snapshot-044; KNI-27 Done). With the Phase 7 floor in place, Phase 8 is
+now the active work. Per standing gate discipline, a question-gate was run before any
+`architecture.md` content was authored. Gates G-1…G-8 were proposed; G-3 was ruled
+all-seven-layers first-write firm; G-6 (Core Layer blocks + Core↔Infrastructure cut)
+and G-8 (AI Layer blocks + Experience↔AI seam) were analyzed via the THREE-LENS TRIO
+(PM / Workflow / System lenses; parallel sub-agents reading canon read-only). Ali ruled
+on all gates 2026-06-09; this DEC records the closure.
+
+**Blueprint vs Board disambiguation (G-1 callout).** The Phase 7 document is
+`system-architecture-blueprint.md` (the "Blueprint"); the Phase 8 document is
+`architecture.md` (the "Puzzle Board"). These names are canonical and not synonymous.
+No concern-view content from the Blueprint is reproduced in the Board; no
+assembled-layer content from the Board belongs in the Blueprint.
+
+**AI Architecture ≠ AI Layer (G-1 highest-collision callout).** Phase 7 AI Architecture
+(`system-architecture-blueprint.md`) answers *how the system executes AI* — the
+cross-cutting concern-view (a lens). Phase 8 AI Layer *assembles the named execution
+blocks into the board* — it places and names, never re-defines or re-executes. The same
+distinction applies to every layer pair: the concern-view is Phase 7; the assembled
+grouping is Phase 8. The boundary test from DEC-030 (`decisions.md:1491-1499`, verbatim
+below) is the governing test for every boundary call.
+
+**Decision — G-1 through G-8.**
+
+---
+
+**G-1 — Altitude and definition.**
+
+Phase 8 = the *layered assembly* (the board) (`Faraz-OS-Canon.md:140`, DEC-030). Its
+function is to answer boundary test item #2 while respecting item #3. DEC-030
+(`decisions.md:1491-1499`) boundary test, recorded verbatim here for the first-write:
+
+> 1. *"How does the system handle [data / execution / AI / integration / security /
+>    runtime] as a cross-cutting concern?"* → **Phase 7** (a concern-view / lens).
+> 2. *"What concrete building blocks exist, and which layer do they sit in — Core /
+>    Domains / Capabilities / Plugins / Infrastructure / Experience / AI?"* →
+>    **Phase 8** (the assembled board).
+> 3. *Re-defines what a domain / capability / plugin / experience-surface **is**, who
+>    owns it, or its sequence* → **neither**; that is Phases 1 / 2 / 3 / 4 / 6,
+>    **referenced**.
+
+Phase 8 NAMES and PLACES. Any re-definition refers back to the owning phase.
+
+---
+
+**G-2 — Closed assembled-from boundary set.**
+
+Phase 8 assembles blocks owned across phases (DEC-030, `decisions.md:1483-1489`):
+- **Domains Layer ← Phase 1** domain truth (`Faraz-OS-Canon/domains.md`); Phase 8
+  places, never re-owns.
+- **Capabilities Layer ← Phase 3** capability definitions (`Faraz-OS-Canon/
+  capabilities.md`); Phase 8 places, never re-owns.
+- **Plugins Layer ← Phase 4** plugin / provider / channel / model contracts plus
+  assembled mounted modules (`Faraz-OS-Canon/extensibility.md`); Phase 8 names the
+  assembled layer, never re-authors the contracts.
+- **Experience Layer ← Phase 2** surfaces, portals, and the Permission Matrix
+  (`Faraz-OS-Canon/experience-architecture.md`); Phase 8 places, never re-authors.
+- **Core Layer ← Phase 7** (Application Architecture + Security Architecture,
+  `system-architecture-blueprint.md:157-159, :361-369`) **+ Phase 4** (Extension
+  Contracts, `extensibility.md:196`); assembled from multiple sources (G-6 below).
+- **Infrastructure Layer ← multiple sources** (Data, Runtime, Security Architecture,
+  Phase 7); named at abstract altitude; physical technology is Phase 9 (G-7 below).
+- **AI Layer ← Phase 7 AI Architecture** (chain execution, agent identity, routing
+  engine, model invocation, human / hybrid paths,
+  `system-architecture-blueprint.md:250-278`) **+ Phase 4** (Model abstraction,
+  `extensibility.md:308`); named at block altitude (G-8 below).
+
+*P7 ↔ P8 cut:* No Phase 7 concern-view *becomes* a Phase 8 layer; they are not 1:1
+(DEC-030, `decisions.md:1483-1489`). Inversion guard (DEC-031 G-1): Phase 7 realizes
+mechanism; Phase 8 names and places; neither re-owns Phase 1 entity truth.
+
+*P8 ↔ P9 cut:* Phase 8 Infrastructure Layer names blocks at *abstract* altitude only
+— no named technology. Phase 9 Infrastructure Design (`infrastructure.md`) assigns
+the physical technology to each abstract block.
+
+---
+
+**G-3 — Seven layers, all first-write firm.**
+
+All seven layers (`Faraz-OS-Canon.md:140-147`) are confirmed first-write targets for
+`architecture.md`. No layer is optional, stub, or deferred:
+1. Core Layer
+2. Domains Layer
+3. Capabilities Layer
+4. Plugins Layer
+5. Infrastructure Layer
+6. Experience Layer [ADDED]
+7. AI Layer [ADDED]
+
+---
+
+**G-4 — Per-layer skeleton (governs the first-write content batch).**
+
+Each layer entry in `architecture.md` follows the six-field-analog:
+1. **Definition** — what the layer IS in one sentence (assembled grouping, not a
+   concern-view).
+2. **Source phases** — which phases' content is assembled here (by reference).
+3. **Assembled blocks** — the named building blocks placed in this layer at layer
+   altitude.
+4. **Boundary notes** — explicit cross-phase cuts and what this layer does NOT own.
+5. **Carried / deferred** — open questions and deferred items affecting this layer,
+   not resolved by Phase 8.
+
+Core and AI Layer blocks are fully named in this DEC (G-6, G-8). The remaining
+layers' block enumeration is the content batch's task, constrained by G-2 and G-5.
+
+---
+
+**G-5 — Non-goals (Phase 8 must not author).**
+
+`architecture.md` authors **no**:
+- Re-definition of what a domain, capability, plugin, or experience surface *is* —
+  those are Phases 1 / 2 / 3 / 4; referenced only.
+- New entity or domain — Phase 1 exclusively.
+- Concern-view content — Phase 7 (`system-architecture-blueprint.md`).
+- Implementation technology or physical infrastructure specifics — Phase 9 / 10.
+- Workflow sequences or ordered execution patterns — Phase 6 (`workflows.md`).
+- Resolution of any carried-open question (Q-004, Q-006, Q-016, Q-017, Q-020,
+  Q-022, Q-024, R-027 set, agent-supervision deferred — all carried, none resolved
+  by Phase 8).
+- Re-authoring of Phase 6 constructs (approval gate mechanism, lifecycle state
+  machine, loop / exception pattern router) as Core Layer blocks — Phase 8
+  references the Phase 6 workflow runtime as a dependency; it does not name Phase 6
+  constructs into its own layer.
+
+---
+
+**G-6 — Core Layer: seven named blocks and Core↔Infrastructure cut.**
+
+*Governing rule.* Core = product-level building blocks that constitute what Faraz OS
+IS as a platform — the platform shell. Infrastructure = abstract substrate blocks the
+platform runs ON. The parallel: enforcement logic is Core; the backing service it
+enforces against is Infrastructure.
+
+*Seven named blocks (derived from Phase 7 Application + Security Architecture and
+Phase 4 Extension Contracts):*
+
+| # | Block | Source / cite |
+|---|---|---|
+| 1 | **Configurable Core Host** | P7 Application Architecture (`blueprint.md:157-159`): "a configurable core hosts the persona portals... and mounts Feature-Modules through the Phase-4 contract" |
+| 2 | **Feature-Module Mounting Engine** | P7 (`extensibility.md:458-459, :464-465`): "the mounting / running / composing mechanism itself is Phase 7"; the assembled mounted modules → Plugins Layer (`:466`) |
+| 3 | **Extension Contract Surface** | P4 Extension Contracts (`extensibility.md:196`): "the explicit, versioned boundary through which every extension — plugin, provider, channel, model — interacts with the core"; Core holds the boundary face |
+| 4 | **Authorization Enforcement Block** | P7 Security Architecture (`blueprint.md:361-363`): "the Phase-2 Permission Matrix and the Phase-1 Governance rules (DEC-026) are enforced at the application and data boundaries; Security adds no rule" |
+| 5 | **Per-Client Isolation Enforcer** | P7 Security Architecture (`blueprint.md:364-366`): "the Data view's per-client logical scoping is enforced as an access boundary (one client's data unreachable from another's context), within single-tenant (DEC-031 G-5)" |
+| 6 | **Credential / Secret Handling Block** | P7 Security Architecture (`blueprint.md:367-369`): "how credentials are scoped, held, rotated, and re-authed (including the dual-path manual re-auth) — not the crypto / implementation (Phase-10)" |
+| 7 | **Platform Context Services** | Canon-endorsed by trio exclusion: client session context, client identity context, and per-client operational context are cross-cutting Core services; placed in no other layer. No direct named canon cite; confirmed unanimous by THREE-LENS TRIO 2026-06-09. |
+
+*Core ↔ Infrastructure cut (governing table for the first-write):*
+
+| Block | Layer | Rule |
+|---|---|---|
+| Configurable Core Host | **Core** | IS the platform product |
+| Feature-Module Mounting Engine | **Core** | Makes base-plus-modules thesis runnable |
+| Extension Contract Surface | **Core** | The product's extension boundary |
+| Authorization Enforcement Block | **Core** | Enforcement logic (rule = P1/P2; engine = Core) |
+| Per-Client Isolation Enforcer | **Core** | Enforcement above the storage layer |
+| Credential / Secret Handling Block | **Core** | Credential logic above the secret store |
+| Platform Context Services | **Core** | Cross-cutting context services (not a substrate) |
+| Auth backing service (abstract) | **Infrastructure** | Substrate; Phase 9 names technology |
+| Secret Store (abstract) | **Infrastructure** | Substrate |
+| Persistent Store (abstract) | **Infrastructure** | Substrate |
+| Job Queue / Event Bus (abstract) | **Infrastructure** | Substrate |
+| Worker / Job Runtime (abstract) | **Infrastructure** | Substrate |
+| Observability Infrastructure (abstract) | **Infrastructure** | Substrate |
+
+*Phase-6-not-Core guard (explicit).* The approval gate mechanism, lifecycle state
+machine, and loop / exception pattern router are **Phase 6-owned constructs**
+(`workflows.md`). Phase 8 Core Layer references the Phase 6 workflow runtime as a
+dependency; it does not name these constructs as Core blocks. A dependency note is
+the correct altitude in `architecture.md`.
+
+---
+
+**G-7 — Infrastructure Layer: abstract altitude and P8↔P9 cut.**
+
+Infrastructure Layer blocks are named at abstract altitude only — no physical
+technology appears in `architecture.md`. Abstract block names (enumeration may be
+extended in the first-write content batch):
+- Persistent Store
+- Job Queue / Event Bus
+- Worker / Job Runtime
+- Auth Backing Service
+- Secret Store
+- Observability Infrastructure
+- Per-Client Data Scoping Scheme (data-organization layout within the storage
+  substrate — distinct from Per-Client Isolation Enforcer in Core, which is the
+  enforcement logic above the storage layer, not within it)
+
+Phase 9 Infrastructure Design (`infrastructure.md`) assigns physical technology to
+each abstract block. This cut is structural and must not be crossed in
+`architecture.md`.
+
+---
+
+**G-8 — AI Layer: five named blocks, two deferred slots, and Experience↔AI cut.**
+
+*Five named blocks (derived from Phase 7 AI Architecture and Phase 4 Model
+abstraction):*
+
+| # | Block | Source / cite |
+|---|---|---|
+| 1 | **Agent / Subagent Execution Unit** | P7 AI Architecture (DEC-031 G-6(a)); `blueprint.md:252-255`: "what an agent / subagent *is* architecturally — a defined executing entity with a lifecycle-as-architecture (instantiated, executes, hands off, retires)" |
+| 2 | **Chain Orchestrator** | P7 AI Architecture; `blueprint.md:250-252`: "the system invokes models and composes agent / subagent execution into chains, selecting per part by policy" |
+| 3 | **Routing Engine** | P7 executes P4 policy; `extensibility.md:391-392`: "the routing policy is Phase 4; the engine that executes routing is Phase 7 AI Architecture"; `blueprint.md:262-264`: "executes the routing engine but authors no selection policy — Phase 4 owns it" |
+| 4 | **Model Invocation Interface** | P4 Model abstraction (`extensibility.md:308`) + P7 execution; the AI Layer face of the swappable model unit; does not re-own the Phase 4 Model contract |
+| 5 | **Human / Hybrid Execution Path** | P7 AI Architecture; `blueprint.md:276-278`: "Human / hybrid execution paths are first-class alternatives to AI-default execution (HITL), never an afterthought" |
+
+*Two deferred slots (carried explicitly open in `architecture.md` first write):*
+- **Q-017 Workflow Management Engine** — if Q-017 resolves to a Phase 7 engine
+  home, a "Workflow Management Engine" block would sit in the AI Layer, with the
+  Experience Layer holding the editing / monitoring surface as a dependent. Cannot
+  be placed until Q-017 is gated. `architecture.md` first write marks: *deferred —
+  Q-017 pending*.
+- **Agent Supervision / Observability** — `blueprint.md:462-463`: "deeper agent
+  supervision / observability... is flagged for its own pass." `architecture.md`
+  first write marks: *deferred — own gated pass*.
+
+*What is NOT in the AI Layer:*
+- Agent-facing surface rendering → **Experience Layer** (Q-013 split; DEC-031
+  G-6(b)).
+- AI Model Routing POLICY → **Plugins Layer** (Phase 4; AI Layer holds the
+  executing engine; `extensibility.md:391-392`).
+- UsageRecord → **Domains Layer** (Phase 1 / AI Operations domain; DEC-038).
+- Prompt / template versioning → TBD (Q-022 open); not AI Layer regardless of
+  resolution.
+
+*Experience ↔ AI Layer cut (produce vs render):*
+- **AI Layer ENDS at** what EXECUTES and HAS IDENTITY: the five named blocks above.
+  These blocks produce execution results.
+- **Experience Layer BEGINS at** what RENDERS for a persona: agent-facing surface
+  rendering, the Agent & Workflow Monitor (`experience-architecture.md:239`), and
+  persona portals. These surfaces display what AI Layer blocks produce.
+- Seam: AI Layer produces results → Experience Layer renders for persona. Nothing
+  in the AI Layer touches what a persona sees.
+
+---
+
+**Scope guard.** This DEC scopes Phase 8 and names assembled blocks at layer
+altitude. It authors NO `architecture.md` content — the first-write content batch is
+a separate gated event after this DEC lands and Ali approves. It re-defines nothing
+owned by another phase. It resolves no carried-open question.
+
+**Carried / not-owned.** Q-004 (Client Brain partitioning), Q-006 (Service Agreement
+aggregate boundary), Q-016 (inherited Phase-1 set), Q-017 (visual workflow management
+— multi-phase, candidate P7 home; creates potential AI Layer block if resolved to P7
+engine), Q-020 (access-status / connection-health owner), Q-022 (prompt / template
+versioning), Q-024 (Ticket ↔ Escalation Case lifecycle coupling), R-027 set
+(insight → durable threshold, `domains.md:1941`), the ~4 remaining Phase-1 entity
+reopenings (Campaign, Ad-Account, Schedule, Consent), agent supervision /
+observability deferred — all carried, none resolved. DEC-030 / DEC-031 / DEC-032 /
+DEC-037 / DEC-038 / DEC-039 disciplines referenced, not changed.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
