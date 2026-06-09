@@ -2778,6 +2778,69 @@ Status:
 
 ---
 
+### DEC-047
+**Q-016 — Client persona has Performance & Analytics View scoped to own-engagement data.**
+
+Phase: 2. Resolves: Q-016. Supersedes: none (extends DEC-022 view membership).
+Date: 2026-06-09.
+
+Q-016 surfaced a pre-existing inconsistency: the View Inventory (experience-architecture.md
+line ~614) listed the Client column with a `‡` flag (scoped); the Client portal surface
+table (~line 370) omitted Performance & Analytics View entirely. The Permission Matrix
+projection (Snapshot-033) flagged it but did not resolve it (R-027/R-028).
+
+**Candidates assessed:**
+- **Client sees the view, scoped to own-engagement**: consistent with Client Reports &
+  Analytics exposure (Scoped, own-engagement already ratified). The `‡` flag in the View
+  Inventory was the correct signal. Client-facing performance data is standard in agency
+  portals and does not expand Client access beyond ratified surface bounds.
+- **Client does not see the view**: would contradict the View Inventory `‡` and leave the
+  Client with no mechanism to review their own campaign performance — operationally
+  implausible.
+
+**Decision:** The Client persona **sees the Performance & Analytics View**, scoped to
+**own-engagement data only**. The View Inventory `‡` flag is resolved to `Scoped
+(own-engagement)`. The Client portal surface table is updated to include this view at the
+scoped access level. DEC-022 view membership is extended accordingly. Agency-level
+aggregated or cross-client analytics remain outside Client scope.
+
+Status:
+- Active
+
+---
+
+### DEC-048
+**Q-017 — Workflows are fixed-flow at T1; visual editing deferred to v2.**
+
+Phase: 6. Resolves: Q-017. Supersedes: none.
+Date: 2026-06-09.
+
+Q-017 asked where the system administrator's visual viewing and management
+(update / add / remove) of workflows belong across phases. The question registered
+that visual workflow editing has candidate homes in Phase 2 (surface), Phase 4 (config-time
+binding), Phase 6 (definitions as configurable artifacts), and Phase 7 (engine support).
+
+**Candidates assessed:**
+- **Fixed-flow at T1, visual editing deferred to v2**: Phase 6 workflow definitions are
+  canon as-written — authoritative flows, not editable artifacts at T1. The Agent &
+  Workflow Monitor (Phase 2, System Administrator Full) provides viewing of execution state.
+  Visual editing capability requires a multi-phase coordinated feature spanning Phase 2, 4,
+  6, and 7 — appropriately gated as v2.
+- **Author visual editing at T1**: premature. No Phase evidence for engine support
+  (Phase 7), configurable-artifact model (Phase 6), or editing surface (Phase 2) at T1 scope.
+  Would require simultaneous changes across four phases without grounded requirements.
+
+**Decision:** Workflows are **fixed-flow at T1**. Phase 6 `workflows.md` canon flows are
+authoritative as-written. System Administrator views workflow execution state via the
+Phase 2 Agent & Workflow Monitor (Full access; no new surface). Visual workflow editing /
+management is **deferred to v2** as a multi-phase gated feature — its own coordinated
+decision spanning Phase 2, Phase 4, Phase 6, and Phase 7 when scoped.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

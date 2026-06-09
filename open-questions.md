@@ -449,14 +449,12 @@ Pre-existing inconsistency between two ratified Phase-2 sources, surfaced by the
 matrix view projection (Snapshot-033). Resolution reopens DEC-022 view membership
 — its own small decision.
 
-Current direction:
-- Flagged in the Permission Matrix view projection as `‡`; not resolved there
-  (the matrix authors no decision; R-027/R-028).
-- The Client's surface-level Reports & Analytics exposure (Scoped, own-engagement)
-  is unaffected and reproduces the ratified surface table; this question is only
-  the view-membership nuance.
-- Deferred; its resolution is a small DEC reopening DEC-022 view membership.
-- Lives in this file as the system of record; tracked in Linear if/when scheduled.
+Resolved (DEC-047):
+- Client persona **sees the Performance & Analytics View**, scoped to own-engagement
+  data only. The View Inventory `‡` flag is resolved to `Scoped (own-engagement)`.
+  Client portal surface table updated to include this view at scoped access level.
+  DEC-022 view membership extended. Agency-level aggregated or cross-client analytics
+  remain outside Client scope.
 
 ---
 
@@ -464,32 +462,12 @@ Current direction:
 Where do the system administrator's **visual viewing and management**
 (update / add / remove) of workflows belong across phases?
 
-Current direction:
-- **Viewing** is partially covered already: the Phase-2 **Agent & Workflow
-  Monitor** surface gives the System Administrator Full exposure
-  (`experience-architecture.md:239`).
-- The **new part is visual workflow editing / management** — updating, adding,
-  and removing workflows through a visual interface. This is not yet authored
-  anywhere.
-- Candidate homes span multiple phases and likely need more than one:
-  - Phase 2 (the surface / experience through which editing happens);
-  - Phase 6 (workflow definitions treated as **configurable artifacts** rather
-    than fixed canon flows);
-  - Phase 4 (config-time binding / extensibility of workflow definitions);
-  - Phase 7 (engine support for editable, runnable workflow definitions).
-- **Registered, not resolved.** Multi-phase placement is its own gated decision
-  later; do not default it. This question lives in this file as the system of
-  record; tracked in Linear if/when scheduled.
-
-Why it matters:
-- It keeps a real capability (administer workflows visually) from being silently
-  assumed or authored in the wrong phase. In particular, the Phase 6
-  `workflows.md` first write (Batch B flow entries) must **not** assume or author
-  a visual workflow editor / management capability; it carries this as a
-  registered flag.
-- The viewing-vs-editing split mirrors the Phase-2 vs Phase-6/4/7 altitude
-  boundaries already in canon; resolving where editing lives prevents collapsing
-  a surface concern, a definition-as-artifact concern, and an engine concern.
+Resolved (DEC-048):
+- Workflows are **fixed-flow at T1**. Phase 6 canon flows are authoritative as-written.
+  System Administrator views workflow execution state via Phase 2 Agent & Workflow Monitor
+  (Full access; no new surface needed). Visual workflow editing / management is
+  **deferred to v2** as a multi-phase gated feature (Phase 2, 4, 6, 7) — its own
+  coordinated decision when scoped.
 
 ---
 

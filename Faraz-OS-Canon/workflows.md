@@ -267,7 +267,7 @@ Each entry uses the six-field skeleton above. Capabilities are referenced **by
 name only** (Phase 3); gates and modes follow *Human Approval Gates*;
 exception/loop behavior references the patterns above. No capability, surface,
 authorization rule, agent identity, or visual workflow-management capability
-(Q-017, registered open) is authored here.
+(Q-017 resolved — DEC-048; visual editing deferred to v2) is authored here.
 
 ### Lead → Client
 - **Definition.** Converts a qualified inbound lead into an established client
@@ -429,15 +429,12 @@ throughout (R-028).
 
 ## Open and inherited flags
 Carried, referenced, not resolved here:
-- **Q-017 (new this gate, registered).** The system administrator's **visual
-  viewing and management** (update / add / remove) of workflows. Viewing is
-  partially covered by the Phase-2 Agent & Workflow Monitor surface (System
-  Administrator Full, `experience-architecture.md:239`); the new part — visual
-  workflow **editing / management** — has candidate homes across Phase 2 (surface),
-  Phase 6 (workflow definitions as configurable artifacts), Phase 4 (config-time
-  binding), and Phase 7 (engine support). **Multi-phase placement is its own gated
-  decision later**; this file authors no visual workflow-management capability. See
-  `open-questions.md` (Q-017).
+- **Q-017 resolved (DEC-048, 2026-06-09).** Workflows are **fixed-flow at T1**;
+  Phase 6 definitions are canon as-written — no visual editing surface at T1. System
+  Administrator views workflow execution state via Agent & Workflow Monitor (Phase 2,
+  Full reuse, `experience-architecture.md:239`). Visual workflow **editing / management**
+  is deferred to v2 as a multi-phase gated feature (affects Phase 2, Phase 4, Phase 6,
+  Phase 7 — its own gate then).
 - **Agent / subagent identity** — what an agent *is*, its surface, and the AI
   architecture that executes it: the registered Phase-7 flag
   (`extensibility.md:345-347`, `:505-508`). Agent Chains name roles, never

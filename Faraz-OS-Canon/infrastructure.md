@@ -89,8 +89,9 @@ it is the most architecturally load-bearing block in the stack.
 - Build pipeline, CI/CD config, or deployment runbook — Phase 10.
 - Cost arithmetic or exact SKU commitments — illustrative references only;
   actual sizing is Phase 10 / operational.
-- Resolution of any carried-open question (Q-004, Q-006, Q-017, Q-020, Q-022,
-  Q-024, R-027 set) — all referenced where relevant, none resolved here.
+- Resolution of any carried-open question (Q-006, Q-024, R-027 set; Q-004/Q-017/Q-020/Q-022
+  resolved by DEC-045/048/046/044 respectively) — remaining open items referenced where
+  relevant, none resolved here.
 
 ---
 

@@ -17,8 +17,7 @@ enumerates the firm inventory of concrete Operating Surfaces,
 enumerates portal contents per persona,
 enumerates the concrete Cross-Domain Views,
 and defines the Navigation Model (surface-movement).
-It does not populate the permission matrix.
-Permission matrix population is deferred to later Phase 2 work.
+It populates the permission matrix (DEC-026 / Snapshot-033).
 
 ---
 
@@ -42,7 +41,7 @@ the seven firm views and their canon-worthy rules
 The Navigation Model section now defines
 the surface-movement model
 (see KNI-17 / Snapshot-023).
-The Permission Matrix remains unpopulated.
+The Permission Matrix is now populated (DEC-026 / Snapshot-033).
 
 No Phase 1 domain truth,
 ownership,
@@ -236,7 +235,7 @@ they are carried in Open and Deferred Items, not here.
 | 3 | Review Queue | Operator | Manager Full; Client → Distinct (*Client Approval Queue*) |
 | 4 | Client Brain Surface | Operator | Manager Full; Contractor Scoped (assigned client) |
 | 5 | Knowledge Workspace | Operator | Manager Full; Contractor Scoped (engagement-relevant); System Administrator → Distinct (*Admin Knowledge*) |
-| 6 | Agent & Workflow Monitor | Operator | Manager Full or Scoped; System Administrator Full |
+| 6 | Agent & Workflow Monitor | Operator | Manager Full; System Administrator Full |
 | 7 | Reports & Analytics Surface | Operator | Manager Full; Contractor Scoped; Client Scoped — hosts four Cross-Domain Views (Performance & Analytics, Team Oversight, Engagement Health, Client Engagement Summary); see Cross-Domain Views |
 | 8 | Lead Workspace | Operator | Manager Full; Contractor — |
 | 9 | Client Notifications | Client | — |
@@ -335,7 +334,7 @@ defined in the Operating Surfaces section
 | Review Queue | Full | |
 | Client Brain Surface | Full | |
 | Knowledge Workspace | Full | |
-| Agent & Workflow Monitor | Full or Scoped | |
+| Agent & Workflow Monitor | Full | |
 | Reports & Analytics Surface | Full | hosts the Performance & Analytics, Team Oversight, and Engagement Health views (see Cross-Domain Views) |
 | Lead Workspace | Full | |
 
@@ -367,7 +366,7 @@ Projection note: the Contractor portal does not include Lead Workspace
 | Client Approval Queue | Full | primary persona |
 | Client Deliverable Library | Full | primary persona |
 | Client Billing / Invoices Surface | Full | primary persona; Finance owns the data |
-| Reports & Analytics Surface | Scoped | hosts the Client Engagement Summary View (see Cross-Domain Views) |
+| Reports & Analytics Surface | Scoped | hosts the Performance & Analytics View (Scoped, own-engagement) and Client Engagement Summary View (see Cross-Domain Views) |
 
 Pending / flagged: *Client Profile* — tentative; not added.
 
@@ -614,7 +613,7 @@ membership follows the View Inventory and portal tables.
 |---|------|--------------|----------|---------|--------|------------|----------------------|
 | 1 | Client Brain View | Client Brain Surface | Full | Full | — | Scoped (assigned-client) | — |
 | 2 | Lead Context View | Lead Workspace | Full | Full | — | — | — |
-| 3 | Performance & Analytics View | Reports & Analytics Surface | Full | Full | ‡ | Scoped (own-engagement) | — |
+| 3 | Performance & Analytics View | Reports & Analytics Surface | Full | Full | Scoped (own-engagement) | Scoped (own-engagement) | — |
 | 4 | Team Oversight View | Reports & Analytics Surface | — | Full | — | — | — |
 | 5 | Engagement Health View | Reports & Analytics Surface | Full | Full | — | — | — |
 | 6 | Client Engagement Summary View | Reports & Analytics Surface | — | — | Scoped (own-engagement) | — | — |
@@ -622,15 +621,12 @@ membership follows the View Inventory and portal tables.
 
 System Administrator has no Cross-Domain View (see Cross-Domain Views section).
 
-**‡ Flagged pre-existing Phase-2 nuance (NOT resolved here; tracked as Q-016).**
-The View Inventory marks the Client "scoped" on the Performance & Analytics View,
-but the Client portal table lists only the Client Engagement Summary View on the
-Reports & Analytics Surface. These two ratified Phase-2 sources differ on whether
-the Client sees the Performance & Analytics View. This read-only projection does
-not resolve it (authoring no decision; R-027/R-028) — it is registered as **Q-016**
-(its resolution reopens DEC-022 view membership). The Client's surface-level
-Reports & Analytics exposure (Scoped, own-engagement) is unaffected and reproduces
-the ratified surface table.
+**Q-016 resolved (DEC-047).** The Client persona sees the Performance & Analytics View,
+scoped to own-engagement data. The discrepancy between the View Inventory (Client
+"scoped") and the Client portal table (only Client Engagement Summary View listed)
+is resolved: both views are now included for the Client — the Performance & Analytics
+View (Scoped, own-engagement) and the Client Engagement Summary View (Scoped,
+own-engagement). The Client portal table and View Inventory are updated accordingly.
 
 ### Multi-role resolution
 A human carrying more than one role receives, for each surface/view, the **union of
@@ -713,9 +709,9 @@ and its primary persona.
 
 | # | View | Decision-context | Domains composed | Host surface | Primary persona |
 |---|------|------------------|------------------|--------------|-----------------|
-| 1 | Client Brain View | understand this client | Client Brain (owned by Knowledge — DEC-027; partitioning draft Q-004) + CRM + Service Delivery + Client Success + Finance + Brand | Client Brain Surface | Operator (Manager full; Contractor scoped) |
+| 1 | Client Brain View | understand this client | Client Brain (owned by Knowledge — DEC-027; per-Brand partitioning — DEC-045) + CRM (Brand entity) + Service Delivery + Client Success + Finance | Client Brain Surface | Operator (Manager full; Contractor scoped) |
 | 2 | Lead Context View | understand this lead | CRM + Intelligence (lead scoring) + Client Success | Lead Workspace | Operator (Manager full) |
-| 3 | Performance & Analytics View | read performance | Intelligence + Finance + Service Delivery + CRM | Reports & Analytics Surface | Operator / Manager (Contractor / Client scoped) |
+| 3 | Performance & Analytics View | read performance | Intelligence + Finance + Service Delivery + CRM | Reports & Analytics Surface | Operator / Manager / Client (Contractor / Client scoped own-engagement; DEC-047) |
 | 4 | Team Oversight View | oversee the team | Workforce + Service Delivery + Client Success + Intelligence | Reports & Analytics Surface (manager scope) | Manager |
 | 5 | Engagement Health View | is this engagement healthy / profitable? | Service Delivery + Finance + Client Success + Workforce | Reports & Analytics Surface (operator / manager scope) | Operator / Manager |
 | 6 | Client Engagement Summary View | how is my engagement going? | Service Delivery + Finance + Client Success | Reports & Analytics Surface (client-scoped) | Client |
@@ -891,12 +887,9 @@ are carried as deferred sub-detail of the Navigation Model.
 They are not designed in this pass.
 
 ### Deferred — Concrete enumeration
-The following enumerations are deferred to later Phase 2 refinement:
+The following enumerations were deferred; all are now populated:
 
-- populated permission matrix rows and columns
-
-This item requires additional explicit decisions
-and must not be introduced silently.
+- populated permission matrix rows and columns — **completed (DEC-026 / Snapshot-033)**
 
 The firm Operating Surfaces inventory
 is no longer deferred; it is enumerated

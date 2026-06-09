@@ -288,9 +288,10 @@ each follows the six-field skeleton above and is bound by the three governing ru
     (`Faraz-OS-Canon/workflows.md:129-133`; DEC-028 `decisions.md:1325-1332`), Phase-7
     clause verbatim: *"Defines what the agent is (identity, surface, executing AI
     architecture) → Phase 7."*
-- **Open / deferred items.** Q-017 (system-administrator visual workflow management) notes
-  a candidate Phase-7 home but is its own gated, multi-phase decision — carried, not
-  resolved here. Resolves no inherited Phase-1 question (R-027).
+- **Open / deferred items.** Q-017 resolved — DEC-048 (2026-06-09): workflows are
+  fixed-flow at T1; visual editing deferred to v2. This file noted the Phase-7 component
+  of that multi-phase question; no Phase-7 block added at T1. Resolves no inherited
+  Phase-1 question (R-027).
 
 ---
 
@@ -469,10 +470,12 @@ Referenced by the views, owned elsewhere, not authored here:
 ---
 
 ## Carried / not-owned (DEC-031 G-7)
-- R-027 set carried unresolved: Q-003 (Brand placement), Q-004 (Client Brain
-  partitioning), the insight→durable-knowledge threshold (`Faraz-OS-Canon/domains.md:1941`).
-- Q-016 and Q-017 carried; Q-017's visual-workflow-management home is its own gated,
-  multi-phase decision.
+- R-027 set: Q-003 (Brand placement) and insight→durable-knowledge threshold
+  (`Faraz-OS-Canon/domains.md:1946`) remain open; Q-004 (Client Brain partitioning)
+  resolved — DEC-045.
+- Q-016 resolved — DEC-047 (Client sees Performance & Analytics View, scoped to
+  own-engagement). Q-017 resolved — DEC-048 (fixed-flow at T1; visual editing
+  deferred to v2).
 - The Phase-1 entity reopenings the non-canon gap analysis surfaced: 5 of ~10 are now
   resolved (DEC-033 Media & Assets, DEC-034 Service Agreement, DEC-035 Community,
   DEC-036 Brand, DEC-038 AI Operations); ~5 remain (Campaign, Ticket, Ad-Account,

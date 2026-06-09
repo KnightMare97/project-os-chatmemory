@@ -88,8 +88,9 @@ Per DEC-040 G-5, `architecture.md` authors **no**:
 - Concern-view content — Phase 7 (`system-architecture-blueprint.md`).
 - Implementation technology or physical infrastructure specifics — Phase 9 / 10.
 - Workflow sequences or ordered execution patterns — Phase 6 (`workflows.md`).
-- Resolution of any carried-open question (Q-004, Q-006, Q-016, Q-017, Q-020, Q-022,
-  Q-024, R-027 set) — all referenced where they affect a layer, none resolved here.
+- Resolution of any carried-open question (Q-006, Q-024, R-027 set; Q-004/Q-016/Q-017/Q-020/Q-022
+  resolved by DEC-045/047/048/046/044 respectively) — remaining open items referenced where
+  they affect a layer, none resolved here.
 - Re-authoring of Phase 6 constructs (approval gate mechanism, lifecycle state machine,
   loop / exception pattern router) as Core Layer blocks — Phase 8 references the Phase 6
   workflow runtime as a dependency; those constructs are Phase 6-owned (`workflows.md`).
@@ -404,7 +405,7 @@ Per DEC-040 G-5, `architecture.md` authors **no**:
   | 3 | **Persona Portals** | Phase 2 (`experience-architecture.md:280`): the visual panel each persona group receives — one portal per persona, containing its scoped set of Operating Surfaces (`experience-architecture.md:303`). Five portals: Operator, Manager, Contractor, Client, System Administrator. |
   | 4 | **Navigation Model** | Phase 2 (`experience-architecture.md:423`): the movement model across portals and surfaces — how personas navigate within and between workspaces. |
   | 5 | **Permission Matrix** | Phase 2 (`experience-architecture.md:502`): the three-altitude governing access structure that projects Phase 1 Governance authorization rules onto persona↔surface exposure. The authoritative projection of who sees what. |
-  | 6 | **Cross-Domain Views** | Phase 2 (`experience-architecture.md:651`): cross-domain data aggregation surfaces hosted inside the Reports & Analytics Surface — Performance & Analytics, Team Oversight, Engagement Health, Client Engagement Summary. |
+  | 6 | **Cross-Domain Views** | Phase 2 (`experience-architecture.md:651`): cross-domain data aggregation surfaces; seven firm views — Client Brain View (Client Brain Surface), Lead Context View (Lead Workspace), Performance & Analytics View (Reports & Analytics; Client scoped own-engagement — DEC-047), Team Oversight View (Reports & Analytics), Engagement Health View (Reports & Analytics), Client Engagement Summary View (Reports & Analytics, client-scoped), Contractor Assignment-in-Context View (Contractor Assignments). |
   | 7 | **Channel Behaviors** | Phase 2 (`experience-architecture.md:792`): per-channel UX property definitions — format/media constraints, preview affordance, notification capability — the Phase 2 rendering behaviors that hang off Phase 4 channel-level properties. |
 
 - **Boundary notes.**
@@ -464,7 +465,7 @@ Per DEC-040 G-5, `architecture.md` authors **no**:
   | 3 | **Routing Engine** | Phase 7 AI Architecture (`blueprint.md:262-264`): "This view *executes* the routing engine but authors no selection policy — Phase 4 owns it." The runtime block that applies the Phase 4 AI Model Routing Policy (Plugins Layer) at per-chain-step invocation. Policy source: `extensibility.md:391-392`. |
   | 4 | **Model Invocation Interface** | Phase 7 AI Architecture (`blueprint.md:261-262`): executes against the Phase 4 Model abstraction (`extensibility.md:308`) — the abstraction layer between the orchestration tier and the actual model call. The swappable contract is Phase 4 (Plugins Layer, Model block); this block is the Phase 7 execution of that interface. |
   | 5 | **Human / Hybrid Execution Path** | Phase 7 AI Architecture (`blueprint.md:276-278`): "Human / hybrid execution paths are first-class alternatives to AI-default execution (HITL), never an afterthought." The execution path that routes steps requiring a human and manages the human-response re-entry into the chain. |
-  | — | ***Deferred slot 1:* Q-017 Workflow Management Engine** | *Deferred pending Q-017 gate* (`blueprint.md:474-475`: "Q-017's visual-workflow-management home is its own gated, multi-phase decision"). If resolved into this layer, adds a named block here. |
+  | — | ***Resolved slot 1:* Q-017 Workflow Management Engine** | *Q-017 resolved — DEC-048 (2026-06-09)*: workflows are **fixed-flow at T1**; visual editing is **deferred to v2** as a multi-phase gated feature. No new block added to this layer at T1. System Admin views workflow state via Agent & Workflow Monitor (Phase 2). Visual editing (if added in v2) would affect Phase 2 / Phase 4 / Phase 6 / Phase 7 — own gate then. |
   | — | ***Deferred slot 2:* Agent Supervision / Observability** | *Deferred — own gated pass* (`blueprint.md:462-463`: "Deeper agent supervision / observability is flagged for its own pass"). Not authored here. |
 
 - **Boundary notes.**
@@ -506,10 +507,10 @@ Per DEC-040 G-5, `architecture.md` authors **no**:
   executes against the Phase 4 Model abstraction (Plugins Layer). Execution here; policy
   and contract there.
 
-- **Carried / deferred.** Q-017 (Workflow Management Engine — own gated decision, may
-  add block 6 to this layer). Agent Supervision / Observability (own gated pass, may add
-  block 7). Q-022 (prompt/template versioning — separate gate). DEC-040 G-8 deferred
-  slots registered; neither resolved here.
+- **Carried / deferred.** Q-017 resolved (DEC-048): fixed-flow at T1, no new AI Layer
+  block. Agent Supervision / Observability (own gated pass, may add block 7). Q-022
+  resolved (DEC-044): Knowledge owns PromptTemplate. DEC-040 G-8 deferred slots:
+  slot 1 resolved (Q-017 / DEC-048); slot 2 (Agent Supervision) still open.
 
 ---
 
@@ -525,8 +526,8 @@ Experience (7 structural blocks) · AI (5 blocks + 2 deferred slots).
 Pending gated events (separate decisions, not Phase 8's to resolve):
 - Phase 9 Infrastructure Design (`infrastructure.md`) — assigns physical technology to
   each abstract Infrastructure block.
-- Q-017 Workflow Management Engine — own gated, multi-phase decision; may add a block to
-  the AI Layer (deferred slot 1).
+- Q-017 Workflow Management Engine — resolved (DEC-048, 2026-06-09): fixed-flow at T1,
+  visual editing deferred to v2. AI Layer deferred slot 1 updated accordingly.
 - Agent Supervision / Observability — own gated pass; may add a block to the AI Layer
   (deferred slot 2).
 - Phase-1 entity reopenings (Campaign, Ad-Account, Schedule, Consent) — each its own
