@@ -2671,6 +2671,44 @@ Status:
 
 ---
 
+### DEC-044
+**Q-022 — prompt / template versioning ownership — Knowledge owns PromptTemplate.**
+
+Phase: 1. Resolves: Q-022. Supersedes: none.
+Date: 2026-06-09.
+
+Q-022 asked where prompt / template definitions and their versioning live.
+Candidates were Media & Assets (DEC-033) and Knowledge.
+
+**Extend test — Knowledge:**
+Knowledge already owns Knowledge Artifact + Knowledge Version entities (the
+reusable structured artifact + version-history shape). PromptTemplate is a
+reusable organizational artifact with version history (version, A/B test, rollback)
+— structurally identical to what Knowledge already holds. The Organizational
+Knowledge bounded context lists "templates" in its focus. Extend test passes.
+
+**Extend test — Media & Assets:**
+Media & Assets (DEC-033) owns client-facing deliverable assets and their
+lifecycle (upload, version, approval, distribution). PromptTemplate is an
+internal operational artifact, not a client-facing deliverable. Extend test
+fails the content-type match.
+
+**Orphan test:** A standalone PromptTemplate domain would be a single-entity
+domain owning reusable internal artifacts — orphan test fails, Knowledge absorbs it.
+
+**Decision:** Knowledge owns PromptTemplate. PromptTemplate is added to:
+- Knowledge "What it owns" list (reusable structured AI prompt artifacts and
+  their version history)
+- Knowledge Candidate Entities list
+- Organizational Knowledge bounded context focus (templates, explicitly including
+  PromptTemplate)
+AI Operations "not responsible for" note updated to reflect resolution.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

@@ -1262,6 +1262,7 @@ Knowledge owns the source of truth for:
 - retrieval-oriented knowledge structures
 - memory references and knowledge indexing
 - approved organizational memory artifacts
+- PromptTemplate (DEC-044; reusable structured AI prompt artifacts and their version history)
 - Client Brain (DEC-027; partitioning per Client/Brand draft — Q-004)
 
 Knowledge may reference but should not own:
@@ -1290,6 +1291,7 @@ Partitioning per Client/Brand remains draft (Q-004).
 - Agency Brain Entry
 - Client Brain
 - Knowledge Version
+- PromptTemplate
 
 ---
 
@@ -1342,7 +1344,7 @@ rather than becoming a full aggregate.
 Focus:
 - agency-wide reusable knowledge
 - methods
-- templates
+- templates (including PromptTemplate — DEC-044)
 - standards
 - reusable guidance
 
@@ -4042,7 +4044,7 @@ AI Operations is not responsible for:
 - per-client rollups, margin, or AI-vs-human-cost ratio (Intelligence — derived)
 - the budget-cap policy (Phase 1 Governance) or its enforcement (Phase 4 AI Model Routing)
 - the commercial monetary layer — invoices, payments (Finance)
-- prompt / template definitions or versioning (Q-022, separate gate)
+- prompt / template definitions or versioning (resolved DEC-044; owned by Knowledge)
 
 ---
 
@@ -4092,8 +4094,8 @@ AI Operations may reference but should not own:
   (DEC-038 / Q-021); the internal entity modeling and aggregate placement are Draft v1.
 - **Per-client cost is derived (Intelligence), not a second entity here.**
 - The Phase-7 metering mechanism, the Intelligence margin / ratio views, the Governance
-  budget-cap policy + Phase-4 enforcement, and **prompt / template versioning (Q-022)** are
-  **separate later gates**, not authored here. The budget-cap gate reuses the Routing
+  budget-cap policy + Phase-4 enforcement are separate later gates, not authored here.
+  **Prompt / template versioning** is resolved: Knowledge owns PromptTemplate (DEC-044). The budget-cap gate reuses the Routing
   Governance Aggregate (P4) + the existing Escalation Loop (P6); no new Phase-6 pattern, and
   the Dual-Path / Manual-Fallback pattern (DEC-037) is not re-scoped.
 - No inherited Phase-1 question other than Q-021 is resolved here (R-027 set untouched).

@@ -611,6 +611,17 @@ Why it matters:
 - Prompt / template versioning (A/B, rollback) is an AI-quality + cost lever; it needs an owning
   home distinct from the cost record it is referenced by.
 
+Resolved (DEC-044):
+- **Knowledge** owns PromptTemplate. Extend test passes: PromptTemplate is a reusable
+  structured artifact with version history — the same shape as Knowledge Artifact /
+  Knowledge Version already in Knowledge. Media & Assets (DEC-033) owns client-facing
+  deliverable assets; prompt templates are internal organizational artifacts.
+- PromptTemplate added to Knowledge "What it owns," Candidate Entities list, and
+  Organizational Knowledge bounded context in `domains.md`.
+- AI Operations "not responsible for" note updated: prompt/template versioning owned
+  by Knowledge, not a separate gate.
+- Closed.
+
 ---
 
 ### Q-023
