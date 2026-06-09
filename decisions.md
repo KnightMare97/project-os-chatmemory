@@ -2903,6 +2903,53 @@ If a current decision is replaced:
 - create a new decision id if meaning materially changes
 - mark the older one as Superseded if needed
 
+### DEC-050
+**Phase 11 — Claude Code Operating System scope, four rulings.**
+
+Phase: 11 (scope gate). Resolves: Phase 11 scope gate. Supersedes: none.
+Date: 2026-06-10.
+
+Phase 11 is scoped as the Claude Code Operating System — the operating discipline
+under which Claude Code executes the Faraz OS build. It is the bridge from the
+finished architecture (Phases 1–10) to actual code. Phase 11 governs process,
+not product: agent stances, operating modes, session protocol, snapshot discipline,
+prompt handoff format, development rules, the coding-standards framework, and the
+provisioning/credentials checklist. It does not re-architect, does not resolve
+carried-open Phase-1 questions, and does not write application code.
+
+**Four scope rulings:**
+
+1. **Build snapshots → build repo.** Build-session snapshots (stage, blocks
+   completed, stage-gate status, surprises, architecture flags, next focus)
+   live in the future separate build/code repository — not this
+   architecture-memory repo. The architecture-memory repo remains pure design
+   canon after Phase 11. The build repo will be created at build time.
+
+2. **Agent roles = operating stances within one session, extensible.** The four
+   baseline agent roles (Architect Agent, Builder Agent, QA Agent, Review Agent)
+   are operating stances that Claude Code adopts within a single session — not
+   separate processes or instances. The model is explicitly extensible: additional
+   agent roles (e.g. a Migration Agent, a Documentation Agent) can be added to
+   the team when a build need calls for it. The four are the baseline set for
+   MVP → V1; they do not constitute a closed set.
+
+3. **Coding standards → deferred to build-repo CLAUDE.md.** Phase 11 defines
+   the coding-standards framework (categories of standards, which are universal
+   regardless of technology, which are deferred). Concrete pins — language version,
+   linter config, formatter, import conventions, naming rules, framework-specific
+   patterns — land in the build-repo CLAUDE.md at build-repo setup time, once
+   Phase 9 technology selections are confirmed. This is consistent with DEC-049
+   and Phase 9's intent.
+
+4. **Secret naming convention defined now; provisioning checklist plain-language.**
+   The secret naming convention is: `faraz-os-{env}-{block}-{type}` (env: dev |
+   staging | prod; block: sql | firebase | ai | channel-{name}; type: password |
+   sa-key | api-key). The provisioning checklist in `claude-operating-system.md`
+   is plain-language and explicit — enumerating every account, API, service account,
+   role, and secret with what it is, where Ali gets it, and that it goes into
+   GCP Secret Manager. Goal: Ali reads it and knows exactly what to gather with
+   zero guesswork.
+
 ---
 
 ## Review Rule

@@ -47,11 +47,18 @@ Phase 1 Domain Discovery is complete.
 Its normalized model in `domains.md`
 is the accepted Phase 1 reference.
 
-The current most active work is:
-- Phase 11 Claude Code Operating System (next recommended step after Phase 10 completion)
+**ALL ELEVEN PHASES NOW HAVE FIRST-WRITE ENTRIES. The Faraz OS
+architecture-memory repository is complete as a design canon.**
 
-Phases 1–10 all have first-write entries. **All ten architecture content phases
-(Phases 1–10) now have first-write entries** (Snapshot-049 / DEC-049 / commit `193790e`).
+Phase 11 Claude Code Operating System — `claude-operating-system.md` (824 lines) —
+is the Phase 11 deliverable: the operating discipline for Claude Code build sessions
+(four agent stances, three modes, session protocol, prompt handoff, provisioning
+checklist, development rules, coding-standards framework, Build-Time CLAUDE.md
+Template). DEC-050 mints the Phase 11 scope gate (four rulings: build snapshots
+→ build repo, agent roles = stances + extensible, coding standards deferred to
+build-repo CLAUDE.md, secret naming `faraz-os-{env}-{block}-{type}` with
+plain-language provisioning checklist).
+
 Phase 10 Build Roadmap — `roadmap.md` (589 lines) — is the Phase 10 deliverable:
 a dependency-ordered Build Roadmap (Foundation → Core Layer → T1 Launch → V1 →
 V2 → Future) on the six-field skeleton. DEC-049 mints the Phase 10 scope gate
@@ -376,28 +383,28 @@ with human review.
 ---
 
 ## Current Phase 11 Position
-Claude collaboration is now being made more explicit
-through repository-level operating rules.
 
-This includes:
-- `CLAUDE.md`
-- session discipline
-- session close-out and sync discipline
-- source-of-truth discipline
-- plan/build/review mode discipline
-- handoff-oriented repository behavior
+**Phase 11 Claude Code Operating System — FIRST WRITE COMPLETE.**
+(Snapshot-050 / DEC-050 / 2026-06-10)
 
-Execution tracking is mirrored in Linear.
-GitHub remains the source of truth;
-Linear is execution tracking only,
-reconciled against the latest snapshot at session close.
+`Faraz-OS-Canon/claude-operating-system.md` (824 lines) is the Phase 11 deliverable.
+It defines the operating discipline for Claude Code build sessions:
+- Four agent stances: Architect Agent, Builder Agent, QA Agent, Review Agent
+  (extensible model — add roles as build needs require)
+- Three operating modes: Plan Mode, Build Mode, Review Mode (with transition table)
+- Session protocol: start discipline, close-out discipline, GATED vs AUTO split
+- Snapshot discipline: build snapshots belong in the build repo (not here)
+- Prompt handoff format for cold-start session orientation
+- Prerequisites / Provisioning Checklist: plain-language enumerated list of every
+  GCP account, API, service account, IAM role, and secret Ali must provision
+  before the Foundation stage gate; secret naming `faraz-os-{env}-{block}-{type}`
+- Development rules (9 rules, technology-agnostic)
+- Coding standards framework: universal rules + deferred pins for build-repo CLAUDE.md
+- Appendix A: Build-Time CLAUDE.md Template (fenced code block spec; no real CLAUDE.md
+  created in this repo; `./CLAUDE.md` untouched)
 
-The executable runbook for this reconciliation
-is `workflows/sync-protocol.md`
-(the single canonical Linear ↔ GitHub sync procedure).
-
-This separates architecture content ownership
-from Claude operating behavior.
+The build repo (separate from this architecture-memory repo) will be created at
+build time. Architecture-memory repo stays pure design canon.
 
 ---
 
@@ -452,20 +459,24 @@ Avoid:
 ---
 
 ## Current Next Focus
-The current recommended next focus is:
 
-**Phase 10 Build Roadmap COMPLETE (Snapshot-049, 2026-06-09).** DEC-049 minted;
-`roadmap.md` first write pushed and verified at SHA `193790e`. **All ten architecture
-content phases (Phases 1–10) now have first-write entries.** Next recommended steps:
+**ALL ELEVEN PHASES COMPLETE. Architecture-memory repository is done as design canon.**
+
+Phase 11 COMPLETE (Snapshot-050, 2026-06-10). DEC-050 minted;
+`claude-operating-system.md` first write pushed and verified. **All eleven phases
+(Phases 0–11) now have first-write entries.** Next recommended steps:
 
 1. **Q-006 Phase-1 gate** — Service Agreement / Engagement Scope aggregate boundary;
-   mandatory before CRM domain schema can be written in Phase 11.
+   mandatory before CRM domain schema can be written in the build repo.
 2. **Q-024 Phase-1 gate** — Ticket ↔ Escalation Case lifecycle coupling; mandatory
-   before Client Success domain schema can be written in Phase 11.
-3. **Phase 11 Claude Code Operating System** — `claude-operating-system.md`, the
-   final phase file.
+   before Client Success domain schema can be written in the build repo.
+3. **Build-repo setup** — Create the separate build/code repository; instantiate
+   the Build-Time CLAUDE.md Template (Appendix A of `claude-operating-system.md`);
+   complete the provisioning checklist; pin coding standards in build-repo CLAUDE.md.
 4. **Q-003 Phase-1 gate** — Brand aggregate placement; preferably before V1
    schema finalization.
+5. **Foundation stage build** — Begin MVP Foundation stage per `roadmap.md`,
+   once build repo is set up and provisioning checklist is complete.
 
 Remaining open items (do not touch without explicit gate):
 - Q-003 (Brand aggregate placement), Q-006, Q-007, Q-024 (`domains.md:1720`),
