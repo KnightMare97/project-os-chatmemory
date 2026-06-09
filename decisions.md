@@ -2841,6 +2841,62 @@ Status:
 
 ---
 
+### DEC-049
+**Phase 10 — Build Roadmap scope, six rulings.**
+
+Phase: 10 (scope gate). Resolves: Phase 10 scope gate. Supersedes: none.
+Date: 2026-06-09.
+
+Phase 10 is scoped as the Build Roadmap — the first and only phase in the
+Faraz OS stack where concrete build decisions land: exact instance SKUs,
+migration runner implementation, CI/CD pipeline config, deployment scripts,
+RLS policy sets per table/domain, and all items Phase 9 (`infrastructure.md`)
+explicitly flagged as `Build-layer → Phase 10`. Phase 10 sequences carried-open
+Phase-1 questions as named gates; it does not resolve them.
+
+**Six scope rulings:**
+
+1. **MVP definition.** MVP = all 7 fixed-flow workflows running end-to-end
+   for a single client, T1-critical domains active, schema-per-client isolation
+   proven. V1 = same system in production-ready form: all 5 portals / 16 surfaces /
+   Permission Matrix enforced. MVP → V1 is the contiguous near-term showcase
+   deliverable — the sequence to build and present to leadership. Foundation
+   and Core Layer are MVP sub-stages (prerequisites), not separate product milestones.
+
+2. **T3 entity slots.** Campaign, Ad-Account, Schedule, and Consent are V2
+   items — gated-but-intended, not permanently deferred. Each requires its
+   own Phase-1 decision gate before any domain schema is written.
+
+3. **Q-006 and Q-024 as explicit pre-build gates.** Q-006 (Service Agreement /
+   Engagement Scope aggregate boundary) and Q-024 (Ticket ↔ Escalation Case
+   lifecycle coupling) are named mandatory gates in the T1 Launch stage: both
+   must be resolved before the CRM and Client Success domain schemas respectively
+   are written. These gates do not block Foundation or Core Layer stages.
+
+4. **Bilingual / IR-sensitivity as first-class build constraints.** Content
+   production and publishing carry two non-negotiable constraints:
+   (a) Farsi/English bilingual — Content domain schema carries a `language`
+   field first-class; PromptTemplate supports Farsi templates; Publishing
+   pipeline handles RTL rendering and Unicode normalization;
+   (b) Iran-specific platform-access reality — Dual-Path / Manual Fallback
+   (DEC-037) is T1-critical and wired at MVP, not deferred. Five specific
+   constraints are enumerated in `roadmap.md` T1 Launch; Phase 11 (Claude Code)
+   must validate them before writing Content or Publishing schema.
+
+5. **Q-003 (Brand aggregate placement) sequencing.** Q-003 should be resolved
+   as a Phase-1 gate before V1 schema is finalized — not a T1 Launch blocker.
+   Brand entity is already placed (DEC-036); only aggregate placement remains
+   open. Resolving before V1 avoids Brand aggregate schema rework.
+
+6. **Phase 10 deliverable file.** `Faraz-OS-Canon/roadmap.md` is the Phase 10
+   canon file. Top-level structure: MVP / V1 / V2 / Future (matching
+   `Faraz-OS-Canon.md:162-165`).
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
