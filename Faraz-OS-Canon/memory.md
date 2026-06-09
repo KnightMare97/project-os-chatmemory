@@ -22,9 +22,9 @@ ownership (Phase 1).
 
 ## Governing ownership
 Five of the six firm structures are already owned by the **Knowledge** domain per
-Phase 1 (`domains.md:1253-1263`, "Knowledge — What it owns"); **Client Brain**
-ownership was resolved to Knowledge by DEC-027 (`domains.md:374`, `:1263`,
-`:2785-2789`). Phase 5 gives these Knowledge-owned structures architectural form; it
+Phase 1 (`domains.md:1254-1265`, "Knowledge — What it owns"); **Client Brain**
+ownership was resolved to Knowledge by DEC-027 (`domains.md:374`, `:1265`,
+`:2791-2795`). Phase 5 gives these Knowledge-owned structures architectural form; it
 does not re-own them.
 
 Each entry uses the DEC-027 six-field skeleton: Definition · Owner (Phase-1
@@ -37,12 +37,12 @@ Boundary notes.
 - **Definition.** Persistent durable memory holding the cross-workflow, cross-service
   context a client requires — strategic, brand, relationship, and learning context,
   reusable by humans and AI (`domains.md:342-343`, `:2770-2776`). Its partitioning
-  unit (per Client, per Brand, or both) is **open — Q-004** — and is not fixed by
-  this entry.
+  unit is **per Brand** (DEC-045), with a per-Client aggregation view for cross-brand
+  context.
 - **Owner (Phase-1).** **Knowledge** (DEC-027; `domains.md:374`, Knowledge "What it
-  owns" `:1263`). Client Success **contributes** relationship-relevant content but
+  owns" `:1265`). Client Success **contributes** relationship-relevant content but
   does not own it; CRM **references** it but does not own it (`:376-377`,
-  `:2787-2788`). Primary consumers: Strategy, Service Delivery, Intelligence,
+  `:2793-2794`). Primary consumers: Strategy, Service Delivery, Intelligence,
   Approval workflows, CRM (partial) (`:379-384`).
 - **Contents.** Identity; Brand context; Market context; Commercial & offer context;
   Rules & constraints; Strategic context; Relationship memory; Performance learnings;
@@ -51,7 +51,7 @@ Boundary notes.
   memory, durable learnings, approved long-lived context, and reusable client
   knowledge for humans and AI (`:2770-2776`). Does **not** hold the legal/commercial
   account, operational delivery state, approval-queue state, workforce identity, or
-  secret values (`:2778-2783`; secrets boundary `:605-615`).
+  secret values (`:2784-2789`; secrets boundary `:605-615`).
 - **Lifecycle / durability.** Versioned: draft → active → approved → superseded
   (`domains.md:630-634`). Approved strategic context is long-lived and must not be
   silently overwritten (`:556-557`, `:594`).
@@ -64,101 +64,101 @@ Boundary notes.
   silent overwrite of strategic fields, no unreviewed replacement of approved
   context. AI may propose / enrich / summarize / classify / recommend, never silently
   overwrite approved context (`:594-603`). *Access* authorization defers to **DEC-026**
-  (`domains.md:2482`, Client Brain "access only"); *physical* retrieval and storage
+  (`domains.md:2487`, Client Brain "access only"); *physical* retrieval and storage
   defer to **Phase 7**.
-- **Boundary notes.** **Partition-agnostic (Q-004):** nothing in this entry assumes a
-  per-Client, per-Brand, or both instantiation; partitioning is open (Q-004,
-  entangled with Q-003 Brand placement). Aggregate-vs-Memory-Object status stays draft
-  (`domains.md:1322-1333`). Client Brain may hold durable Brand-related memory without
-  owning Brand identity (`:3698-3700`); Brand placement is Q-003.
+- **Boundary notes.** **Partitioning: per-Brand (DEC-045):** Client Brain is
+  partitioned per Brand, with a per-Client aggregation view for cross-brand context;
+  Q-003 resolved (DEC-036). Aggregate-vs-Memory-Object status stays draft
+  (`domains.md:1325-1336`). Client Brain may hold durable Brand-related memory without
+  owning Brand identity (`:3698-3700`).
 
 ## Agency Brain
 - **Definition.** The organization-wide reusable memory layer — agency-level
-  knowledge, distinct from client-specific memory (`domains.md:1393-1395`).
-- **Owner (Phase-1).** Knowledge (`domains.md:1255`, Knowledge "What it owns").
-  Entity: Agency Brain Entry (`:1288`).
+  knowledge, distinct from client-specific memory (`domains.md:1396-1398`).
+- **Owner (Phase-1).** Knowledge (`domains.md:1254`, Knowledge "What it owns").
+  Entity: Agency Brain Entry (`:1290`).
 - **Contents.** Agency-wide reusable knowledge: methods, templates, standards, and
-  reusable guidance (Organizational Knowledge bounded context, `domains.md:1339-1345`).
+  reusable guidance (Organizational Knowledge bounded context, `domains.md:1342-1348`).
 - **Lifecycle / durability.** Updated and surfaced via the "agency brain updated"
-  event (`domains.md:1426`); durable agency knowledge follows the Knowledge durability
-  path (artifact created → approved → superseded, `:1420-1422`).
+  event (`domains.md:1429`); durable agency knowledge follows the Knowledge durability
+  path (artifact created → approved → superseded, `:1423-1425`).
 - **Retrieval & update contract.** Reusable across workflows (cross-workflow memory
-  reuse, `domains.md:1241`). Access authorization defers to DEC-026; physical
+  reuse, `domains.md:1242`). Access authorization defers to DEC-026; physical
   retrieval / indexing defers to Phase 7.
 - **Boundary notes.** Distinct from Client Brain — organization-wide vs
-  client-specific (`domains.md:1361-1366` vs `:1393-1395`). Not interpretive analytics
-  (Intelligence; risk of overlap `:1438-1439`).
+  client-specific (`domains.md:1364-1370` vs `:1396-1398`). Not interpretive analytics
+  (Intelligence; risk of overlap `:1441-1442`).
 
 ## Knowledge Base
 - **Definition.** The store of reusable organizational knowledge artifacts —
-  structured reusable memory objects, not mere document files (`domains.md:1256`,
+  structured reusable memory objects, not mere document files (`domains.md:1257`,
   `:1378-1379`).
-- **Owner (Phase-1).** Knowledge (`domains.md:1256`). Entities: Knowledge Artifact,
-  Knowledge Entry, Playbook, Knowledge Version (`:1281-1290`).
+- **Owner (Phase-1).** Knowledge (`domains.md:1257`). Entities: Knowledge Artifact,
+  Knowledge Entry, Playbook, Knowledge Version (`:1281-1293`).
 - **Contents.** Knowledge artifacts with content body / structured payload, tags,
   version state, retrieval metadata, and approval state (Knowledge Artifact Aggregate,
-  `domains.md:1296-1303`); reusable playbooks and knowledge artifacts (`:1259`).
+  `domains.md:1299-1306`); reusable playbooks and knowledge artifacts (`:1259`).
 - **Lifecycle / durability.** Knowledge artifact created → approved → superseded
-  (`domains.md:1420-1422`), with version visibility maintained (Knowledge Version,
-  `:1240`, `:1290`). Which artifact types require explicit approval before becoming
-  durable reusable knowledge is **open** (`:1448-1449`).
+  (`domains.md:1423-1425`), with version visibility maintained (Knowledge Version,
+  `:1241`, `:1292`). Which artifact types require explicit approval before becoming
+  durable reusable knowledge is **open** (`:1451-1452`).
 - **Retrieval & update contract.** Retrieval-ready structuring and cross-workflow
-  reuse (`domains.md:1239-1241`). Access authorization defers to DEC-026; physical
+  reuse (`domains.md:1240-1242`). Access authorization defers to DEC-026; physical
   indexing / storage defers to Phase 7.
 - **Boundary notes.** Risk: an unbounded dumping ground if artifact types are not kept
-  explicit (`domains.md:1434-1435`). Whether Decision Log and Learning Record are
-  separate aggregates or specialized Knowledge Artifact types is open (`:1450-1452`).
+  explicit (`domains.md:1436-1438`). Whether Decision Log and Learning Record are
+  separate aggregates or specialized Knowledge Artifact types is open (`:1453-1455`).
 
 ## Decision Logs
 - **Definition.** The durable record of decisions and their rationale — preserving
   *why* a decision was made, not only the final state, because Faraz OS is
-  human-governed (`domains.md:1347-1352`, `:1381-1383`).
-- **Owner (Phase-1).** Knowledge (`domains.md:1257`). Entity: Decision Log (`:1283`).
+  human-governed (`domains.md:1350-1355`, `:1381-1383`).
+- **Owner (Phase-1).** Knowledge (`domains.md:1258`). Entity: Decision Log (`:1283`).
 - **Contents.** Decision summary, rationale, decision-maker references, effective
-  date, and linked domain references (Decision Log Aggregate, `domains.md:1306-1312`);
+  date, and linked domain references (Decision Log Aggregate, `domains.md:1308-1315`);
   audit-friendly knowledge trails and decision visibility over time (Decision Memory
-  bounded context, `:1347-1352`).
+  bounded context, `:1350-1355`).
 - **Lifecycle / durability.** Inbound: decision made / decision revised
-  (`domains.md:1401-1402`); surfaced via "decision logged" (`:1423`). Retained for
+  (`domains.md:1404-1405`); surfaced via "decision logged" (`:1423`). Retained for
   decision visibility and audit over time (`:1351-1352`).
-- **Retrieval & update contract.** Retained as an audit-friendly trail (`domains.md:1351`).
+- **Retrieval & update contract.** Retained as an audit-friendly trail (`domains.md:1354`).
   Access authorization defers to DEC-026; physical retrieval defers to Phase 7.
 - **Boundary notes.** Aggregate granularity — own aggregate vs specialized Knowledge
-  Artifact type — is open (`domains.md:1450-1452`).
+  Artifact type — is open (`domains.md:1453-1455`).
 
 ## Learnings
 - **Definition.** Durable reusable learnings — reusable insight produced by execution,
-  review, correction, and outcome analysis (`domains.md:1258`, `:1385-1386`).
-- **Owner (Phase-1).** Knowledge (`domains.md:1258`). Entity: Learning Record (`:1284`).
+  review, correction, and outcome analysis (`domains.md:1259`, `:1385-1386`).
+- **Owner (Phase-1).** Knowledge (`domains.md:1259`). Entity: Learning Record (`:1284`).
 - **Contents.** Learning record with source context, confidence / validation state,
   reusable recommendation, and linked workflow / domain references (Learning
-  Aggregate, `domains.md:1314-1320`); post-execution learnings, recurring patterns,
+  Aggregate, `domains.md:1317-1323`); post-execution learnings, recurring patterns,
   validated improvements, and reusable lessons (Learning Memory bounded context,
   `:1354-1359`).
 - **Lifecycle / durability.** Inbound: learning generated → learning approved
-  (`domains.md:1403-1404`); surfaced via "learning published" (`:1424`). **The
+  (`domains.md:1406-1407`); surfaced via "learning published" (`:1424`). **The
   threshold at which an insight becomes durable knowledge is Phase-1 Intelligence
-  truth, pending (`domains.md:1941`) — this entry references it at altitude and defines
+  truth, pending (`domains.md:1946`) — this entry references it at altitude and defines
   no threshold and no mechanism (G-7 / R-027).** Which artifact types require explicit
-  approval before becoming durable is likewise open (`:1448-1449`).
+  approval before becoming durable is likewise open (`:1451-1452`).
 - **Retrieval & update contract.** Reusable across workflows — the continuous learning
-  loop (Principle #9, `principles.md:27-28`; cross-workflow reuse `domains.md:1241`).
+  loop (Principle #9, `principles.md:27-28`; cross-workflow reuse `domains.md:1242`).
   Access authorization defers to DEC-026; physical retrieval defers to Phase 7.
 - **Boundary notes.** Not interpretive analytics: Intelligence computes insight;
-  Knowledge holds the durable learning once it qualifies (`domains.md:1438-1439`). The
+  Knowledge holds the durable learning once it qualifies (`domains.md:1441-1442`). The
   insight→durable threshold stays with Phase-1 Intelligence (G-7).
 
 ## Context Retrieval
 - **Definition.** The retrieval layer — indexing, memory references, retrieval slices,
   and context packaging that make memory available to workflows and AI execution
-  (`domains.md:1368-1373`).
-- **Owner (Phase-1).** Knowledge (`domains.md:1260-1261`). Entities: Retrieval
-  Context, Memory Reference (`:1286-1287`).
+  (`domains.md:1371-1376`).
+- **Owner (Phase-1).** Knowledge (`domains.md:1262`). Entities: Retrieval
+  Context, Memory Reference (`:1288-1289`).
 - **Contents.** Indexes, memory references, retrieval slices, and context packages for
   workflows and AI execution (Retrieval Context Management bounded context,
-  `domains.md:1368-1373`); memory references and knowledge indexing (`:1261`).
+  `domains.md:1371-1376`); memory references and knowledge indexing (`:1261`).
 - **Lifecycle / durability.** Inbound: retrieval context requested
-  (`domains.md:1414`); outbound: retrieval context prepared (`:1427`). Retrieval
+  (`domains.md:1417`); outbound: retrieval context prepared (`:1427`). Retrieval
   contexts are prepared on request to package existing durable memory for consumers;
   they are derived from the durable structures above, not a separate source of truth.
 - **Retrieval & update contract.** Packages context for consumers (workflows, AI
@@ -166,7 +166,7 @@ Boundary notes.
   implementation, data paths — is Phase 7** and is not specified here. Access
   authorization defers to DEC-026.
 - **Boundary notes.** Risk: retrieval structures over-designed too early, before core
-  artifact types stabilize (`domains.md:1440-1441`). Canon notes the depth of
+  artifact types stabilize (`domains.md:1443-1444`). Canon notes the depth of
   retrieval modeling as a deferral (`:1453-1454`); Phase 5 names the contract and
   defers implementation to Phase 7.
 
@@ -192,13 +192,13 @@ memory, name-only); ordered sequences or the Learn → Memory Update orchestrati
 (Phase 6); capability *definitions* (Phase 3 — capabilities *produce* outputs that
 may become durable knowledge); authorization / access / policy rules (Phase 1
 Governance / DEC-026); resolution of inherited Phase-1 questions (incl. the
-insight→durable-knowledge threshold, `domains.md:1941`); the deep content of the
+insight→durable-knowledge threshold, `domains.md:1946`); the deep content of the
 deferred Asset Intelligence sub-item; and implementation technology.
 
 ## Cross-phase boundaries (closed seven-boundary set, DEC-027)
-- **↔ Phase 1 domain truth.** Knowledge owns these structures (`domains.md:1253-1263`);
+- **↔ Phase 1 domain truth.** Knowledge owns these structures (`domains.md:1254-1265`);
   Client Brain owned by Knowledge (DEC-027). Phase 5 architects, never re-owns.
-- **↔ Phase 1 Governance.** Access authorization is DEC-026's (`domains.md:2482`);
+- **↔ Phase 1 Governance.** Access authorization is DEC-026's (`domains.md:2487`);
   `memory.md` authors none.
 - **↔ Phase 2.** Surfaces / views render memory (Client Brain Surface, Knowledge
   Workspace) — name-only.
@@ -213,10 +213,8 @@ deferred Asset Intelligence sub-item; and implementation technology.
   implementation are out — Phase 7.
 
 ## Open and inherited flags
-- **Q-004** — Client Brain partitioning (per Client / per Brand / both); entangled with
-  Q-003 Brand placement; the Client Brain entry is written partition-agnostic.
-- **Client Brain Aggregate vs Memory Object** — draft (`domains.md:1322-1333`).
-- **Insight → durable-knowledge threshold** — `domains.md:1941`; Phase-1 Intelligence
+- **Client Brain Aggregate vs Memory Object** — draft (`domains.md:1325-1336`).
+- **Insight → durable-knowledge threshold** — `domains.md:1946`; Phase-1 Intelligence
   truth, pending (G-7 / R-027); referenced at altitude by the Learnings entry.
 - **Approval-before-durable** and **Decision Log / Learning Record aggregate
-  granularity** — open in canon (`domains.md:1448-1452`).
+  granularity** — open in canon (`domains.md:1451-1455`).

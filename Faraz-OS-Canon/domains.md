@@ -657,10 +657,9 @@ Brand may need to be modeled as its own Entity
 or a scoped child entity,
 rather than only as a field inside Client Brain.
 
-Open Question:
-Should Client Brain exist per Client,
-per Brand,
-or support both levels?
+Resolved (DEC-045):
+Client Brain is partitioned per Brand, with a per-Client aggregation view
+for cross-brand context. Ownership remains Knowledge (DEC-027).
 
 ### Service Agreement Relationship
 Service Agreement is the likely business artifact
@@ -1263,7 +1262,7 @@ Knowledge owns the source of truth for:
 - memory references and knowledge indexing
 - approved organizational memory artifacts
 - PromptTemplate (DEC-044; reusable structured AI prompt artifacts and their version history)
-- Client Brain (DEC-027; partitioning per Client/Brand draft — Q-004)
+- Client Brain (DEC-027; per-Brand partitioning with per-Client aggregation view — DEC-045)
 
 Knowledge may reference but should not own:
 - CRM Client identity
@@ -1276,7 +1275,7 @@ Knowledge may reference but should not own:
 
 Client Brain is owned by Knowledge (DEC-027);
 Client Success contributes relationship-relevant content but does not own it.
-Partitioning per Client/Brand remains draft (Q-004).
+Partitioning is per-Brand with per-Client aggregation view (DEC-045).
 
 ---
 
@@ -1448,7 +1447,7 @@ Candidate outbound events from Knowledge:
 
 ### Open Questions
 - Resolved (DEC-027): Client Brain is owned by Knowledge; Client Success
-  contributes but does not own. (Partitioning per Client/Brand remains open — Q-004.)
+  contributes but does not own. (Per-Brand partitioning resolved; DEC-045.)
 - Which artifact types require explicit approval
   before becoming durable reusable knowledge?
 - Should Decision Log and Learning Record
@@ -2471,7 +2470,7 @@ review / approval items (Service Delivery) · client deliverables (Service Deliv
 client approval items (Service Delivery / Client Success) · client-facing notifications
 (Client Success / Service Delivery) · knowledge artifacts (Knowledge) · admin
 knowledge (Knowledge) · Client Brain (cross-cutting; owned by Knowledge — DEC-027;
-partitioning draft Q-004 — access only, per the Domain Notes that Governance may
+per-Brand partitioning (DEC-045) — access only, per the Domain Notes that Governance may
 constrain access but not own it) · analytics & reporting outputs (Intelligence) · lead records (CRM) ·
 billing / invoices (Finance — presentation; Finance owns) · contractor assignment
 records (Workforce / Service Delivery) · agent & workflow runtime state
@@ -2793,7 +2792,7 @@ Ownership (resolved — DEC-027):
 - Knowledge owns Client Brain as durable, reusable memory
 - CRM references Client Brain but does not own it
 - Client Success contributes heavily to its relationship-relevant content, but does not own it
-- partitioning (per Client / per Brand / both) remains draft — Q-004, entangled with Q-003 Brand placement
+- partitioning is per-Brand with per-Client aggregation view (DEC-045; Q-003 resolved DEC-036)
 
 ---
 
@@ -3008,7 +3007,7 @@ Workforce remains the source of truth for:
 
 ### Open Questions
 - Resolved (DEC-027): Client Brain is owned by Knowledge; Client Success
-  contributes but does not own. (Partitioning per Client/Brand remains open — Q-004.)
+  contributes but does not own. (Per-Brand partitioning resolved; DEC-045.)
 - Open Question: Should Client Brain exist per Client, per Brand,
   or support both levels?
 - Open Question: Is Service Agreement owned by CRM,
@@ -3746,8 +3745,8 @@ and remain draft.
 ### Open Questions
 **Answered by DEC-036:** Brand is a first-class Entity owned by CRM (not a child entity);
 owned in CRM (not an adjacent Bounded Context); identity-level attributes live on the Brand
-Entity while voice / style memory stays in Client Brain (Knowledge). **Still open:** Q-004
-(Client Brain partitioning — unblocked by DEC-036, not resolved); whether one Engagement
+Entity while voice / style memory stays in Client Brain (Knowledge). **Q-004 resolved
+(DEC-045): per-Brand partitioning with per-Client aggregation view.** Whether one Engagement
 Scope may reference more than one Brand; and whether Brand needs its own Aggregate boundary
 (aggregate placement draft/pending). The historical questions below are retained as record.
 
@@ -3790,17 +3789,17 @@ Scope may reference more than one Brand; and whether Brand needs its own Aggrega
 - **Identity-vs-memory seam:** Brand identity (this CRM Entity; holds voice / style
   *references*) is distinct from brand **voice / tone / style content**, which stays in
   Client Brain, owned by **Knowledge (DEC-027, untouched)**.
-- **Q-004** (Client Brain per-Client / per-Brand / both) is **unblocked by DEC-036 but stays
-  OPEN** — a Phase-5 / Knowledge memory-partitioning call; the Phase-5 Client Brain entry
-  stays partition-agnostic.
-- **Flagged, not edited here:** the Client Brain Identity `brand_name` field (this file,
-  Client Brain Identity field group) becomes denormalized once Brand is a CRM Entity —
-  carried to the Q-004 / Phase-5 memory pass.
+- **Q-004 resolved (DEC-045):** Client Brain partitioning is **per-Brand**, with a
+  **per-Client aggregation view** for cross-brand context. The Phase-5 memory entry is
+  updated to reflect per-Brand as the partitioning unit.
+- **Brand_name field:** the Client Brain Identity `brand_name` field becomes a Brand
+  reference (CRM Entity, DEC-036) rather than a plain text field — resolved as part of
+  DEC-045 landing.
 - **Separate later gates:** Brand Kit → Media & Assets (DEC-033); brand-style enforcement →
   Phase 3 / Governance; Brand aggregate placement → later.
 - Carried fallback: the DEC-034 "Commercial / Agreements" domain if CRM later strains.
-- No inherited Phase-1 question other than Q-003 is resolved here (Q-004 unblocked-not-
-  resolved; the R-027 threshold and Q-006 untouched).
+- No inherited Phase-1 question other than Q-003 and Q-004 is resolved here
+  (the R-027 threshold and Q-006 untouched).
 
 ---
 

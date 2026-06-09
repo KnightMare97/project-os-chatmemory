@@ -128,6 +128,15 @@ Note (DEC-027 / DEC-036):
 - The Phase-5 Client Brain entry is written partition-agnostic — valid under
   per-Client, per-Brand, or both — so it does not silently resolve Q-004.
 
+Resolved (DEC-045):
+- **Per-Brand** partitioning is the primary unit, with a **per-Client aggregation
+  view** for cross-brand context. Ownership remains Knowledge (DEC-027).
+- Per-Brand aligns Client Brain with Brand's first-class CRM identity (DEC-036)
+  and preserves execution-relevant voice/tone/strategy precision per brand.
+- Per-Client aggregation view provides cross-brand context for multi-brand clients.
+- `memory.md` Client Brain entry updated; `domains.md` all Q-004 references updated.
+- Closed.
+
 ---
 
 ### Q-005

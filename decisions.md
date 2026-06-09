@@ -2709,6 +2709,42 @@ Status:
 
 ---
 
+### DEC-045
+**Q-004 — Client Brain partitioning — per-Brand, with per-Client aggregation view.**
+
+Phase: 1. Resolves: Q-004. Supersedes: none.
+Date: 2026-06-09.
+
+Q-004 asked whether Client Brain should be partitioned per Client, per Brand,
+or support both levels. It was unblocked by DEC-036 (Brand is a first-class
+CRM Entity, Q-003 resolved), then carried to its own gate.
+
+**Evidence / reasoning:**
+1. **Brand is a first-class CRM Entity (DEC-036)**: Brand is reference-addressable,
+   carries identity attributes, and is a meaningful context boundary for client
+   memory. A per-Brand partitioning makes Client Brain's scope align with the
+   entity that shapes execution context.
+2. **Multi-brand clients need a cross-brand view**: A client may own multiple
+   Brands (1 Client : N Brand). AI execution at the client level needs a
+   cross-brand aggregation view for context that spans all a client's brands
+   (e.g. shared commercial context, overall relationship health).
+3. **Per-Client alone is too coarse**: A per-Client partition loses Brand
+   specificity needed for voice/tone/strategy memory; Brand context is execution-
+   relevant and must not be blended across brands.
+4. **Per-Brand alone is sufficient, with a view for cross-brand**: The per-Brand
+   partition as the primary unit, plus a per-Client aggregation view (read-only
+   cross-brand context), gives both precision and breadth.
+
+**Decision:** Client Brain is partitioned **per Brand** (the primary unit), with a
+**per-Client aggregation view** for cross-brand context. Ownership remains Knowledge
+(DEC-027). Q-003 entanglement resolved (DEC-036). `memory.md` Client Brain entry
+updated; `domains.md` all Q-004 references updated.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined
