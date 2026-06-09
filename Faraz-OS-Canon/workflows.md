@@ -401,7 +401,7 @@ authorization rule, agent identity, or visual workflow-management capability
 - **Cross-phase boundary notes.** Updates Phase-5 memory (target + contract are
   Phase 5, `memory.md`); the **insight→durable-knowledge threshold** is inherited
   Phase-1 Intelligence truth, referenced at altitude and **not resolved here**
-  (R-027, `domains.md:1918`). Authors no memory structure and no threshold.
+  (R-027, `domains.md:1941`). Authors no memory structure and no threshold.
 
 ---
 
@@ -448,7 +448,7 @@ Carried, referenced, not resolved here:
   resolved here (scoping only; no Phase-7/8 content).
 - **Inherited Phase-1 questions (R-027)** — Q-003 (Brand placement), Q-004 (Client
   Brain partitioning), and the insight→durable-knowledge threshold
-  (`domains.md:1918`): referenced at altitude, resolved by their owning Phase-1
+  (`domains.md:1941`): referenced at altitude, resolved by their owning Phase-1
   work, not here.
 - **R-028 reference-altitude guards** — the role-vs-identity and P6↔P7 litmuses are
   the active guards; Workflow Runtime is the highest-overcommitment surface and

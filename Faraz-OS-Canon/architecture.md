@@ -399,7 +399,7 @@ Per DEC-040 G-5, `architecture.md` authors **no**:
 
   | # | Experience Layer block | Source |
   |---|---|---|
-  | 1 | **Persona Model** | Phase 2 (`experience-architecture.md:109`): the locked set of 5 experience archetypes — Operator, Manager, Contractor, Client, System Administrator — plus a Future Personas deferred placeholder (`experience-architecture.md:121`). Persona is distinct from Workforce identity (Phase 1). |
+  | 1 | **Persona Model** | Phase 2 (`experience-architecture.md:121`): the locked set of 5 experience archetypes — Operator, Manager, Contractor, Client, System Administrator — plus a Future Personas deferred placeholder (`experience-architecture.md:140`). Persona is distinct from Workforce identity (Phase 1). |
   | 2 | **Operating Surfaces** | Phase 2 (`experience-architecture.md:151`): functional workspaces through which personas perform work. 16-surface firm inventory (`experience-architecture.md:223`). **Agent & Workflow Monitor** (`experience-architecture.md:239`) is surface #6 and is the Experience Layer's render-side face of the Experience↔AI seam: it presents AI and workflow execution state; the executing blocks are AI Layer (not here). |
   | 3 | **Persona Portals** | Phase 2 (`experience-architecture.md:280`): the visual panel each persona group receives — one portal per persona, containing its scoped set of Operating Surfaces (`experience-architecture.md:303`). Five portals: Operator, Manager, Contractor, Client, System Administrator. |
   | 4 | **Navigation Model** | Phase 2 (`experience-architecture.md:423`): the movement model across portals and surfaces — how personas navigate within and between workspaces. |
@@ -433,7 +433,7 @@ Per DEC-040 G-5, `architecture.md` authors **no**:
 
   *↔ Phase 3 / Capabilities Layer.* Operating Surfaces are not capabilities. The KPI
   computation is Phase 3 (Analytics capability); displaying it on the Reports & Analytics
-  Surface is Phase 2 (`experience-architecture.md:668`).
+  Surface is Phase 2 (`experience-architecture.md:672`).
 
   *↔ Phase 6.* Operating Surfaces are not workflows. Ordered execution paths are Phase 6.
 

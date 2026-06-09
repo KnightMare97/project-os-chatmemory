@@ -146,7 +146,7 @@ acceptance test, restated at the end of this entry.*
   them.
 - **Channel experience attributes (the three Phase 2 reads).** Each channel
   category carries three channel-level properties, mapped 1:1 to the Phase 2
-  Channel Behaviors dimensions (`experience-architecture.md:696-698`):
+  Channel Behaviors dimensions (`experience-architecture.md:799-801`):
   1. **Format / media constraints** — what content formats and media the channel
      accepts (the property Phase 2 reads to write *rendering differences per
      channel*).
@@ -343,7 +343,7 @@ acceptance test, restated at the end of this entry.*
   - ↔ Phase 7: the model contract is Phase 4; the AI Architecture that executes
     models is Phase 7.
   - Agent / subagent identity (registered open flag): agents/subagents that wrap
-    models are likely Phase 7 AI Architecture (`experience-architecture.md:821`);
+    models are likely Phase 7 AI Architecture (`experience-architecture.md:963`);
     not resolved here. **Scoped to Phase 7 per DEC-031** (un-deferred into Phase 7
     AI Architecture; defined in the Phase 7 content write).
   - No inherited Phase 1 question is resolved here.
@@ -503,7 +503,7 @@ question.
 Carried from DEC-025 / Snapshot-027 (some since resolved this normalization pass,
 noted inline):
 - **Agent / subagent identity** — likely Phase 7 AI Architecture
-  (`experience-architecture.md:809` Workforce owns *human* identity; `:821` AI
+  (`experience-architecture.md:68` Workforce owns *human* identity; `:963` AI
   Architecture is the likely home of agent surfaces). **Resolved: scoped to Phase 7
   per DEC-031** (un-deferred into Phase 7 AI Architecture; defined in the content write).
 - **Safety-controls vocabulary** — resolved (mapping): "safety controls"
