@@ -2634,6 +2634,43 @@ Status:
 
 ---
 
+### DEC-043
+**Q-005 — CRM / Client Success domain boundary — resolved at domain-boundary level.
+G-05 — Brand Assumptions block stale wording corrected.**
+
+Phase: 1. Resolves: Q-005 (domain-boundary level). Corrects: G-05. Supersedes: none.
+Date: 2026-06-09.
+
+**Q-005 resolution — domain boundary:**
+CRM and Client Success share adjacent concerns and the exact ownership line was
+draft (Q-005). The domain-boundary is now resolved:
+
+- **CRM owns the commercial account identity** — who the client IS commercially:
+  Lead records, Client Account, pipeline stage, service relationship visibility at
+  CRM level, CRM dashboard/reporting. This is the commercial record layer.
+- **Client Success owns the active post-conversion relationship lifecycle** — how
+  the relationship IS HANDLED: communication, coordination, approval handling,
+  escalation intake, satisfaction signals, relationship notes, account handling at
+  the relationship layer.
+
+Each references the other at appropriate altitude; neither absorbs the other.
+CRM references Client Relationship records for post-conversion visibility; Client
+Success references CRM Client Account for commercial context. This close is at
+domain-boundary level only — Aggregate boundary questions for CRM and Client Success
+remain separately open and are not resolved here.
+
+**G-05 correction:**
+The Brand Assumptions block in `domains.md` (§ Brand, ### Assumptions) read:
+"Assumption: Final Brand placement remains unresolved." This was stale. Brand's
+**identity placement** was resolved by DEC-036 (Brand is a first-class CRM Entity).
+What genuinely remains open is the **aggregate boundary** question for Brand.
+Corrected to: "Assumption: Brand aggregate placement remains unresolved."
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

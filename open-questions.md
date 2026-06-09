@@ -144,6 +144,14 @@ Why it matters:
   relationship lifecycle modeling,
   and later aggregate clarity.
 
+Resolved (DEC-043):
+- Domain-boundary close only. Aggregate boundaries remain separately open.
+- CRM = commercial account identity (Lead, Client Account, pipeline, CRM dashboard).
+- Client Success = active post-conversion relationship lifecycle (communication,
+  coordination, approval handling, escalation intake, satisfaction signals).
+- Neither absorbs the other; each references the other at appropriate altitude.
+- Closed.
+
 ---
 
 ### Q-006

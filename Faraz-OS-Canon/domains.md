@@ -763,6 +763,8 @@ CRM may reference but should not own:
 - knowledge artifacts
 - secrets and credentials
 
+↔ Client Success domain boundary (DEC-043): CRM owns the **commercial account identity** — who the client IS commercially (Lead, Client Account, pipeline state, service relationship visibility, CRM dashboard). Client Success owns the **active post-conversion relationship lifecycle** — how the relationship IS HANDLED (communication, coordination, approval handling, escalation intake, satisfaction signals). Each references the other at appropriate altitude; neither absorbs the other.
+
 ---
 
 ### Bounded Contexts
@@ -1513,6 +1515,8 @@ Client Success may reference but should not own:
 - financial invoices or payment records
 - publishing execution state
 - internal delivery task state
+
+↔ CRM domain boundary (DEC-043): Client Success owns the **active post-conversion relationship lifecycle** — how the relationship IS HANDLED (communication, coordination, approval handling, escalation, satisfaction signals). CRM owns the **commercial account identity** — who the client IS commercially (Lead, Client Account, pipeline state, service relationship visibility). Neither absorbs the other.
 
 ---
 
@@ -3733,7 +3737,7 @@ and remain draft.
   without owning Brand identity.
 - Assumption: Engagement Scope may reference Brand
   when execution is brand-specific.
-- Assumption: Final Brand placement remains unresolved.
+- Assumption: Brand aggregate placement remains unresolved.
 
 ---
 
