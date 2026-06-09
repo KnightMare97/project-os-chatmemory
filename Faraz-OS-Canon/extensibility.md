@@ -145,8 +145,8 @@ acceptance test, restated at the end of this entry.*
   a taxonomy (R-028). They enter the taxonomy when a domain/capability references
   them.
 - **Channel experience attributes (the three Phase 2 reads).** Each channel
-  category carries three channel-level properties, mapped 1:1 to the Phase 2
-  Channel Behaviors dimensions (`experience-architecture.md:799-801`):
+  category carries four channel-level properties; the first three map 1:1 to the
+  Phase 2 Channel Behaviors dimensions (`experience-architecture.md:799-801`):
   1. **Format / media constraints** — what content formats and media the channel
      accepts (the property Phase 2 reads to write *rendering differences per
      channel*).
@@ -154,13 +154,19 @@ acceptance test, restated at the end of this entry.*
      content before dispatch (→ *preview behavior per channel*).
   3. **Notification capability** — whether and how the channel surfaces
      notifications (→ *notification user experience per channel*).
-  Phase 4 defines these as channel-level properties; Phase 2 writes the
-  human-experience behaviors that hang off them. The behaviors themselves are
-  Phase 2, not authored here.
+  4. **Access-status / connection-health** — the operational state of this channel
+     binding for the current client context (e.g. connected / disconnected /
+     degraded); read by Dual-Path / Manual-Fallback routing (DEC-037; Phase 6) to
+     select the automated vs manual execution path (Q-020, resolved DEC-046).
+     Distinct from Governance policy-enabled/disabled (Phase 1 Governance); owned
+     here as a Phase 4 channel-level operational attribute.
+  Phase 4 defines these four channel-level properties; Phase 2 writes the
+  human-experience behaviors that hang off the first three. The behaviors themselves
+  are Phase 2, not authored here.
 - **Contract surface.** A channel inherits the Provider Model contract surface
   (the APIs, events, permissions, schemas, versioned interfaces named by
   Extension Contracts / Philosophy #4), named at altitude, and adds the
-  channel-specific contract elements implied by the three attributes above. The
+  channel-specific contract elements implied by the first three attributes above. The
   concrete integration mechanics — credential / auth, API binding, delivery /
   dispatch semantics, rate limits — are **deferred to External Integrations** and
   are not specified here.
@@ -184,14 +190,18 @@ acceptance test, restated at the end of this entry.*
   - ↔ Phase 6 / Phase 7: channel *selection* is order-free (Phase 4); ordered
     publish/dispatch flow is Phase 6; the wiring that realizes the channel
     contract is Phase 7.
-  - No inherited Phase 1 question is resolved here.
+  - **Q-020 resolved here (DEC-046).** Access-status / connection-health is a
+    Phase 4 Channel Model operational attribute; Dual-Path / Manual-Fallback routing
+    (DEC-037; Phase 6) reads it to select the execution path. Distinct from
+    Governance policy-enabled/disabled (Phase 1 Governance).
 - **Acceptance test (DEC-025, verbatim).** *"The Channel Model is deep enough iff
   Phase 2 can later write rendering / preview / notification behaviors for each
   channel type using only the taxonomy and the three experience attributes
   (format/media constraints · preview affordance · notification capability), with
   no further Phase 4 content required."* This entry meets it: the taxonomy gives
-  the channel type(s) and the typing axis, and the three attributes give Phase 2
-  the per-type properties it needs — no further Phase 4 content required.
+  the channel type(s) and the typing axis, the three UX-facing attributes give Phase 2
+  the per-type properties it needs, and the fourth attribute (access-status /
+  connection-health — DEC-046) is an operational attribute added post-DEC-025.
 
 ### Extension Contracts
 - **Definition.** The contract surface itself: the explicit, versioned boundary

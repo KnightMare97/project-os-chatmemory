@@ -2745,6 +2745,39 @@ Status:
 
 ---
 
+### DEC-046
+**Q-020 — access-status / connection-health owner — Phase 4 Channel Model operational attribute.**
+
+Phase: 4. Resolves: Q-020. Supersedes: none.
+Date: 2026-06-09.
+
+Q-020 asked which Phase-4 construct owns the per-client / per-platform access-status /
+connection-health signal that Dual-Path / Manual-Fallback routing (DEC-037) reads.
+
+**Candidates assessed:**
+- **Phase 4 Channel Model**: each channel binding has operational state (connected /
+  disconnected / degraded). The Channel Model already owns channel-level properties
+  (format, preview, notification). Access-status is a natural fourth property — the
+  current operational state of the binding for this client context. It is channel-
+  level, per-client-binding, and operational.
+- **Separate Phase 4 construct**: unnecessary — no evidence for a new Phase 4 entity
+  that isn't already covered by the Channel Model. Orphan test fails.
+- **Phase 1 Governance policy state**: Governance owns policy-enabled/disabled rules
+  (whether a channel is permitted for a client). Access-status/connection-health is
+  operational connectivity, not a policy ruling. These are distinct axes.
+
+**Decision:** Access-status / connection-health is a **Phase 4 Channel Model operational
+attribute** — the 4th channel-level property, added to the Channel Model alongside the
+three Phase 2-facing UX attributes (format, preview, notification). Dual-Path /
+Manual-Fallback routing (DEC-037; Phase 6) reads this attribute to select the automated
+vs manual execution path. The attribute is per channel binding, per client context.
+Distinct from Governance policy-enabled/disabled.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

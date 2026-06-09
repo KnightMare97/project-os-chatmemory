@@ -576,6 +576,15 @@ Why it matters:
   Phase-4 follow-on the dual-path principle depends on (the connection-health / manual-re-auth
   item the gap analysis tiered T1).
 
+Resolved (DEC-046):
+- **Phase 4 Channel Model** owns access-status / connection-health as a channel-level
+  operational attribute (the 4th Channel Model property, after format, preview, notification).
+- Read by Dual-Path / Manual-Fallback routing (DEC-037; Phase 6) to select automated vs
+  manual execution path.
+- Distinct from Governance policy-enabled/disabled (Phase 1 Governance) — ownership is
+  operational state of the binding, not a policy rule.
+- Closed.
+
 ---
 
 ### Q-021
