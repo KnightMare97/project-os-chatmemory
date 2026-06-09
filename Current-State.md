@@ -48,6 +48,13 @@ Its normalized model in `domains.md`
 is the accepted Phase 1 reference.
 
 The current most active work is:
+- Phase 10 Claude Code Architecture (Phase 10 question-gate is the recommended next step)
+
+Phases 1–9 all have first-write entries. Architecture reconciliation sweep (Snapshot-048)
+resolved all 7 deferred open questions (DEC-042–DEC-048) and landed G-01–G-05 content
+fixes. The canon is at GREEN coherence.
+
+*(Prior active work — for historical context:)*
 - Phase 2 Experience Architecture
 
 Phase 2 scope is defined and human-confirmed
@@ -135,8 +142,9 @@ Phase 2 sub-item status (7 canon sub-items):
   Configuration / Settings, Onboarding.
 
 Phase 2 is therefore 7-of-7 populated — **Phase 2 Experience Architecture is
-complete.** (One flagged Phase-2 view-membership nuance, Q-016, is tracked
-separately and does not affect the 7-of-7 surface projection.)
+complete.** Q-016 (Client × Performance & Analytics View membership nuance) has
+since been resolved by DEC-047: Client sees this view, scoped to own-engagement.
+The 7-of-7 surface projection was never affected.
 
 The five populated Phase 2 sub-items (Personas, Operating Surfaces, Portals,
 Cross-Domain Views, Navigation Model) were audited for internal consistency,
@@ -164,7 +172,7 @@ records all eight capabilities on the six-field skeleton (commits 9be5cbc,
 288969a); the header references the Governing Boundary Test and six-boundary
 set rather than restating them; the Serves field is a Phase-3 inference at
 naming altitude; Q-015 (since resolved, DEC-028 / Snapshot-036), while the
-inherited Phase 1 questions (domains.md:1939-1940, :1941, :1942-1943) remain
+inherited Phase 1 questions (domains.md:1944-1945, :1946, :1947-1948) remain
 open — referenced, not resolved. The FIND-026
 examples-list touch-up (adding Video Creation to domains.md:184-191) is applied
 as a separate called-out commit. New this phase: Q-015 (Publishing
@@ -241,10 +249,9 @@ authorize (who-may-approve = Phase 1 / DEC-026); agent steps are at role altitud
 no memory structure, threshold (R-027), or engine is authored. The scope itself was
 fixed by DEC-028 (commit `e9c9296`) with the Q-015 resolution and the isolated
 `capabilities.md` refresh (commit `623960e`); the execution-mode operating contract
-is persisted in `CLAUDE.md` (commits `7f1cda3`, `e96b435`). **Q-017** (new this
-session, registered): system-administrator visual workflow viewing + management —
-viewing partially covered by the Phase-2 Agent & Workflow Monitor surface, visual
-editing/management multi-phase placement pending its own gated decision.
+is persisted in `CLAUDE.md` (commits `7f1cda3`, `e96b435`). **Q-017 resolved (DEC-048, 2026-06-09)**: workflows fixed-flow at T1; System Administrator
+views execution state via Phase 2 Agent & Workflow Monitor (Full; no new surface); visual
+editing/management deferred to v2 as multi-phase gated feature.
 
 Phase 11 Claude Code Operating System
 currently owns the operating method
@@ -330,8 +337,9 @@ further reopening is its own explicit gated decision (domain truth is never re-d
 wholesale). The Community Phase-3 capability / Phase-4 inbound-channel category / Phase-6
 post-publish workflow, the Brand-Kit / brand-style / Brand-aggregate follow-ons, the
 AI-Operations P7-metering / Intelligence-margin / Governance-cap / P4-enforcement /
-**prompt-versioning (Q-022)** follow-ons, and the **Ticket P6-8th-flow / P2-submit-surface /
-P4-inbound-channel / aggregate-boundary (Q-024)** follow-ons, are separate later gates.
+prompt-versioning (Q-022 resolved — DEC-044) follow-ons, and the **Ticket P6-8th-flow /
+P2-submit-surface / P4-inbound-channel / aggregate-boundary (Q-024)** follow-ons, are
+separate later gates.
 
 ---
 
@@ -409,13 +417,14 @@ should be trusted before stale summary material.
 Some important architectural areas remain draft.
 
 These include:
-- Client Brain partitioning — per Client / per Brand (Q-004; entangled with Q-003).
-  Client Brain *ownership* is resolved to Knowledge (DEC-027); only partitioning
-  remains draft.
-- final Brand placement
+- Brand aggregate placement (Brand entity placement is resolved — DEC-036; only
+  aggregate placement remains draft)
 - final Service Agreement ownership
 - final Aggregate boundaries (incl. Client Brain Aggregate vs Memory Object)
 - some cross-domain operational boundaries
+
+Note: Client Brain partitioning is now resolved — DEC-045 (per-Brand partitioning with
+per-Client aggregation view). This draft area is closed.
 
 These draft areas should remain visible
 until explicitly resolved.
@@ -441,34 +450,37 @@ Avoid:
 ## Current Next Focus
 The current recommended next focus is:
 
+**Reconciliation sweep COMPLETE (Snapshot-048, 2026-06-09).** DEC-042–DEC-048 minted;
+all seven deferred open questions resolved; G-01–G-05 content fixes landed. Architecture
+canon is at GREEN coherence. **Phase 10 Claude Code Architecture is now unblocked** —
+recommended next step is the Phase 10 question-gate to scope sub-items before any content
+is written.
+
+Remaining open items (do not touch without explicit gate):
+- Q-003 (Brand aggregate placement), Q-006, Q-007, Q-024 (`domains.md:1720`),
+  insight→durable-knowledge threshold (`domains.md:1946`), 4 Phase-1 entity reopenings
+  (Campaign, Ad-Account, Schedule, Consent), Agent Supervision/Observability deferred slot.
+
+---
+*(Prior Next Focus entries — preserved for historical record:)*
+
 **Q-023 resolved (DEC-039): Ticket is a first-class Entity in Client Success** — extend test
-(not a new domain); non-collapse from Escalation Case (`:1525`) and Coordination Request
-(`:1526`) explicit. Lifecycle: submitted → routed → in-progress → resolved/closed; routes to
-a named handler; may trigger CRM-notify side-effect; does not own routing rules or the CRM
-record. Aggregate placement pending Q-024. **6th of the ~10 Phase-1 reopenings; ~4 remain**
-(Campaign, Ad-Account, Schedule, Consent). **Q-024** (Ticket ↔ Escalation Case lifecycle
-coupling — two-entity vs single-lifecycle) registered open; cross-references `domains.md:1712-1714`.
-Separate later gates: P6 8th flow "Client Ticket → Resolution"; P2 submit surface; P4 inbound
-channel; Ticket ↔ Escalation Case aggregate boundary (Q-024).
+(not a new domain); non-collapse from Escalation Case and Coordination Request explicit.
+Lifecycle: submitted → routed → in-progress → resolved/closed. Aggregate placement pending
+Q-024. **6th of the ~10 Phase-1 reopenings; ~4 remain** (Campaign, Ad-Account, Schedule,
+Consent). **Q-024** (Ticket ↔ Escalation Case lifecycle coupling) registered open;
+cross-references `domains.md:1720`. Separate later gates: P6 8th flow; P2 submit surface;
+P4 inbound channel; Ticket ↔ Escalation Case aggregate boundary.
 
 **Q-021 resolved (DEC-038): a new Phase-1 domain — AI Operations — owns the per-job UsageRecord
 Entity** (raw AI usage/cost). The 5th of the ~10 reopenings. Per-client cost is derived
 (Intelligence); four-way seam (P1-owns / P7-meters / Intelligence-margin / Governance-cap +
-P4-enforce); budget-cap gate reuses the Routing Governance Aggregate + the existing Escalation
-Loop (no new P6 pattern). **Q-022** (prompt/template versioning) registered open. The P7-metering
-/ Intelligence-margin / Governance-cap-policy / P4-enforcement / prompt-versioning pieces are
-separate later gates.
+P4-enforce). **Q-022 resolved (DEC-044)**: Knowledge owns PromptTemplate.
 
-**Dual-Path / Manual-Fallback recorded as a cross-phase principle (DEC-037).** Every external
-action has an automated/AI path + a manual/human path with fallback when the automated path is
-unavailable (the founding Iran constraint; T1). Four-altitude seam: P1 Governance (when fallback
-is permitted), P6 (the semantic routing — a 4th loop/exception pattern), P7 (detect+switch
-engine + idempotency safety pre-req), P4 (the access-status signal), P3 (hybrid-capable enabler).
-Distinct from HITL (oversight) and execution-mode (capacity) — three orthogonal axes. **Split
-landing — step 2 done:** the **Phase-6 4th loop/exception pattern "Dual-Path / Manual-Fallback
-Routing" is written** (Snapshot-045; commit `2f9dd56`; KNI-33 Done; mechanism-free; Phase 6 stays
-complete at DEC-028's scope + this DEC-037 increment). **Remaining dual-path follow-on: Q-020**
-(the Phase-4 access-status / connection-health owner; KNI-32, open) — its own later gate.
+**Dual-Path / Manual-Fallback recorded as a cross-phase principle (DEC-037).** Phase-6 4th
+loop/exception pattern "Dual-Path / Manual-Fallback Routing" is written (Snapshot-045;
+commit `2f9dd56`; KNI-33 Done). **Q-020 resolved (DEC-046)**: access-status/connection-health
+is a Phase 4 Channel Model operational attribute (4th property).
 
 **Q-003 resolved (DEC-036): Brand is a first-class Entity owned by CRM** (reference-addressable,
 not absorbed into Client Account; mandatory Client reference, 1 Client : N Brand; aggregate
@@ -534,10 +546,9 @@ Snapshot-041; KNI-11 → Done): concern-views (P7) vs layered assembly (P8), one
 dependency (P7 first). **The open path is the Phase 7 content gate — the full
 `system-architecture-blueprint.md` write (KNI-27), all seven concern-views now unblocked,
 in gated batches after Ali's go; no Phase-7 content before then.** Other fresh/gated
-follow-ups: **Q-017** (system-administrator visual workflow management — multi-phase; any
-Phase-6 increment is marked-future, does not reopen the phase); the **three** remaining
-Phase-4 deferred sub-items (Versioning & Compatibility, External Integrations, Future
-Domains); Phase 5 Asset Intelligence un-defer.
+follow-ups: Q-017 resolved (DEC-048) — fixed-flow at T1, v2 visual editing deferred; the
+**three** remaining Phase-4 deferred sub-items (Versioning & Compatibility, External
+Integrations, Future Domains); Phase 5 Asset Intelligence un-defer.
 
 **Phase 6 Workflow Design — complete at DEC-028's scope (DEC-029 / Snapshot-040).** `workflows.md`
 is written (Batches A–C; `6eefd90` / `a7de5ef` / `a0fe15d`), under DEC-028, via
@@ -591,7 +602,7 @@ The standing items below remain:
    now **resolved** (DEC-028 / Snapshot-036; KNI-21 → Done): atomic push and the
    scheduled-publish when-parameter are firm Phase 3, cross-item queueing is
    Phase 6 orchestration. Phase 3 has no remaining open item of its own. The
-   inherited Phase 1 questions (domains.md:1939-1940, :1941, :1942-1943) stay
+   inherited Phase 1 questions (domains.md:1944-1945, :1946, :1947-1948) stay
    referenced, not resolved, pending their owning Phase 1 work.
 2. **Phase 2 Experience Architecture is complete — 7-of-7 populated.** The
    Permission Matrix is populated (Snapshot-033 / KNI-14): a read-only projection
@@ -604,9 +615,8 @@ The standing items below remain:
      routing, and deep-linking stay deferred (marked future items).
    - The three Operating-Surface flags (Client Profile, System
      Configuration / Settings, Onboarding) stay parked.
-   - Q-016 (one Phase-2 view-membership nuance: Client × Performance & Analytics
-     View) is tracked separately; it does not affect the 7-of-7 surface
-     projection.
+   - Q-016 resolved (DEC-047): Client sees Performance & Analytics View, scoped
+     to own-engagement. No longer a carry-forward.
 3. keep Phase 2 and Phase 3 scope distinct from each other and from
    Phase 6 Workflow Design, per the governing boundary test in
    `Faraz-OS-Canon/experience-architecture.md` and the closed six-boundary
@@ -643,28 +653,37 @@ Sentiment Signal ownership left contested/draft.
 Open question Q-003 (Brand placement) is resolved
 (see DEC-036): Brand is a first-class Entity owned by CRM (reference-addressable, not
 absorbed into Client Account; 1 Client : N Brand; aggregate placement draft/pending).
-Open question Q-004 (Client Brain partitioning) is unblocked by Q-003 (DEC-036) but
-stays open — a Phase-5 / Knowledge memory-partitioning call; Client Brain entry stays
-partition-agnostic.
-Open question Q-020 (Phase-4 access-status / connection-health owner) is registered and
-open (see DEC-037): the per-client/per-platform signal Dual-Path routing reads; candidate
-home is the Phase-4 Channel Model, not yet decided.
+Open question Q-004 (Client Brain partitioning) is resolved (DEC-045, 2026-06-09):
+per-Brand partitioning (primary unit) with a per-Client aggregation view for cross-brand
+context. Ownership remains Knowledge (DEC-027).
+Open question Q-020 (Phase-4 access-status / connection-health owner) is resolved
+(DEC-046, 2026-06-09): access-status/connection-health is a Phase 4 Channel Model
+operational attribute — the 4th channel-level property. Distinct from Governance
+policy-enabled/disabled. Read by Dual-Path / Manual-Fallback routing (DEC-037).
 Open question Q-021 (AI usage/cost ledger ownership) is resolved
 (see DEC-038): a new Phase-1 domain, AI Operations, owns the per-job UsageRecord Entity;
 per-client cost is derived (Intelligence).
-Open question Q-022 (prompt/template versioning home) is registered and open
-(see DEC-038): candidate home Media & Assets or Knowledge; not yet decided.
+Open question Q-022 (prompt/template versioning home) is resolved (DEC-044, 2026-06-09):
+Knowledge domain owns PromptTemplate (reusable structured AI prompt artifact with version
+history). Extend test passes against Knowledge Artifact / Knowledge Version shape.
 Open question Q-023 (Ticket entity ownership) is resolved
 (see DEC-039): Ticket is a first-class Entity in Client Success (extend test; 6th of ~10
 reopenings; non-collapse from Escalation Case / Coordination Request; aggregate pending Q-024).
 Open question Q-024 (Ticket ↔ Escalation Case lifecycle coupling) is registered and open
-(see DEC-039): two-entity vs single-lifecycle; cross-references `domains.md:1712-1714`; its own
+(see DEC-039): two-entity vs single-lifecycle; cross-references `domains.md:1720`; its own
 gated Phase-1 decision.
 Open question Q-015 (Publishing scheduling/queueing, P3 ↔ P6)
 is resolved (see DEC-028 / Snapshot-036).
-Open question Q-017 (system-administrator visual workflow
-viewing + management) is open and registered (see Snapshot-037);
-multi-phase placement pending its own gated decision.
+Open question Q-017 (system-administrator visual workflow viewing + management) is resolved
+(DEC-048, 2026-06-09): workflows are fixed-flow at T1; visual editing deferred to v2 as
+multi-phase gated feature (Phase 2 / 4 / 6 / 7 — own gate then).
+Open question Q-016 (Client × Performance & Analytics View membership) is resolved
+(DEC-047, 2026-06-09): Client sees the view, scoped to own-engagement data.
+Open question Q-005 (CRM / Client Success domain boundary) is resolved
+(DEC-043, 2026-06-09): CRM owns commercial account identity; Client Success owns active
+post-conversion relationship lifecycle.
+Open question Q-009 (Phase 9 coherence — Channel Model continuity) is resolved
+(DEC-042, 2026-06-09): Snapshot-047 + DEC-046 together close the coherence concern.
 Open question Q-012 (Phase 7 ↔ Phase 8) is resolved
 (see DEC-030 / Snapshot-041; KNI-11 → Done): Phase 7 = the cross-cutting
 concern-views, Phase 8 = the layered assembly, one-way dependency (P7 first).
@@ -677,10 +696,15 @@ Core 7 blocks + AI 5 blocks + 2 deferred slots named at altitude; Core↔Infrast
 + Experience↔AI cuts governed; Phase-6-not-Core guard explicit. `architecture.md`
 **first write COMPLETE (Snapshot-046; 2026-06-09; Batches A–C; KNI-39 Done).** All eight
 architecture phases (1–8) now have first writes — milestone, not a phase-complete
-declaration. Q-017 and agent-supervision carried as deferred slots.
+declaration. Agent-supervision carried as deferred slot; Q-017 resolved (DEC-048).
 Phase 9 Infrastructure Design: all-GCP stack approved (DEC-041, 2026-06-09) — Cloud SQL
 (Persistent Store) · pg-boss (Job Queue / Event Bus) · Cloud Run (Worker / Job Runtime)
 · Firebase Auth (Auth Backing Service) · GCP Secret Manager (Secret Store) · Cloud
 Logging + Monitoring + Grafana Cloud (Observability) · Schema-per-client + RLS
 (Per-Client Data Scoping Scheme). `infrastructure.md` **first write COMPLETE
-(Snapshot-047; 2026-06-09; 706 lines; KNI-40 Done).** Q-017, Q-020, Q-022 carried open.
+(Snapshot-047; 2026-06-09; 706 lines; KNI-40 Done).**
+**Reconciliation sweep COMPLETE (Snapshot-048; 2026-06-09):** DEC-042–DEC-048 minted;
+Q-004/Q-005/Q-009/Q-016/Q-017/Q-020/Q-022 all resolved; G-01–G-05 content fixes landed.
+**Phase 10 is now unblocked.** Remaining open: Q-003 (Brand aggregate placement), Q-006,
+Q-007, Q-024, insight→durable threshold (`domains.md:1946`), and 4 Phase-1 entity
+reopenings (Campaign, Ad-Account, Schedule, Consent) — each its own future gate.
