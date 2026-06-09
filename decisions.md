@@ -2604,6 +2604,36 @@ Status:
 
 ---
 
+### DEC-042
+**Q-009 — normalization review summary persistence — resolved-by-completion.**
+
+Phase: 1 (normalization pass). Resolves: Q-009. Supersedes: none.
+Date: 2026-06-09.
+
+Q-009 asked whether the normalization pass should produce a standalone file
+persisting the review summary in addition to the cleaned `domains.md`. The explicit
+precondition for full resolution was stated at `open-questions.md:226-227`:
+"Full resolution of Q-009 is deferred until after the first normalization pass
+is complete."
+
+The Phase-1 `domains.md` normalization pass v1 is complete (Snapshot-039; all
+seven normalization items resolved; accepted). The review summary served its
+purpose within the normalization commit and session archive. No standalone file
+was produced or called for. The review-summary convention (Changes Made / Items
+Left Unchanged / Duplicate Definitions Consolidated / Draft Boundaries Confirmed
+Preserved / Follow-up Discovery Items / Residual Ambiguity) is established
+practice recorded in the Execution Checklist v1.
+
+**Decision:** Q-009 is closed as resolved-by-completion. No standalone
+normalization review summary file is required beyond what is produced within the
+commit and session record. The convention established in the Execution Checklist v1
+stands as the persistent format specification.
+
+Status:
+- Active
+
+---
+
 ## Supersession Rule
 If a current decision is replaced:
 - keep the same decision id if only wording is refined

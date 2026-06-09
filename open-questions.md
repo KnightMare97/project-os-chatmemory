@@ -226,6 +226,15 @@ after acceptance remains open.
 Full resolution of Q-009 is deferred until after
 the first normalization pass is complete.
 
+Resolved (DEC-042):
+- Normalization pass v1 complete (Snapshot-039); all seven items accepted.
+- The review summary served its purpose within the normalization commit and session
+  archive; no standalone file is required.
+- Convention (Changes Made / Items Left Unchanged / Duplicate Definitions
+  Consolidated / Draft Boundaries Confirmed Preserved / Follow-up Discovery Items /
+  Residual Ambiguity) is established in Execution Checklist v1.
+- Closed.
+
 ---
 
 ### Q-010
