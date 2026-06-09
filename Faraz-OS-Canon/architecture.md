@@ -222,5 +222,167 @@ Per DEC-040 G-5, `architecture.md` authors **no**:
 
 ---
 
-*(Batch B pending — Domains Layer, Capabilities Layer, Plugins Layer.)*
+## Domains Layer
+
+- **Definition.** The assembled named business-responsibility domains constituting Faraz OS's
+  domain model — every Phase 1-confirmed domain, placed on the board at naming altitude.
+
+- **Source phases.** Phase 1 Domain Discovery (`domains.md`). Eleven domains are confirmed;
+  their entities, aggregates, bounded contexts, inbound/outbound events, and Phase 1 open
+  questions are Phase 1 truth and are **not re-authored** by Phase 8.
+
+- **Assembled blocks.**
+
+  | # | Domain block | Source |
+  |---|---|---|
+  | 1 | **CRM** | Phase 1 (`domains.md:695`): Lead Acquisition & Conversion + Current Client Management + Dead Lead Recovery + CRM Reporting. Entities include Lead, Client Account, Brand (DEC-036), Service Agreement (DEC-034). |
+  | 2 | **Workforce** | Phase 1 (`domains.md:1010`): Human Operator identity, role, capacity, skills, and assignment eligibility. |
+  | 3 | **Knowledge** | Phase 1 (`domains.md:1225`): Agency Brain, Knowledge Artifacts, Decision Log, Learning Records, Client Brain (DEC-027 — owned by Knowledge). |
+  | 4 | **Client Success** | Phase 1 (`domains.md:1458`): Client Relationship, Approval Response, Escalation Case, Coordination Request, Ticket (DEC-039). |
+  | 5 | **Intelligence** | Phase 1 (`domains.md:1742`): Insights, Recommendations, Scores, Anomaly and Trend signals. |
+  | 6 | **Finance** | Phase 1 (`domains.md:1949`): Invoice, Payment, Receivable, Payable, Settlement. Per-job AI cost (UsageRecord) is AI Operations (DEC-038), not Finance. |
+  | 7 | **Governance** | Phase 1 (`domains.md:2179`): Policy, Authorization Rules, Checkpoint Definitions, Audit Records, Routing Constraints. |
+  | 8 | **Service Delivery** | Phase 1 (`domains.md:3281`): Engagement, Deliverable, Revision Cycle, Delivery Task, Engagement Scope (Domain Artifact). |
+  | 9 | **Media & Assets** | Phase 1 (`domains.md:3801`; DEC-033, Q-018): Client Asset entity — raw upload, client-uploaded, AI-generated, and produced states. |
+  | 10 | **Community** | Phase 1 (`domains.md:3900`; DEC-035, Q-019): Comment, Direct Message, Conversation/Thread, Engagement Reply — the B2C post-publish audience axis. |
+  | 11 | **AI Operations** | Phase 1 (`domains.md:4005`; DEC-038, Q-021): UsageRecord (per-job AI usage/cost record). |
+
+- **Boundary notes.**
+
+  *Phase 8 names domains — it does not re-define them.* Each domain block is placed here
+  at naming altitude. Entities, aggregates, bounded contexts, business rules, and domain
+  events are Phase 1 truth (`domains.md`); this file references, never re-authors.
+
+  *Concepts that are NOT domain blocks (key disambiguation):*
+  - Brand → CRM Entity (DEC-036), not a domain.
+  - Service Agreement → CRM Entity (DEC-034), not a domain.
+  - Client Brain → Memory Object / Shared Service Artifact owned by Knowledge (DEC-027), not
+    a domain.
+  - Engagement Scope → Domain Artifact aligned to Service Delivery, not a domain.
+
+  *↔ Capabilities Layer.* Capabilities (Phase 3) are reusable functions, not domains. The
+  Intelligence domain and the Analytics/Reporting capabilities overlap at altitude — that
+  boundary is a Phase 1 open question (`domains.md:1939-1940`), referenced only.
+
+  *↔ AI Layer.* UsageRecord is a Domains Layer entity (AI Operations); AI Layer blocks are
+  execution-time infrastructure, not business-domain entities.
+
+- **Carried / deferred.** Q-004 (Client Brain per-Client/per-Brand partitioning), Q-006
+  (Service Agreement ↔ Engagement Scope consistency), Q-022 (prompt/template versioning,
+  registered DEC-038), Q-024 (Ticket ↔ Escalation Case lifecycle coupling, registered
+  DEC-039) — all referenced; none resolved by Phase 8. Approximately 4 Phase-1 entity
+  reopenings remain pending (Campaign, Ad-Account, Schedule, Consent).
+
+---
+
+## Capabilities Layer
+
+- **Definition.** The assembled named reusable business capabilities of Faraz OS — every
+  Phase 3-defined capability block placed on the board at naming altitude.
+
+- **Source phases.** Phase 3 Capability Map (`capabilities.md`). All eight capabilities are
+  written (Batches A–B, Snapshot-025 / DEC-024); referenced-never-redefined.
+
+- **Assembled blocks.**
+
+  | # | Capability block | Source |
+  |---|---|---|
+  | 1 | **Publishing** | Phase 3 (`capabilities.md:73`): push a piece of approved content to a channel. |
+  | 2 | **Reporting** | Phase 3 (`capabilities.md:95`): assemble and generate a report artifact from domain-held data. |
+  | 3 | **Content Creation** | Phase 3 (`capabilities.md:121`): produce a non-video content asset. |
+  | 4 | **Research** | Phase 3 (`capabilities.md:140`): gather and synthesize information into a research output. |
+  | 5 | **Strategy** | Phase 3 (`capabilities.md:156`): analyze inputs and produce a strategic recommendation. |
+  | 6 | **Video Creation** | Phase 3 (`capabilities.md:172`): produce a video asset. |
+  | 7 | **Analytics** | Phase 3 (`capabilities.md:189`): compute metrics and aggregations from domain-held data. |
+  | 8 | **Lead Scoring** | Phase 3 (`capabilities.md:215`): compute a score for a lead. |
+
+- **Boundary notes.**
+
+  *Phase 8 names capabilities — it does not re-define them.* Each capability block is
+  placed here at naming altitude. Definition, execution mode, produces, provider
+  dependencies, and boundary notes are Phase 3 truth (`capabilities.md`); not re-authored
+  here.
+
+  *Capabilities ≠ Domains.* A capability is a reusable function (Phase 3); a domain is a
+  business-responsibility area (Phase 1). Analytics and Reporting are capabilities;
+  Intelligence is a domain. The boundary between them is a Phase 1 open question
+  (`domains.md:1939-1940`), referenced only.
+
+  *Capabilities ≠ Plugins.* Provider dependencies named in Phase 3 entries bind through
+  Phase 4 extension points (→ Plugins Layer). The capability names the function; the
+  plugin names the swappable tool.
+
+  *↔ Phase 6.* Ordered sequences that invoke capabilities (e.g. Approval → Publishing →
+  Reporting) are Phase 6 workflows. Capabilities are order-free, gate-free functions.
+
+  *↔ Phase 7.* Provider wiring that realizes capability execution is Phase 7.
+
+- **Carried / deferred.** Phase 3 "Serves" inference fields are pending Phase 1 domain
+  confirmation. Intelligence vs Analytics/Reporting boundary is an inherited open question
+  (`domains.md:1939-1940`).
+
+---
+
+## Plugins Layer
+
+- **Definition.** The assembled named extensibility-mechanism blocks of Faraz OS — every
+  Phase 4-defined extension-point type placed on the board at naming altitude. This layer
+  includes the AI Model Routing **policy** (Phase 4) and Feature Modules (DEC-032).
+
+- **Source phases.** Phase 4 Extensibility Model (`extensibility.md`). Eight named
+  extension-point types (Batches A–C plus Feature Modules, DEC-032);
+  referenced-never-redefined.
+
+- **Assembled blocks.**
+
+  | # | Plugin Layer block | Source and note |
+  |---|---|---|
+  | 1 | **Provider Model** | Phase 4 (`extensibility.md:84`): the contract for any swappable external provider — AI model provider, media tool, channel/platform, or third-party service. |
+  | 2 | **Channel Model** | Phase 4 (`extensibility.md:120`): the contract for a channel — a typed specialization of the Provider Model for content-delivery providers. |
+  | 3 | **Extension Contracts** | Phase 4 (`extensibility.md:196`): the explicit, versioned boundary through which every extension — plugin, provider, channel, model — interacts with the core. Distinct from: the Core Layer's Extension Contract Surface (the core face of this boundary). |
+  | 4 | **Permission (Capability Grant Model)** | Phase 4 (`extensibility.md:236`): the model for capability grants to extensions — what a plugin, provider, channel, or model is permitted to do, expressed as grants carried through the contract surface. |
+  | 5 | **Plugin Model** | Phase 4 (`extensibility.md:273`): the model for a plugin — a packaged unit that attaches extensions (channels, providers, or specialized integrations) to the core through the contract surface. |
+  | 6 | **Model (AI Model)** | Phase 4 (`extensibility.md:308`): the abstraction for an AI model as a swappable unit — a specific model and tier the system invokes through a provider. |
+  | 7 | **AI Model Routing Policy** | Phase 4 (`extensibility.md:351`): the **policy-driven selection** mechanism that chooses among interchangeable models, providers, agents, and execution paths by policy — cost, quality, latency, availability, risk, task type. **This is the routing POLICY (Phase 4).** The executing routing engine is the AI Layer's Routing Engine block (`extensibility.md:391-392`: "the routing policy is Phase 4; the engine that executes routing is Phase 7 AI Architecture"). |
+  | 8 | **Feature Modules** | Phase 4 (`extensibility.md:426`; DEC-032): a mountable unit of product functionality that mounts on the base and may aggregate plugins. The **mounting/running/composing mechanism** is the Core Layer's Feature-Module Mounting Engine block (`extensibility.md:464-465`: "the runtime that mounts, runs, or composes modules is Phase 7"). |
+
+- **Boundary notes.**
+
+  *Phase 8 names extension-point types — it does not re-define them.* Each block is
+  placed here at naming altitude. Contract surfaces, governance touchpoints, runtime/config
+  attributes, and per-entry boundary notes are Phase 4 truth (`extensibility.md`); not
+  re-authored here.
+
+  *AI Model Routing Policy ≠ Routing Engine (AI Layer) — critical guard:*
+  > The routing **policy** (cost, quality, latency, availability, risk, task type) sits in
+  > this layer (Phase 4, `extensibility.md:391-392`). The executing routing **engine** —
+  > the runtime block that applies the policy — is the Phase 8 AI Layer's **Routing
+  > Engine** block. Two distinct blocks at two distinct layer altitudes.
+
+  *Feature Modules ↔ Core:* The Feature-Module Mounting Engine (Core Layer) is the Phase
+  7-originated runtime that mounts modules under the Phase 4 contract. Feature Modules
+  (this layer) are what is mounted. The runtime mechanism is Core; the mountable product
+  units are Plugins.
+
+  *Extension Contracts ↔ Core:* The Extension Contract Surface (Core Layer) is the
+  **core face** of the versioned boundary. Extension Contracts (this layer) is the Phase 4
+  **definition** of that contract. Distinct blocks: boundary face (Core) vs contract
+  definition (Plugins).
+
+  *↔ Phase 4 deferred sub-items:* Versioning & Compatibility, External Integrations, and
+  Future Domains are Phase 4-deferred stubs (`extensibility.md:472-483`); not named as
+  Plugins Layer blocks.
+
+  *↔ Phase 1 Governance.* The Permission grant model carries grants within the bounds of
+  Phase 1 authorization rules (DEC-026); it does not author those rules.
+
+  *↔ Phase 7.* The contract surface and plugin attachment contract are Phase 4; the system
+  wiring that realizes them is Phase 7.
+
+- **Carried / deferred.** Q-014 resolved (DEC-026). Q-020 (access-status/connection-health
+  owner — Phase 4 carried open). Versioning & Compatibility, External Integrations, and
+  Future Domains: Phase 4 deferred sub-items, not authored here.
+
+---
+
 *(Batch C pending — Experience Layer, AI Layer.)*
