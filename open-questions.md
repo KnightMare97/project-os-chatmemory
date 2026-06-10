@@ -672,6 +672,266 @@ Why it matters:
 
 ---
 
+---
+
+## Pre-V1 Gate Batch — External-Critique Verification (origin/main 3ed009c, 2026-06-10)
+
+This batch was registered 2026-06-10 from a team verification of an external expert critique
+at SHA 3ed009c. **None are resolved.** All are UNRESOLVED / TRACKED open items.
+Do not resolve any item in this batch without an explicit gated decision.
+Cross-reference: FIND-041 records the verification event.
+
+---
+
+### Q-025 ⚑ PromptTemplate Schema Tier (V1 SCHEMA BLOCKER — highest priority in batch)
+
+Which tier does a PromptTemplate live in — shared platform schema vs. per-client schema?
+
+Context:
+- DEC-044 resolved Q-022 by placing PromptTemplate ownership in the Knowledge domain.
+- DEC-049 defined the `platform` schema + `client_{uuid}` schema split as the V1 schema architecture.
+- What is NOT resolved: whether a PromptTemplate is a platform-level artifact (shared
+  system-default prompts, platform-owned rows) or a per-client/per-Brand artifact
+  (client-specific customizations, brand-voice-tuned prompt rows), or a multi-tier artifact
+  with both. No `SystemPromptTemplate` / `ClientPromptTemplate` concept exists anywhere in canon.
+- This is the schema-tier classification question for a Knowledge domain entity — distinct from
+  its domain ownership (resolved: DEC-044).
+
+Why it matters:
+- Any Knowledge or Content schema written for V1 depends on this: if PromptTemplate is in the
+  platform schema, it is a shared row; if per-client, it is a client-schema row. Writing
+  schema before this is resolved inverts the schema split (DEC-049).
+- **Only true V1 schema blocker in this batch.** Must be resolved before any Knowledge or
+  Content schema work begins in the build repo.
+
+Resolution timing: **MUST resolve before V1 schema work.** A gated Phase-1 decision.
+
+Status: UNRESOLVED / TRACKED.
+
+---
+
+### Q-026 Domain Event Registry
+
+Should Faraz OS maintain a cross-domain event contract registry, and what should it contain?
+
+Context:
+- Domain events are currently listed per-domain inside `domains.md` (event names attached to
+  bounded contexts and entities), but there is no `events.md` or equivalent cross-domain
+  registry recording: event name, producing domain/bounded-context, consuming domains,
+  payload shape, and contract status.
+- Without a registry, cross-domain event contracts remain implicit and fragmented across
+  the per-domain sections of `domains.md`.
+
+Why it matters:
+- Any schema work involving event-driven integration depends on a canonical event contract
+  layer. The Phase 9 stack (pg-boss / Cloud Run — event-bus-heavy) makes this a first-class
+  concern for the build repo.
+- Cross-domain event producers and consumers cannot be safely validated against each other
+  without a registry.
+
+Resolution timing: Recommend resolving as a **pre-Phase-7 Integration Architecture gate item**;
+ideally before V1 integration schema is written.
+
+Status: UNRESOLVED / TRACKED.
+
+---
+
+### Q-027 Operational Risk Stubs — Infrastructure Recovery
+
+Are structured recovery stubs defined for the following infrastructure failure scenarios?
+- Failed mid-loop client-schema migration
+- Service-account privilege escalation
+- Secret Manager secret rotation
+- Client-schema corruption
+
+Context:
+- `infrastructure.md` (Phase 9, Snapshot-047) defines the GCP stack and the per-client
+  schema-per-client + RLS scoping scheme.
+- No structured recovery procedure stubs exist for these four failure scenarios.
+- These are pre-production hardening concerns, not V1-blocking architecture gaps.
+
+Why it matters:
+- Client-schema migration failures mid-loop, privilege escalation, and schema corruption
+  are high-blast-radius events in a multi-client schema-per-client setup.
+- Absence of stubs means operational runbooks must be invented at build time or incident time.
+
+Resolution timing: **Pre-production hardening; defer past V1.** Not a V1 architecture blocker.
+Registered here so these are not forgotten at the production-readiness gate.
+
+Status: UNRESOLVED / TRACKED. Deferred past V1 by design.
+
+---
+
+### Q-028 Phase-11 FAST Tier — Proposed Procedure Enhancement
+
+Should the GATED/AUTO build protocol in Phase 11 include a FAST tier for routine
+within-block build work?
+
+Context:
+- `claude-operating-system.md` (Phase 11, Snapshot-050 / DEC-050) defines the operating
+  discipline with a GATED/AUTO split and four agent stances.
+- The protocol has no intermediate tier between GATED (explicit Ali go) and AUTO (post-hoc
+  record-only).
+- A FAST tier would cover within-block incremental build steps that are not architecture-modifying
+  (e.g., adding a field under an already-approved block design, writing a passing test for an
+  already-approved behavior) — lower ceremony than GATED, but with lightweight explicit sign-off
+  rather than pure post-hoc AUTO.
+- **This is a procedure change (GATED per CLAUDE.md — procedure-file changes require Ali's
+  explicit go).** Do not adopt without explicit approval.
+
+Why it matters:
+- Build sessions may have many small within-block steps that are neither risky enough for full
+  GATED ceremony nor purely record-only. A FAST tier could reduce approval friction without
+  sacrificing visibility.
+
+Resolution timing: Ali's decision. **Requires explicit go before any adoption.**
+
+Status: UNRESOLVED / TRACKED. A proposed procedure enhancement, not a current requirement.
+
+---
+
+### Q-029 Agency Day-in-the-Life Validation Gate
+
+Should a pre-schema scenario walkthrough gate be defined before V1 schema work begins?
+
+Context:
+- The Phase 10 Build Roadmap (`roadmap.md`) defines the build sequence (Foundation → Core Layer
+  → T1 Launch → V1 → V2 → Future).
+- No pre-schema gate is defined that walks through a realistic agency day-in-the-life scenario
+  to stress-test the domain model and workflow design before schema is written.
+- Such a gate would: pick a representative client scenario, trace it through all relevant domains
+  and workflows, and surface entity/ownership gaps that would be expensive to fix post-schema.
+
+Why it matters:
+- Schema changes after V1 schema is written carry migration cost. Catching missing entities or
+  ownership gaps before schema work begins is significantly cheaper.
+- This is a process gate, not an architecture decision.
+
+Resolution timing: **Optional but recommended** before V1 schema work. Ali's decision whether to
+include this gate.
+
+Status: UNRESOLVED / TRACKED. A proposed process step.
+
+---
+
+### Q-030 Intelligence vs Analytics/Reporting Boundary (PULL-FORWARD TO PRE-V1)
+
+Where exactly is the boundary between the Intelligence domain and the Analytics/Reporting domain?
+
+Context:
+- This is the **longest-carried unresolved Phase-1 boundary** in the repository. It is tracked
+  as an open question in the Intelligence section of `domains.md:1944-1945`: "What belongs in
+  Intelligence versus Analytics / Reporting capability?" The R-027 rule has kept this boundary
+  intact across all downstream phase writes (no phase has been allowed to silently resolve it).
+- The overlap zone — where a derived analytical finding becomes an Intelligence insight, and which
+  domain owns aggregated reporting vs. real-time intelligence — is undrawn.
+
+Why it matters:
+- **Any Intelligence domain schema or Analytics/Reporting schema written for V1 depends on this
+  boundary being drawn.** Schema split cannot be correctly modeled if the domain boundary is
+  ambiguous.
+- This is a Phase-1 domain-truth question. It must be resolved as a gated Phase-1 decision
+  before Intelligence or Analytics/Reporting schemas are written.
+
+Resolution timing: **MUST resolve before any Intelligence or Analytics/Reporting schema work.**
+Pre-V1 gate. As the longest-carried unresolved item, this should be prioritized in the
+pre-schema gate sequence.
+
+Status: UNRESOLVED / TRACKED. Inherited Phase-1 open question (`domains.md:1944-1945`);
+never resolved; R-027 carried set.
+
+---
+
+### Q-031 PublishedItem Entity Definition
+
+What is the entity definition and field list for PublishedItem?
+
+Context:
+- The PublishedItem concept is referenced in the canon (Phase 6 Approval → Publishing flow in
+  `workflows.md`; Community domain post-publish engagement in DEC-035) but **no entity
+  definition exists**: no field list, no canonical bounded-context placement, no Aggregate
+  designation.
+- Candidate fields from the external critique verification: permalink, platform-assigned ID,
+  engagement-metrics references, performance-history references.
+- Ownership direction from existing canon: Publishing / Service Delivery area. This is a
+  Phase-1 entity formalization gap, not a new domain question.
+
+Why it matters:
+- The Community domain (DEC-035) models Comment, DirectMessage, Conversation, and EngagementReply
+  — all reference the published item they attach to — but have nothing canonical to point to.
+- The Performance & Analytics / Reporting view (Phase 2) surfaces performance data per published
+  item, but there is no authoritative entity to reference.
+- Formalizing PublishedItem before Community or Service-Delivery schemas prevents orphaned
+  foreign-key references.
+
+Resolution timing: **Formalize before Community or Service-Delivery schemas.** Pre-V1 gate.
+
+Status: UNRESOLVED / TRACKED. No prior Q-number; this is the first registration.
+
+---
+
+### Q-032 Campaign and Schedule Entity Status — Named Entity vs. Field? (PULL-FORWARD TO PRE-V1)
+
+Should Campaign and Schedule be modeled as named first-class entities, or remain field-level
+constructs?
+
+Context:
+- Campaign and Schedule currently appear only as field-level references: `campaign_focus`,
+  `related_campaign_refs` (Engagement Scope fields in `domains.md`). No first-class Campaign
+  or Schedule entity exists.
+- The non-canon gap analysis (`grounding/Gap-Analysis-and-Roadmap.md`) includes Campaign and
+  Schedule in the deferred-entity tracking.
+- The Phase 10 Build Roadmap (`roadmap.md`) includes a V2 slot for Campaign/Schedule promotion.
+- Campaign and Schedule are two of the four remaining Phase-1 entity reopenings listed in
+  Current-State.md (alongside Ad-Account and Consent).
+- The "promote-to-V1?" posture question is unresolved.
+
+Why it matters:
+- If Campaign or Schedule is promoted to a named entity before V1 schema is written, it acquires
+  a schema table, lifecycle, and relationships. If it stays field-level, it is a string/reference
+  field. Migration from field to entity post-V1 is expensive.
+- The posture question must be answered before V1 schema work on any schema that carries these
+  field references (Engagement Scope, Service Delivery).
+
+Cross-references: `grounding/Gap-Analysis-and-Roadmap.md` (deferred-entity tracking);
+`roadmap.md` V2 slot; Current-State.md remaining reopenings list.
+
+Resolution timing: **Pre-V1 gate** — decide promote-to-V1 vs. keep-as-field before V1 schema
+work that includes Engagement Scope or Service Delivery schemas.
+
+Status: UNRESOLVED / TRACKED. Roadmap places at V2; posture-question registered here for
+explicit V1-gate check.
+
+---
+
+### Q-033 Client Onboarding Phase-6 Workflow Gap (PULL-FORWARD TO PRE-V1)
+
+Is there a Phase-6 workflow entry for Client Onboarding, and if not, should one be added?
+
+Context:
+- `roadmap.md` (Phase 10) and `grounding/Gap-Analysis-and-Roadmap.md` tag Client Onboarding
+  as a T1 (launch-required) capability.
+- Phase 6 Workflow Design (`workflows.md`, Snapshot-037 / DEC-028) defines seven flows: Lead →
+  Client, Client → Strategy, Strategy → Production, Production → Approval, Approval →
+  Publishing, Publishing → Reporting, Learn → Memory Update.
+- **No Client Onboarding workflow entry exists** in `workflows.md`. The Lead → Client flow
+  covers the pre-conversion stage, but the post-conversion onboarding process — provisioning
+  the client schema, setting up Brand / Engagement Scope, configuring platform access — is not
+  modeled as a Phase-6 workflow.
+
+Why it matters:
+- If Client Onboarding is T1 (V1-required), the absence of a Phase-6 workflow means the build
+  repo will have no canonical workflow to implement against. The provisioning sequence (schema
+  provisioning, access setup, initial Brand/EngagementScope creation) will be invented ad hoc.
+- This is a pre-V1 workflow gap that should be resolved before the T1 build stage.
+
+Resolution timing: **Pre-V1 gate** — decide whether to add an 8th workflow for Client
+Onboarding before the Core Layer / T1 build stage.
+
+Status: UNRESOLVED / TRACKED. No prior Phase-6 workflow entry; this is the first registration.
+
+---
+
 ## Question Review Rule
 Review this file regularly.
 

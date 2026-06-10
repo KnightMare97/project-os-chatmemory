@@ -478,10 +478,29 @@ Phase 11 COMPLETE (Snapshot-050, 2026-06-10). DEC-050 minted;
 5. **Foundation stage build** — Begin MVP Foundation stage per `roadmap.md`,
    once build repo is set up and provisioning checklist is complete.
 
+**Pre-V1 Gate Batch registered (Snapshot-051, 2026-06-10):** Nine gaps from external-critique
+verification (SHA 3ed009c) are now open/tracked in `open-questions.md` (Q-025–Q-033) and
+recorded in FIND-041. None resolved; no architecture changed. Key items:
+- **Q-025 ⚑ V1 BLOCKER**: PromptTemplate schema tier (platform vs. per-client) — must
+  resolve before any Knowledge/Content schema work begins.
+- **Q-030 hard pre-schema gate**: Intelligence vs Analytics/Reporting boundary
+  (`domains.md:1944-1945`) — longest-carried unresolved Phase-1 boundary; must draw before
+  Intelligence or Reporting schemas.
+- **Q-031 pre-V1 gate**: PublishedItem entity definition — must formalize before Community or
+  Service-Delivery schemas.
+- **Q-033 pre-V1 gate**: Client Onboarding Phase-6 workflow gap — T1-required capability with
+  no Phase-6 workflow entry.
+- **Q-026**: Domain Event Registry (pre-Integration Architecture gate).
+- **Q-027**: Operational Risk Stubs — deferred past V1.
+- **Q-028**: Phase-11 FAST tier proposal — GATED, needs Ali's explicit go.
+- **Q-029**: Agency day-in-the-life validation gate — optional pre-schema process step.
+- **Q-032**: Campaign + Schedule entity status (promote-to-V1 posture check).
+
 Remaining open items (do not touch without explicit gate):
 - Q-003 (Brand aggregate placement), Q-006, Q-007, Q-024 (`domains.md:1720`),
   insight→durable-knowledge threshold (`domains.md:1946`), 4 Phase-1 entity reopenings
   (Campaign, Ad-Account, Schedule, Consent), Agent Supervision/Observability deferred slot.
+- Pre-V1 batch: Q-025 through Q-033 (see above; none resolved).
 
 ---
 *(Prior Next Focus entries — preserved for historical record:)*

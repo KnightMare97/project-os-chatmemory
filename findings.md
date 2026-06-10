@@ -669,3 +669,40 @@ wording matches all five Ali rulings from DEC-049, R-028 held.
 
 Source:
 - Snapshot-049 (commit `193790e` context); 2026-06-09.
+
+---
+
+### FIND-041
+External critique verification at SHA 3ed009c surfaced nine pre-V1 gaps; all registered
+as open/tracked items in `open-questions.md` (Q-025–Q-033). No architecture resolved.
+
+Meaning:
+- A team verification of an external expert critique was run against origin/main at SHA
+  3ed009c (2026-06-10, Snapshot-051). Nine pre-V1 gaps were surfaced:
+  - Q-025: PromptTemplate schema tier — the only true V1 schema blocker; must resolve before
+    any Knowledge/Content schema work begins (DEC-044 resolved domain ownership; tier is open).
+  - Q-026: Domain Event Registry — no cross-domain event contract registry exists.
+  - Q-027: Operational Risk Stubs — no recovery stubs for four infrastructure failure scenarios;
+    deferred past V1 by design.
+  - Q-028: Phase-11 FAST tier — proposed procedure enhancement; GATED, needs Ali's explicit go.
+  - Q-029: Agency day-in-the-life validation gate — proposed optional pre-schema process step.
+  - Q-030: Intelligence vs Analytics/Reporting boundary (`domains.md:1944-1945`) — longest-carried
+    unresolved Phase-1 boundary; must draw before Intelligence or Reporting schema work.
+  - Q-031: PublishedItem entity definition — no field list, no canonical BC placement;
+    must formalize before Community or Service-Delivery schemas.
+  - Q-032: Campaign + Schedule entity status — named entity vs. field; promote-to-V1 posture
+    question; cross-references `grounding/Gap-Analysis-and-Roadmap.md` and `roadmap.md` V2 slot.
+  - Q-033: Client Onboarding Phase-6 workflow gap — T1-required capability with no Phase-6
+    workflow entry; must decide 8th-flow add before T1 build.
+- No architecture was resolved. No canon content was changed. No DECs were minted.
+  All nine items are UNRESOLVED / TRACKED.
+
+Impact:
+- The pre-V1 gate sequence has nine explicitly registered items.
+- Q-025 is the only true V1 schema blocker.
+- Q-030 (Intelligence vs Analytics/Reporting) is a hard pre-schema gate for two domains.
+- Q-031 and Q-033 are pre-V1 entity/workflow formalization gates.
+- Q-027 and Q-028 are deferred past V1 / procedural proposals respectively.
+
+Source:
+- External critique verification, 2026-06-10; Snapshot-051 close-out.
