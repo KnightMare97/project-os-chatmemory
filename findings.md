@@ -706,3 +706,32 @@ Impact:
 
 Source:
 - External critique verification, 2026-06-10; Snapshot-051 close-out.
+
+---
+
+### FIND-042
+An isolated `domains.md` concept-altitude edit can be authored **net-zero-line**
+(replace N lines with N lines) to avoid the FIND-032/033/034 downstream cite-shift
+cascade and preserve true commit isolation.
+
+Meaning:
+- DEC-051 (Q-025 resolution) needed a concept-altitude annotation in the Knowledge
+  section of `domains.md` (lines ~1264, ~1293). Many living docs cite `domains.md`
+  line ranges below that point (`:1525`, `:1607-1614`, `:1712-1714`, `:1720`,
+  `:1944-1945`, `:1946`, `:1947-1948`). Adding net lines there would shift every one
+  of those citations — the FIND-032/033/034 same-session-shift failure mode — and
+  balloon an "isolated" Phase-1 edit into a repo-wide cite sweep (as DEC-045 required:
+  "+ FIND-032 cite sweep").
+- By folding the annotation into the existing lines (net-zero: `git diff --numstat` =
+  `2 2`), no line below the edit moved. Re-derivation of `:1720`, `:1944-1945`, `:1946`
+  post-edit confirmed all downstream cites intact; zero living-doc cites needed
+  updating; the commit stayed truly isolated.
+
+Impact:
+- A reusable discipline: when a `domains.md` edit is annotation-only at concept
+  altitude, prefer net-zero-line authoring to keep the GATED isolated-commit clean and
+  skip the cascade sweep. When net lines are unavoidable (genuinely new entries), the
+  full FIND-032/033/034 re-derivation sweep still applies.
+
+Source:
+- DEC-051 / Snapshot-052 close-out; 2026-06-12.

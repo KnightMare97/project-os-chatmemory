@@ -462,6 +462,15 @@ Avoid:
 
 **ALL ELEVEN PHASES COMPLETE. Architecture-memory repository is done as design canon.**
 
+**Latest (Snapshot-052, 2026-06-12): Q-025 RESOLVED (DEC-051).** PromptTemplate is a
+two-tier entity, both tiers Knowledge-owned (DEC-044 unchanged): **SystemPromptTemplate**
+in the shared platform (`public`) schema tier and **ClientPromptTemplate** in each client's
+per-client (`client_{uuid}`) schema tier, partitioned per-Brand (DEC-045). Tier-selection
+litmus: system-default/shared → System tier; brand/client-specific → Client tier. This was
+the only true V1 schema blocker in the pre-V1 batch — its resolution **unblocks the T1
+Knowledge / Content schema work** in the build repo. Landed as an isolated, called-out
+`domains.md` concept-altitude edit (net-zero line count; no cascade cite-sweep — FIND-042).
+
 Phase 11 COMPLETE (Snapshot-050, 2026-06-10). DEC-050 minted;
 `claude-operating-system.md` first write pushed and verified. **All eleven phases
 (Phases 0–11) now have first-write entries.** Next recommended steps:
@@ -479,10 +488,12 @@ Phase 11 COMPLETE (Snapshot-050, 2026-06-10). DEC-050 minted;
    once build repo is set up and provisioning checklist is complete.
 
 **Pre-V1 Gate Batch registered (Snapshot-051, 2026-06-10):** Nine gaps from external-critique
-verification (SHA 3ed009c) are now open/tracked in `open-questions.md` (Q-025–Q-033) and
-recorded in FIND-041. None resolved; no architecture changed. Key items:
-- **Q-025 ⚑ V1 BLOCKER**: PromptTemplate schema tier (platform vs. per-client) — must
-  resolve before any Knowledge/Content schema work begins.
+verification (SHA 3ed009c) were opened/tracked in `open-questions.md` (Q-025–Q-033) and
+recorded in FIND-041. **Q-025 is now RESOLVED (DEC-051, Snapshot-052, 2026-06-12); the other
+eight (Q-026–Q-033) remain open.** Key items:
+- **Q-025 ⚑ V1 BLOCKER — RESOLVED (DEC-051)**: PromptTemplate schema tier = two tiers
+  (SystemPromptTemplate in `public` / ClientPromptTemplate in `client_{uuid}`, per-Brand);
+  both Knowledge-owned. T1 Knowledge/Content schema unblocked.
 - **Q-030 hard pre-schema gate**: Intelligence vs Analytics/Reporting boundary
   (`domains.md:1944-1945`) — longest-carried unresolved Phase-1 boundary; must draw before
   Intelligence or Reporting schemas.
@@ -500,7 +511,7 @@ Remaining open items (do not touch without explicit gate):
 - Q-003 (Brand aggregate placement), Q-006, Q-007, Q-024 (`domains.md:1720`),
   insight→durable-knowledge threshold (`domains.md:1946`), 4 Phase-1 entity reopenings
   (Campaign, Ad-Account, Schedule, Consent), Agent Supervision/Observability deferred slot.
-- Pre-V1 batch: Q-025 through Q-033 (see above; none resolved).
+- Pre-V1 batch: Q-026 through Q-033 still open (Q-025 resolved — DEC-051 / Snapshot-052).
 
 ---
 *(Prior Next Focus entries — preserved for historical record:)*
