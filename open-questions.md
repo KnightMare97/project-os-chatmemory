@@ -681,6 +681,9 @@ at SHA 3ed009c. **None are resolved.** All are UNRESOLVED / TRACKED open items.
 Do not resolve any item in this batch without an explicit gated decision.
 Cross-reference: FIND-041 records the verification event.
 
+**Update (2026-06-12):** Q-025 is now **RESOLVED by DEC-051** (see its entry below).
+The remaining eight items (Q-026–Q-033) stay UNRESOLVED / TRACKED.
+
 ---
 
 ### Q-025 ⚑ PromptTemplate Schema Tier (V1 SCHEMA BLOCKER — highest priority in batch)
@@ -706,7 +709,13 @@ Why it matters:
 
 Resolution timing: **MUST resolve before V1 schema work.** A gated Phase-1 decision.
 
-Status: UNRESOLVED / TRACKED.
+Status: **RESOLVED — see DEC-051** (2026-06-12). PromptTemplate is a two-tier entity,
+both tiers Knowledge-owned (DEC-044 unchanged): **SystemPromptTemplate** in the shared
+platform (`public`) schema tier (`infrastructure.md:430`), and **ClientPromptTemplate** in
+each client's per-client (`client_{uuid}`) schema tier (`infrastructure.md:436`), partitioned
+per-Brand (DEC-045). Tier-selection litmus: system-default/shared → System tier;
+brand/client-specific → Client tier. This was the only true V1 schema blocker in the batch;
+its resolution unblocks the T1 Knowledge / Content schema work in the build repo.
 
 ---
 

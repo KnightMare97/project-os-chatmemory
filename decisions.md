@@ -2952,6 +2952,65 @@ carried-open Phase-1 questions, and does not write application code.
 
 ---
 
+### DEC-051
+**Q-025 — PromptTemplate schema tier — two tiers (System / Client), both Knowledge-owned.**
+
+Phase: 1. Resolves: Q-025. Supersedes: none.
+Date: 2026-06-12.
+
+Q-025 asked which schema tier a PromptTemplate lives in — the shared platform
+schema vs. a per-client schema. DEC-044 resolved domain *ownership* (Knowledge owns
+PromptTemplate); the schema-tier *placement* was left open, and no
+`SystemPromptTemplate` / `ClientPromptTemplate` concept existed in canon. The
+canonical two-tier schema layout is defined in Phase 9 `infrastructure.md` Schema
+Layout: a `public` schema for platform-level tables shared across all clients
+(`infrastructure.md:430`) and a `client_{uuid}` schema, one per client account
+(`infrastructure.md:436`).
+
+**Decision: PromptTemplate is a two-tier entity (both tiers Knowledge-owned —
+DEC-044 unchanged):**
+
+1. **SystemPromptTemplate — platform / shared tier.** System-maintained default
+   templates shared across all clients. Lives in the shared platform (`public`)
+   schema tier (`infrastructure.md:430`). One canonical row set, not duplicated
+   per client.
+
+2. **ClientPromptTemplate — per-client tier.** Brand-specific / client-customized
+   templates. Lives in each client's per-client (`client_{uuid}`) schema tier
+   (`infrastructure.md:436`), partitioned **per-Brand** consistent with DEC-045's
+   per-Brand Client Brain partitioning (the per-Client aggregation view applies for
+   cross-brand context).
+
+This answers "which schema tier does a PromptTemplate live in" = **BOTH**, as two
+explicit tiers — not a single tier, and not an ambiguous multi-tier row.
+
+**Tier-selection litmus (which tier a given template belongs to):**
+- A **system-default / shared** template (no client- or brand-specific content)
+  → **System tier** (`public`).
+- A **brand- or client-specific** template (brand-voice-tuned, client-customized)
+  → **Client tier** (`client_{uuid}`, per-Brand).
+
+**Altitude.** This ruling fixes *where the two tiers live* — the architecture /
+ownership ruling plus the platform-vs-per-client placement principle — at canon
+altitude. Concrete DDL (columns, types, indexes, FK shape, version-history table
+structure) is build-layer and lands in the build repo (per DEC-049 / DEC-050),
+not here.
+
+**Ties:** DEC-044 (Knowledge owns PromptTemplate — unchanged); DEC-045 (per-Brand
+Client Brain partitioning — the Client tier follows the same per-Brand unit);
+Phase 9 `infrastructure.md` Schema Layout (the `public` vs `client_{uuid}` tier
+model; DEC-041); DEC-049 (the V1 schema architecture this unblocks).
+
+**Effect.** Q-025 — the only true V1 schema blocker in the Snapshot-051 pre-V1
+batch — is resolved. The T1 Knowledge / Content schema work in the build repo is
+unblocked. `domains.md` Knowledge section is updated (isolated, called-out, this
+DEC) to record the two-tier PromptTemplate distinction at concept altitude.
+
+Status:
+- Active
+
+---
+
 ## Review Rule
 Review this file regularly.
 

@@ -1261,7 +1261,7 @@ Knowledge owns the source of truth for:
 - retrieval-oriented knowledge structures
 - memory references and knowledge indexing
 - approved organizational memory artifacts
-- PromptTemplate (DEC-044; reusable structured AI prompt artifacts and their version history)
+- PromptTemplate (DEC-044; reusable structured AI prompt artifacts and their version history) — two tiers (DEC-051): a platform-shared SystemPromptTemplate and a per-client, per-Brand ClientPromptTemplate
 - Client Brain (DEC-027; per-Brand partitioning with per-Client aggregation view — DEC-045)
 
 Knowledge may reference but should not own:
@@ -1290,7 +1290,7 @@ Partitioning is per-Brand with per-Client aggregation view (DEC-045).
 - Agency Brain Entry
 - Client Brain
 - Knowledge Version
-- PromptTemplate
+- PromptTemplate — two tiers (DEC-051): SystemPromptTemplate (platform-shared, system-default) / ClientPromptTemplate (per-client, per-Brand — DEC-045)
 
 ---
 
